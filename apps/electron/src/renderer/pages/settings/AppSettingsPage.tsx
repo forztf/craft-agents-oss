@@ -27,6 +27,7 @@ import {
   SettingsToggle,
 } from '@/components/settings'
 import { useUpdateChecker } from '@/hooks/useUpdateChecker'
+import { useTranslation } from '@/contexts/I18nContext'
 
 export const meta: DetailsPageMeta = {
   navigator: 'settings',
@@ -38,6 +39,7 @@ export const meta: DetailsPageMeta = {
 // ============================================
 
 export default function AppSettingsPage() {
+  const { t } = useTranslation('pages/settings/AppSettingsPage')
   // Notifications state
   const [notificationsEnabled, setNotificationsEnabled] = useState(true)
 
@@ -88,17 +90,17 @@ export default function AppSettingsPage() {
 
   return (
     <div className="h-full flex flex-col">
-      <PanelHeader title="App" actions={<HeaderMenu route={routes.view.settings('app')} helpFeature="app-settings" />} />
+      <PanelHeader title={t('App')} actions={<HeaderMenu route={routes.view.settings('app')} helpFeature="app-settings" />} />
       <div className="flex-1 min-h-0 mask-fade-y">
         <ScrollArea className="h-full">
           <div className="px-5 py-7 max-w-3xl mx-auto">
             <div className="space-y-8">
               {/* Notifications */}
-              <SettingsSection title="Notifications">
+              <SettingsSection title={t('Notifications')}>
                 <SettingsCard>
                   <SettingsToggle
-                    label="Desktop notifications"
-                    description="Get notified when AI finishes working in a chat."
+                    label={t('Desktop notifications')}
+                    description={t('Get notified when AI finishes working in a chat.')}
                     checked={notificationsEnabled}
                     onCheckedChange={handleNotificationsEnabledChange}
                   />
@@ -106,11 +108,11 @@ export default function AppSettingsPage() {
               </SettingsSection>
 
               {/* Power */}
-              <SettingsSection title="Power">
+              <SettingsSection title={t('Power')}>
                 <SettingsCard>
                   <SettingsToggle
-                    label="Keep screen awake"
-                    description="Prevent the screen from turning off while sessions are running."
+                    label={t('Keep screen awake')}
+                    description={t('Prevent the screen from turning off while sessions are running.')}
                     checked={keepAwakeEnabled}
                     onCheckedChange={handleKeepAwakeEnabledChange}
                   />
@@ -118,12 +120,12 @@ export default function AppSettingsPage() {
               </SettingsSection>
 
               {/* About */}
-              <SettingsSection title="About">
+              <SettingsSection title={t('About')}>
                 <SettingsCard>
-                  <SettingsRow label="Version">
+                  <SettingsRow label={t('Version')}>
                     <div className="flex items-center gap-2">
                       <span className="text-muted-foreground">
-                        {updateChecker.updateInfo?.currentVersion ?? 'Loading...'}
+                        {updateChecker.updateInfo?.currentVersion ?? t('Loading...')}
                       </span>
                       {updateChecker.updateAvailable && updateChecker.updateInfo?.latestVersion && (
                         <Button
@@ -131,12 +133,12 @@ export default function AppSettingsPage() {
                           size="sm"
                           onClick={updateChecker.installUpdate}
                         >
-                          Update to {updateChecker.updateInfo.latestVersion}
+                          {t('Update to {{version}}', { version: updateChecker.updateInfo.latestVersion })}
                         </Button>
                       )}
                     </div>
                   </SettingsRow>
-                  <SettingsRow label="Check for updates">
+                  <SettingsRow label={t('Check for updates')}>
                     <Button
                       variant="outline"
                       size="sm"
@@ -146,20 +148,20 @@ export default function AppSettingsPage() {
                       {isCheckingForUpdates ? (
                         <>
                           <Spinner className="mr-1.5" />
-                          Checking...
+                          {t('Checking...')}
                         </>
                       ) : (
-                        'Check Now'
+                        t('Check Now')
                       )}
                     </Button>
                   </SettingsRow>
                   {updateChecker.isReadyToInstall && (
-                    <SettingsRow label="Install update">
+                    <SettingsRow label={t('Install update')}>
                       <Button
                         size="sm"
                         onClick={updateChecker.installUpdate}
                       >
-                        Restart to Update
+                        {t('Restart to Update')}
                       </Button>
                     </SettingsRow>
                   )}

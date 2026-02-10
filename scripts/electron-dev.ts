@@ -38,7 +38,7 @@ function loadEnvFile(): void {
           let value = trimmed.slice(eqIndex + 1).trim();
           // Remove surrounding quotes if present
           if ((value.startsWith('"') && value.endsWith('"')) ||
-              (value.startsWith("'") && value.endsWith("'"))) {
+            (value.startsWith("'") && value.endsWith("'"))) {
             value = value.slice(1, -1);
           }
           process.env[key] = value;
@@ -137,29 +137,43 @@ async function buildMcpServers(): Promise<void> {
   if (!existsSync(sessionDistDir)) mkdirSync(sessionDistDir, { recursive: true });
   if (!existsSync(bridgeDistDir)) mkdirSync(bridgeDistDir, { recursive: true });
 
-  // Build both servers in parallel
-  const [sessionResult, bridgeResult] = await Promise.all([
-    runEsbuild(
-      "packages/session-mcp-server/src/index.ts",
-      "packages/session-mcp-server/dist/index.js"
-    ),
-    runEsbuild(
-      "packages/bridge-mcp-server/src/index.ts",
-      "packages/bridge-mcp-server/dist/index.js"
-    ),
-  ]);
+  const builds = [];
 
-  if (!sessionResult.success) {
-    console.error("❌ Session MCP server build failed:", sessionResult.error);
-    process.exit(1);
+  // Build Session MCP Server if source exists
+  if (existsSync(join(SESSION_SERVER_DIR, "src"))) {
+    builds.push(
+      runEsbuild(
+        "packages/session-mcp-server/src/index.ts",
+        "packages/session-mcp-server/dist/index.js"
+      ).then(result => ({ name: "Session MCP", result }))
+    );
+  } else {
+    console.warn("⚠️  Skipping Session MCP Server build: source not found at packages/session-mcp-server/src");
   }
-  console.log("✅ Session MCP server built");
 
-  if (!bridgeResult.success) {
-    console.error("❌ Bridge MCP server build failed:", bridgeResult.error);
-    process.exit(1);
+  // Build Bridge MCP Server if source exists
+  if (existsSync(join(BRIDGE_SERVER_DIR, "src"))) {
+    builds.push(
+      runEsbuild(
+        "packages/bridge-mcp-server/src/index.ts",
+        "packages/bridge-mcp-server/dist/index.js"
+      ).then(result => ({ name: "Bridge MCP", result }))
+    );
+  } else {
+    console.warn("⚠️  Skipping Bridge MCP Server build: source not found at packages/bridge-mcp-server/src");
   }
-  console.log("✅ Bridge MCP server built");
+
+  // Wait for all builds to complete
+  const results = await Promise.all(builds);
+
+  // Check results
+  for (const { name, result } of results) {
+    if (!result.success) {
+      console.error(`❌ ${name} server build failed:`, result.error);
+      process.exit(1);
+    }
+    console.log(`✅ ${name} server built`);
+  }
 }
 
 // Get OAuth defines for esbuild API

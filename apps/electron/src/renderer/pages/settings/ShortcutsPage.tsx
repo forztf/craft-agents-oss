@@ -11,6 +11,7 @@ import { SettingsSection, SettingsCard, SettingsRow } from '@/components/setting
 import type { DetailsPageMeta } from '@/lib/navigation-registry'
 import { isMac } from '@/lib/platform'
 import { actionsByCategory, useActionLabel, type ActionId } from '@/actions'
+import { useTranslation } from '@/contexts/I18nContext'
 
 export const meta: DetailsPageMeta = {
   navigator: 'settings',
@@ -28,28 +29,29 @@ interface ShortcutSection {
 }
 
 // Component-specific shortcuts that aren't in the centralized registry
-const componentSpecificSections: ShortcutSection[] = [
+// NOTE: These will be internationalized using the hook in the component
+const getComponentSpecificSections = (t: (key: string) => string): ShortcutSection[] => [
   {
-    title: 'List Navigation',
+    title: t('List Navigation'),
     shortcuts: [
-      { keys: ['↑', '↓'], description: 'Navigate items in list' },
-      { keys: ['Home'], description: 'Go to first item' },
-      { keys: ['End'], description: 'Go to last item' },
+      { keys: ['↑', '↓'], description: t('Navigate items in list') },
+      { keys: ['Home'], description: t('Go to first item') },
+      { keys: ['End'], description: t('Go to last item') },
     ],
   },
   {
-    title: 'Session List',
+    title: t('Session List'),
     shortcuts: [
-      { keys: ['Enter'], description: 'Focus chat input' },
-      { keys: ['Right-click'], description: 'Open context menu' },
+      { keys: ['Enter'], description: t('Focus chat input') },
+      { keys: ['Right-click'], description: t('Open context menu') },
     ],
   },
   {
-    title: 'Chat Input',
+    title: t('Chat Input'),
     shortcuts: [
-      { keys: ['Enter'], description: 'Send message' },
-      { keys: ['Shift', 'Enter'], description: 'New line' },
-      { keys: ['Esc'], description: 'Close dialog / blur input' },
+      { keys: ['Enter'], description: t('Send message') },
+      { keys: ['Shift', 'Enter'], description: t('New line') },
+      { keys: ['Esc'], description: t('Close dialog / blur input') },
     ],
   },
 ]
@@ -89,9 +91,11 @@ function ActionShortcutRow({ actionId }: { actionId: ActionId }) {
 }
 
 export default function ShortcutsPage() {
+  const { t } = useTranslation('pages/settings/ShortcutsPage')
+
   return (
     <div className="h-full flex flex-col">
-      <PanelHeader title="Shortcuts" />
+      <PanelHeader title={t('Shortcuts')} />
       <div className="flex-1 min-h-0 mask-fade-y">
         <ScrollArea className="h-full">
           <div className="px-5 py-7 max-w-3xl mx-auto space-y-8">
@@ -107,7 +111,7 @@ export default function ShortcutsPage() {
             ))}
 
             {/* Component-specific sections */}
-            {componentSpecificSections.map((section) => (
+            {getComponentSpecificSections(t).map((section) => (
               <SettingsSection key={section.title} title={section.title}>
                 <SettingsCard>
                   {section.shortcuts.map((shortcut, index) => (

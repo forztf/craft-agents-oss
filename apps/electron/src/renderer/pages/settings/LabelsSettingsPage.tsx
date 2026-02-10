@@ -28,6 +28,7 @@ import {
   SettingsSection,
   SettingsCard,
 } from '@/components/settings'
+import { useTranslation } from '@/contexts/I18nContext'
 import { routes } from '@/lib/navigate'
 import type { DetailsPageMeta } from '@/lib/navigation-registry'
 
@@ -40,6 +41,7 @@ export default function LabelsSettingsPage() {
   const { activeWorkspaceId } = useAppShellContext()
   const activeWorkspace = useActiveWorkspace()
   const { labels, isLoading } = useLabels(activeWorkspaceId)
+  const { t } = useTranslation('pages/settings/LabelsSettingsPage')
 
   // Resolve edit configs using the workspace root path
   const rootPath = activeWorkspace?.rootPath || ''
@@ -54,7 +56,7 @@ export default function LabelsSettingsPage() {
 
   return (
     <div className="h-full flex flex-col">
-      <PanelHeader title="Labels" actions={<HeaderMenu route={routes.view.settings('labels')} />} />
+      <PanelHeader title={t('Labels')} actions={<HeaderMenu route={routes.view.settings('labels')} />} />
       <div className="flex-1 min-h-0 mask-fade-y">
         <ScrollArea className="h-full">
           <div className="px-5 py-7 max-w-3xl mx-auto">
@@ -66,17 +68,17 @@ export default function LabelsSettingsPage() {
               ) : (
                 <>
                   {/* About Section */}
-                  <SettingsSection title="About Labels">
+                  <SettingsSection title={t('About Labels')}>
                     <SettingsCard className="px-4 py-3.5">
                       <div className="text-sm text-muted-foreground leading-relaxed space-y-1.5">
                         <p>
                           Labels help you organize sessions with colored tags. Use them to categorize conversations by project, topic, or priority — making it easy to filter and find related sessions later.
                         </p>
                         <p>
-                          Each label can optionally carry a <span className="text-foreground/80 font-medium">value</span> with a specific type (text, number, or date). This turns labels into structured metadata — for example, a "priority" label with value 3, or a "due" label with a date.
+                          Each label can optionally carry a <span className="text-foreground/80 font-medium">{t('value')}</span> with a specific type (text, number, or date). This turns labels into structured metadata — for example, a "priority" label with value 3, or a "due" label with a date.
                         </p>
                         <p>
-                          <span className="text-foreground/80 font-medium">Auto-apply rules</span> assign labels automatically when a message matches a regex pattern. For example, pasting a Linear issue URL can auto-tag the session with the project name and issue ID — no manual tagging needed.
+                          <span className="text-foreground/80 font-medium">{t('Auto-apply rules')}</span> assign labels automatically when a message matches a regex pattern. For example, pasting a Linear issue URL can auto-tag the session with the project name and issue ID — no manual tagging needed.
                         </p>
                         <p>
                           <button
@@ -93,8 +95,8 @@ export default function LabelsSettingsPage() {
 
                   {/* Label Hierarchy Section */}
                   <SettingsSection
-                    title="Label Hierarchy"
-                    description="All labels configured for this workspace. Labels can be nested to form groups."
+                    title={t('Label Hierarchy')}
+                    description={t('All labels configured for this workspace. Labels can be nested to form groups.')}
                     action={
                       <EditPopover
                         trigger={<EditButton />}
@@ -113,13 +115,13 @@ export default function LabelsSettingsPage() {
                           searchable
                           maxHeight={350}
                           fullscreen
-                          fullscreenTitle="Label Hierarchy"
+                          fullscreenTitle={t('Label Hierarchy')}
                         />
                       ) : (
                         <div className="p-8 text-center text-muted-foreground">
-                          <p className="text-sm">No labels configured.</p>
+                          <p className="text-sm">{t('No labels configured.')}</p>
                           <p className="text-xs mt-1 text-foreground/40">
-                            Labels can be created by the agent or by editing <code className="bg-foreground/5 px-1 rounded">labels/config.json</code> in your workspace.
+                            Labels can be created by the agent or by editing <code className="bg-foreground/5 px-1 rounded">{t('labels/config.json')}</code> in your workspace.
                           </p>
                         </div>
                       )}
@@ -128,8 +130,8 @@ export default function LabelsSettingsPage() {
 
                   {/* Auto-Apply Rules Section */}
                   <SettingsSection
-                    title="Auto-Apply Rules"
-                    description="Regex patterns that automatically apply labels when matched in user messages. For example, paste a Linear issue URL and automatically tag the session with the project name and issue ID."
+                    title={t('Auto-Apply Rules')}
+                    description={t('Regex patterns that automatically apply labels when matched in user messages. For example, paste a Linear issue URL and automatically tag the session with the project name and issue ID.')}
                     action={
                       <EditPopover
                         trigger={<EditButton />}
@@ -147,7 +149,7 @@ export default function LabelsSettingsPage() {
                         searchable
                         maxHeight={350}
                         fullscreen
-                        fullscreenTitle="Auto-Apply Rules"
+                        fullscreenTitle={t('Auto-Apply Rules')}
                       />
                     </SettingsCard>
                   </SettingsSection>

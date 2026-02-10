@@ -25,6 +25,7 @@ import {
   SettingsSegmentedControl,
   SettingsMenuSelect,
 } from '@/components/settings'
+import { useTranslation } from '@/contexts/I18nContext'
 import { useWorkspaceIcons } from '@/hooks/useWorkspaceIcon'
 import { Info_DataTable, SortableHeader } from '@/components/info/Info_DataTable'
 import { Info_Badge } from '@/components/info/Info_Badge'
@@ -39,52 +40,7 @@ export const meta: DetailsPageMeta = {
 // Tool Icons Table
 // ============================================
 
-/**
- * Column definitions for the tool icon mappings table.
- * Shows a preview icon, tool name, and the CLI commands that trigger it.
- */
-const toolIconColumns: ColumnDef<ToolIconMapping>[] = [
-  {
-    accessorKey: 'iconDataUrl',
-    header: () => <span className="p-1.5 pl-2.5">Icon</span>,
-    cell: ({ row }) => (
-      <div className="p-1.5 pl-2.5">
-        <img
-          src={row.original.iconDataUrl}
-          alt={row.original.displayName}
-          className="w-5 h-5 object-contain"
-        />
-      </div>
-    ),
-    size: 60,
-    enableSorting: false,
-  },
-  {
-    accessorKey: 'displayName',
-    header: ({ column }) => <SortableHeader column={column} title="Tool" />,
-    cell: ({ row }) => (
-      <div className="p-1.5 pl-2.5 font-medium">
-        {row.original.displayName}
-      </div>
-    ),
-    size: 150,
-  },
-  {
-    accessorKey: 'commands',
-    header: () => <span className="p-1.5 pl-2.5">Commands</span>,
-    cell: ({ row }) => (
-      <div className="p-1.5 pl-2.5 flex flex-wrap gap-1">
-        {row.original.commands.map(cmd => (
-          <Info_Badge key={cmd} color="muted" className="font-mono">
-            {cmd}
-          </Info_Badge>
-        ))}
-      </div>
-    ),
-    meta: { fillWidth: true },
-    enableSorting: false,
-  },
-]
+// ============================================
 
 // ============================================
 // Main Component
@@ -92,6 +48,7 @@ const toolIconColumns: ColumnDef<ToolIconMapping>[] = [
 
 export default function AppearanceSettingsPage() {
   const { mode, setMode, colorTheme, setColorTheme, font, setFont, activeWorkspaceId, setWorkspaceColorTheme } = useTheme()
+  const { t } = useTranslation('pages/settings/AppearanceSettingsPage')
   const { workspaces } = useAppShellContext()
 
   // Fetch workspace icons as data URLs (file:// URLs don't work in renderer)
@@ -141,6 +98,57 @@ export default function AppearanceSettingsPage() {
     loadWorkspaceThemes()
   }, [])
 
+  // ============================================
+  // Tool Icons Table
+  // ============================================
+
+  /**
+   * Column definitions for the tool icon mappings table.
+   * Shows a preview icon, tool name, and the CLI commands that trigger it.
+   */
+  const toolIconColumns = useMemo<ColumnDef<ToolIconMapping>[]>(() => [
+    {
+      accessorKey: 'iconDataUrl',
+      header: () => <span className="p-1.5 pl-2.5">{t('Icon')}</span>,
+      cell: ({ row }) => (
+        <div className="p-1.5 pl-2.5">
+          <img
+            src={row.original.iconDataUrl}
+            alt={row.original.displayName}
+            className="w-5 h-5 object-contain"
+          />
+        </div>
+      ),
+      size: 60,
+      enableSorting: false,
+    },
+    {
+      accessorKey: 'displayName',
+      header: ({ column }) => <SortableHeader column={column} title={t('Tool')} />,
+      cell: ({ row }) => (
+        <div className="p-1.5 pl-2.5 font-medium">
+          {row.original.displayName}
+        </div>
+      ),
+      size: 150,
+    },
+    {
+      accessorKey: 'commands',
+      header: () => <span className="p-1.5 pl-2.5">{t('Commands')}</span>,
+      cell: ({ row }) => (
+        <div className="p-1.5 pl-2.5 flex flex-wrap gap-1">
+          {row.original.commands.map(cmd => (
+            <Info_Badge key={cmd} color="muted" className="font-mono">
+              {cmd}
+            </Info_Badge>
+          ))}
+        </div>
+      ),
+      meta: { fillWidth: true },
+      enableSorting: false,
+    },
+  ], [t])
+
   // Load tool icon mappings and resolve the config file path on mount
   useEffect(() => {
     const load = async () => {
@@ -185,14 +193,14 @@ export default function AppearanceSettingsPage() {
 
   // Theme options for dropdowns
   const themeOptions = useMemo(() => [
-    { value: 'default', label: 'Default' },
+    { value: 'default', label: t('Default') },
     ...presetThemes
       .filter(t => t.id !== 'default')
       .map(t => ({
         value: t.id,
         label: t.theme.name || t.id,
       })),
-  ], [presetThemes])
+  ], [presetThemes, t])
 
   // Get current app default theme label for display (null when using 'default' to avoid redundant "Use Default (Default)")
   const appDefaultLabel = useMemo(() => {
@@ -204,7 +212,7 @@ export default function AppearanceSettingsPage() {
   return (
     <div className="h-full flex flex-col">
       <PanelHeader
-        title="Appearance"
+        title={t('Appearance')}
         actions={<HeaderMenu route={routes.view.settings('appearance')} helpFeature="themes" />}
       />
       <div className="flex-1 min-h-0 mask-fade-y">
@@ -213,33 +221,33 @@ export default function AppearanceSettingsPage() {
             <div className="space-y-8">
 
               {/* Default Theme */}
-              <SettingsSection title="Default Theme">
+              <SettingsSection title={t('Default Theme')}>
                 <SettingsCard>
-                  <SettingsRow label="Mode">
+                  <SettingsRow label={t('Mode')}>
                     <SettingsSegmentedControl
                       value={mode}
                       onValueChange={setMode}
                       options={[
-                        { value: 'system', label: 'System', icon: <Monitor className="w-4 h-4" /> },
-                        { value: 'light', label: 'Light', icon: <Sun className="w-4 h-4" /> },
-                        { value: 'dark', label: 'Dark', icon: <Moon className="w-4 h-4" /> },
+                        { value: 'system', label: t('System'), icon: <Monitor className="w-4 h-4" /> },
+                        { value: 'light', label: t('Light'), icon: <Sun className="w-4 h-4" /> },
+                        { value: 'dark', label: t('Dark'), icon: <Moon className="w-4 h-4" /> },
                       ]}
                     />
                   </SettingsRow>
-                  <SettingsRow label="Color theme">
+                  <SettingsRow label={t('Color theme')}>
                     <SettingsMenuSelect
                       value={colorTheme}
                       onValueChange={setColorTheme}
                       options={themeOptions}
                     />
                   </SettingsRow>
-                  <SettingsRow label="Font">
+                  <SettingsRow label={t('Font')}>
                     <SettingsSegmentedControl
                       value={font}
                       onValueChange={setFont}
                       options={[
                         { value: 'inter', label: 'Inter' },
-                        { value: 'system', label: 'System' },
+                        { value: 'system', label: t('System') },
                       ]}
                     />
                   </SettingsRow>
@@ -249,8 +257,8 @@ export default function AppearanceSettingsPage() {
               {/* Workspace Themes */}
               {workspaces.length > 0 && (
                 <SettingsSection
-                  title="Workspace Themes"
-                  description="Override theme settings per workspace"
+                  title={t('Workspace Themes')}
+                  description={t('Override theme settings per workspace')}
                 >
                   <SettingsCard>
                     {workspaces.map((workspace) => {
@@ -278,7 +286,7 @@ export default function AppearanceSettingsPage() {
                             value={hasCustomTheme ? wsTheme : 'default'}
                             onValueChange={(value) => handleWorkspaceThemeChange(workspace.id, value)}
                             options={[
-                              { value: 'default', label: appDefaultLabel ? `Use Default (${appDefaultLabel})` : 'Use Default' },
+                              { value: 'default', label: appDefaultLabel ? t('Use Default ({{label}})', { label: appDefaultLabel }) : t('Use Default') },
                               ...presetThemes
                                 .filter(t => t.id !== 'default')
                                 .map(t => ({
@@ -296,15 +304,15 @@ export default function AppearanceSettingsPage() {
 
               {/* Tool Icons — shows the command → icon mapping used in turn cards */}
               <SettingsSection
-                title="Tool Icons"
-                description="Icons shown next to CLI commands in chat activity. Stored in ~/.craft-agent/tool-icons/."
+                title={t('Tool Icons')}
+                description={t('Icons shown next to CLI commands in chat activity. Stored in ~/.craft-agent/tool-icons/.')}
                 action={
                   toolIconsJsonPath ? (
                     <EditPopover
                       trigger={<EditButton />}
                       {...getEditConfig('edit-tool-icons', toolIconsJsonPath)}
                       secondaryAction={{
-                        label: 'Edit File',
+                        label: t('Edit File'),
                         filePath: toolIconsJsonPath,
                       }}
                     />
@@ -315,9 +323,9 @@ export default function AppearanceSettingsPage() {
                   <Info_DataTable
                     columns={toolIconColumns}
                     data={toolIcons}
-                    searchable={{ placeholder: 'Search tools...' }}
+                    searchable={{ placeholder: t('Search tools...') }}
                     maxHeight={480}
-                    emptyContent="No tool icon mappings found"
+                    emptyContent={t('No tool icon mappings found')}
                   />
                 </SettingsCard>
               </SettingsSection>

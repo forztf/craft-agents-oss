@@ -29,7 +29,7 @@ function loadEnvFile(): void {
           const key = trimmed.slice(0, eqIndex).trim();
           let value = trimmed.slice(eqIndex + 1).trim();
           if ((value.startsWith('"') && value.endsWith('"')) ||
-              (value.startsWith("'") && value.endsWith("'"))) {
+            (value.startsWith("'") && value.endsWith("'"))) {
             value = value.slice(1, -1);
           }
           process.env[key] = value;
@@ -220,11 +220,19 @@ async function main(): Promise<void> {
   verifySessionToolsCore();
 
   // Build bridge server (needed for API sources in Codex sessions)
-  await buildBridgeServer();
+  if (existsSync(join(BRIDGE_SERVER_DIR, "src"))) {
+    await buildBridgeServer();
+  } else {
+    console.warn("⚠️  Skipping Bridge MCP Server build: source not found at packages/bridge-mcp-server/src");
+  }
 
   // Build session server (provides session-scoped tools like SubmitPlan for Codex sessions)
   // Depends on session-tools-core being built first
-  await buildSessionServer();
+  if (existsSync(join(SESSION_SERVER_DIR, "src"))) {
+    await buildSessionServer();
+  } else {
+    console.warn("⚠️  Skipping Session MCP Server build: source not found at packages/session-mcp-server/src");
+  }
 
   const buildDefines = getBuildDefines();
 

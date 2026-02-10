@@ -23,6 +23,7 @@ import {
   SettingsToggle,
   SettingsMenuSelectRow,
 } from '@/components/settings'
+import { useTranslation } from '@/contexts/I18nContext'
 
 export const meta: DetailsPageMeta = {
   navigator: 'settings',
@@ -34,6 +35,7 @@ export const meta: DetailsPageMeta = {
 // ============================================
 
 export default function InputSettingsPage() {
+  const { t } = useTranslation('pages/settings/InputSettingsPage')
   // Auto-capitalisation state
   const [autoCapitalisation, setAutoCapitalisation] = useState(true)
 
@@ -81,23 +83,23 @@ export default function InputSettingsPage() {
 
   return (
     <div className="h-full flex flex-col">
-      <PanelHeader title="Input" actions={<HeaderMenu route={routes.view.settings('input')} />} />
+      <PanelHeader title={t('Input')} actions={<HeaderMenu route={routes.view.settings('input')} />} />
       <div className="flex-1 min-h-0 mask-fade-y">
         <ScrollArea className="h-full">
           <div className="px-5 py-7 max-w-3xl mx-auto">
             <div className="space-y-8">
               {/* Typing Behavior */}
-              <SettingsSection title="Typing" description="Control how text is entered in the chat input.">
+              <SettingsSection title={t('Typing')} description={t('Control how text is entered in the chat input.')}>
                 <SettingsCard>
                   <SettingsToggle
-                    label="Auto capitalisation"
-                    description="Automatically capitalise the first letter when typing a message."
+                    label={t('Auto capitalisation')}
+                    description={t('Automatically capitalise the first letter when typing a message.')}
                     checked={autoCapitalisation}
                     onCheckedChange={handleAutoCapitalisationChange}
                   />
                   <SettingsToggle
-                    label="Spell check"
-                    description="Underline misspelled words while typing."
+                    label={t('Spell check')}
+                    description={t('Underline misspelled words while typing.')}
                     checked={spellCheck}
                     onCheckedChange={handleSpellCheckChange}
                   />
@@ -105,11 +107,11 @@ export default function InputSettingsPage() {
               </SettingsSection>
 
               {/* Send Behavior */}
-              <SettingsSection title="Sending" description="Choose how to send messages.">
+              <SettingsSection title={t('Sending')} description={t('Choose how to send messages.')}>
                 <SettingsCard>
                   <SettingsMenuSelectRow
-                    label="Send message with"
-                    description="Keyboard shortcut for sending messages"
+                    label={t('Send message with')}
+                    description={t('Keyboard shortcut for sending messages')}
                     value={sendMessageKey}
                     onValueChange={handleSendMessageKeyChange}
                     options={[

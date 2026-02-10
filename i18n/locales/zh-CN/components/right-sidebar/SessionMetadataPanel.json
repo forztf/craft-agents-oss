@@ -1,6 +1,10 @@
 {
+  "Add notes...": "添加备注...",
   "Chat Info": "对话信息",
+  "Loading...": "正在加载...",
   "Loading session...": "正在加载会话...",
+  "Name": "名称",
   "No session selected": "未选择会话",
+  "Notes": "备注",
   "Untitled": "无标题"
 }

@@ -12,6 +12,7 @@ import { HeaderMenu } from '@/components/ui/HeaderMenu'
 import { routes } from '@/lib/navigate'
 import { isMac } from '@/lib/platform'
 import { actionsByCategory, useActionLabel, type ActionId } from '@/actions'
+import { useTranslation } from '@/contexts/I18nContext'
 
 interface ShortcutItem {
   keys: string[]
@@ -24,38 +25,41 @@ interface ShortcutSection {
 }
 
 // Component-specific shortcuts that aren't in the centralized registry
-const componentSpecificSections: ShortcutSection[] = [
-  {
-    title: 'List Navigation',
-    shortcuts: [
-      { keys: ['↑', '↓'], description: 'Navigate items in list' },
-      { keys: ['Home'], description: 'Go to first item' },
-      { keys: ['End'], description: 'Go to last item' },
-    ],
-  },
-  {
-    title: 'Session List',
-    shortcuts: [
-      { keys: ['Enter'], description: 'Focus chat input' },
-      { keys: ['Right-click'], description: 'Open context menu' },
-    ],
-  },
-  {
-    title: 'Agent Tree',
-    shortcuts: [
-      { keys: ['←'], description: 'Collapse folder' },
-      { keys: ['→'], description: 'Expand folder' },
-    ],
-  },
-  {
-    title: 'Chat Input',
-    shortcuts: [
-      { keys: ['Enter'], description: 'Send message' },
-      { keys: ['Shift', 'Enter'], description: 'New line' },
-      { keys: ['Esc'], description: 'Close dialog / blur input' },
-    ],
-  },
-]
+// Translations will be applied dynamically in component
+function getComponentSpecificSections(t: (key: string) => string): ShortcutSection[] {
+  return [
+    {
+      title: t('List Navigation'),
+      shortcuts: [
+        { keys: ['↑', '↓'], description: t('Navigate items in list') },
+        { keys: ['Home'], description: t('Go to first item') },
+        { keys: ['End'], description: t('Go to last item') },
+      ],
+    },
+    {
+      title: t('Session List'),
+      shortcuts: [
+        { keys: ['Enter'], description: t('Focus chat input') },
+        { keys: ['Right-click'], description: t('Open context menu') },
+      ],
+    },
+    {
+      title: t('Agent Tree'),
+      shortcuts: [
+        { keys: ['←'], description: t('Collapse folder') },
+        { keys: ['→'], description: t('Expand folder') },
+      ],
+    },
+    {
+      title: t('Chat Input'),
+      shortcuts: [
+        { keys: ['Enter'], description: t('Send message') },
+        { keys: ['Shift', 'Enter'], description: t('New line') },
+        { keys: ['Esc'], description: t('Close dialog / blur input') },
+      ],
+    },
+  ]
+}
 
 function Kbd({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
@@ -94,9 +98,12 @@ function ActionShortcutRow({ actionId }: { actionId: ActionId }) {
 }
 
 export default function ShortcutsPage() {
+  const { t } = useTranslation('pages/ShortcutsPage')
+  const componentSpecificSections = React.useMemo(() => getComponentSpecificSections(t), [t])
+
   return (
     <div className="h-full flex flex-col">
-      <PanelHeader title="Shortcuts" actions={<HeaderMenu route={routes.view.settings('shortcuts')} />} />
+      <PanelHeader title={t('Shortcuts')} actions={<HeaderMenu route={routes.view.settings('shortcuts')} />} />
       <Separator />
       <ScrollArea className="flex-1">
         <div className="px-5 py-4">

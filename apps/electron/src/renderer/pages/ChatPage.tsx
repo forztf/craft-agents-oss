@@ -23,12 +23,14 @@ import { ensureSessionMessagesLoadedAtom, loadedSessionsAtom, sessionMetaMapAtom
 import { getSessionTitle } from '@/utils/session'
 // Model resolution: connection.defaultModel (no hardcoded defaults)
 import { resolveEffectiveConnectionSlug, isSessionConnectionUnavailable } from '@config/llm-connections'
+import { useTranslation } from '@/contexts/I18nContext'
 
 export interface ChatPageProps {
   sessionId: string
 }
 
 const ChatPage = React.memo(function ChatPage({ sessionId }: ChatPageProps) {
+  const { t } = useTranslation('pages/ChatPage')
   // Diagnostic: mark when component runs
   React.useLayoutEffect(() => {
     rendererPerf.markSessionSwitch(sessionId, 'panel.mounted')
@@ -537,11 +539,11 @@ const ChatPage = React.memo(function ChatPage({ sessionId }: ChatPageProps) {
           <RenameDialog
             open={renameDialogOpen}
             onOpenChange={setRenameDialogOpen}
-            title="Rename Session"
+            title={t('Rename Session')}
             value={renameName}
             onValueChange={setRenameName}
             onSubmit={handleRenameSubmit}
-            placeholder="Enter session name..."
+            placeholder={t('Enter session name...')}
           />
         </>
       )
@@ -550,10 +552,10 @@ const ChatPage = React.memo(function ChatPage({ sessionId }: ChatPageProps) {
     // Session truly doesn't exist
     return (
       <div className="h-full flex flex-col">
-        <PanelHeader  title="Session" rightSidebarButton={rightSidebarButton} />
+        <PanelHeader  title={t('Session')} rightSidebarButton={rightSidebarButton} />
         <div className="flex-1 flex flex-col items-center justify-center gap-3 text-muted-foreground">
           <AlertCircle className="h-10 w-10" />
-          <p className="text-sm">This session no longer exists</p>
+          <p className="text-sm">{t('This session no longer exists')}</p>
         </div>
       </div>
     )
@@ -613,11 +615,11 @@ const ChatPage = React.memo(function ChatPage({ sessionId }: ChatPageProps) {
       <RenameDialog
         open={renameDialogOpen}
         onOpenChange={setRenameDialogOpen}
-        title="Rename Session"
+        title={t('Rename Session')}
         value={renameName}
         onValueChange={setRenameName}
         onSubmit={handleRenameSubmit}
-        placeholder="Enter session name..."
+        placeholder={t('Enter session name...')}
       />
     </>
   )
