@@ -9,5 +9,21 @@
   "Other Conversations": "Other Conversations",
   "Promise": "Promise",
   "Rename Session": "Rename Session",
-  "Sessions": "Sessions"
+  "Sessions": "Sessions",
+  "New Session": "New Session",
+  "Searched titles and message content": "Searched titles and message content",
+  "Clear search": "Clear search",
+  "Link copied to clipboard": "Link copied to clipboard",
+  "Undo": "Undo",
+  "Session flagged": "Session flagged",
+  "Added to your flagged items": "Added to your flagged items",
+  "Flag removed": "Flag removed",
+  "Removed from flagged items": "Removed from flagged items",
+  "Session archived": "Session archived",
+  "Moved to archive": "Moved to archive",
+  "Session restored": "Session restored",
+  "Moved from archive": "Moved from archive",
+  "Session deleted": "Session deleted",
+  "Sessions you archive will appear here. Archive sessions to keep your list tidy while preserving conversations.": "Sessions you archive will appear here. Archive sessions to keep your list tidy while preserving conversations.",
+  "Sessions with your agent appear here. Start one to get going.": "Sessions with your agent appear here. Start one to get going."
 }

@@ -1,12 +1,1 @@
-{
-  "Connection Unavailable": "Connection Unavailable",
-  "Connection default": "Connection default",
-  "Context": "Context",
-  "Extended reasoning depth": "Extended reasoning depth",
-  "Filter folders...": "Filter folders...",
-  "Model": "Model",
-  "Not authenticated": "Not authenticated",
-  "Search sources...": "Search sources...",
-  "Working directory": "Working directory",
-  "Edit File": "Edit File"
-}
+{"Attach Files": "Attach Files", "1 file": "1 file", "files": "files", "Choose Sources": "Choose Sources", "sources": "sources", "Connection Unavailable": "Connection Unavailable", "Connection default": "Connection default", "Context": "Context", "Extended reasoning depth": "Extended reasoning depth", "Filter folders...": "Filter folders...", "Model": "Model", "Not authenticated": "Not authenticated", "Search sources...": "Search sources...", "Choose working directory": "Choose working directory", "Working directory": "Working directory", "Edit File": "Edit File", "No folders found": "No folders found"}

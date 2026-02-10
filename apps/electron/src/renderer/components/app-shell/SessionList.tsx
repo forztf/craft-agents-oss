@@ -290,6 +290,7 @@ interface SessionItemProps {
     ref: (el: HTMLElement | null) => void
     role: string
   }
+  t: (key: string) => string
   isSelected: boolean
   isLast: boolean
   isFirstInGroup: boolean
@@ -365,6 +366,7 @@ function SessionItem({
   onRangeSelect,
   onFocusZone,
 }: SessionItemProps) {
+  const { t } = useTranslation('pages/ChatPage')
   const [menuOpen, setMenuOpen] = useState(false)
   const [contextMenuOpen, setContextMenuOpen] = useState(false)
   const [todoMenuOpen, setTodoMenuOpen] = useState(false)
@@ -658,14 +660,14 @@ function SessionItem({
                     <StyledDropdownMenuContent align="start">
                       <StyledDropdownMenuItem onClick={() => window.electronAPI.openUrl(item.sharedUrl!)}>
                         <Globe />
-                        Open in Browser
+                        {t('Open in Browser')}
                       </StyledDropdownMenuItem>
                       <StyledDropdownMenuItem onClick={async () => {
                         await navigator.clipboard.writeText(item.sharedUrl!)
                         toast.success('Link copied to clipboard')
                       }}>
                         <Copy />
-                        Copy Link
+                        {t('Copy Link')}
                       </StyledDropdownMenuItem>
                       <StyledDropdownMenuItem onClick={async () => {
                         const result = await window.electronAPI.sessionCommand(item.id, { type: 'updateShare' })
@@ -677,7 +679,7 @@ function SessionItem({
                         }
                       }}>
                         <RefreshCw />
-                        Update Share
+                        {t('Update Share')}
                       </StyledDropdownMenuItem>
                       <StyledDropdownMenuSeparator />
                       <StyledDropdownMenuItem onClick={async () => {
@@ -690,7 +692,7 @@ function SessionItem({
                         }
                       }} variant="destructive">
                         <Link2Off />
-                        Stop Sharing
+                        {t('Stop Sharing')}
                       </StyledDropdownMenuItem>
                     </StyledDropdownMenuContent>
                   </DropdownMenu>
@@ -1247,10 +1249,10 @@ export function SessionList({
   const handleFlagWithToast = useCallback((sessionId: string) => {
     if (!onFlag) return
     onFlag(sessionId)
-    toast('Session flagged', {
-      description: 'Added to your flagged items',
+    toast(t('Session flagged'), {
+      description: t('Added to your flagged items'),
       action: onUnflag ? {
-        label: 'Undo',
+        label: t('Undo'),
         onClick: () => onUnflag(sessionId),
       } : undefined,
     })
@@ -1259,10 +1261,10 @@ export function SessionList({
   const handleUnflagWithToast = useCallback((sessionId: string) => {
     if (!onUnflag) return
     onUnflag(sessionId)
-    toast('Flag removed', {
-      description: 'Removed from flagged items',
+    toast(t('Flag removed'), {
+      description: t('Removed from flagged items'),
       action: onFlag ? {
-        label: 'Undo',
+        label: t('Undo'),
         onClick: () => onFlag(sessionId),
       } : undefined,
     })
@@ -1271,10 +1273,10 @@ export function SessionList({
   const handleArchiveWithToast = useCallback((sessionId: string) => {
     if (!onArchive) return
     onArchive(sessionId)
-    toast('Session archived', {
-      description: 'Moved to archive',
+    toast(t('Session archived'), {
+      description: t('Moved to archive'),
       action: onUnarchive ? {
-        label: 'Undo',
+        label: t('Undo'),
         onClick: () => onUnarchive(sessionId),
       } : undefined,
     })
@@ -1283,10 +1285,10 @@ export function SessionList({
   const handleUnarchiveWithToast = useCallback((sessionId: string) => {
     if (!onUnarchive) return
     onUnarchive(sessionId)
-    toast('Session restored', {
+    toast(t('Session restored'), {
       description: 'Moved from archive',
       action: onArchive ? {
-        label: 'Undo',
+        label: t('Undo'),
         onClick: () => onArchive(sessionId),
       } : undefined,
     })
@@ -1297,7 +1299,7 @@ export function SessionList({
     // We await so toast only shows after successful deletion (if user confirmed)
     const deleted = await onDelete(sessionId)
     if (deleted) {
-      toast('Session deleted')
+      toast(t('Session deleted'))
     }
     return deleted
   }, [onDelete])
@@ -1446,9 +1448,9 @@ export function SessionList({
             <EmptyMedia variant="icon">
               <Archive />
             </EmptyMedia>
-            <EmptyTitle>No archived sessions</EmptyTitle>
+            <EmptyTitle>{t('No archived sessions')}</EmptyTitle>
             <EmptyDescription>
-              Sessions you archive will appear here. Archive sessions to keep your list tidy while preserving conversations.
+              {t('Sessions you archive will appear here. Archive sessions to keep your list tidy while preserving conversations.')}
             </EmptyDescription>
           </EmptyHeader>
         </Empty>
@@ -1463,7 +1465,7 @@ export function SessionList({
           </EmptyMedia>
           <EmptyTitle>No sessions yet</EmptyTitle>
           <EmptyDescription>
-            Sessions with your agent appear here. Start one to get going.
+            {t('Sessions with your agent appear here. Start one to get going.')}
           </EmptyDescription>
         </EmptyHeader>
         <EmptyContent>
@@ -1477,7 +1479,7 @@ export function SessionList({
             }}
             className="inline-flex items-center h-7 px-3 text-xs font-medium rounded-[8px] bg-background shadow-minimal hover:bg-foreground/[0.03] transition-colors"
           >
-            New Session
+            {t('New Session')}
           </button>
         </EmptyContent>
       </Empty>
@@ -1513,9 +1515,9 @@ export function SessionList({
           {/* No results message when in search mode */}
           {isSearchMode && flatItems.length === 0 && !isSearchingContent && (
             <div className="flex flex-col items-center justify-center py-12 px-4">
-              <p className="text-sm text-muted-foreground">No sessions found</p>
+              <p className="text-sm text-muted-foreground">{t('No sessions found')}</p>
               <p className="text-xs text-muted-foreground/60 mt-0.5">
-                Searched titles and message content
+                {t('Searched titles and message content')}
               </p>
               <button
                 onClick={() => onSearchChange?.('')}

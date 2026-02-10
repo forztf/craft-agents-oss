@@ -246,8 +246,7 @@ export default function AppearanceSettingsPage() {
                       value={font}
                       onValueChange={setFont}
                       options={[
-                        { value: 'inter', label: 'Inter' },
-                        { value: 'system', label: t('System') },
+                        { value: 'inter', label: t('Inter') },
                       ]}
                     />
                   </SettingsRow>

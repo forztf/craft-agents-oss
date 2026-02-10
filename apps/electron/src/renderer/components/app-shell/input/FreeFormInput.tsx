@@ -1407,9 +1407,9 @@ export function FreeFormInput({
             // Show count ("1 file" / "X files") instead of filename for cleaner UI
             label={attachments.length > 0
               ? attachments.length === 1
-                ? "1 file"
-                : `${attachments.length} files`
-              : "Attach Files"
+                ? t("1 file")
+                : `${attachments.length} ${t("files")}`
+              : t("Attach Files")
             }
             isExpanded={isEmptySession}
             hasSelection={attachments.length > 0}
@@ -1460,12 +1460,12 @@ export function FreeFormInput({
                 }
                 label={
                   optimisticSourceSlugs.length === 0
-                    ? "Choose Sources"
+                    ? t("Choose Sources")
                     : (() => {
                         const enabledSources = sources.filter(s => optimisticSourceSlugs.includes(s.config.slug))
                         if (enabledSources.length === 1) return enabledSources[0].config.name
                         if (enabledSources.length === 2) return enabledSources.map(s => s.config.name).join(', ')
-                        return `${enabledSources.length} sources`
+                        return `${enabledSources.length} ${t("sources")}`
                       })()
                 }
                 isExpanded={isEmptySession}
@@ -1524,7 +1524,7 @@ export function FreeFormInput({
                             ref={sourceFilterInputRef}
                             value={sourceFilter}
                             onValueChange={setSourceFilter}
-                            placeholder="Search sources..."
+                            placeholder={t("Search sources...")}
                             className="w-full bg-transparent text-sm outline-none placeholder:text-muted-foreground placeholder:select-none"
                           />
                         </div>
@@ -2047,7 +2047,7 @@ function WorkingDirectoryBadge({
                   <span className="text-xs opacity-70">{formatPathForDisplay(workingDirectory, homeDir)}</span>
                   {gitBranch && <span className="text-xs opacity-70">on {gitBranch}</span>}
                 </span>
-              ) : "Choose working directory"
+              ) : t("Choose working directory")
             }
           />
         </span>
@@ -2061,7 +2061,7 @@ function WorkingDirectoryBadge({
                 ref={inputRef}
                 value={filter}
                 onValueChange={setFilter}
-                placeholder="Filter folders..."
+                placeholder={t("Filter folders...")}
                 className="w-full bg-transparent text-sm outline-none placeholder:text-muted-foreground/50 placeholder:select-none"
               />
             </div>
@@ -2111,7 +2111,7 @@ function WorkingDirectoryBadge({
             {/* Empty state when filtering */}
             {showFilter && (
               <CommandPrimitive.Empty className="py-3 text-center text-sm text-muted-foreground">
-                No folders found
+                {t("No folders found")}
               </CommandPrimitive.Empty>
             )}
           </CommandPrimitive.List>

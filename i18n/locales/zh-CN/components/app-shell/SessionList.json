@@ -1,13 +1,1 @@
-{
-  "Change todo state": "更改待办状态",
-  "Enter session name...": "输入会话名称...",
-  "In Current View": "在当前视图中",
-  "No archived sessions": "没有已归档的会话",
-  "No sessions found": "未找到会话",
-  "No sessions yet": "暂无会话",
-  "No results in current filter": "当前筛选无结果",
-  "Other Conversations": "其他对话",
-  "Promise": "Promise",
-  "Rename Session": "重命名会话",
-  "Sessions": "会话"
-}
+{"Change todo state": "更改待办状态", "Enter session name...": "输入会话名称...", "In Current View": "在当前视图中", "No archived sessions": "没有已归档的会话", "No sessions found": "未找到会话", "No sessions yet": "暂无会话", "No results in current filter": "当前筛选无结果", "Other Conversations": "其他对话", "Promise": "Promise", "Rename Session": "重命名会话", "Sessions": "会话", "New Session": "新会话", "Searched titles and message content": "搜索了标题和消息内容", "Clear search": "清除搜索", "Link copied to clipboard": "链接已复制到剪贴板", "Undo": "撤销", "Session flagged": "会话已标记", "Added to your flagged items": "已添加到您的标记项", "Flag removed": "标记已移除", "Removed from flagged items": "已从标记项中移除", "Session archived": "会话已归档", "Moved to archive": "已移至归档", "Session restored": "会话已恢复", "Moved from archive": "已从归档中移出", "Session deleted": "会话已删除", "Sessions you archive will appear here. Archive sessions to keep your list tidy while preserving conversations.": "您归档的会话将显示在这里。归档会话可以使列表整洁，同时保留对话内容。", "Sessions with your agent appear here. Start one to get going.": "与您的助手的会话显示在这里。开始一个会话以开始使用。"}

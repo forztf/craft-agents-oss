@@ -11,5 +11,7 @@
   "Collapse folder": "折叠文件夹",
   "Expand folder": "展开文件夹",
   "Chat Input": "聊天输入",
-  "Send message": "发送消息"
+  "Send message": "发送消息",
+  "New line": "新行",
+  "Close dialog / blur input": "关闭对话框 / 取消焦点"
 }

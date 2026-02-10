@@ -115,8 +115,8 @@ export default function InputSettingsPage() {
                     value={sendMessageKey}
                     onValueChange={handleSendMessageKeyChange}
                     options={[
-                      { value: 'enter', label: 'Enter', description: 'Use Shift+Enter for new lines' },
-                      { value: 'cmd-enter', label: isMac ? '⌘ Enter' : 'Ctrl+Enter', description: 'Use Enter for new lines' },
+                      { value: 'enter', label: t('Enter'), description: t('Use Shift+Enter for new lines') },
+                      { value: 'cmd-enter', label: isMac ? t('Cmd Enter') : t('Ctrl+Enter'), description: t('Use Enter for new lines') },
                     ]}
                   />
                 </SettingsCard>

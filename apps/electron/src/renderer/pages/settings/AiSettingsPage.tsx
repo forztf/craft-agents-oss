@@ -89,16 +89,16 @@ export const meta: DetailsPageMeta = {
 // ============================================
 
 /** Get user-friendly message for credential health issue */
-function getHealthIssueMessage(issue: CredentialHealthIssue): string {
+function getHealthIssueMessage(issue: CredentialHealthIssue, t: (key: string) => string): string {
   switch (issue.type) {
     case 'file_corrupted':
-      return 'Credential file is corrupted. Please re-authenticate.'
+      return t('Credential file is corrupted. Please re-authenticate.')
     case 'decryption_failed':
-      return 'Credentials from another machine detected. Please re-authenticate on this device.'
+      return t('Credentials from another machine detected')
     case 'no_default_credentials':
-      return 'No credentials found for your default connection.'
+      return t('No credentials found for your default connection.')
     default:
-      return issue.message || 'Credential issue detected.'
+      return issue.message || t('Credential issue detected.')
   }
 }
 
@@ -162,26 +162,26 @@ function ConnectionRow({ connection, isLastConnection, onEdit, onDelete, onSetDe
   // Build description with provider, default indicator, auth status, and validation state
   const getDescription = () => {
     // Show validation state if not idle
-    if (validationState === 'validating') return 'Validating...'
-    if (validationState === 'success') return 'Connection valid'
-    if (validationState === 'error') return validationError || 'Validation failed'
+    if (validationState === 'validating') return t('Validating...')
+    if (validationState === 'success') return t('Connection valid')
+    if (validationState === 'error') return validationError || t('Validation failed')
 
     const parts: string[] = []
 
     // Provider type (fall back to legacy 'type' field if providerType missing)
     const provider = connection.providerType || connection.type
     switch (provider) {
-      case 'anthropic': parts.push('Anthropic API'); break
-      case 'anthropic_compat': parts.push('Anthropic Compatible'); break
-      case 'openai': parts.push('OpenAI API'); break
-      case 'openai_compat': parts.push('OpenAI Compatible'); break
-      case 'bedrock': parts.push('AWS Bedrock'); break
-      case 'vertex': parts.push('Google Vertex'); break
-      default: parts.push(provider || 'Unknown')
+      case 'anthropic': parts.push(t('Anthropic API')); break
+      case 'anthropic_compat': parts.push(t('Anthropic Compatible')); break
+      case 'openai': parts.push(t('OpenAI API')); break
+      case 'openai_compat': parts.push(t('OpenAI Compatible')); break
+      case 'bedrock': parts.push(t('AWS Bedrock')); break
+      case 'vertex': parts.push(t('Google Vertex')); break
+      default: parts.push(provider || t('Unknown'))
     }
 
     // Auth status
-    if (!connection.isAuthenticated) parts.push('Not authenticated')
+    if (!connection.isAuthenticated) parts.push(t('Not authenticated'))
 
     return parts.join(' · ')
   }
@@ -331,7 +331,7 @@ function WorkspaceOverrideCard({ workspace, llmConnections, onSettingsChange }: 
 
   // Get summary text for collapsed state
   const getSummary = () => {
-    if (!hasOverrides) return 'Using defaults'
+    if (!hasOverrides) return t('Using defaults')
     const parts: string[] = []
     if (settings?.defaultLlmConnection) {
       const conn = llmConnections.find(c => c.slug === settings.defaultLlmConnection)
@@ -372,7 +372,7 @@ function WorkspaceOverrideCard({ workspace, llmConnections, onSettingsChange }: 
           <div className="text-left">
             <div className="text-sm font-medium">{workspace.name}</div>
             <div className="text-xs text-muted-foreground">
-              {isLoading ? 'Loading...' : getSummary()}
+              {isLoading ? t('Loading...') : getSummary()}
             </div>
           </div>
         </div>
@@ -399,13 +399,13 @@ function WorkspaceOverrideCard({ workspace, llmConnections, onSettingsChange }: 
                 value={currentConnection}
                 onValueChange={handleConnectionChange}
                 options={[
-                  { value: 'global', label: 'Use default', description: 'Inherit from app settings' },
+                  { value: 'global', label: t('Use default'), description: t('Inherit from app settings') },
                   ...llmConnections.map((conn) => ({
                     value: conn.slug,
                     label: conn.name,
-                    description: conn.providerType === 'anthropic' ? 'Anthropic' :
-                      conn.providerType === 'openai' ? 'OpenAI' :
-                        conn.providerType || 'Unknown',
+                    description: conn.providerType === 'anthropic' ? t('Anthropic') :
+                      conn.providerType === 'openai' ? t(t('OpenAI')) :
+                        conn.providerType || t('Unknown'),
                   })),
                 ]}
               />
@@ -415,7 +415,7 @@ function WorkspaceOverrideCard({ workspace, llmConnections, onSettingsChange }: 
                 value={currentModel}
                 onValueChange={handleModelChange}
                 options={[
-                  { value: 'global', label: 'Use default', description: 'Inherit from app settings' },
+                  { value: 'global', label: t('Use default'), description: t('Inherit from app settings') },
                   ...getModelOptionsForConnection(workspaceEffectiveConnection),
                 ]}
               />
@@ -425,7 +425,7 @@ function WorkspaceOverrideCard({ workspace, llmConnections, onSettingsChange }: 
                 value={currentThinking}
                 onValueChange={handleThinkingChange}
                 options={[
-                  { value: 'global', label: 'Use default', description: 'Inherit from app settings' },
+                  { value: 'global', label: t('Use default'), description: t('Inherit from app settings') },
                   ...THINKING_LEVELS.map(({ id, name, description }) => ({
                     value: id,
                     label: name,
@@ -599,7 +599,7 @@ export default function AiSettingsPage() {
     } catch (error) {
       setValidationStates(prev => ({
         ...prev,
-        [slug]: { state: 'error', error: 'Validation failed' }
+        [slug]: { state: 'error', error: t('Validation failed') }
       }))
       setTimeout(() => {
         setValidationStates(prev => ({ ...prev, [slug]: { state: 'idle' } }))
@@ -675,12 +675,12 @@ export default function AiSettingsPage() {
                       options={llmConnections.map((conn) => ({
                         value: conn.slug,
                         label: conn.name,
-                        description: conn.providerType === 'anthropic' ? 'Anthropic API' :
-                          conn.providerType === 'openai' ? 'OpenAI API' :
-                            conn.providerType === 'openai_compat' ? 'OpenAI Compatible' :
-                              conn.providerType === 'bedrock' ? 'AWS Bedrock' :
-                                conn.providerType === 'vertex' ? 'Google Vertex' :
-                                  conn.providerType || 'Unknown',
+                        description: conn.providerType === 'anthropic' ? t('Anthropic API') :
+                          conn.providerType === 'openai' ? t('OpenAI API') :
+                            conn.providerType === 'openai_compat' ? t('OpenAI Compatible') :
+                              conn.providerType === 'bedrock' ? t('AWS Bedrock') :
+                                conn.providerType === 'vertex' ? t('Google Vertex') :
+                                  conn.providerType || t('Unknown'),
                       }))}
                     />
                     <SettingsMenuSelectRow

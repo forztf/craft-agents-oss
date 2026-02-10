@@ -1,13 +1,1 @@
-{
-  "Auto capitalisation": "自动大写",
-  "Automatically capitalise the first letter when typing a message.": "输入消息时自动大写首字母。",
-  "Choose how to send messages.": "选择发送消息的方式。",
-  "Control how text is entered in the chat input.": "控制对话输入框中的文本输入方式。",
-  "Input": "输入",
-  "Keyboard shortcut for sending messages": "发送消息的键盘快捷键",
-  "Send message with": "发送消息使用",
-  "Sending": "正在发送",
-  "Spell check": "拼写检查",
-  "Typing": "输入中",
-  "Underline misspelled words while typing.": "输入时在拼写错误的单词下划线。"
-}
+{"Auto capitalisation": "自动大写", "Automatically capitalise the first letter when typing a message.": "输入消息时自动大写首字母。", "Choose how to send messages.": "选择发送消息的方式。", "Control how text is entered in the chat input.": "控制对话输入框中的文本输入方式。", "Input": "输入", "Keyboard shortcut for sending messages": "发送消息的键盘快捷键", "Send message with": "发送消息使用", "Sending": "正在发送", "Spell check": "拼写检查", "Typing": "输入中", "Underline misspelled words while typing.": "输入时在拼写错误的单词下划线。", "Enter": "Enter", "Cmd Enter": "⌘ Enter", "Ctrl+Enter": "Ctrl+Enter", "Use Shift+Enter for new lines": "使用 Shift+Enter 换行", "Use Enter for new lines": "使用 Enter 换行"}

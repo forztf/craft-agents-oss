@@ -1,12 +1,1 @@
-{
-  "Connection Unavailable": "连接不可用",
-  "Connection default": "默认连接",
-  "Context": "上下文",
-  "Extended reasoning depth": "扩展推理深度",
-  "Filter folders...": "筛选文件夹...",
-  "Model": "模型",
-  "Not authenticated": "未验证",
-  "Search sources...": "搜索来源...",
-  "Working directory": "工作目录",
-  "Edit File": "编辑文件"
-}
+{"Attach Files": "附件", "1 file": "1 个文件", "files": "个文件", "Choose Sources": "选择来源", "sources": "个来源", "Connection Unavailable": "连接不可用", "Connection default": "默认连接", "Context": "上下文", "Extended reasoning depth": "扩展推理深度", "Filter folders...": "筛选文件夹...", "Model": "模型", "Not authenticated": "未验证", "Search sources...": "搜索来源...", "Choose working directory": "选择工作目录", "Working directory": "工作目录", "Edit File": "编辑文件", "No folders found": "未找到文件夹"}
