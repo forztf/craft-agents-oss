@@ -78,6 +78,7 @@ import { getResizeGradientStyle } from "@/hooks/useResizeGradient"
 import { useAction, useActionLabel } from "@/actions"
 import { useFocusZone } from "@/hooks/keyboard"
 import { useFocusContext } from "@/context/FocusContext"
+import { useTranslation } from "@/contexts/I18nContext"
 import { getSessionTitle } from "@/utils/session"
 import { useSetAtom } from "jotai"
 import type { Session, Workspace, FileAttachment, PermissionRequest, LoadedSource, LoadedSkill, PermissionMode, SourceFilter } from "../../../shared/types"
@@ -536,6 +537,7 @@ function AppShellContent({
   const [session, setSession] = useSession()
   const { resolvedMode, isDark, setMode } = useTheme()
   const { canGoBack, canGoForward, goBack, goForward, navigateToSource, navigateToSession } = useNavigation()
+  const { t } = useTranslation('components/app-shell/AppShell')
 
   // Double-Esc interrupt feature: first Esc shows warning, second Esc interrupts
   const { handleEscapePress } = useEscapeInterrupt()
@@ -3154,7 +3156,7 @@ function AppShellContent({
             side="bottom"
             align="start"
             secondaryAction={{
-              label: 'Edit File',
+              label: t('Edit File'),
               filePath: `${activeWorkspace.rootPath}/statuses/config.json`,
             }}
             {...getEditConfig('edit-statuses', activeWorkspace.rootPath)}
@@ -3174,7 +3176,7 @@ function AppShellContent({
             side="bottom"
             align="start"
             secondaryAction={{
-              label: 'Edit File',
+              label: t('Edit File'),
               filePath: `${activeWorkspace.rootPath}/labels/config.json`,
             }}
             {...(() => {
@@ -3210,7 +3212,7 @@ function AppShellContent({
             side="bottom"
             align="start"
             secondaryAction={{
-              label: 'Edit File',
+              label: t('Edit File'),
               filePath: `${activeWorkspace.rootPath}/views.json`,
             }}
             {...getEditConfig('edit-views', activeWorkspace.rootPath)}
@@ -3267,7 +3269,7 @@ function AppShellContent({
             side="bottom"
             align="start"
             secondaryAction={{
-              label: 'Edit File',
+              label: t('Edit File'),
               filePath: `${activeWorkspace.rootPath}/labels/config.json`,
             }}
             {...(() => {

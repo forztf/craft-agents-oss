@@ -58,6 +58,7 @@ import { AttachmentPreview } from '../AttachmentPreview'
 import { ANTHROPIC_MODELS, getModelShortName, getModelContextWindow, isCodexModel } from '@config/models'
 import { resolveEffectiveConnectionSlug, isCompatProvider } from '@config/llm-connections'
 import { useOptionalAppShellContext } from '@/context/AppShellContext'
+import { useTranslation } from '@/contexts/I18nContext'
 import { EditPopover, getEditConfig } from '@/components/ui/EditPopover'
 import { SourceAvatar } from '@/components/ui/source-avatar'
 import { FreeFormInputContextBadge } from './FreeFormInputContextBadge'
@@ -255,6 +256,7 @@ export function FreeFormInput({
   // Uses optional variant so playground (no provider) doesn't crash.
   const appShellCtx = useOptionalAppShellContext()
   const llmConnections = appShellCtx?.llmConnections ?? []
+  const { t } = useTranslation('components/app-shell/input/FreeFormInput')
   const workspaceDefaultConnection = appShellCtx?.workspaceDefaultLlmConnection
 
   // Derive connectionDefaultModel per-session from the effective connection.
@@ -1343,7 +1345,7 @@ export function FreeFormInput({
             model={addLabelEditConfig.model}
             systemPromptPreset={addLabelEditConfig.systemPromptPreset}
             secondaryAction={workspaceRootPath ? {
-              label: 'Edit File',
+              label: t('Edit File'),
               filePath: `${workspaceRootPath}/labels/config.json`,
             } : undefined}
             side="top"

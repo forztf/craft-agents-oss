@@ -1,3 +1,18 @@
 {
-  "Shortcuts": "快捷键"
+  "Shortcuts": "快捷键",
+  "List Navigation": "列表导航",
+  "Navigate items in list": "在列表中导航项目",
+  "Go to first item": "转到第一个项目",
+  "Go to last item": "转到最后一个项目",
+  "Session List": "会话列表",
+  "Focus chat input": "聚焦聊天输入",
+  "Open context menu": "打开上下文菜单",
+  "Agent Tree": "Agent 树",
+  "Collapse folder": "折叠文件夹",
+  "Expand folder": "展开文件夹",
+  "Chat Input": "聊天输入",
+  "Send message": "发送消息",
+  "New line": "新行",
+  "Close dialog / blur input": "关闭对话框 / 失去焦点",
+  "+": "+"
 }

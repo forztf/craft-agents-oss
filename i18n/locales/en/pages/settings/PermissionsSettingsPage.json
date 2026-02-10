@@ -11,5 +11,11 @@
   "Workspace-level patterns that extend the app defaults above.": "Workspace-level patterns that extend the app defaults above.",
   "mode, the agent can only read and research — perfect for understanding a problem before committing to changes. When you're ready, switch to": "mode, the agent can only read and research — perfect for understanding a problem before committing to changes. When you're ready, switch to",
   "permissions.json": "permissions.json",
-  "~/.craft-agent/permissions/default.json": "~/.craft-agent/permissions/default.json"
+  "~/.craft-agent/permissions/default.json": "~/.craft-agent/permissions/default.json",
+  "Permissions control how much autonomy your agent has. In {mode} mode, the agent can only read and research — perfect for understanding a problem before committing to changes. When you're ready, switch to {mode2} mode to let the agent implement the plan autonomously.": "Permissions control how much autonomy your agent has. In {mode} mode, the agent can only read and research — perfect for understanding a problem before committing to changes. When you're ready, switch to {mode2} mode to let the agent implement the plan autonomously.",
+  "A good workflow: start in Explore to let the agent investigate, review the proposed plan, then execute with confidence.": "A good workflow: start in Explore to let the agent investigate, review the proposed plan, then execute with confidence.",
+  "Learn more": "Learn more",
+  "Edit File": "Edit File",
+  "Default permissions should be at {path}": "Default permissions should be at {path}",
+  "Create a {file} file in your workspace to add custom rules.": "Create a {file} file in your workspace to add custom rules."
 }

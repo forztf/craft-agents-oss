@@ -21,5 +21,9 @@
   "e.g., America/New_York": "e.g., America/New_York",
   "e.g., English": "e.g., English",
   "e.g., New York": "e.g., New York",
-  "e.g., USA": "e.g., USA"
+  "e.g., USA": "e.g., USA",
+  "English": "English",
+  "简体中文": "Simplified Chinese",
+  "Select language...": "Select language...",
+  "Edit File": "Edit File"
 }

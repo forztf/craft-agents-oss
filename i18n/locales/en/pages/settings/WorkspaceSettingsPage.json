@@ -14,5 +14,16 @@
   "Rename workspace": "Rename workspace",
   "Select which modes to cycle through with Shift+Tab": "Select which modes to cycle through with Shift+Tab",
   "Workspace Info": "Workspace Info",
-  "Workspace Settings": "Workspace Settings"
+  "Workspace Settings": "Workspace Settings",
+  "At least 2 modes required": "At least 2 modes required",
+  "Untitled": "Untitled",
+  "Edit": "Edit",
+  "Uploading...": "Uploading...",
+  "Change": "Change",
+  "Read-only, no changes allowed": "Read-only, no changes allowed",
+  "Prompts before making edits": "Prompts before making edits",
+  "Full autonomous execution": "Full autonomous execution",
+  "Not set (uses session folder)": "Not set (uses session folder)",
+  "Clear": "Clear",
+  "Change...": "Change..."
 }

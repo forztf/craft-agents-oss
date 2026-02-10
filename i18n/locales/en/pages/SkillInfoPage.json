@@ -11,5 +11,13 @@
   "Name": "Name",
   "No effect — all tools already auto-approved": "No effect — all tools already auto-approved",
   "Permission Modes": "Permission Modes",
-  "Slug": "Slug"
+  "Slug": "Slug",
+  "Skill not found": "Skill not found",
+  "Failed to load skill": "Failed to load skill",
+  "Deleted skill": "Deleted skill",
+  "Failed to delete skill": "Failed to delete skill",
+  "Unknown error": "Unknown error",
+  "*No instructions provided.*": "*No instructions provided.*",
+  "How \"Always Allowed Tools\" interacts with permission modes:": "How \"Always Allowed Tools\" interacts with permission modes:",
+  "Edit File": "Edit File"
 }

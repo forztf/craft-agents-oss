@@ -50,7 +50,7 @@ export default function LabelsSettingsPage() {
 
   // Secondary action: open the labels config file directly in system editor
   const editFileAction = rootPath ? {
-    label: 'Edit File',
+    label: t('Edit File'),
     filePath: `${rootPath}/labels/config.json`,
   } : undefined
 

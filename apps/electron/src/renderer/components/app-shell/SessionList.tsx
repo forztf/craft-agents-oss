@@ -48,6 +48,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { RenameDialog } from "@/components/ui/rename-dialog"
 import { useSessionSelection } from "@/hooks/useSession"
+import { useTranslation } from "@/contexts/I18nContext"
 import { useFocusZone, useRovingTabIndex } from "@/hooks/keyboard"
 import { useEscapeInterrupt } from "@/context/EscapeInterruptContext"
 import { useNavigation, useNavigationState, routes, isSessionsNavigation, type SessionFilter } from "@/contexts/NavigationContext"
@@ -926,6 +927,7 @@ export function SessionList({
   const { navigate, navigateToSession } = useNavigation()
   const navState = useNavigationState()
   const { showEscapeOverlay } = useEscapeInterrupt()
+  const { t } = useTranslation('components/app-shell/SessionList')
 
   // Pre-flatten label tree once for efficient ID lookups in each SessionItem
   const flatLabels = useMemo(() => flattenLabels(labels), [labels])
@@ -1530,14 +1532,14 @@ export function SessionList({
               {/* No results in current filter message */}
               {matchingFilterItems.length === 0 && otherResultItems.length > 0 && (
                 <div className="px-4 py-3 text-sm text-muted-foreground">
-                  No results in current filter
+                  {t('No results in current filter')}
                 </div>
               )}
 
               {/* Matching Filters section - flat list, no date grouping */}
               {matchingFilterItems.length > 0 && (
                 <>
-                  <SessionListSectionHeader label="In Current View" />
+                  <SessionListSectionHeader label={t('In Current View')} />
                   {matchingFilterItems.map((item, index) => {
                     const flatIndex = sessionIndexMap.get(item.id) ?? 0
                     const itemProps = getItemProps(item, flatIndex)
@@ -1582,7 +1584,7 @@ export function SessionList({
               {/* Other Matches section - flat list, no date grouping */}
               {otherResultItems.length > 0 && (
                 <>
-                  <SessionListSectionHeader label="Other Conversations" />
+                  <SessionListSectionHeader label={t('Other Conversations')} />
                   {otherResultItems.map((item, index) => {
                     const flatIndex = sessionIndexMap.get(item.id) ?? 0
                     const itemProps = getItemProps(item, flatIndex)

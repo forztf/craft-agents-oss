@@ -21,5 +21,9 @@
   "e.g., America/New_York": "例如：Asia/Shanghai",
   "e.g., English": "例如：简体中文",
   "e.g., New York": "例如：北京",
-  "e.g., USA": "例如：中国"
+  "e.g., USA": "例如：中国",
+  "English": "English",
+  "简体中文": "简体中文",
+  "Select language...": "选择语言...",
+  "Edit File": "编辑文件"
 }

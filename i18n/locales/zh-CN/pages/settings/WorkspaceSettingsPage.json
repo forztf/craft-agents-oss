@@ -14,5 +14,16 @@
   "Rename workspace": "重命名工作区",
   "Select which modes to cycle through with Shift+Tab": "选择使用 Shift+Tab 循环切换的模式",
   "Workspace Info": "工作区信息",
-  "Workspace Settings": "工作区设置"
+  "Workspace Settings": "工作区设置",
+  "At least 2 modes required": "至少需要 2 个模式",
+  "Untitled": "无标题",
+  "Edit": "编辑",
+  "Uploading...": "上传中...",
+  "Change": "更改",
+  "Read-only, no changes allowed": "只读，不允许更改",
+  "Prompts before making edits": "编辑前提示",
+  "Full autonomous execution": "完全自主执行",
+  "Not set (uses session folder)": "未设置（使用会话文件夹）",
+  "Clear": "清除",
+  "Change...": "更改..."
 }

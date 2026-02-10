@@ -24,7 +24,7 @@ import {
 } from '@/components/settings'
 import { EditPopover, EditButton, getEditConfig } from '@/components/ui/EditPopover'
 import type { DetailsPageMeta } from '@/lib/navigation-registry'
-import { useI18n } from '@/contexts/I18nContext'
+import { useI18n, useTranslation } from '@/contexts/I18nContext'
 
 export const meta: DetailsPageMeta = {
   navigator: 'settings',

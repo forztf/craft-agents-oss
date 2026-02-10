@@ -11,5 +11,13 @@
   "Name": "名称",
   "No effect — all tools already auto-approved": "无效果 — 所有工具已自动批准",
   "Permission Modes": "权限模式",
-  "Slug": "Slug"
+  "Slug": "Slug",
+  "Skill not found": "未找到技能",
+  "Failed to load skill": "加载技能失败",
+  "Deleted skill": "已删除技能",
+  "Failed to delete skill": "删除技能失败",
+  "Unknown error": "未知错误",
+  "*No instructions provided.*": "*未提供指令。*",
+  "How \"Always Allowed Tools\" interacts with permission modes:": "\"始终允许的工具\"如何与权限模式交互：",
+  "Edit File": "编辑文件"
 }

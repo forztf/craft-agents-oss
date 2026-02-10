@@ -11,5 +11,11 @@
   "Workspace-level patterns that extend the app defaults above.": "扩展上述应用默认设置的工作区级模式。",
   "mode, the agent can only read and research — perfect for understanding a problem before committing to changes. When you're ready, switch to": "模式，Agent 只能阅读和研究 — 非常适合在提交更改之前了解问题。准备好后，切换到",
   "permissions.json": "permissions.json",
-  "~/.craft-agent/permissions/default.json": "~/.craft-agent/permissions/default.json"
+  "~/.craft-agent/permissions/default.json": "~/.craft-agent/permissions/default.json",
+  "Permissions control how much autonomy your agent has. In {mode} mode, the agent can only read and research — perfect for understanding a problem before committing to changes. When you're ready, switch to {mode2} mode to let the agent implement the plan autonomously.": "权限控制 Agent 的自主性。在{mode}模式下，Agent 只能阅读和研究 — 非常适合在提交更改之前了解问题。准备好后，切换到{mode2}模式让 Agent 自主实施计划。",
+  "A good workflow: start in Explore to let the agent investigate, review the proposed plan, then execute with confidence.": "良好的工作流程：从探索模式开始，让 Agent 调查，审查建议的计划，然后自信地执行。",
+  "Learn more": "了解更多",
+  "Edit File": "编辑文件",
+  "Default permissions should be at {path}": "默认权限应位于 {path}",
+  "Create a {file} file in your workspace to add custom rules.": "在工作区中创建{file}文件以添加自定义规则。"
 }

@@ -8,5 +8,6 @@
   "No labels configured.": "未配置标签。",
   "Regex patterns that automatically apply labels when matched in user messages. For example, paste a Linear issue URL and automatically tag the session with the project name and issue ID.": "在用户消息中匹配时自动应用标签的正则表达式模式。例如，粘贴 Linear issue URL 并自动用项目名称和 issue ID 标记会话。",
   "labels/config.json": "labels/config.json",
-  "value": "值"
+  "value": "值",
+  "Edit File": "编辑文件"
 }
