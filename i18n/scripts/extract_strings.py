@@ -99,7 +99,7 @@ def main():
                     target_rel_path = os.path.join(category, rel_dir, f"{base_name}.json")
                     
                     # Generate EN
-                    en_file = Path(PROJECT_ROOT) / "locales" / "en" / target_rel_path
+                    en_file = Path(PROJECT_ROOT) / "i18n" / "locales" / "en" / target_rel_path
                     en_file.parent.mkdir(parents=True, exist_ok=True)
                     
                     data_en = {s: s for s in extracted}
@@ -108,7 +108,7 @@ def main():
                         json.dump(data_en, f, indent=2, ensure_ascii=False)
                         
                     # Generate ZH-CN (Copy EN for now)
-                    cn_file = Path(PROJECT_ROOT) / "locales" / "zh-CN" / target_rel_path
+                    cn_file = Path(PROJECT_ROOT) / "i18n" / "locales" / "zh-CN" / target_rel_path
                     cn_file.parent.mkdir(parents=True, exist_ok=True)
                     
                     with open(cn_file, 'w', encoding='utf-8') as f:
