@@ -1,0 +1,21 @@
+{
+  "AI": "AI",
+  "AI model for new chats": "AI model for new chats",
+  "API connection for new chats": "API connection for new chats",
+  "Close (Esc)": "Close (Esc)",
+  "Connection": "Connection",
+  "Connections": "Connections",
+  "Default": "Default",
+  "Delete": "Delete",
+  "Edit": "Edit",
+  "Manage your AI provider connections.": "Manage your AI provider connections.",
+  "Model": "Model",
+  "Override default settings per workspace.": "Override default settings per workspace.",
+  "Re-authenticate": "Re-authenticate",
+  "Reasoning depth for new chats": "Reasoning depth for new chats",
+  "Set as default": "Set as default",
+  "Settings for new chats when no workspace override is set.": "Settings for new chats when no workspace override is set.",
+  "Thinking": "Thinking",
+  "Validate Connection": "Validate Connection",
+  "Workspace Overrides": "Workspace Overrides"
+}

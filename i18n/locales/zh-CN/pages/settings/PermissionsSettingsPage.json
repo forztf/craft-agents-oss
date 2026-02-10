@@ -1,0 +1,15 @@
+{
+  "About Permissions": "关于权限",
+  "App-level patterns allowed in Explore mode. Commands not on this list are blocked.": "探索模式下允许的应用级模式。未在此列表中的命令将被阻止。",
+  "Default Permissions": "默认权限",
+  "Execute": "执行",
+  "Explore": "探索",
+  "No custom permissions configured.": "未配置自定义权限。",
+  "No default permissions found.": "未找到默认权限。",
+  "Permissions": "权限",
+  "Workspace Customizations": "工作区自定义",
+  "Workspace-level patterns that extend the app defaults above.": "扩展上述应用默认设置的工作区级模式。",
+  "mode, the agent can only read and research — perfect for understanding a problem before committing to changes. When you're ready, switch to": "模式，Agent 只能阅读和研究 — 非常适合在提交更改之前了解问题。准备好后，切换到",
+  "permissions.json": "permissions.json",
+  "~/.craft-agent/permissions/default.json": "~/.craft-agent/permissions/default.json"
+}

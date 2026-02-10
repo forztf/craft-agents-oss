@@ -1,0 +1,15 @@
+{
+  "Ask to Edit": "请求编辑",
+  "Auto": "自动",
+  "Auto-approved — no prompts for allowed tools": "自动批准 — 允许的工具无需提示",
+  "Blocked — write tools blocked regardless": "已阻止 — 无论如何都阻止写入工具",
+  "Description": "描述",
+  "Explore": "探索",
+  "Instructions": "指令",
+  "Location": "位置",
+  "Metadata": "元数据",
+  "Name": "名称",
+  "No effect — all tools already auto-approved": "无效果 — 所有工具已自动批准",
+  "Permission Modes": "权限模式",
+  "Slug": "Slug"
+}

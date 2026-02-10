@@ -1,0 +1,18 @@
+{
+  "Advanced": "高级",
+  "Control what AI can do": "控制 AI 可以做什么",
+  "Default Working Directory": "默认工作目录",
+  "Default mode": "默认模式",
+  "Enable stdio subprocess servers": "启用 stdio 子进程服务器",
+  "Enter workspace name...": "输入工作区名称...",
+  "Icon": "图标",
+  "Local MCP Servers": "本地 MCP 服务器",
+  "Mode Cycling": "模式切换",
+  "Name": "名称",
+  "No workspace selected": "未选择工作区",
+  "Permissions": "权限",
+  "Rename workspace": "重命名工作区",
+  "Select which modes to cycle through with Shift+Tab": "选择使用 Shift+Tab 循环切换的模式",
+  "Workspace Info": "工作区信息",
+  "Workspace Settings": "工作区设置"
+}

@@ -1,0 +1,18 @@
+{
+  "Advanced": "Advanced",
+  "Control what AI can do": "Control what AI can do",
+  "Default Working Directory": "Default Working Directory",
+  "Default mode": "Default mode",
+  "Enable stdio subprocess servers": "Enable stdio subprocess servers",
+  "Enter workspace name...": "Enter workspace name...",
+  "Icon": "Icon",
+  "Local MCP Servers": "Local MCP Servers",
+  "Mode Cycling": "Mode Cycling",
+  "Name": "Name",
+  "No workspace selected": "No workspace selected",
+  "Permissions": "Permissions",
+  "Rename workspace": "Rename workspace",
+  "Select which modes to cycle through with Shift+Tab": "Select which modes to cycle through with Shift+Tab",
+  "Workspace Info": "Workspace Info",
+  "Workspace Settings": "Workspace Settings"
+}

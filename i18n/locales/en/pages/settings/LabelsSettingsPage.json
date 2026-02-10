@@ -1,0 +1,12 @@
+{
+  "About Labels": "About Labels",
+  "All labels configured for this workspace. Labels can be nested to form groups.": "All labels configured for this workspace. Labels can be nested to form groups.",
+  "Auto-Apply Rules": "Auto-Apply Rules",
+  "Auto-apply rules": "Auto-apply rules",
+  "Label Hierarchy": "Label Hierarchy",
+  "Labels": "Labels",
+  "No labels configured.": "No labels configured.",
+  "Regex patterns that automatically apply labels when matched in user messages. For example, paste a Linear issue URL and automatically tag the session with the project name and issue ID.": "Regex patterns that automatically apply labels when matched in user messages. For example, paste a Linear issue URL and automatically tag the session with the project name and issue ID.",
+  "labels/config.json": "labels/config.json",
+  "value": "value"
+}

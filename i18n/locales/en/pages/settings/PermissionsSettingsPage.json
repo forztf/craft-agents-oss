@@ -1,0 +1,15 @@
+{
+  "About Permissions": "About Permissions",
+  "App-level patterns allowed in Explore mode. Commands not on this list are blocked.": "App-level patterns allowed in Explore mode. Commands not on this list are blocked.",
+  "Default Permissions": "Default Permissions",
+  "Execute": "Execute",
+  "Explore": "Explore",
+  "No custom permissions configured.": "No custom permissions configured.",
+  "No default permissions found.": "No default permissions found.",
+  "Permissions": "Permissions",
+  "Workspace Customizations": "Workspace Customizations",
+  "Workspace-level patterns that extend the app defaults above.": "Workspace-level patterns that extend the app defaults above.",
+  "mode, the agent can only read and research — perfect for understanding a problem before committing to changes. When you're ready, switch to": "mode, the agent can only read and research — perfect for understanding a problem before committing to changes. When you're ready, switch to",
+  "permissions.json": "permissions.json",
+  "~/.craft-agent/permissions/default.json": "~/.craft-agent/permissions/default.json"
+}

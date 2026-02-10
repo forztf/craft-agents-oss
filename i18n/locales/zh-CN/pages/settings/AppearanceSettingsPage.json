@@ -1,0 +1,14 @@
+{
+  "Appearance": "外观",
+  "Color theme": "颜色主题",
+  "Commands": "命令",
+  "Default Theme": "默认主题",
+  "Font": "字体",
+  "Icon": "图标",
+  "Icons shown next to CLI commands in chat activity. Stored in ~/.craft-agent/tool-icons/.": "在对话活动中显示在 CLI 命令旁边的图标。存储在 ~/.craft-agent/tool-icons/ 中。",
+  "Mode": "模式",
+  "Override theme settings per workspace": "覆盖每个工作区的主题设置",
+  "Tool": "工具",
+  "Tool Icons": "工具图标",
+  "Workspace Themes": "工作区主题"
+}

@@ -1,0 +1,14 @@
+{
+  "Appearance": "Appearance",
+  "Color theme": "Color theme",
+  "Commands": "Commands",
+  "Default Theme": "Default Theme",
+  "Font": "Font",
+  "Icon": "Icon",
+  "Icons shown next to CLI commands in chat activity. Stored in ~/.craft-agent/tool-icons/.": "Icons shown next to CLI commands in chat activity. Stored in ~/.craft-agent/tool-icons/.",
+  "Mode": "Mode",
+  "Override theme settings per workspace": "Override theme settings per workspace",
+  "Tool": "Tool",
+  "Tool Icons": "Tool Icons",
+  "Workspace Themes": "Workspace Themes"
+}

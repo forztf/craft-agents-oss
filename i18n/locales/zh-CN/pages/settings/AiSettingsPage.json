@@ -1,0 +1,21 @@
+{
+  "AI": "AI",
+  "AI model for new chats": "新对话使用的 AI 模型",
+  "API connection for new chats": "新对话的 API 连接",
+  "Close (Esc)": "关闭 (Esc)",
+  "Connection": "连接",
+  "Connections": "连接",
+  "Default": "默认",
+  "Delete": "删除",
+  "Edit": "编辑",
+  "Manage your AI provider connections.": "管理您的 AI 提供商连接。",
+  "Model": "模型",
+  "Override default settings per workspace.": "覆盖每个工作区的默认设置。",
+  "Re-authenticate": "重新验证",
+  "Reasoning depth for new chats": "新对话的推理深度",
+  "Set as default": "设为默认",
+  "Settings for new chats when no workspace override is set.": "未设置工作区覆盖时的新对话设置。",
+  "Thinking": "思考中",
+  "Validate Connection": "验证连接",
+  "Workspace Overrides": "工作区覆盖"
+}

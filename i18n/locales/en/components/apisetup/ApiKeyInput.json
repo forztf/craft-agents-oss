@@ -1,0 +1,7 @@
+{
+  "API Key": "API Key",
+  "Endpoint": "Endpoint",
+  "https://your-api-endpoint.com": "https://your-api-endpoint.com",
+  "ollama pull": "ollama pull",
+  "provider/model-name": "provider/model-name"
+}

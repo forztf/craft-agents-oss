@@ -1,0 +1,7 @@
+{
+  "${match.fullMatch.replace(/": "${match.fullMatch.replace(/",
+  "${tooltip.replace(/": "${tooltip.replace(/",
+  ", creating:": ", creating:",
+  "instead of": "替代",
+  "typed": "输入"
+}
