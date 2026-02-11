@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/styled-dropdown"
 import { cn } from "@/lib/utils"
 import { Check, ChevronDown, Eye, EyeOff } from "lucide-react"
+import { useTranslation } from "@/i18n/index"
 
 export type ApiKeyStatus = 'idle' | 'validating' | 'success' | 'error'
 
@@ -100,6 +101,8 @@ export function ApiKeyInput({
   disabled,
   providerType = 'anthropic',
 }: ApiKeyInputProps) {
+  const { t } = useTranslation('components/apisetup/ApiKeyInput')
+
   // Get presets based on provider type
   const presets = getPresetsForProvider(providerType)
   const defaultPreset = presets[0]
@@ -162,7 +165,7 @@ export function ApiKeyInput({
     const parsedModels = parseModelList(connectionDefaultModel)
     const requiresModel = !isDefaultProviderPreset && !!effectiveBaseUrl
     if (requiresModel && parsedModels.length === 0) {
-      setModelError('Default model is required for compatible endpoints.')
+      setModelError(t("Default model is required for compatible endpoints."))
       return
     }
     // For default provider presets, don't pass a baseUrl (use provider's default)
@@ -179,7 +182,7 @@ export function ApiKeyInput({
     <form id={formId} onSubmit={handleSubmit} className="space-y-6">
       {/* API Key */}
       <div className="space-y-2">
-        <Label htmlFor="api-key">API Key</Label>
+        <Label htmlFor="api-key">{t('API Key')}</Label>
         <div className={cn(
           "relative rounded-md shadow-minimal transition-colors",
           "bg-foreground-2 focus-within:bg-background"
@@ -215,7 +218,7 @@ export function ApiKeyInput({
       {/* Endpoint Preset Selector - always visible to allow switching between providers */}
       <div className="space-y-2">
         <div className="flex items-center justify-between">
-          <Label htmlFor="base-url">Endpoint</Label>
+          <Label htmlFor="base-url">{t('Endpoint')}</Label>
           <DropdownMenu>
             <DropdownMenuTrigger
               disabled={isDisabled}
@@ -249,7 +252,7 @@ export function ApiKeyInput({
               type="text"
               value={baseUrl}
               onChange={(e) => handleBaseUrlChange(e.target.value)}
-              placeholder="https://your-api-endpoint.com"
+              placeholder={t('https://your-api-endpoint.com')}
               className="border-0 bg-transparent shadow-none"
               disabled={isDisabled}
             />
@@ -261,9 +264,9 @@ export function ApiKeyInput({
       {!isDefaultProviderPreset && (
         <div className="space-y-2">
           <Label htmlFor="connection-default-model" className="text-muted-foreground font-normal">
-            Default Model{' '}
+            {t('Default Model')}{' '}
             <span className="text-foreground/30">
-              · {(!isDefaultProviderPreset && baseUrl.trim()) ? 'required' : 'optional'}
+              · {(!isDefaultProviderPreset && baseUrl.trim()) ? t('required') : t('optional')}
             </span>
           </Label>
           <div className={cn(
@@ -279,7 +282,7 @@ export function ApiKeyInput({
                 setConnectionDefaultModel(e.target.value)
                 setModelError(null)
               }}
-              placeholder={providerType === 'openai' ? "e.g. openai/gpt-5.2-codex, openai/gpt-5.1-codex-mini" : "e.g. anthropic/claude-opus-4.6, anthropic/claude-haiku-4.5"}
+              placeholder={providerType === 'openai' ? t("e.g. openai/gpt-5.2-codex, openai/gpt-5.1-codex-mini") : t("e.g. anthropic/claude-opus-4.6, anthropic/claude-haiku-4.5")}
               className="border-0 bg-transparent shadow-none"
               disabled={isDisabled}
             />
@@ -288,37 +291,37 @@ export function ApiKeyInput({
             <p className="text-xs text-destructive">{modelError}</p>
           )}
           <p className="text-xs text-foreground/30">
-            Comma-separated list. The first model is the default. The last is used for summarization.
+            {t('Comma-separated list. The first model is the default. The last is used for summarization.')}
           </p>
           {/* Contextual help links for providers that need model format guidance */}
           {activePreset === 'openrouter' && (
             <p className="text-xs text-foreground/30">
-              Required for OpenRouter-compatible endpoints.
+              {t('Required for OpenRouter-compatible endpoints.')}
               <br />
-              Format: <code className="text-foreground/40">provider/model-name</code>.{' '}
+              {t('Format: {code}.', { code: t('provider/model-name') })}{' '}
               <a href="https://openrouter.ai/models" target="_blank" rel="noopener noreferrer" className="text-foreground/50 underline hover:text-foreground/70">
-                Browse models
+                {t('Browse models')}
               </a>
             </p>
           )}
           {activePreset === 'vercel' && (
             <p className="text-xs text-foreground/30">
-              Required for Vercel AI Gateway endpoints.
+              {t('Required for Vercel AI Gateway endpoints.')}
               <br />
-              Format: <code className="text-foreground/40">provider/model-name</code>.{' '}
+              {t('Format: {code}.', { code: t('provider/model-name') })}{' '}
               <a href="https://vercel.com/docs/ai-gateway" target="_blank" rel="noopener noreferrer" className="text-foreground/50 underline hover:text-foreground/70">
-                View supported models
+                {t('View supported models')}
               </a>
             </p>
           )}
           {activePreset === 'ollama' && (
             <p className="text-xs text-foreground/30">
-              Use any model pulled via <code className="text-foreground/40">ollama pull</code>. No API key required.
+              {t('Use any model pulled via {code}. No API key required.', { code: 'ollama pull' })}
             </p>
           )}
-          {(activePreset === 'custom' || !activePreset) && (
+          {activePreset === 'custom' && (
             <p className="text-xs text-foreground/30">
-              Required for custom endpoints. Use the provider-specific model ID.
+              {t('Required for custom endpoints. Use the provider-specific model ID.')}
             </p>
           )}
         </div>

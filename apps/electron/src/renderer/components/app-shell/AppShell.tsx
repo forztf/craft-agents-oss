@@ -176,10 +176,12 @@ function FilterModeSubMenuItems({
   mode,
   onChangeMode,
   onRemove,
+  t,
 }: {
   mode: FilterMode
   onChangeMode: (mode: FilterMode) => void
   onRemove: () => void
+  t: (key: string) => string
 }) {
   return (
     <>
@@ -188,21 +190,21 @@ function FilterModeSubMenuItems({
         className={cn(mode === 'include' && "bg-foreground/[0.03]")}
       >
         <Check className="h-3.5 w-3.5 shrink-0" />
-        <span className="flex-1">Include</span>
+        <span className="flex-1">{t('Include')}</span>
       </StyledDropdownMenuItem>
       <StyledDropdownMenuItem
         onClick={(e) => { e.preventDefault(); onChangeMode('exclude') }}
         className={cn(mode === 'exclude' && "bg-foreground/[0.03]")}
       >
         <X className="h-3.5 w-3.5 shrink-0" />
-        <span className="flex-1">Exclude</span>
+        <span className="flex-1">{t('Exclude')}</span>
       </StyledDropdownMenuItem>
       <StyledDropdownMenuSeparator />
       <StyledDropdownMenuItem
         onClick={(e) => { e.preventDefault(); onRemove() }}
       >
         <Trash2 className="h-3.5 w-3.5 shrink-0" />
-        <span className="flex-1">Clear</span>
+        <span className="flex-1">{t('Clear')}</span>
       </StyledDropdownMenuItem>
     </>
   )
@@ -341,7 +343,7 @@ function FilterLabelItems({
                         />
                       </StyledDropdownMenuSubTrigger>
                       <StyledDropdownMenuSubContent minWidth="min-w-[140px]">
-                        <FilterModeSubMenuItems mode={mode} {...makeModeCallbacks(label.id)} />
+                        <FilterModeSubMenuItems mode={mode} mode={mode} {...makeModeCallbacks(label.id)} t={t} />
                       </StyledDropdownMenuSubContent>
                     </DropdownMenuSub>
                     <StyledDropdownMenuSeparator />
@@ -396,7 +398,7 @@ function FilterLabelItems({
                 />
               </StyledDropdownMenuSubTrigger>
               <StyledDropdownMenuSubContent minWidth="min-w-[140px]">
-                <FilterModeSubMenuItems mode={mode} {...makeModeCallbacks(label.id)} />
+                <FilterModeSubMenuItems mode={mode} mode={mode} {...makeModeCallbacks(label.id)} t={t} />
               </StyledDropdownMenuSubContent>
             </DropdownMenuSub>
           )
@@ -538,6 +540,14 @@ function AppShellContent({
   const { resolvedMode, isDark, setMode } = useTheme()
   const { canGoBack, canGoForward, goBack, goForward, navigateToSource, navigateToSession } = useNavigation()
   const { t } = useTranslation('components/app-shell/AppShell')
+
+/**
+ * FilterModeBadge - Display-only badge showing the current filter mode.
+ * Shows a checkmark for 'include' and an X for 'exclude'. Used as a visual
+ * indicator inside DropdownMenuSubTrigger rows (the actual mode switching
+ * happens via the sub-menu content, not this badge).
+ */
+function FilterModeBadge({ mode }: { mode: FilterMode }) {
 
   // Double-Esc interrupt feature: first Esc shows warning, second Esc interrupts
   const { handleEscapePress } = useEscapeInterrupt()
@@ -2081,7 +2091,7 @@ function AppShellContent({
                     // --- Sessions Section ---
                     {
                       id: "nav:allSessions",
-                      title: "All Sessions",
+                      title: t('All Sessions'),
                       label: String(workspaceSessionMetas.length),
                       icon: Inbox,
                       variant: sessionFilter?.kind === 'allSessions' ? "default" : "ghost",
@@ -2089,7 +2099,7 @@ function AppShellContent({
                     },
                     {
                       id: "nav:flagged",
-                      title: "Flagged",
+                      title: t('Flagged'),
                       label: String(flaggedCount),
                       icon: <Flag className="h-3.5 w-3.5" />,
                       variant: sessionFilter?.kind === 'flagged' ? "default" : "ghost",
@@ -2098,7 +2108,7 @@ function AppShellContent({
                     // States: expandable section with status sub-items (drag-and-drop reorder)
                     {
                       id: "nav:states",
-                      title: "Status",
+                      title: t('Status'),
                       icon: CheckCircle2,
                       variant: "ghost",
                       onClick: () => toggleExpanded('nav:states'),
@@ -2130,7 +2140,7 @@ function AppShellContent({
                     // Labels: navigable header (shows all labeled sessions) + hierarchical tree (drag-and-drop reorder + re-parent)
                     {
                       id: "nav:labels",
-                      title: "Labels",
+                      title: t('Labels'),
                       icon: Tag,
                       // Only highlighted when "Labels" itself is selected (not sub-labels)
                       variant: (sessionFilter?.kind === 'label' && sessionFilter.labelId === '__all__') ? "default" as const : "ghost" as const,
@@ -2149,7 +2159,7 @@ function AppShellContent({
                     // --- Archived Section ---
                     {
                       id: "nav:archived",
-                      title: "Archived",
+                      title: t('Archived'),
                       label: archivedCount > 0 ? String(archivedCount) : undefined,
                       icon: Archive,
                       variant: sessionFilter?.kind === 'archived' ? "default" : "ghost",
@@ -2160,7 +2170,7 @@ function AppShellContent({
                     // --- Sources & Skills Section ---
                     {
                       id: "nav:sources",
-                      title: "Sources",
+                      title: t('Sources'),
                       label: String(sources.length),
                       icon: DatabaseZap,
                       variant: (isSourcesNavigation(navState) && !sourceFilter) ? "default" : "ghost",
@@ -2176,7 +2186,7 @@ function AppShellContent({
                       items: [
                         {
                           id: "nav:sources:api",
-                          title: "APIs",
+                          title: t('APIs'),
                           label: String(sourceTypeCounts.api),
                           icon: Globe,
                           variant: (sourceFilter?.kind === 'type' && sourceFilter.sourceType === 'api') ? "default" : "ghost",
@@ -2189,7 +2199,7 @@ function AppShellContent({
                         },
                         {
                           id: "nav:sources:mcp",
-                          title: "MCPs",
+                          title: t('MCPs'),
                           label: String(sourceTypeCounts.mcp),
                           icon: <McpIcon className="h-3.5 w-3.5" />,
                           variant: (sourceFilter?.kind === 'type' && sourceFilter.sourceType === 'mcp') ? "default" : "ghost",
@@ -2202,7 +2212,7 @@ function AppShellContent({
                         },
                         {
                           id: "nav:sources:local",
-                          title: "Local Folders",
+                          title: t('Local Folders'),
                           label: String(sourceTypeCounts.local),
                           icon: FolderOpen,
                           variant: (sourceFilter?.kind === 'type' && sourceFilter.sourceType === 'local') ? "default" : "ghost",
@@ -2217,7 +2227,7 @@ function AppShellContent({
                     },
                     {
                       id: "nav:skills",
-                      title: "Skills",
+                      title: t('Skills'),
                       label: String(skills.length),
                       icon: Zap,
                       variant: isSkillsNavigation(navState) ? "default" : "ghost",
@@ -2232,7 +2242,7 @@ function AppShellContent({
                     // --- Settings ---
                     {
                       id: "nav:settings",
-                      title: "Settings",
+                      title: t('Settings'),
                       icon: Settings,
                       variant: isSettingsNavigation(navState) ? "default" : "ghost",
                       onClick: () => handleSettingsClick('app'),
@@ -2269,33 +2279,33 @@ function AppShellContent({
                           </button>
                         </DropdownMenuTrigger>
                       </TooltipTrigger>
-                      <TooltipContent side="top">Help & Documentation</TooltipContent>
+                      <TooltipContent side="top">{t('Help & Documentation')}</TooltipContent>
                     </Tooltip>
                     <StyledDropdownMenuContent align="end" side="top" sideOffset={8}>
                       <StyledDropdownMenuItem onClick={() => window.electronAPI.openUrl(getDocUrl('sources'))}>
                         <DatabaseZap className="h-3.5 w-3.5" />
-                        <span className="flex-1">Sources</span>
+                        <span className="flex-1">{t('Sources')}</span>
                         <ExternalLink className="h-3 w-3 text-muted-foreground" />
                       </StyledDropdownMenuItem>
                       <StyledDropdownMenuItem onClick={() => window.electronAPI.openUrl(getDocUrl('skills'))}>
                         <Zap className="h-3.5 w-3.5" />
-                        <span className="flex-1">Skills</span>
+                        <span className="flex-1">{t('Skills')}</span>
                         <ExternalLink className="h-3 w-3 text-muted-foreground" />
                       </StyledDropdownMenuItem>
                       <StyledDropdownMenuItem onClick={() => window.electronAPI.openUrl(getDocUrl('statuses'))}>
                         <CheckCircle2 className="h-3.5 w-3.5" />
-                        <span className="flex-1">Statuses</span>
+                        <span className="flex-1">{t('Statuses')}</span>
                         <ExternalLink className="h-3 w-3 text-muted-foreground" />
                       </StyledDropdownMenuItem>
                       <StyledDropdownMenuItem onClick={() => window.electronAPI.openUrl(getDocUrl('permissions'))}>
                         <Settings className="h-3.5 w-3.5" />
-                        <span className="flex-1">Permissions</span>
+                        <span className="flex-1">{t('Permissions')}</span>
                         <ExternalLink className="h-3 w-3 text-muted-foreground" />
                       </StyledDropdownMenuItem>
                       <StyledDropdownMenuSeparator />
                       <StyledDropdownMenuItem onClick={() => window.electronAPI.openUrl('https://agents.craft.do/docs')}>
                         <ExternalLink className="h-3.5 w-3.5" />
-                        <span className="flex-1">All Documentation</span>
+                        <span className="flex-1">{t('All Documentation')}</span>
                       </StyledDropdownMenuItem>
                     </StyledDropdownMenuContent>
                   </DropdownMenu>
@@ -2390,7 +2400,7 @@ function AppShellContent({
                       >
                         {/* Header with title and clear button (only clears user-added filters, never pinned) */}
                         <div className="flex items-center justify-between px-2 py-1.5">
-                          <span className="text-xs font-medium text-muted-foreground">Filter Chats</span>
+                          <span className="text-xs font-medium text-muted-foreground">{t('Filter Chats')}</span>
                           {(listFilter.size > 0 || labelFilter.size > 0) && (
                             <button
                               onClick={(e) => {
@@ -2489,7 +2499,7 @@ function AppShellContent({
                                   <StyledDropdownMenuItem disabled>
                                     <FilterMenuRow
                                       icon={<Flag className="h-3.5 w-3.5" />}
-                                      label="Flagged"
+                                      label="{t('Flagged')}"
                                       accessory={<Check className="h-3 w-3 text-muted-foreground" />}
                                     />
                                   </StyledDropdownMenuItem>
@@ -2542,7 +2552,7 @@ function AppShellContent({
                                         />
                                       </StyledDropdownMenuSubTrigger>
                                       <StyledDropdownMenuSubContent minWidth="min-w-[140px]">
-                                        <FilterModeSubMenuItems
+                                        <FilterModeSubMenuItems mode={mode}
                                           mode={mode}
                                           onChangeMode={(newMode) => setListFilter(prev => {
                                             const next = new Map(prev)
@@ -2554,6 +2564,7 @@ function AppShellContent({
                                             next.delete(state.id)
                                             return next
                                           })}
+                                          t={t}
                                         />
                                       </StyledDropdownMenuSubContent>
                                     </DropdownMenuSub>
@@ -2573,7 +2584,7 @@ function AppShellContent({
                                         />
                                       </StyledDropdownMenuSubTrigger>
                                       <StyledDropdownMenuSubContent minWidth="min-w-[140px]">
-                                        <FilterModeSubMenuItems
+                                        <FilterModeSubMenuItems mode={mode}
                                           mode={mode}
                                           onChangeMode={(newMode) => setLabelFilter(prev => {
                                             const next = new Map(prev)
@@ -2598,7 +2609,7 @@ function AppShellContent({
                             <DropdownMenuSub>
                               <StyledDropdownMenuSubTrigger>
                                 <Inbox className="h-3.5 w-3.5" />
-                                <span className="flex-1">Statuses</span>
+                                <span className="flex-1">{t('Statuses')}</span>
                               </StyledDropdownMenuSubTrigger>
                               <StyledDropdownMenuSubContent minWidth="min-w-[180px]">
                                 {effectiveTodoStates.map(state => {
@@ -2620,7 +2631,7 @@ function AppShellContent({
                                           />
                                         </StyledDropdownMenuSubTrigger>
                                         <StyledDropdownMenuSubContent minWidth="min-w-[140px]">
-                                          <FilterModeSubMenuItems
+                                          <FilterModeSubMenuItems mode={mode}
                                             mode={currentMode}
                                             onChangeMode={(newMode) => setListFilter(prev => {
                                               const next = new Map(prev)
@@ -2670,12 +2681,12 @@ function AppShellContent({
                             <DropdownMenuSub>
                               <StyledDropdownMenuSubTrigger>
                                 <Tag className="h-3.5 w-3.5" />
-                                <span className="flex-1">Labels</span>
+                                <span className="flex-1">{t('Labels')}</span>
                               </StyledDropdownMenuSubTrigger>
                               <StyledDropdownMenuSubContent minWidth="min-w-[180px]">
                                 {labelConfigs.length === 0 ? (
                                   <StyledDropdownMenuItem disabled>
-                                    <span className="text-muted-foreground">No labels configured</span>
+                                    <span className="text-muted-foreground">{t('No labels configured')}</span>
                                   </StyledDropdownMenuItem>
                                 ) : (
                                   <FilterLabelItems
@@ -2695,7 +2706,7 @@ function AppShellContent({
                               }}
                             >
                               <Search className="h-3.5 w-3.5" />
-                              <span className="flex-1">Search</span>
+                              <span className="flex-1">{t('Search')}</span>
                             </StyledDropdownMenuItem>
                           </>
                         ) : (
@@ -2706,7 +2717,7 @@ function AppShellContent({
                                 Supports keyboard navigation (ArrowUp/Down/Enter in input). */}
                             {filterDropdownResults.states.length === 0 && filterDropdownResults.labels.length === 0 ? (
                               <div className="px-3 py-4 text-center text-xs text-muted-foreground">
-                                No matching statuses or labels
+                                {t('{t('No matching statuses or labels')}')}
                               </div>
                             ) : (
                               <div ref={filterDropdownListRef} className="max-h-[240px] overflow-y-auto py-1">
@@ -2714,8 +2725,8 @@ function AppShellContent({
                                 {filterDropdownResults.states.length > 0 && (
                                   <>
                                     <div className="px-3 pt-1.5 pb-1 text-[11px] font-medium text-muted-foreground/60 uppercase tracking-wider">
-                                      Statuses
-                                    </div>
+{t('Statuses')}
+</div>
                                     {filterDropdownResults.states.map((state, index) => {
                                       const applyColor = state.iconColorable
                                       const isPinned = state.id === pinnedFilters.pinnedStatusId
@@ -2741,7 +2752,7 @@ function AppShellContent({
                                               />
                                             </StyledDropdownMenuSubTrigger>
                                             <StyledDropdownMenuSubContent minWidth="min-w-[140px]">
-                                              <FilterModeSubMenuItems
+                                              <FilterModeSubMenuItems mode={mode}
                                                 mode={currentMode}
                                                 onChangeMode={(newMode) => setListFilter(prev => {
                                                   const next = new Map(prev)
@@ -2801,8 +2812,8 @@ function AppShellContent({
                                 {filterDropdownResults.labels.length > 0 && (
                                   <>
                                     <div className="px-3 pt-1.5 pb-1 text-[11px] font-medium text-muted-foreground/60 uppercase tracking-wider">
-                                      Labels
-                                    </div>
+{t('Labels')}
+</div>
                                     {filterDropdownResults.labels.map((item, index) => {
                                       // Offset by state count for unified index
                                       const flatIndex = filterDropdownResults.states.length + index
@@ -2830,7 +2841,7 @@ function AppShellContent({
                                               />
                                             </StyledDropdownMenuSubTrigger>
                                             <StyledDropdownMenuSubContent minWidth="min-w-[140px]">
-                                              <FilterModeSubMenuItems
+                                              <FilterModeSubMenuItems mode={mode}
                                                 mode={currentMode}
                                                 onChangeMode={(newMode) => setLabelFilter(prev => {
                                                   const next = new Map(prev)

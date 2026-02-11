@@ -1,0 +1,659 @@
+{
+  "reportMetadata": {
+    "analysisDate": "2025-02-11",
+    "directory": "apps/electron/src/renderer/components/app-shell",
+    "status": "部分组件已使用 useTranslation hook",
+    "totalComponents": 25,
+    "componentsWithI18n": 3,
+    "componentsNeedingI18n": 22,
+    "prioritizedTextCount": 80
+  },
+  "migrationPlan": {
+    "phase1": {
+      "name": "高优先级 - 用户直接交互文本",
+      "description": "用户显式看到和点击的界面元素",
+      "components": [
+        "ActiveOptionBadges.tsx",
+        "input/structured/PermissionRequest.tsx",
+        "input/structured/CredentialRequest.tsx"
+      ],
+      "estimatedImpact": 30条文本"
+    },
+    "phase2": {
+      "name": "中优先级 - 状态和信息提示",
+      "description": "动态状态消息、加载提示、错误信息",
+      "components": [
+        "ChatDisplay.tsx",
+        "SessionList.tsx",
+        "SessionMenu.tsx"
+      ],
+      "estimatedImpact": 40条文本"
+    },
+    "phase3": {
+      "name": "低优先级 - 辅助性文本",
+      "description": "工具提示、占位符、调试信息",
+      "components": [
+        "AppShell.tsx",
+        "LeftSidebar.tsx",
+        "RightSidebar.tsx",
+        "NavigatorPanel.tsx"
+      ],
+      "estimatedImpact": 10条文本"
+    }
+  },
+  "components": [
+    {
+      "filePath": "input/structured/PermissionRequest.tsx",
+      "status": "部分国际化（已有 useTranslation）",
+      "priority": "HIGH",
+      "textItems": [
+        {
+          "originalText": "Permission Required",
+          "currentStatus": "已使用 t()",
+          "suggestedKey": "Permission Required",
+          "location": "第60行"
+        },
+        {
+          "originalText": "Allow",
+          "currentStatus": "已使用 t()",
+          "suggestedKey": "Allow",
+          "location": "第86行"
+        },
+        {
+          "originalText": "Always Allow",
+          "currentStatus": "已使用 t()",
+          "suggestedKey": "Always Allow",
+          "location": "第95行"
+        },
+        {
+          "originalText": "Deny",
+          "currentStatus": "已使用 t()",
+          "suggestedKey": "Deny",
+          "location": "第104行"
+        },
+        {
+          "originalText": "\"Always Allow\" remembers this command for the session",
+          "currentStatus": "已使用 t()",
+          "suggestedKey": "'Always Allow' remembers this command for the session",
+          "location": "第112行"
+        }
+      ],
+      "notes": "该组件已完全国际化，无需修改"
+    },
+    {
+      "filePath": "input/structured/CredentialRequest.tsx",
+      "status": "部分国际化（需要补充）",
+      "priority": "HIGH",
+      "textItems": [
+        {
+          "originalText": "Authentication Required",
+          "currentStatus": "已使用 t()",
+          "suggestedKey": "Authentication Required",
+          "location": "第133行"
+        },
+        {
+          "originalText": "Bearer Token",
+          "currentStatus": "已使用 t()",
+          "suggestedKey": "Bearer Token",
+          "location": "第104行"
+        },
+        {
+          "originalText": "API Key",
+          "currentStatus": "已使用 t()",
+          "suggestedKey": "API Key",
+          "location": "第104行"
+        },
+        {
+          "originalText": "Username",
+          "currentStatus": "已使用 t()",
+          "suggestedKey": "Username",
+          "location": "第105行"
+        },
+        {
+          "originalText": "Password",
+          "currentStatus": "已使用 t()",
+          "suggestedKey": "Password",
+          "location": "第106行"
+        },
+        {
+          "originalText": "Enter username",
+          "currentStatus": "已使用 t()",
+          "suggestedKey": "Enter username",
+          "location": "第165行"
+        },
+        {
+          "originalText": "Password (optional)",
+          "currentStatus": "硬编码",
+          "suggestedKey": "Password (optional)",
+          "location": "推断来自.getPasswordLabel工具函数"
+        },
+        {
+          "originalText": "Submit",
+          "currentStatus": "硬编码",
+          "suggestedKey": "Submit",
+          "location": "推断存在"
+        },
+        {
+          "originalText": "Cancel",
+          "currentStatus": "硬编码",
+          "suggestedKey": "Cancel",
+          "location": "推断存在"
+        }
+      ],
+      "notes": "大部分文本已使用 t()，需要检查是否还有遗漏的硬编码文本"
+    },
+    {
+      "filePath": "ActiveOptionBadges.tsx",
+      "status": "已国际化",
+      "priority": "HIGH",
+      "textItems": [
+        {
+          "originalText": "Ultrathink",
+          "currentStatus": "已使用 t()",
+          "suggestedKey": "Ultrathink",
+          "location": "第174行"
+        }
+      ],
+      "notes": "该组件已国际化，无需修改"
+    },
+    {
+      "filePath": "ChatDisplay.tsx",
+      "status": "未国际化",
+      "priority": "HIGH",
+      "textItems": [
+        {
+          "originalText": "Thinking...",
+          "currentStatus": "硬编码",
+          "suggestedKey": "Processing message: Thinking...",
+          "location": "第204行",
+          "isPartOfArray": true
+        },
+        {
+          "originalText": "Pondering...",
+          "currentStatus": "硬编码",
+          "suggestedKey": "Processing message: Pondering...",
+          "location": "第205行",
+          "isPartOfArray": true
+        },
+        {
+          "originalText": "Compacting...",
+          "currentStatus": "硬编码（statusMessage参数）",
+          "suggestedKey": "Processing message: Compacting...",
+          "location": "动态传入"
+        },
+        {
+          "originalText": "What would you like to change?",
+          "currentStatus": "硬编码",
+          "suggestedKey": "What would you like to change?",
+          "location": "第1295行"
+        },
+        {
+          "originalText": "Just describe it — I'll handle the rest",
+          "currentStatus": "硬编码",
+          "suggestedKey": "Just describe it - I'll handle the rest",
+          "location": "第1296行"
+        },
+        {
+          "originalText": "↑ Scroll up for earlier messages ({startIndex} more)",
+          "currentStatus": "硬编码",
+          "suggestedKey": "Scroll up for earlier messages ({count} more)",
+          "location": "第1302行",
+          "hasParameters": true
+        },
+        {
+          "originalText": "Conversation Compacted",
+          "currentStatus": "硬编码",
+          "suggestedKey": "Conversation Compacted",
+          "location": "第1919行"
+        },
+        {
+          "originalText": "Error",
+          "currentStatus": "硬编码",
+          "suggestedKey": "Error",
+          "location": "第1792行"
+        },
+        {
+          "originalText": "Hide",
+          "currentStatus": "硬编码",
+          "suggestedKey": "Hide",
+          "location": "第1804行"
+        },
+        {
+          "originalText": "Show technical details",
+          "currentStatus": "硬编码",
+          "suggestedKey": "Show technical details",
+          "location": "第1804行"
+        },
+        {
+          "originalText": "Raw: {errorOriginal}...",
+          "currentStatus": "硬编码",
+          "suggestedKey": "Raw error: {message}",
+          "location": "第1813行",
+          "hasParameters": true
+        },
+        {
+          "originalText": "Warning",
+          "currentStatus": "硬编码",
+          "suggestedKey": "Warning",
+          "location": "第1951行"
+        },
+        {
+          "originalText": "Open in new window",
+          "currentStatus": "硬编码（tooltip属性）",
+          "suggestedKey": "Open in new window",
+          "location": "第1859行"
+        },
+        {
+          "originalText": "Plan approved, please execute.",
+          "currentStatus": "硬编码",
+          "suggestedKey": "Plan approved, please execute.",
+          "location": "第1421行"
+        }
+      ],
+      "notes": "包含大量处理消息数组(PROCESSING_MESSAGES)，建议保持英文以维持风格一致性，或选择性地翻译核心消息"
+    },
+    {
+      "filePath": "SessionList.tsx",
+      "status": "未国际化",
+      "priority": "HIGH",
+      "textItems": [
+        {
+          "originalText": "Search sessions...",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Search sessions...",
+          "location": "推断存在"
+        },
+        {
+          "originalText": "No sessions found",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "No sessions found",
+          "location": "推断存在"
+        },
+        {
+          "originalText": "Start a new chat",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Start a new chat",
+          "location": "推断存在"
+        }
+      ],
+      "notes": "需要完整分析SessionList.tsx文件以确定所有硬编码文本"
+    },
+    {
+      "filePath": "SessionMenu.tsx",
+      "status": "未国际化",
+      "priority": "HIGH",
+      "textItems": [
+        {
+          "originalText": "Rename",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Rename session",
+          "location": "推断存在"
+        },
+        {
+          "originalText": "Delete",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Delete session",
+          "location": "推断存在"
+        },
+        {
+          "originalText": "Archive",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Archive session",
+          "location": "推断存在"
+        },
+        {
+          "originalText": "Flag",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Flag session",
+          "location": "推断存在"
+        },
+        {
+          "originalText": "Export",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Export session",
+          "location": "推断存在"
+        }
+      ],
+      "notes": "需要完整分析SessionMenu.tsx及SessionMenuParts.tsx文件"
+    },
+    {
+      "filePath": "AppShell.tsx",
+      "status": "部分国际化（有useTranslation但未充分使用）",
+      "priority": "MEDIUM",
+      "textItems": [
+        {
+          "originalText": "Include",
+          "currentStatus": "硬编码",
+          "suggestedKey": "Include",
+          "location": "第191行"
+        },
+        {
+          "originalText": "Exclude",
+          "currentStatus": "硬编码",
+          "suggestedKey": "Exclude",
+          "location": "第198行"
+        },
+        {
+          "originalText": "Clear",
+          "currentStatus": "硬编码",
+          "suggestedKey": "Clear filter",
+          "location": "第205行"
+        }
+      ],
+      "notes": "AppShell组件有useTranslation hook引用，但大部分文本仍为硬编码"
+    },
+    {
+      "filePath": "EscapeInterruptOverlay.tsx",
+      "status": "未分析",
+      "priority": "MEDIUM",
+      "textItems": [
+        {
+          "originalText": "Press Esc again to interrupt",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Press Esc again to interrupt",
+          "location": "推断存在"
+        }
+      ],
+      "notes": "未读取该文件，需要进一步分析"
+    },
+    {
+      "filePath": "FreeFormInput.tsx",
+      "status": "未充分分析",
+      "priority": "MEDIUM",
+      "textItems": [
+        {
+          "originalText": "Type a message...",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Type a message...",
+          "location": "推断存在"
+        },
+        {
+          "originalText": "Send",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Send message",
+          "location": "推断存在"
+        }
+      ],
+      "notes": "文件过大（103KB），需要读取完整内容"
+    },
+    {
+      "filePath": "ActiveTasksBar.tsx",
+      "status": "未分析",
+      "priority": "MEDIUM",
+      "textItems": [
+        {
+          "originalText": "Task",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Background task",
+          "location": "推断存在"
+        },
+        {
+          "originalText": "Stop",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Stop task",
+          "location": "推断存在"
+        }
+      ],
+      "notes": "未读取该文件"
+    },
+    {
+      "filePath": "NavigatorPanel.tsx",
+      "status": "未分析",
+      "priority": "MEDIUM",
+      "textItems": [
+        {
+          "originalText": "Navigator",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Navigator panel",
+          "location": "推断存在"
+        }
+      ],
+      "notes": "未读取该文件"
+    },
+    {
+      "filePath": "PanelHeader.tsx",
+      "status": "未分析",
+      "priority": "MEDIUM",
+      "textItems": [
+        {
+          "originalText": "Panel header actions",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Panel header",
+          "location": "推断存在"
+        }
+      ],
+      "notes": "未读取该文件"
+    },
+    {
+      "filePath": "RightSidebar.tsx",
+      "status": "未分析",
+      "priority": "MEDIUM",
+      "textItems": [
+        {
+          "originalText": "Right sidebar",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Right sidebar",
+          "location": "推断存在"
+        }
+      ],
+      "notes": "未读取该文件"
+    },
+    {
+      "filePath": "LeftSidebar.tsx",
+      "status": "未分析",
+      "priority": "MEDIUM",
+      "textItems": [
+        {
+          "originalText": "Left sidebar",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Left sidebar",
+          "location": "推断存在"
+        }
+      ],
+      "notes": "未读取该文件"
+    },
+    {
+      "filePath": "SidebarMenu.tsx",
+      "status": "未分析",
+      "priority": "MEDIUM",
+      "textItems": [
+        {
+          "originalText": "Chat",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Chat",
+          "location": "推断存在"
+        },
+        {
+          "originalText": "Sources",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Sources",
+          "location": "推断存在"
+        },
+        {
+          "originalText": "Skills",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Skills",
+          "location": "推断存在"
+        },
+        {
+          "originalText": "Settings",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Settings",
+          "location": "推断存在"
+        }
+      ],
+      "notes": "侧边栏菜单项，可能已在其他地方国际化"
+    },
+    {
+      "filePath": "WorkspaceSwitcher.tsx",
+      "status": "未分析",
+      "priority": "LOW",
+      "textItems": [
+        {
+          "originalText": "Switch workspace",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Switch workspace",
+          "location": "推断存在"
+        }
+      ],
+      "notes": "可能已有国际化"
+    },
+    {
+      "filePath": "MultiSelectPanel.tsx",
+      "status": "未分析",
+      "priority": "LOW",
+      "textItems": [],
+      "notes": "需要分析"
+    },
+    {
+      "filePath": "SessionSearchHeader.tsx",
+      "status": "未分析",
+      "priority": "LOW",
+      "textItems": [
+        {
+          "originalText": "Search",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Search",
+          "location": "推断存在"
+        }
+      ],
+      "notes": "需要分析"
+    },
+    {
+      "filePath": "SourceMenu.tsx",
+      "status": "未分析",
+      "priority": "LOW",
+      "textItems": [],
+      "notes": "需要分析"
+    },
+    {
+      "filePath": "SetupAuthBanner.tsx",
+      "status": "未分析",
+      "priority": "LOW",
+      "textItems": [],
+      "notes": "需要分析"
+    },
+    {
+      "filePath": "SkillsListPanel.tsx",
+      "status": "未分析",
+      "priority": "LOW",
+      "textItems": [],
+      "notes": "需要分析"
+    },
+    {
+      "filePath": "SourcesListPanel.tsx",
+      "status": "未分析",
+      "priority": "LOW",
+      "textItems": [],
+      "notes": "需要分析"
+    },
+    {
+      "filePath": "TaskActionMenu.tsx",
+      "status": "未分析",
+      "priority": "LOW",
+      "textItems": [
+        {
+          "originalText": "Kill",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "Kill task",
+          "location": "推断存在"
+        },
+        {
+          "originalText": "View",
+          "currentStatus": "硬编码（推断）",
+          "suggestedKey": "View task details",
+          "location": "推断存在"
+        }
+      ],
+      "notes": "需要分析"
+    },
+    {
+      "filePath": "SkillMenu.tsx",
+      "status": "未分析",
+      "priority": "LOW",
+      "textItems": [],
+      "notes": "需要分析"
+    },
+    {
+      "filePath": "AttachmentPreview.tsx",
+      "status": "未分析",
+      "priority": "LOW",
+      "textItems": [],
+      "notes": "需要分析"
+    },
+    {
+      "filePath": "Panel.tsx",
+      "status": "未分析",
+      "priority": "LOW",
+      "textItems": [],
+      "notes": "需要分析"
+    },
+    {
+      "filePath": "MainContentPanel.tsx",
+      "status": "未分析",
+      "priority": "LOW",
+      "textItems": [],
+      "notes": "需要分析"
+    },
+    {
+      "filePath": "FreeFormInputContextBadge.tsx",
+      "status": "未分析",
+      "priority": "LOW",
+      "textItems": [],
+      "notes": "需要分析"
+    }
+  ],
+  "dependencies": {
+    "sharedTranslations": [
+      "Allow",
+      "Cancel",
+      "Delete",
+      "Edit",
+      "Save",
+      "Settings",
+      "Loading",
+      "Error",
+      "Warning",
+      "Success"
+    ],
+    "namespaceRecommendation": {
+      "pattern": "components/app-shell/{ComponentName}",
+      "example": "components/app-shell/ChatDisplay",
+      "notes": "按组件路径组织命名空间，便于查找和维护"
+    }
+  },
+  "specialConsiderations": [
+    {
+      "topic": "PROCESSING_MESSAGES 数组",
+      "description": "ChatDisplay.tsx 中的处理消息数组包含50+种消息（如 Thinking..., Pondering..., Brewing...）",
+      "recommendation": "保持英文以维持 Claude 友好的品牌一致性，或选择性翻译核心消息如 'Thinking...'、'Processing...'",
+      "rationale": "这些消息创造了一种友好的、拟人化的体验，翻译可能丢失其风格"
+    },
+    {
+      "topic": "动态参数",
+      "description": "部分文本包含动态参数，如 '↑ Scroll up for earlier messages ({startIndex} more)'",
+      "recommendation": "使用翻译函数的参数化功能，如 t('Scroll up for earlier messages ({count} more)', { count: startIndex })",
+      "rationale": "保证数字位置符合不同语言的语法规则"
+    },
+    {
+      "topic": "状态消息",
+      "description": "statusMessage 参数用于覆盖ProcessingIndicator默认消息（如 'Compacting...'）",
+      "recommendation": "从 SessionStore 或相关状态管理中传入翻译后的消息",
+      "rationale": "statusMessage来自动态状态，需要在源头处理好国际化"
+    },
+    {
+      "topic": "工具提示（tooltips）",
+      "description": "部分文本仅在 title 属性中，如 'Open in new window'",
+      "recommendation": "这些文本也应该国际化，用户可能依赖屏幕阅读器访问",
+      "rationale": "辅助功能需求"
+    }
+  ],
+  "nextSteps": [
+    "1. 完整读取 SessionList.tsx、FreeFormInput.tsx 等关键组件的完整内容",
+    "2. 为高优先级组件创建翻译命名空间和初始 en.json/zh-CN.json 条目",
+    "3. 添加 useTranslation hook 到需要国际化的组件",
+    "4. 使用命名组织器将翻译按组件分组管理",
+    "5. 更新现有翻译文件（如已存在）",
+    "6. 测试翻译在实际应用中的显示效果"
+  ]
+}

@@ -18,6 +18,7 @@ import { DropdownMenu, DropdownMenuTrigger, StyledDropdownMenuContent, StyledDro
 import type { TodoStateId, TodoState } from '@/config/todo-states'
 import type { LabelConfig } from '@craft-agent/shared/labels'
 import { LabelMenuItems, StatusMenuItems } from './SessionMenuParts'
+import { useTranslation } from '@/contexts/I18nContext'
 
 export interface MultiSelectPanelProps {
   /** Number of selected sessions */
@@ -54,6 +55,8 @@ export function MultiSelectPanel({
   onClearSelection,
   className,
 }: MultiSelectPanelProps) {
+  const { t } = useTranslation('components/app-shell/MultiSelectPanel')
+
   return (
     <div
       className={cn(
@@ -67,24 +70,14 @@ export function MultiSelectPanel({
           <span className="text-2xl font-semibold text-accent">{count}</span>
         </div>
         <h2 className="text-lg font-medium text-foreground">
-          {count} {count === 1 ? 'Chat' : 'Chats'} selected
+          {t(count === 1 ? '1 Chat selected' : `${count} Chats selected`)}
         </h2>
         <div className="text-sm text-foreground/50 flex flex-col items-center gap-1">
           <span>
-            Use{' '}
-            <KbdGroup>
-              <Kbd>{isMac ? '⌘' : 'Ctrl'}</Kbd>
-              <Kbd>Click</Kbd>
-            </KbdGroup>{' '}
-            to toggle,{' '}
-            <KbdGroup>
-              <Kbd>⇧</Kbd>
-              <Kbd>Click</Kbd>
-            </KbdGroup>{' '}
-            for range
+            {t('Use Command+Click to toggle, Shift+Click for range')}
           </span>
           <span>
-            Press <Kbd>Esc</Kbd> to clear selection
+            {t('Press Esc to clear selection')}
           </span>
         </div>
       </div>
@@ -100,7 +93,7 @@ export function MultiSelectPanel({
                 className="gap-2 bg-background shadow-minimal hover:bg-foreground/[0.03]"
               >
                 <CheckCircle2 className="w-4 h-4" />
-                Change Status
+                {t('Change Status')}
               </Button>
             </DropdownMenuTrigger>
             <StyledDropdownMenuContent align="center">
@@ -122,7 +115,7 @@ export function MultiSelectPanel({
                 className="gap-2 bg-background shadow-minimal hover:bg-foreground/[0.03]"
               >
                 <Tag className="w-4 h-4" />
-                Set Labels
+                {t('Set Labels')}
               </Button>
             </DropdownMenuTrigger>
             <StyledDropdownMenuContent align="center" className="min-w-[220px]">
@@ -149,7 +142,7 @@ export function MultiSelectPanel({
             className="gap-2 bg-background shadow-minimal hover:bg-foreground/[0.03]"
           >
             <Archive className="w-4 h-4" />
-            Archive
+            {t('Archive')}
           </Button>
         )}
       </div>

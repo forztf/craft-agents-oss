@@ -1,3 +1,15 @@
 {
-  "Promise": "Promise"
+  "Promise": "Promise",
+  "Claude Pro/Max": "Claude Pro/Max",
+  "Use your Claude subscription for unlimited access.": "使用您的 Claude 订阅享受无限访问。",
+  "Anthropic API Key": "Anthropic API 密钥",
+  "Pay-as-you-go via Anthropic, OpenRouter, or compatible APIs.": "通过 Anthropic、OpenRouter 或兼容 API 按使用付费。",
+  "Codex · ChatGPT Plus/Pro": "Codex · ChatGPT Plus/Pro",
+  "Use your ChatGPT Plus or Pro subscription with Codex.": "使用您的 ChatGPT Plus 或 Pro 订阅搭配 Codex。",
+  "Codex · OpenAI API Key": "Codex · OpenAI API 密钥",
+  "Pay-as-you-go via OpenAI Platform, OpenRouter, or Vercel AI Gateway.": "通过 OpenAI 平台、OpenRouter 或 Vercel AI Gateway 按使用付费。",
+  "Set Up API Connection": "设置 API 连接",
+  "Select how you'd like to power your AI agents.": "选择您希望为智能体提供动力的方式。",
+  "Anthropic": "Anthropic",
+  "OpenAI": "OpenAI"
 }

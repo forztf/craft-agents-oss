@@ -7,6 +7,7 @@ import {
 import { useRegisterModal } from "@/context/ModalContext"
 import { isMac } from "@/lib/platform"
 import { actionsByCategory, useActionLabel, type ActionId } from "@/actions"
+import { useTranslation } from "@/contexts/I18nContext"
 
 interface KeyboardShortcutsDialogProps {
   open: boolean
@@ -116,16 +117,16 @@ function RegistrySection({ category, actionIds }: { category: string; actionIds:
 /**
  * Renders a section of static shortcuts (component-specific)
  */
-function StaticSection({ section }: { section: ShortcutSection }) {
+function StaticSection({ section, t }: { section: ShortcutSection; t: (key: string) => string }) {
   return (
     <div>
       <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
-        {section.title}
+        {t(section.title)}
       </h3>
       <div className="space-y-1.5">
         {section.shortcuts.map((shortcut, index) => (
           <div key={index} className="flex items-center justify-between py-1">
-            <span className="text-sm">{shortcut.description}</span>
+            <span className="text-sm">{t(shortcut.description)}</span>
             <div className="flex items-center gap-1">
               {shortcut.keys.map((key, keyIndex) => (
                 <Kbd key={keyIndex}>{key}</Kbd>
@@ -139,6 +140,7 @@ function StaticSection({ section }: { section: ShortcutSection }) {
 }
 
 export function KeyboardShortcutsDialog({ open, onOpenChange }: KeyboardShortcutsDialogProps) {
+  const { t } = useTranslation('components/KeyboardShortcutsDialog')
   // Register with modal context so X button / Cmd+W closes this dialog first
   useRegisterModal(open, () => onOpenChange(false))
 
@@ -146,7 +148,7 @@ export function KeyboardShortcutsDialog({ open, onOpenChange }: KeyboardShortcut
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[500px] max-h-[80vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Keyboard Shortcuts</DialogTitle>
+          <DialogTitle>{t('Keyboard Shortcuts')}</DialogTitle>
         </DialogHeader>
         <div className="space-y-6 py-2">
           {/* Registry-driven sections */}
@@ -160,7 +162,7 @@ export function KeyboardShortcutsDialog({ open, onOpenChange }: KeyboardShortcut
 
           {/* Component-specific sections */}
           {componentSpecificSections.map((section) => (
-            <StaticSection key={section.title} section={section} />
+            <StaticSection key={section.title} section={section} t={t} />
           ))}
         </div>
       </DialogContent>

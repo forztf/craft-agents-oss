@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Search, X } from 'lucide-react'
 import { Spinner } from '@craft-agent/ui'
+import { useTranslation } from '@/contexts/I18nContext'
 
 /**
  * SessionSearchHeader - Presentational component for session list search UI.
@@ -50,9 +51,11 @@ export function SessionSearchHeader({
   resultCount,
   exceededLimit = false,
   inputRef,
-  placeholder = 'Search titles and content...',
+  placeholder,
   readOnly = false,
 }: SessionSearchHeaderProps) {
+  const { t } = useTranslation('components/app-shell/SessionSearchHeader')
+
   return (
     <div className="shrink-0 px-2 pt-2 pb-1.5 border-b border-border/50">
       {/* Search input */}
@@ -68,14 +71,14 @@ export function SessionSearchHeader({
           onFocus={onFocus}
           onBlur={onBlur}
           readOnly={readOnly}
-          placeholder={placeholder}
+          placeholder={placeholder || t('Search titles and content...')}
           className="w-full h-8 pl-8 pr-8 text-sm bg-transparent border-0 rounded-[8px] outline-none focus-visible:ring-0 focus-visible:outline-none placeholder:text-muted-foreground/50"
         />
         {onSearchClose && (
           <button
             onClick={onSearchClose}
             className="absolute right-2 top-1/2 -translate-y-1/2 p-0.5 hover:bg-foreground/10 rounded"
-            title="Close search"
+            title={t('Close search')}
           >
             <X className="h-3.5 w-3.5 text-muted-foreground" />
           </button>
@@ -88,10 +91,10 @@ export function SessionSearchHeader({
           {isSearching ? (
             <>
               <Spinner className="text-[9px] text-foreground/50" />
-              <span>Loading…</span>
+              <span>{t('Loading…')}</span>
             </>
           ) : (
-            <span>{exceededLimit ? '100+' : (resultCount ?? 0)} results</span>
+            <span>{exceededLimit ? '100+' : (resultCount ?? 0)} {t('results')}</span>
           )}
         </div>
       )}

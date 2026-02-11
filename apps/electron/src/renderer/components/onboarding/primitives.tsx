@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils"
 import { Button, type ButtonProps } from "@/components/ui/button"
 import { Spinner } from "@craft-agent/ui"
+import { useTranslation } from "@/i18n/index"
 
 /* =============================================================================
    ONBOARDING PRIMITIVES
@@ -242,10 +243,13 @@ interface BackButtonProps extends Omit<ButtonProps, 'variant' | 'children'> {
 /**
  * BackButton - Consistent back/cancel button
  */
-export function BackButton({ children = 'Back', className, ...props }: BackButtonProps) {
+export function BackButton({ children, className, ...props }: BackButtonProps) {
+  const { t } = useTranslation('components/onboarding/primitives')
+  const buttonText = children ?? t('Back')
+
   return (
     <Button variant="ghost" className={cn("flex-1 max-w-[320px] bg-foreground-2 shadow-minimal text-foreground hover:bg-foreground/5 rounded-lg", className)} {...props}>
-      {children}
+      {buttonText}
     </Button>
   )
 }
@@ -260,22 +264,26 @@ interface ContinueButtonProps extends Omit<ButtonProps, 'children'> {
  * ContinueButton - Consistent primary action button
  */
 export function ContinueButton({
-  children = 'Continue',
+  children,
   loading,
-  loadingText = 'Loading...',
+  loadingText,
   className,
   disabled,
   ...props
 }: ContinueButtonProps) {
+  const { t } = useTranslation('components/onboarding/primitives')
+  const buttonText = children ?? t('Continue')
+  const displayLoadingText = loadingText ?? t('Loading...')
+
   return (
     <Button className={cn("flex-1 max-w-[320px] bg-background shadow-minimal text-foreground hover:bg-foreground/5 rounded-lg", className)} disabled={disabled || loading} {...props}>
       {loading ? (
         <>
           <Spinner className="mr-2" />
-          {loadingText}
+          {displayLoadingText}
         </>
       ) : (
-        children
+        buttonText
       )}
     </Button>
   )

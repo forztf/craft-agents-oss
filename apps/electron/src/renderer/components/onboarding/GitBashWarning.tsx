@@ -1,9 +1,20 @@
+/**
+ * GitBashWarning - Warning screen when Git Bash is not found on Windows
+ *
+ * Shows:
+ * - Warning message explaining why Git Bash is needed
+ * - Download link to Git for Windows
+ * - Option to manually specify bash.exe path
+ * - Option to skip and continue anyway
+ */
+
 import { useState } from "react"
 import { Download, FolderOpen, RefreshCw } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { StepFormLayout, BackButton } from "./primitives"
 import type { GitBashStatus } from "../../../shared/types"
+import { useTranslation } from "@/contexts/I18nContext"
 
 export type { GitBashStatus }
 
@@ -18,15 +29,6 @@ interface GitBashWarningProps {
   onClearError?: () => void
 }
 
-/**
- * GitBashWarning - Warning screen when Git Bash is not found on Windows
- *
- * Shows:
- * - Warning message explaining why Git Bash is needed
- * - Download link to Git for Windows
- * - Option to manually specify bash.exe path
- * - Option to skip and continue anyway
- */
 export function GitBashWarning({
   status,
   onBrowse,
@@ -37,6 +39,7 @@ export function GitBashWarning({
   errorMessage,
   onClearError,
 }: GitBashWarningProps) {
+  const { t } = useTranslation('components/onboarding/GitBashWarning')
   const [customPath, setCustomPath] = useState(status.path || '')
   const [showCustomPath, setShowCustomPath] = useState(false)
 
@@ -60,17 +63,17 @@ export function GitBashWarning({
 
   return (
     <StepFormLayout
-      title="Git Bash Required"
-      description="Craft Agent needs Git Bash to run shell commands on Windows. It was not found on your system."
+      title={t('Git Bash Required')}
+      description={t('Craft Agent needs Git Bash to run shell commands on Windows. It was not found on your system.')}
     >
       <div className="space-y-4">
         {/* Primary action: Download Git */}
         <div className="rounded-lg border border-border bg-foreground-2 p-4">
           <h3 className="text-sm font-medium text-foreground">
-            Install Git for Windows
+            {t('Install Git for Windows')}
           </h3>
           <p className="mt-1 text-xs text-muted-foreground">
-            The easiest way to get Git Bash. It's free and includes everything you need.
+            {t('The easiest way to get Git Bash. It\'s free and includes everything you need.')}
           </p>
           <Button
             onClick={handleDownload}
@@ -78,17 +81,17 @@ export function GitBashWarning({
             size="sm"
           >
             <Download className="mr-2 size-4" />
-            Download Git for Windows
+            {t('Download Git for Windows')}
           </Button>
         </div>
 
         {/* Secondary: Already have Git? */}
         <div className="rounded-lg border border-border bg-foreground-2 p-4">
           <h3 className="text-sm font-medium text-foreground">
-            Already have Git installed?
+            {t('Already have Git installed?')}
           </h3>
           <p className="mt-1 text-xs text-muted-foreground">
-            If Git is installed in a non-standard location, you can specify the path to bash.exe.
+            {t('If Git is installed in a non-standard location, you can specify the path to bash.exe.')}
           </p>
 
           {showCustomPath ? (
@@ -99,7 +102,7 @@ export function GitBashWarning({
                   setCustomPath(e.target.value)
                   onClearError?.()
                 }}
-                placeholder="C:\Program Files\Git\bin\bash.exe"
+                placeholder='C:\Program Files\Git\bin\bash.exe'
                 className="text-xs"
               />
               <Button
@@ -108,7 +111,7 @@ export function GitBashWarning({
                 className="w-full bg-background shadow-minimal text-foreground hover:bg-foreground/5 rounded-lg"
                 size="sm"
               >
-                Use this path
+                {t('Use this path')}
               </Button>
               {errorMessage && (
                 <p className="text-xs text-red-500">{errorMessage}</p>
@@ -123,7 +126,7 @@ export function GitBashWarning({
                 className="flex-1 bg-background text-foreground hover:bg-foreground/5 rounded-lg shadow-minimal"
               >
                 <RefreshCw className={`mr-2 size-4 ${isRechecking ? 'animate-spin' : ''}`} />
-                {isRechecking ? 'Checking...' : 'Re-check'}
+                {isRechecking ? t('Checking...') : t('Re-check')}
               </Button>
               <Button
                 onClick={handleBrowse}
@@ -131,7 +134,7 @@ export function GitBashWarning({
                 className="flex-1 bg-background text-foreground hover:bg-foreground/5 rounded-lg shadow-minimal"
               >
                 <FolderOpen className="mr-2 size-4" />
-                Browse...
+                {t('Browse...')}
               </Button>
             </div>
           )}

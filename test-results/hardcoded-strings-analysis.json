@@ -1,0 +1,3999 @@
+{
+  "timestamp": "2026-02-11T10:41:09.265Z",
+  "summary": {
+    "totalFiles": 292,
+    "totalIssues": 556
+  },
+  "files": {
+    "apps\\electron\\src\\renderer\\actions\\definitions.ts": [
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 9,
+        "column": 4,
+        "text": "New Chat",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 10,
+        "column": 4,
+        "text": "Create a new chat session",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 16,
+        "column": 4,
+        "text": "Settings",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 17,
+        "column": 4,
+        "text": "Open application settings",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 23,
+        "column": 4,
+        "text": "Toggle Theme",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 24,
+        "column": 4,
+        "text": "Switch between light and dark mode",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 30,
+        "column": 4,
+        "text": "Search",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 31,
+        "column": 4,
+        "text": "Open search panel",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 37,
+        "column": 4,
+        "text": "Keyboard Shortcuts",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 38,
+        "column": 4,
+        "text": "Show keyboard shortcuts reference",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 44,
+        "column": 4,
+        "text": "New Window",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 45,
+        "column": 4,
+        "text": "Open a new window",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 51,
+        "column": 4,
+        "text": "Quit",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 52,
+        "column": 4,
+        "text": "Quit the application",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 62,
+        "column": 4,
+        "text": "Focus Sidebar",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 68,
+        "column": 4,
+        "text": "Focus Session List",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 74,
+        "column": 4,
+        "text": "Focus Chat",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 80,
+        "column": 4,
+        "text": "Focus Next Zone",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 86,
+        "column": 4,
+        "text": "Go Back",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 87,
+        "column": 4,
+        "text": "Navigate to previous session",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 93,
+        "column": 4,
+        "text": "Go Forward",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 94,
+        "column": 4,
+        "text": "Navigate to next session",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 100,
+        "column": 4,
+        "text": "Go Back",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 107,
+        "column": 4,
+        "text": "Go Forward",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 118,
+        "column": 4,
+        "text": "Toggle Sidebar",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 124,
+        "column": 4,
+        "text": "Toggle Focus Mode",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 135,
+        "column": 4,
+        "text": "Select All Sessions",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 142,
+        "column": 4,
+        "text": "Clear Selection",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 154,
+        "column": 4,
+        "text": "Stop Processing",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 163,
+        "column": 4,
+        "text": "Cycle Permission Mode",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 164,
+        "column": 4,
+        "text": "Switch between Explore, Ask, and Execute modes",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 170,
+        "column": 4,
+        "text": "Next Search Match",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+        "line": 177,
+        "column": 4,
+        "text": "Previous Search Match",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\actions\\useHotkeyLabel.ts": [
+      {
+        "file": "apps\\electron\\src\\renderer\\actions\\useHotkeyLabel.ts",
+        "line": 26,
+        "column": 6,
+        "text": "New Chat",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\apisetup\\ApiKeyInput.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\apisetup\\ApiKeyInput.tsx",
+        "line": 61,
+        "column": 22,
+        "text": "Anthropic",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\apisetup\\ApiKeyInput.tsx",
+        "line": 62,
+        "column": 23,
+        "text": "OpenRouter",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\apisetup\\ApiKeyInput.tsx",
+        "line": 63,
+        "column": 19,
+        "text": "Vercel AI Gateway",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\apisetup\\ApiKeyInput.tsx",
+        "line": 64,
+        "column": 19,
+        "text": "Ollama",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\apisetup\\ApiKeyInput.tsx",
+        "line": 65,
+        "column": 19,
+        "text": "Custom",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\apisetup\\ApiKeyInput.tsx",
+        "line": 71,
+        "column": 19,
+        "text": "OpenAI",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\apisetup\\ApiKeyInput.tsx",
+        "line": 72,
+        "column": 23,
+        "text": "OpenRouter",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\apisetup\\ApiKeyInput.tsx",
+        "line": 73,
+        "column": 19,
+        "text": "Vercel AI Gateway",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\apisetup\\ApiKeyInput.tsx",
+        "line": 74,
+        "column": 19,
+        "text": "Custom",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 191,
+        "column": 32,
+        "text": "Include",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 198,
+        "column": 32,
+        "text": "Exclude",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 205,
+        "column": 32,
+        "text": "Clear",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2277,
+        "column": 48,
+        "text": "Sources",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2282,
+        "column": 48,
+        "text": "Skills",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2287,
+        "column": 48,
+        "text": "Statuses",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2292,
+        "column": 48,
+        "text": "Permissions",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2298,
+        "column": 48,
+        "text": "All Documentation",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2393,
+        "column": 85,
+        "text": "Filter Chats",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2601,
+        "column": 56,
+        "text": "Statuses",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2673,
+        "column": 56,
+        "text": "Labels",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2678,
+        "column": 75,
+        "text": "No labels configured",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2698,
+        "column": 54,
+        "text": "Search",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2084,
+        "column": 22,
+        "text": "All Sessions",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2092,
+        "column": 22,
+        "text": "Flagged",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2101,
+        "column": 22,
+        "text": "Status",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2133,
+        "column": 22,
+        "text": "Labels",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2152,
+        "column": 22,
+        "text": "Archived",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2163,
+        "column": 22,
+        "text": "Sources",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2179,
+        "column": 26,
+        "text": "APIs",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2192,
+        "column": 26,
+        "text": "MCPs",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2205,
+        "column": 26,
+        "text": "Local Folders",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2220,
+        "column": 22,
+        "text": "Skills",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+        "line": 2235,
+        "column": 22,
+        "text": "Settings",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\app-shell\\MainContentPanel.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\MainContentPanel.tsx",
+        "line": 162,
+        "column": 32,
+        "text": "No sources configured",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\MainContentPanel.tsx",
+        "line": 184,
+        "column": 32,
+        "text": "No skills configured",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\MainContentPanel.tsx",
+        "line": 236,
+        "column": 30,
+        "text": "Select a conversation to get started",
+        "type": "jsx-text"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\app-shell\\PanelHeader.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\PanelHeader.tsx",
+        "line": 21,
+        "column": 27,
+        "text": "Rename",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\PanelHeader.tsx",
+        "line": 21,
+        "column": 54,
+        "text": "Delete",
+        "type": "jsx-text"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\app-shell\\SessionList.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\SessionList.tsx",
+        "line": 1466,
+        "column": 21,
+        "text": "No sessions yet",
+        "type": "jsx-text"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\chat\\AuthRequestCard.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\chat\\AuthRequestCard.tsx",
+        "line": 580,
+        "column": 12,
+        "text": "Cancel",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\chat\\AuthRequestCard.tsx",
+        "line": 597,
+        "column": 10,
+        "text": "Cancel",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
+        "line": 113,
+        "column": 48,
+        "text": "Flags",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
+        "line": 126,
+        "column": 48,
+        "text": "Template",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
+        "line": 143,
+        "column": 48,
+        "text": "Description",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
+        "line": 216,
+        "column": 35,
+        "text": "Search rules...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
+        "line": 235,
+        "column": 39,
+        "text": "Search rules...",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\info\\Info_DataTable.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\info\\Info_DataTable.tsx",
+        "line": 63,
+        "column": 19,
+        "text": "Search tools...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\info\\Info_DataTable.tsx",
+        "line": 86,
+        "column": 15,
+        "text": "Search...",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\info\\Info_Page.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\info\\Info_Page.tsx",
+        "line": 84,
+        "column": 44,
+        "text": "Error loading content",
+        "type": "jsx-text"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\info\\Info_StatusBadge.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\info\\Info_StatusBadge.tsx",
+        "line": 13,
+        "column": 13,
+        "text": "Allowed",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\info\\Info_StatusBadge.tsx",
+        "line": 14,
+        "column": 13,
+        "text": "Blocked",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\info\\LabelsDataTable.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\info\\LabelsDataTable.tsx",
+        "line": 79,
+        "column": 48,
+        "text": "Color",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\info\\LabelsDataTable.tsx",
+        "line": 163,
+        "column": 35,
+        "text": "Search labels...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\info\\LabelsDataTable.tsx",
+        "line": 183,
+        "column": 39,
+        "text": "Search labels...",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
+        "line": 123,
+        "column": 48,
+        "text": "Comment",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
+        "line": 159,
+        "column": 48,
+        "text": "Comment",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
+        "line": 206,
+        "column": 35,
+        "text": "Search patterns...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
+        "line": 225,
+        "column": 39,
+        "text": "Search patterns...",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\info\\ToolsDataTable.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\info\\ToolsDataTable.tsx",
+        "line": 59,
+        "column": 48,
+        "text": "Description",
+        "type": "jsx-text"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+        "line": 31,
+        "column": 4,
+        "text": "List Navigation",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+        "line": 33,
+        "column": 26,
+        "text": "Navigate items in list",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+        "line": 34,
+        "column": 24,
+        "text": "Go to first item",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+        "line": 35,
+        "column": 23,
+        "text": "Go to last item",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+        "line": 39,
+        "column": 4,
+        "text": "Session List",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+        "line": 41,
+        "column": 25,
+        "text": "Focus chat input",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+        "line": 42,
+        "column": 26,
+        "text": "Delete session",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+        "line": 43,
+        "column": 21,
+        "text": "Rename session",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+        "line": 44,
+        "column": 31,
+        "text": "Open context menu",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+        "line": 48,
+        "column": 4,
+        "text": "Agent Tree",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+        "line": 50,
+        "column": 21,
+        "text": "Collapse folder",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+        "line": 51,
+        "column": 21,
+        "text": "Expand folder",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+        "line": 55,
+        "column": 4,
+        "text": "Chat Input",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+        "line": 57,
+        "column": 25,
+        "text": "Send message",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+        "line": 58,
+        "column": 34,
+        "text": "New line",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\settings\\SettingsRow.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\settings\\SettingsRow.tsx",
+        "line": 36,
+        "column": 46,
+        "text": "Change",
+        "type": "jsx-text"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\settings\\SettingsSegmentedControl.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\settings\\SettingsSegmentedControl.tsx",
+        "line": 41,
+        "column": 26,
+        "text": "System",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\settings\\SettingsSegmentedControl.tsx",
+        "line": 42,
+        "column": 25,
+        "text": "Light",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\settings\\SettingsSegmentedControl.tsx",
+        "line": 43,
+        "column": 24,
+        "text": "Dark",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 114,
+        "column": 6,
+        "text": "Permission Settings",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 116,
+        "column": 9,
+        "text": "The user is on the Settings Screen and pressed the edit button on Workspace Permission settings.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 132,
+        "column": 6,
+        "text": "Default Permissions",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 152,
+        "column": 6,
+        "text": "Skill Instructions",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 154,
+        "column": 9,
+        "text": "The user is editing skill instructions in SKILL.md.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 170,
+        "column": 6,
+        "text": "Skill Metadata",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 172,
+        "column": 9,
+        "text": "The user is editing skill metadata in the YAML frontmatter of SKILL.md.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 188,
+        "column": 6,
+        "text": "Source Documentation",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 204,
+        "column": 6,
+        "text": "Source Configuration",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 221,
+        "column": 6,
+        "text": "Source Permissions",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 238,
+        "column": 6,
+        "text": "Tool Permissions",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 240,
+        "column": 9,
+        "text": "The user is viewing the Tools list for an MCP source and wants to modify tool permissions.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 258,
+        "column": 6,
+        "text": "Preferences Notes",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 276,
+        "column": 6,
+        "text": "Add Source",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 278,
+        "column": 9,
+        "text": "The user wants to add a new source to their workspace.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 293,
+        "column": 6,
+        "text": "Add API",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 295,
+        "column": 9,
+        "text": "The user is viewing API sources and wants to add a new REST API.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 310,
+        "column": 6,
+        "text": "Add MCP Server",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 312,
+        "column": 9,
+        "text": "The user is viewing MCP sources and wants to add a new MCP server.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 327,
+        "column": 6,
+        "text": "Add Local Folder",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 329,
+        "column": 9,
+        "text": "The user wants to add a local folder source.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 345,
+        "column": 6,
+        "text": "Add Skill",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 347,
+        "column": 9,
+        "text": "The user wants to add a new skill to their workspace.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 362,
+        "column": 6,
+        "text": "Status Configuration",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 382,
+        "column": 6,
+        "text": "Label Configuration",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 423,
+        "column": 6,
+        "text": "Add Label",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 444,
+        "column": 6,
+        "text": "Views Configuration",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 465,
+        "column": 6,
+        "text": "Tool Icons",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+        "line": 467,
+        "column": 9,
+        "text": "The user wants to edit CLI tool icon mappings.",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\ui\\fading-text.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\fading-text.tsx",
+        "line": 19,
+        "column": 14,
+        "text": "Long text that might overflow",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\fading-text.tsx",
+        "line": 20,
+        "column": 29,
+        "text": "Custom fade width",
+        "type": "jsx-text"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\ui\\label-menu.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\label-menu.tsx",
+        "line": 296,
+        "column": 41,
+        "text": "Add New Label",
+        "type": "jsx-text"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\ui\\label-value-popover.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\label-value-popover.tsx",
+        "line": 297,
+        "column": 17,
+        "text": "Remove",
+        "type": "jsx-text"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
+        "line": 276,
+        "column": 73,
+        "text": "No results",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
+        "line": 137,
+        "column": 27,
+        "text": "Results",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
+        "line": 482,
+        "column": 8,
+        "text": "Skills",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
+        "line": 497,
+        "column": 8,
+        "text": "Sources",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
+        "line": 514,
+        "column": 8,
+        "text": "Files",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
+        "line": 94,
+        "column": 2,
+        "text": "Ultrathink",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
+        "line": 95,
+        "column": 2,
+        "text": "Extended reasoning for complex problems",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
+        "line": 564,
+        "column": 6,
+        "text": "Modes",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
+        "line": 571,
+        "column": 6,
+        "text": "Features",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
+        "line": 586,
+        "column": 8,
+        "text": "Recent Working Directories",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+        "line": 43,
+        "column": 4,
+        "text": "Connected",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+        "line": 44,
+        "column": 4,
+        "text": "Source is connected and working",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+        "line": 49,
+        "column": 4,
+        "text": "Needs Authentication",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+        "line": 50,
+        "column": 4,
+        "text": "Source requires authentication to connect",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+        "line": 55,
+        "column": 4,
+        "text": "Connection Failed",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+        "line": 56,
+        "column": 4,
+        "text": "Failed to connect to source",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+        "line": 61,
+        "column": 4,
+        "text": "Not Tested",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+        "line": 62,
+        "column": 4,
+        "text": "Connection has not been tested",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+        "line": 67,
+        "column": 4,
+        "text": "Disabled",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+        "line": 68,
+        "column": 4,
+        "text": "Local MCP servers are disabled in Settings",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\contexts\\NavigationContext.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\contexts\\NavigationContext.tsx",
+        "line": 780,
+        "column": 12,
+        "text": "The content may have been moved or deleted.",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\hooks\\useUpdateChecker.ts": [
+      {
+        "file": "apps\\electron\\src\\renderer\\hooks\\useUpdateChecker.ts",
+        "line": 51,
+        "column": 6,
+        "text": "Restart to apply the update.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\hooks\\useUpdateChecker.ts",
+        "line": 54,
+        "column": 8,
+        "text": "Restart",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\hooks\\useUpdateChecker.ts",
+        "line": 70,
+        "column": 8,
+        "text": "The app will restart automatically.",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\main.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\main.tsx",
+        "line": 76,
+        "column": 42,
+        "text": "Something went wrong",
+        "type": "jsx-text"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\pages\\ChatPage.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\pages\\ChatPage.tsx",
+        "line": 330,
+        "column": 18,
+        "text": "Open",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\pages\\settings\\PreferencesPage.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\pages\\settings\\PreferencesPage.tsx",
+        "line": 236,
+        "column": 35,
+        "text": "English",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\playground\\adapters\\input-adapters.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\adapters\\input-adapters.tsx",
+        "line": 22,
+        "column": 4,
+        "text": "Execute a shell command to list files in the current directory",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 37,
+        "column": 2,
+        "text": "Run shell command",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 45,
+        "column": 2,
+        "text": "Run shell command",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 53,
+        "column": 2,
+        "text": "Run complex deployment script",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 179,
+        "column": 17,
+        "text": "Explore codebase structure",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 242,
+        "column": 17,
+        "text": "Implement new feature",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 291,
+        "column": 17,
+        "text": "Analyze code quality",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 326,
+        "column": 17,
+        "text": "Fix identified issues",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 377,
+        "column": 17,
+        "text": "Refactor authentication",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 388,
+        "column": 17,
+        "text": "Implement OAuth flow",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 436,
+        "column": 38,
+        "text": "Run auth tests",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 663,
+        "column": 8,
+        "text": "Disable remove buttons",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 669,
+        "column": 8,
+        "text": "Number of loading placeholders to show",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 691,
+        "column": 4,
+        "text": "Shows when an agent needs activation or authentication",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 696,
+        "column": 8,
+        "text": "Banner state",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 700,
+        "column": 14,
+        "text": "Hidden",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 701,
+        "column": 14,
+        "text": "MCP Auth",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 702,
+        "column": 14,
+        "text": "API Auth",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 703,
+        "column": 14,
+        "text": "Error",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 710,
+        "column": 8,
+        "text": "Custom reason message",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 711,
+        "column": 35,
+        "text": "Optional custom reason",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 735,
+        "column": 8,
+        "text": "Show ultrathink badge",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 741,
+        "column": 8,
+        "text": "Current permission mode",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 745,
+        "column": 14,
+        "text": "Safe Mode",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 746,
+        "column": 14,
+        "text": "Ask Permission",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 747,
+        "column": 14,
+        "text": "Allow All",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 754,
+        "column": 8,
+        "text": "Interaction variant",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 758,
+        "column": 14,
+        "text": "Dropdown",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 759,
+        "column": 14,
+        "text": "Cycle",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 800,
+        "column": 8,
+        "text": "Automatically toggle between states",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 830,
+        "column": 18,
+        "text": "I found the pattern across the codebase and made the necessary edits.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 856,
+        "column": 4,
+        "text": "TurnCard showing Task subagent with child tools still running",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 872,
+        "column": 4,
+        "text": "TurnCard showing multiple sequential Task subagents, each with their own child tools",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 930,
+        "column": 8,
+        "text": "Disable all inputs",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 942,
+        "column": 8,
+        "text": "Textarea placeholder text",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 943,
+        "column": 35,
+        "text": "Message...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 948,
+        "column": 8,
+        "text": "Current selected model",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 961,
+        "column": 8,
+        "text": "Permission mode badge",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 967,
+        "column": 14,
+        "text": "Allow All",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 974,
+        "column": 8,
+        "text": "Show ultrathink toggle",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 980,
+        "column": 8,
+        "text": "Current working directory",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 999,
+        "column": 8,
+        "text": "Normal state",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 1004,
+        "column": 8,
+        "text": "While agent is processing",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 1018,
+        "column": 8,
+        "text": "With ultrathink enabled",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\chat.tsx",
+        "line": 1025,
+        "column": 8,
+        "text": "Fully disabled",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 334,
+        "column": 56,
+        "text": "Click the button to open the popover",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 299,
+        "column": 2,
+        "text": "Label Configuration",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 301,
+        "column": 5,
+        "text": "Playground demo of EditPopover component.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 351,
+        "column": 4,
+        "text": "The actual EditPopover component with trigger button",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 362,
+        "column": 8,
+        "text": "Example text shown in placeholder",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 363,
+        "column": 35,
+        "text": "Enter example...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 368,
+        "column": 8,
+        "text": "Label for the trigger button",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 369,
+        "column": 35,
+        "text": "Button label...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 376,
+        "column": 8,
+        "text": "Uses compact ChatDisplay for inline agent execution",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 385,
+        "column": 8,
+        "text": "Opens new window instead of inline execution",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 394,
+        "column": 8,
+        "text": "Styled for adding a new source",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 403,
+        "column": 8,
+        "text": "Styled for adding a new skill",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 416,
+        "column": 4,
+        "text": "Full chat experience in compact mode for inline editing in popovers",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 421,
+        "column": 8,
+        "text": "Whether the agent is currently processing",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 427,
+        "column": 8,
+        "text": "Placeholder text for the input",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 428,
+        "column": 35,
+        "text": "Enter placeholder...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 435,
+        "column": 8,
+        "text": "No messages yet, ready for user input",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 439,
+        "column": 10,
+        "text": "Describe what you",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 444,
+        "column": 8,
+        "text": "User just sent a message, waiting for response",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 452,
+        "column": 8,
+        "text": "Agent is thinking with intermediate message",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 460,
+        "column": 8,
+        "text": "Single turn completed successfully",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 476,
+        "column": 8,
+        "text": "Agent encountered an issue and is asking for clarification",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 484,
+        "column": 8,
+        "text": "Using",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 488,
+        "column": 10,
+        "text": "What would you like to connect?",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 493,
+        "column": 8,
+        "text": "Using",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\edit-popover.tsx",
+        "line": 497,
+        "column": 10,
+        "text": "What should I learn to do?",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\playground\\registry\\icons.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\icons.tsx",
+        "line": 12,
+        "column": 4,
+        "text": "Full Craft Agents branding logo with text",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\icons.tsx",
+        "line": 17,
+        "column": 8,
+        "text": "Tailwind classes for sizing and styling",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\icons.tsx",
+        "line": 32,
+        "column": 4,
+        "text": "Craft Agents",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\icons.tsx",
+        "line": 37,
+        "column": 8,
+        "text": "Tailwind classes for sizing",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\icons.tsx",
+        "line": 52,
+        "column": 4,
+        "text": "Sidebar toggle icon with rounded corners",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\icons.tsx",
+        "line": 57,
+        "column": 8,
+        "text": "Tailwind classes",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\icons.tsx",
+        "line": 77,
+        "column": 8,
+        "text": "Tailwind classes",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 155,
+        "column": 64,
+        "text": "Input Transitions Test",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 115,
+        "column": 20,
+        "text": "Input",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 116,
+        "column": 22,
+        "text": "Permission",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 238,
+        "column": 4,
+        "text": "Main text input with model selector, slash commands, and attachments",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 243,
+        "column": 8,
+        "text": "Placeholder text",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 244,
+        "column": 35,
+        "text": "Message...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 249,
+        "column": 8,
+        "text": "Disable the input",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 255,
+        "column": 8,
+        "text": "Show stop button instead of send",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 261,
+        "column": 8,
+        "text": "Currently selected model",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 270,
+        "column": 8,
+        "text": "Safe mode badge active",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 276,
+        "column": 8,
+        "text": "Ultrathink badge active",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 293,
+        "column": 4,
+        "text": "Structured input for approving tool execution permissions",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 298,
+        "column": 8,
+        "text": "Name of the tool requesting permission",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 299,
+        "column": 35,
+        "text": "Bash",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 304,
+        "column": 8,
+        "text": "Description of what the tool wants to do",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 305,
+        "column": 37,
+        "text": "Description...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 310,
+        "column": 8,
+        "text": "The command or action being requested",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 311,
+        "column": 37,
+        "text": "Command preview...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 316,
+        "column": 57,
+        "text": "Execute a shell command",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 317,
+        "column": 54,
+        "text": "Read file contents",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 318,
+        "column": 56,
+        "text": "Create or overwrite a file",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\playground\\registry\\label-badges.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\label-badges.tsx",
+        "line": 110,
+        "column": 8,
+        "text": "Whether valued labels show their typed values",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\label-badges.tsx",
+        "line": 124,
+        "column": 8,
+        "text": "One label without a value",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\label-badges.tsx",
+        "line": 139,
+        "column": 8,
+        "text": "Multiple labels without values",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 156,
+        "column": 8,
+        "text": "Markdown content to render",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 162,
+        "column": 8,
+        "text": "Render mode controlling formatting level",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 166,
+        "column": 14,
+        "text": "Terminal",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 167,
+        "column": 14,
+        "text": "Minimal",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 168,
+        "column": 14,
+        "text": "Full",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 175,
+        "column": 8,
+        "text": "Enable collapsible headings",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 197,
+        "column": 4,
+        "text": "Syntax highlighted code block using Shiki with copy button",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 202,
+        "column": 8,
+        "text": "Code to display",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 208,
+        "column": 8,
+        "text": "Programming language for syntax highlighting",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 212,
+        "column": 14,
+        "text": "TypeScript",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 213,
+        "column": 14,
+        "text": "JavaScript",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 214,
+        "column": 14,
+        "text": "Python",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 216,
+        "column": 14,
+        "text": "Bash",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 217,
+        "column": 14,
+        "text": "Plain Text",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 224,
+        "column": 8,
+        "text": "Render mode",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 228,
+        "column": 14,
+        "text": "Terminal",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 229,
+        "column": 14,
+        "text": "Minimal",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 230,
+        "column": 14,
+        "text": "Full",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 247,
+        "column": 4,
+        "text": "Styled inline code span with subtle background and border",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\markdown.tsx",
+        "line": 252,
+        "column": 8,
+        "text": "Code text",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 282,
+        "column": 69,
+        "text": "Processing States",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 290,
+        "column": 69,
+        "text": "User Messages",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 299,
+        "column": 69,
+        "text": "Assistant Messages",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 393,
+        "column": 69,
+        "text": "Auth Request Cards",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 465,
+        "column": 74,
+        "text": "Auth Completed",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 480,
+        "column": 74,
+        "text": "Auth Cancelled",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 494,
+        "column": 74,
+        "text": "Auth Failed",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 406,
+        "column": 16,
+        "text": "Enter your GitHub personal access token to connect.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 427,
+        "column": 16,
+        "text": "Connect to your Atlassian account.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 502,
+        "column": 16,
+        "text": "Invalid API key. Please check and try again.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 555,
+        "column": 4,
+        "text": "All message types displayed together for easy design comparison",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 571,
+        "column": 8,
+        "text": "Message text content",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 572,
+        "column": 37,
+        "text": "Enter message...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 593,
+        "column": 37,
+        "text": "Enter message...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 613,
+        "column": 8,
+        "text": "Status message text",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 614,
+        "column": 35,
+        "text": "Status message...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 634,
+        "column": 8,
+        "text": "Message text content",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 635,
+        "column": 37,
+        "text": "Message content...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 640,
+        "column": 8,
+        "text": "Message type determining visual style",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 644,
+        "column": 14,
+        "text": "System",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 645,
+        "column": 14,
+        "text": "Info",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 646,
+        "column": 14,
+        "text": "Warning",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 647,
+        "column": 14,
+        "text": "Error",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 665,
+        "column": 4,
+        "text": "Horizontal rule with centered label shown after context compaction",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 670,
+        "column": 8,
+        "text": "Label text shown in the center",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 671,
+        "column": 35,
+        "text": "Label...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 676,
+        "column": 34,
+        "text": "Conversation Compacted",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 677,
+        "column": 39,
+        "text": "Context Reset",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 685,
+        "column": 4,
+        "text": "Animated processing indicator with cycling messages and elapsed time counter",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 690,
+        "column": 8,
+        "text": "Message cycle interval in milliseconds",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 719,
+        "column": 4,
+        "text": "Inline authentication request card for credentials or OAuth flows",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 744,
+        "column": 8,
+        "text": "Type of authentication",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 748,
+        "column": 14,
+        "text": "Credential",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 749,
+        "column": 14,
+        "text": "OAuth",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 750,
+        "column": 14,
+        "text": "Google OAuth",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 751,
+        "column": 14,
+        "text": "Slack OAuth",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 752,
+        "column": 14,
+        "text": "Microsoft OAuth",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 759,
+        "column": 8,
+        "text": "Current status of the auth request",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 763,
+        "column": 14,
+        "text": "Pending",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 764,
+        "column": 14,
+        "text": "Completed",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 765,
+        "column": 14,
+        "text": "Cancelled",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 766,
+        "column": 14,
+        "text": "Failed",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 773,
+        "column": 8,
+        "text": "Name of the source",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 774,
+        "column": 35,
+        "text": "Source name...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 783,
+        "column": 14,
+        "text": "Bearer Token",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 784,
+        "column": 14,
+        "text": "Basic Auth",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 785,
+        "column": 14,
+        "text": "Header",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 786,
+        "column": 14,
+        "text": "Query Param",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 793,
+        "column": 8,
+        "text": "Description shown to user",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 794,
+        "column": 35,
+        "text": "Description...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 799,
+        "column": 8,
+        "text": "Hint about where to find credentials",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 800,
+        "column": 35,
+        "text": "Hint...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 806,
+        "column": 35,
+        "text": "Error message...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 812,
+        "column": 35,
+        "text": "Email...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 824,
+        "column": 10,
+        "text": "Enter your personal access token to connect.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 835,
+        "column": 10,
+        "text": "Connect to your Atlassian account.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\messages.tsx",
+        "line": 877,
+        "column": 10,
+        "text": "Invalid API key. Please check and try again.",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\playground\\registry\\oauth.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\oauth.tsx",
+        "line": 43,
+        "column": 4,
+        "text": "Page shown in browser after OAuth authorization redirect",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\oauth.tsx",
+        "line": 49,
+        "column": 8,
+        "text": "Whether authorization was successful",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\oauth.tsx",
+        "line": 59,
+        "column": 14,
+        "text": "Electron",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\oauth.tsx",
+        "line": 60,
+        "column": 14,
+        "text": "Terminal",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\oauth.tsx",
+        "line": 68,
+        "column": 35,
+        "text": "Error message",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 30,
+        "column": 4,
+        "text": "Initial welcome screen with feature overview",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 35,
+        "column": 8,
+        "text": "Show update settings message instead of welcome",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 41,
+        "column": 8,
+        "text": "Show loading state on continue button",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 59,
+        "column": 4,
+        "text": "Choose payment method for AI usage",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 64,
+        "column": 8,
+        "text": "Currently selected API setup method",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 68,
+        "column": 14,
+        "text": "None",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 69,
+        "column": 14,
+        "text": "Claude OAuth",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 70,
+        "column": 14,
+        "text": "API Key",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 96,
+        "column": 8,
+        "text": "Credential validation status",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 100,
+        "column": 14,
+        "text": "Idle",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 101,
+        "column": 14,
+        "text": "Validating",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 102,
+        "column": 14,
+        "text": "Success",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 103,
+        "column": 14,
+        "text": "Error",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 110,
+        "column": 8,
+        "text": "Error message to display",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 111,
+        "column": 35,
+        "text": "Error message",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 137,
+        "column": 8,
+        "text": "OAuth status",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 141,
+        "column": 14,
+        "text": "Idle",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 142,
+        "column": 14,
+        "text": "Validating",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 143,
+        "column": 14,
+        "text": "Success",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 144,
+        "column": 14,
+        "text": "Error",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 151,
+        "column": 8,
+        "text": "Show auth code entry form",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 157,
+        "column": 8,
+        "text": "Error message to display",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 158,
+        "column": 35,
+        "text": "Error message",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 184,
+        "column": 4,
+        "text": "Success screen after completing onboarding",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 189,
+        "column": 8,
+        "text": "Completion status",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 193,
+        "column": 14,
+        "text": "Saving",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 194,
+        "column": 14,
+        "text": "Complete",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\onboarding.tsx",
+        "line": 212,
+        "column": 4,
+        "text": "Warning screen when Git Bash is not found on Windows",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\playground\\registry\\samples\\customer-support.ts": [
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\samples\\customer-support.ts",
+        "line": 109,
+        "column": 4,
+        "text": "Querying customer account data from database",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\samples\\customer-support.ts",
+        "line": 150,
+        "column": 4,
+        "text": "Customer reports being charged twice for January subscription",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\playground\\registry\\samples\\deployment.ts": [
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\samples\\deployment.ts",
+        "line": 29,
+        "column": 4,
+        "text": "Checking current branch status and recent commits",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\samples\\deployment.ts",
+        "line": 88,
+        "column": 4,
+        "text": "Installing React Query and Zod for the new feature",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\samples\\deployment.ts",
+        "line": 107,
+        "column": 4,
+        "text": "Running unit tests with coverage for preferences feature",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\samples\\deployment.ts",
+        "line": 145,
+        "column": 4,
+        "text": "Building Docker container image for deployment",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\samples\\deployment.ts",
+        "line": 164,
+        "column": 4,
+        "text": "Pushing container image to Google Container Registry",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\samples\\deployment.ts",
+        "line": 183,
+        "column": 4,
+        "text": "Deploying to staging cluster and waiting for rollout",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\samples\\deployment.ts",
+        "line": 223,
+        "column": 4,
+        "text": "Applying infrastructure changes for new API endpoint",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\samples\\deployment.ts",
+        "line": 242,
+        "column": 4,
+        "text": "Deploying to production cluster",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\playground\\registry\\samples\\incident-response.ts": [
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\samples\\incident-response.ts",
+        "line": 107,
+        "column": 4,
+        "text": "Creating hotfix branch for the authentication fix",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\samples\\incident-response.ts",
+        "line": 126,
+        "column": 4,
+        "text": "Running authentication service tests",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\samples\\incident-response.ts",
+        "line": 145,
+        "column": 4,
+        "text": "Committing hotfix and pushing to remote",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\samples\\incident-response.ts",
+        "line": 164,
+        "column": 4,
+        "text": "Creating pull request for the hotfix",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 316,
+        "column": 56,
+        "text": "No conversations found",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 18,
+        "column": 4,
+        "text": "Todo",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 26,
+        "column": 4,
+        "text": "In Progress",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 34,
+        "column": 4,
+        "text": "Done",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 368,
+        "column": 4,
+        "text": "Session list search UI showing title matching and yellow match count badge",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 373,
+        "column": 8,
+        "text": "Current search query text",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 374,
+        "column": 35,
+        "text": "Search...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 379,
+        "column": 8,
+        "text": "Show the search input bar",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 385,
+        "column": 8,
+        "text": "Show loading spinner while searching",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 409,
+        "column": 8,
+        "text": "Explicit result count to display",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 417,
+        "column": 8,
+        "text": "Normal session list without search active",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 425,
+        "column": 8,
+        "text": "Search input visible, no query yet",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 433,
+        "column": 8,
+        "text": "Search query matching session titles",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 443,
+        "column": 8,
+        "text": "Selected session with yellow match count badge",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 454,
+        "column": 8,
+        "text": "Content search in progress",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 463,
+        "column": 8,
+        "text": "Search returned no matches",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 483,
+        "column": 8,
+        "text": "Search query for highlighting",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 484,
+        "column": 35,
+        "text": "Search...",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 489,
+        "column": 8,
+        "text": "Whether this session is selected",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 503,
+        "column": 8,
+        "text": "Normal state without search",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 510,
+        "column": 8,
+        "text": "Search query highlights in title",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\session-list.tsx",
+        "line": 518,
+        "column": 8,
+        "text": "Selected session with yellow match count badge",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\playground\\registry\\slash-command.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\slash-command.tsx",
+        "line": 276,
+        "column": 4,
+        "text": "Command palette for slash commands using cmdk",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\slash-command.tsx",
+        "line": 281,
+        "column": 8,
+        "text": "Show filter input above the menu",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\slash-command.tsx",
+        "line": 287,
+        "column": 8,
+        "text": "Placeholder text for filter input",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\slash-command.tsx",
+        "line": 288,
+        "column": 35,
+        "text": "Search...",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\playground\\registry\\toasts.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\toasts.tsx",
+        "line": 72,
+        "column": 67,
+        "text": "Toast Types",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\toasts.tsx",
+        "line": 95,
+        "column": 67,
+        "text": "Quick Actions",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\toasts.tsx",
+        "line": 14,
+        "column": 19,
+        "text": "Default",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\toasts.tsx",
+        "line": 15,
+        "column": 19,
+        "text": "Success",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\toasts.tsx",
+        "line": 16,
+        "column": 17,
+        "text": "Error",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\toasts.tsx",
+        "line": 17,
+        "column": 19,
+        "text": "Warning",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\toasts.tsx",
+        "line": 18,
+        "column": 16,
+        "text": "Info",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\toasts.tsx",
+        "line": 19,
+        "column": 19,
+        "text": "Loading",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\toasts.tsx",
+        "line": 20,
+        "column": 18,
+        "text": "With Action",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\toasts.tsx",
+        "line": 21,
+        "column": 20,
+        "text": "With Long URL and Action",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\toasts.tsx",
+        "line": 32,
+        "column": 36,
+        "text": "Your action completed successfully.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\toasts.tsx",
+        "line": 35,
+        "column": 31,
+        "text": "Something went wrong. Please try again.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\toasts.tsx",
+        "line": 38,
+        "column": 35,
+        "text": "This action may have consequences.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\toasts.tsx",
+        "line": 41,
+        "column": 29,
+        "text": "Here is some useful information.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\toasts.tsx",
+        "line": 44,
+        "column": 38,
+        "text": "Please wait while we process.",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\toasts.tsx",
+        "line": 50,
+        "column": 12,
+        "text": "Undo",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\toasts.tsx",
+        "line": 59,
+        "column": 12,
+        "text": "Open",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\toasts.tsx",
+        "line": 137,
+        "column": 4,
+        "text": "Toast notifications with different types, actions, and stacking behavior",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\playground\\registry\\turn-card-modes.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card-modes.tsx",
+        "line": 63,
+        "column": 38,
+        "text": "Checking repository status",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card-modes.tsx",
+        "line": 78,
+        "column": 36,
+        "text": "Running the test suite",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card-modes.tsx",
+        "line": 96,
+        "column": 4,
+        "text": "Hello team!",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card-modes.tsx",
+        "line": 317,
+        "column": 4,
+        "text": "Compare Informative vs Detailed mode with various tool types and workflows",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card-modes.tsx",
+        "line": 324,
+        "column": 8,
+        "text": "Starting display mode",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card-modes.tsx",
+        "line": 328,
+        "column": 14,
+        "text": "Informative",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card-modes.tsx",
+        "line": 329,
+        "column": 14,
+        "text": "Detailed",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card-modes.tsx",
+        "line": 368,
+        "column": 8,
+        "text": "Quick demo with native tools and MCP sources",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card-modes.tsx",
+        "line": 385,
+        "column": 8,
+        "text": "Same mix starting in Informative mode",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1816,
+        "column": 79,
+        "text": "Tool",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1817,
+        "column": 79,
+        "text": "Permission",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1818,
+        "column": 79,
+        "text": "Description",
+        "type": "jsx-text"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 190,
+        "column": 36,
+        "text": "Running tests",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 222,
+        "column": 2,
+        "text": "Permission denied",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 480,
+        "column": 8,
+        "text": "Whether content is still being received",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 486,
+        "column": 8,
+        "text": "Whether this turn is fully complete",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 492,
+        "column": 8,
+        "text": "Start with activities expanded",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 507,
+        "column": 8,
+        "text": "No activities yet, just starting",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 518,
+        "column": 8,
+        "text": "One tool currently executing",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 530,
+        "column": 8,
+        "text": "Several tools executing in parallel",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 545,
+        "column": 8,
+        "text": "Multiple tools finished, collapsed by default",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 560,
+        "column": 8,
+        "text": "Tools done, response is streaming",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 574,
+        "column": 8,
+        "text": "Tools done, waiting for response to start",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 588,
+        "column": 8,
+        "text": "Finished turn with brief response",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 603,
+        "column": 8,
+        "text": "Finished turn with detailed response",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 620,
+        "column": 8,
+        "text": "A tool failed during execution",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 636,
+        "column": 8,
+        "text": "Direct response without tool usage",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 647,
+        "column": 8,
+        "text": "Large number of completed tools",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 678,
+        "column": 8,
+        "text": "Activities shown expanded initially",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 694,
+        "column": 8,
+        "text": "Tools interleaved with LLM intermediate messages",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 713,
+        "column": 8,
+        "text": "Tool running after intermediate message",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 752,
+        "column": 8,
+        "text": "LLM thinking before first tool call",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 765,
+        "column": 8,
+        "text": "LLM is streaming an intermediate message",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 797,
+        "column": 8,
+        "text": "TodoWrite with one item in progress",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 823,
+        "column": 8,
+        "text": "TodoWrite with most items completed, one in progress",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 849,
+        "column": 8,
+        "text": "TodoWrite stress test with many items",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 896,
+        "column": 8,
+        "text": "How fast to simulate streaming",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 900,
+        "column": 14,
+        "text": "Slow",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 901,
+        "column": 14,
+        "text": "Normal",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 902,
+        "column": 14,
+        "text": "Fast",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 909,
+        "column": 8,
+        "text": "Intent text shown in header",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 925,
+        "column": 8,
+        "text": "Shows last few lines in large card with batched updates",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1701,
+        "column": 15,
+        "text": "First Result",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1702,
+        "column": 15,
+        "text": "Second Result",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1703,
+        "column": 15,
+        "text": "Third Result",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1802,
+        "column": 43,
+        "text": "Read files from disk",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1803,
+        "column": 40,
+        "text": "Write files to disk",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1804,
+        "column": 39,
+        "text": "Edit existing files",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1805,
+        "column": 39,
+        "text": "Execute shell commands",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1806,
+        "column": 43,
+        "text": "Search file contents",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1807,
+        "column": 43,
+        "text": "Find files by pattern",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1808,
+        "column": 47,
+        "text": "Fetch URL content",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1809,
+        "column": 48,
+        "text": "Search the web",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1882,
+        "column": 4,
+        "text": "Fullscreen document view for reading AI responses and plans",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1892,
+        "column": 14,
+        "text": "Response",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1893,
+        "column": 14,
+        "text": "Plan",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1902,
+        "column": 8,
+        "text": "Standard response view with commenting support",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1910,
+        "column": 8,
+        "text": "Plan view with green header badge",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1918,
+        "column": 8,
+        "text": "Minimal content to test layout",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1926,
+        "column": 8,
+        "text": "Content with lots of code blocks",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1988,
+        "column": 14,
+        "text": "Read",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1989,
+        "column": 14,
+        "text": "Write",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 1998,
+        "column": 8,
+        "text": "Reading a TypeScript source file",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2010,
+        "column": 8,
+        "text": "Reading a Python ML pipeline",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2022,
+        "column": 8,
+        "text": "Reading a subset of lines from a large file",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2034,
+        "column": 8,
+        "text": "Showing a file being written",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2043,
+        "column": 8,
+        "text": "Error state when file read fails",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2069,
+        "column": 8,
+        "text": "Group changes by file path",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2077,
+        "column": 8,
+        "text": "Several file changes shown individually",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2085,
+        "column": 8,
+        "text": "Changes grouped by file path",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2101,
+        "column": 8,
+        "text": "Opens with a specific change focused",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2133,
+        "column": 8,
+        "text": "Tool type for display styling",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2137,
+        "column": 14,
+        "text": "Bash",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2138,
+        "column": 14,
+        "text": "Grep",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2139,
+        "column": 14,
+        "text": "Glob",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2154,
+        "column": 10,
+        "text": "Running the test suite",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2159,
+        "column": 8,
+        "text": "Failed deployment command",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2165,
+        "column": 10,
+        "text": "Deploy to production",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2176,
+        "column": 10,
+        "text": "Search for",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2181,
+        "column": 8,
+        "text": "Finding files matching a pattern",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2187,
+        "column": 10,
+        "text": "Find files matching",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2192,
+        "column": 8,
+        "text": "Command blocked by permission system",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2198,
+        "column": 10,
+        "text": "Clean build cache",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2208,
+        "column": 6,
+        "text": "Running tests",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2223,
+        "column": 8,
+        "text": "Title shown in header",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2234,
+        "column": 10,
+        "text": "User Profile",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2239,
+        "column": 8,
+        "text": "Typical paginated API response",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2242,
+        "column": 10,
+        "text": "Search Results",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2247,
+        "column": 8,
+        "text": "Array of simple objects",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2254,
+        "column": 10,
+        "text": "Items List",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2259,
+        "column": 8,
+        "text": "Small JSON payload",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2261,
+        "column": 33,
+        "text": "Operation completed",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2262,
+        "column": 10,
+        "text": "Status",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2267,
+        "column": 8,
+        "text": "Error state when JSON parsing fails",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2270,
+        "column": 10,
+        "text": "API Response",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2271,
+        "column": 10,
+        "text": "Unexpected token",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2277,
+        "column": 6,
+        "text": "JSON Result",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2292,
+        "column": 8,
+        "text": "Header title",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2303,
+        "column": 10,
+        "text": "WebFetch Result",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2308,
+        "column": 8,
+        "text": "Simple text output",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2311,
+        "column": 10,
+        "text": "Build Output",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2316,
+        "column": 8,
+        "text": "Content that looks like JSON",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2319,
+        "column": 10,
+        "text": "Health Check",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2325,
+        "column": 6,
+        "text": "Activity",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2334,
+        "column": 4,
+        "text": "Fullscreen data table view with scrollable content",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2340,
+        "column": 8,
+        "text": "Table title in header",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2354,
+        "column": 8,
+        "text": "Table showing tool permission levels",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2356,
+        "column": 10,
+        "text": "Tool Permissions",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2362,
+        "column": 8,
+        "text": "Table without subtitle",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2364,
+        "column": 10,
+        "text": "Configuration",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\registry\\turn-card.tsx",
+        "line": 2369,
+        "column": 6,
+        "text": "Permissions",
+        "type": "string-literal"
+      }
+    ],
+    "apps\\electron\\src\\renderer\\playground\\ThemeToggle.tsx": [
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\ThemeToggle.tsx",
+        "line": 8,
+        "column": 30,
+        "text": "Light",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\ThemeToggle.tsx",
+        "line": 9,
+        "column": 30,
+        "text": "Dark",
+        "type": "string-literal"
+      },
+      {
+        "file": "apps\\electron\\src\\renderer\\playground\\ThemeToggle.tsx",
+        "line": 10,
+        "column": 35,
+        "text": "System",
+        "type": "string-literal"
+      }
+    ]
+  }
+}

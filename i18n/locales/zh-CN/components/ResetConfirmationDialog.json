@@ -1,8 +1,1 @@
-{
-  "All credentials and API keys": "所有凭据和 API 密钥",
-  "All preferences and session data": "所有偏好设置和会话数据",
-  "All workspaces and their settings": "所有工作区及其设置",
-  "Back up any important data first!": "请先备份所有重要数据！",
-  "Enter answer": "输入答案",
-  "permanently delete": "永久删除"
-}
+{"All credentials and API keys": "所有凭据和 API 密钥", "All preferences and session data": "所有偏好设置和会话数据", "All workspaces and their settings": "所有工作区及其设置", "Back up any important data first!": "请先备份所有重要数据！", "Cancel": "取消", "Enter answer": "输入答案", "Reset App": "重置应用", "This action cannot be undone.": "此操作无法撤销。", "To confirm, solve:": "请确认答案：", "This will <strong>permanently delete</strong>:": "这将<strong>永久删除</strong>："}

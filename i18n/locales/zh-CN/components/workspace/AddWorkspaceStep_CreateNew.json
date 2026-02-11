@@ -1,8 +1,1 @@
-{
-  "Choose a location": "选择位置",
-  "Create workspace": "创建工作区",
-  "Default location": "默认位置",
-  "Enter a name and choose where to store your workspace.": "输入名称并选择工作区存储位置。",
-  "My Workspace": "我的工作区",
-  "Promise": "Promise"
-}
+{"Back": "返回", "Create workspace": "创建工作区", "Enter a name and choose where to store your workspace.": "输入名称并选择工作区存储位置。", "Workspace name": "工作区名称", "My Workspace": "我的工作区", "Location": "位置", "Default location": "默认位置", "under .craft-agent folder": "在 .craft-agent 文件夹下", "Choose a location": "选择位置", "Pick a place to put your new workspace.": "选择放置新工作区的位置。", "Browse": "浏览", "Creating...": "创建中...", "Create": "创建", "A workspace named \"{slug}\" already exists": "已存在名为 \"{slug}\" 的工作区"}

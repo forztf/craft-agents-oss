@@ -85,9 +85,9 @@ const shortTimeLocale: Pick<Locale, 'formatDistance'> = {
  * Format a date for the date header
  * Returns "Today", "Yesterday", or formatted date like "Dec 19"
  */
-function formatDateHeader(date: Date): string {
-  if (isToday(date)) return "Today"
-  if (isYesterday(date)) return "Yesterday"
+function formatDateHeader(date: Date, t: (key: string) => string): string {
+  if (isToday(date)) return t("Today")
+  if (isYesterday(date)) return t("Yesterday")
   return format(date, "MMM d")
 }
 
@@ -95,7 +95,7 @@ function formatDateHeader(date: Date): string {
  * Group sessions by date (day boundary)
  * Returns array of { date, sessions } sorted by date descending
  */
-function groupSessionsByDate(sessions: SessionMeta[]): Array<{ date: Date; label: string; sessions: SessionMeta[] }> {
+function groupSessionsByDate(sessions: SessionMeta[], t: (key: string) => string): Array<{ date: Date; label: string; sessions: SessionMeta[] }> {
   const groups = new Map<string, { date: Date; sessions: SessionMeta[] }>()
 
   for (const session of sessions) {
@@ -114,7 +114,7 @@ function groupSessionsByDate(sessions: SessionMeta[]): Array<{ date: Date; label
     .sort((a, b) => b.date.getTime() - a.date.getTime())
     .map(group => ({
       ...group,
-      label: formatDateHeader(group.date),
+      label: formatDateHeader(group.date, t),
     }))
 }
 
@@ -1161,7 +1161,7 @@ export function SessionList({
   }, [hasMore, loadMore])
 
   // Group sessions by date (only used in normal mode, not search mode)
-  const dateGroups = useMemo(() => groupSessionsByDate(paginatedItems), [paginatedItems])
+  const dateGroups = useMemo(() => groupSessionsByDate(paginatedItems, t), [paginatedItems, t])
 
   // Create flat list for keyboard navigation (maintains order across groups/sections)
   const flatItems = useMemo(() => {

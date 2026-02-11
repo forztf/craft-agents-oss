@@ -51,7 +51,9 @@
     "prepare": "husky",
     "test:e2e": "playwright test --project=electron",
     "test:e2e:ui": "playwright test --project=electron --ui",
-    "test:i18n": "bun run tests/e2e/hardcoded-check.ts",
+    "test:e2e:i18n": "playwright test tests/e2e/i18n/i18n-e2e.spec.ts --project=electron",
+    "test:i18n": "bun run tests/e2e/i18n/static-analyzer.ts",
+    "test:i18n:legacy": "bun run tests/e2e/hardcoded-check.ts",
     "test:setup": "bun run scripts/setup-playwright.ts"
   },
   "devDependencies": {

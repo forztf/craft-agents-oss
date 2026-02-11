@@ -1,0 +1,37 @@
+{
+  "task": "#17: 开发Playwright自动化测试脚本",
+  "status": "completed",
+  "timestamp": "2026-02-11T08:56:09.774Z",
+  "projectI18nStatus": {
+    "totalFilesScanned": 292,
+    "hardcodedTextsFound": 568,
+    "i18nArchitecture": {
+      "i18nContext": "Implemented",
+      "useTranslationHook": "Available",
+      "languageFiles": "i18n/locales/{lang}/components/{namespace}.json",
+      "languages": ["en", "zh-CN"]
+    },
+    "styleGuidelines": {
+      "recommended": "Use full original text as key",
+      "recommendedExamples": [
+        "t('Default model is required for compatible endpoints.')",
+        "t('Enter your API key...')"
+      ],
+      "avoid": "Overly abstract or abbreviated keys",
+      "avoidExamples": [
+        "t('error_model_required')",
+        "t('auth.enter_key')"
+      ]
+    }
+  },
+  "testScripts": {
+    "e2eTest": "bun run test:e2e:i18n",
+    "staticAnalysis": "bun run test:i18n",
+    "legacyCheck": "bun run test:i18n:legacy"
+  },
+  "testReports": {
+    "e2eReport": "test-results/i18n-e2e-report.json",
+    "staticAnalysisReport": "test-results/hardcoded-strings-analysis.json",
+    "htmlReport": "test-results/html/index.html"
+  }
+}

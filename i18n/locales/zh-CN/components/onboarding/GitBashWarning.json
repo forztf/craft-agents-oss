@@ -1,6 +1,1 @@
-{
-  "C:\\Program Files\\Git\\bin\\bash.exe": "C:\\Program Files\\Git\\bin\\bash.exe",
-  "Craft Agent needs Git Bash to run shell commands on Windows. It was not found on your system.": "Craft Agent 需要 Git Bash 在 Windows 上运行 Shell 命令。系统中未找到 Git Bash。",
-  "Git Bash Required": "需要 Git Bash",
-  "Promise": "Promise"
-}
+{"Git Bash Required": "需要 Git Bash", "Craft Agent needs Git Bash to run shell commands on Windows. It was not found on your system.": "Craft Agent 需要 Git Bash 在 Windows 上运行 Shell 命令。系统中未找到 Git Bash。", "Install Git for Windows": "安装 Windows 版 Git", "The easiest way to get Git Bash. It's free and includes everything you need.": "获取 Git Bash 的最简单方法。它是免费的，并且包含您需要的一切。", "Download Git for Windows": "下载 Windows 版 Git", "Already have Git installed?": "已安装 Git？", "If Git is installed in a non-standard location, you can specify the path to bash.exe.": "如果 Git 安装在非标准位置，您可以指定 bash.exe 的路径。", "Use this path": "使用此路径", "Checking...": "检查中...", "Re-check": "重新检查", "Browse...": "浏览..."}

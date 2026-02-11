@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils"
 import { Check, CreditCard, Key, Cpu } from "lucide-react"
 import { StepFormLayout, BackButton, ContinueButton } from "./primitives"
+import { useTranslation } from "@/contexts/I18nContext"
 import type { LlmAuthType, LlmProviderType } from "@craft-agent/shared/config/llm-connections"
 
 /**
@@ -41,36 +42,38 @@ interface ApiSetupOption {
   providerType: LlmProviderType
 }
 
-const API_SETUP_OPTIONS: ApiSetupOption[] = [
-  {
-    id: 'claude_oauth',
-    name: 'Claude Pro/Max',
-    description: 'Use your Claude subscription for unlimited access.',
-    icon: <CreditCard className="size-4" />,
-    providerType: 'anthropic',
-  },
-  {
-    id: 'anthropic_api_key',
-    name: 'Anthropic API Key',
-    description: 'Pay-as-you-go via Anthropic, OpenRouter, or compatible APIs.',
-    icon: <Key className="size-4" />,
-    providerType: 'anthropic',
-  },
-  {
-    id: 'chatgpt_oauth',
-    name: 'Codex · ChatGPT Plus/Pro',
-    description: 'Use your ChatGPT Plus or Pro subscription with Codex.',
-    icon: <Cpu className="size-4" />,
-    providerType: 'openai',
-  },
-  {
-    id: 'openai_api_key',
-    name: 'Codex · OpenAI API Key',
-    description: 'Pay-as-you-go via OpenAI Platform, OpenRouter, or Vercel AI Gateway.',
-    icon: <Key className="size-4" />,
-    providerType: 'openai',
-  },
-]
+function getApiSetupOptions(t: (key: string) => string): ApiSetupOption[] {
+  return [
+    {
+      id: 'claude_oauth',
+      name: t('Claude Pro/Max'),
+      description: t('Use your Claude subscription for unlimited access.'),
+      icon: <CreditCard className="size-4" />,
+      providerType: 'anthropic',
+    },
+    {
+      id: 'anthropic_api_key',
+      name: t('Anthropic API Key'),
+      description: t('Pay-as-you-go via Anthropic, OpenRouter, or compatible APIs.'),
+      icon: <Key className="size-4" />,
+      providerType: 'anthropic',
+    },
+    {
+      id: 'chatgpt_oauth',
+      name: t('Codex · ChatGPT Plus/Pro'),
+      description: t('Use your ChatGPT Plus or Pro subscription with Codex.'),
+      icon: <Cpu className="size-4" />,
+      providerType: 'openai',
+    },
+    {
+      id: 'openai_api_key',
+      name: t('Codex · OpenAI API Key'),
+      description: t('Pay-as-you-go via OpenAI Platform, OpenRouter, or Vercel AI Gateway.'),
+      icon: <Key className="size-4" />,
+      providerType: 'openai',
+    },
+  ]
+}
 
 interface APISetupStepProps {
   selectedMethod: ApiSetupMethod | null
@@ -151,10 +154,13 @@ export function APISetupStep({
   onContinue,
   onBack
 }: APISetupStepProps) {
+  const { t } = useTranslation('components/onboarding/APISetupStep')
+  const API_SETUP_OPTIONS = getApiSetupOptions(t)
+
   return (
     <StepFormLayout
-      title="Set Up API Connection"
-      description="Select how you'd like to power your AI agents."
+      title={t('Set Up API Connection')}
+      description={t("Select how you'd like to power your AI agents.")}
       actions={
         <>
           <BackButton onClick={onBack} />
@@ -166,7 +172,7 @@ export function APISetupStep({
       <div className="space-y-4">
         {/* Anthropic section */}
         <div>
-          <div className="text-xs font-medium text-muted-foreground mb-2 py-2.5 text-center">Anthropic</div>
+          <div className="text-xs font-medium text-muted-foreground mb-2 py-2.5 text-center">{t('Anthropic')}</div>
           <div className="space-y-3">
             {API_SETUP_OPTIONS.filter(o => o.providerType === 'anthropic').map((option) => (
               <OptionButton
@@ -181,7 +187,7 @@ export function APISetupStep({
 
         {/* OpenAI section */}
         <div>
-          <div className="text-xs font-medium text-muted-foreground mb-2 py-2.5 text-center">OpenAI</div>
+          <div className="text-xs font-medium text-muted-foreground mb-2 py-2.5 text-center">{t('OpenAI')}</div>
           <div className="space-y-3">
             {API_SETUP_OPTIONS.filter(o => o.providerType === 'openai').map((option) => (
               <OptionButton

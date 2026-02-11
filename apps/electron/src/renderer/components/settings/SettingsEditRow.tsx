@@ -9,6 +9,7 @@
 import { Button } from '@/components/ui/button'
 import { EditPopover, type EditContext } from '@/components/ui/EditPopover'
 import { SettingsRow } from './SettingsRow'
+import { useTranslation } from '@/contexts/I18nContext'
 
 export interface SettingsEditRowProps {
   /** Row label */
@@ -36,6 +37,8 @@ export function SettingsEditRow({
   inCard = true,
   className,
 }: SettingsEditRowProps) {
+  const { t } = useTranslation('components/settings/SettingsEditRow')
+
   return (
     <SettingsRow
       label={label}
@@ -46,7 +49,7 @@ export function SettingsEditRow({
         <EditPopover
           trigger={
             <Button variant="ghost" size="sm" className="h-7 px-2.5 rounded-[6px] bg-background shadow-minimal">
-              Edit
+              {t('Edit')}
             </Button>
           }
           example={editExample}

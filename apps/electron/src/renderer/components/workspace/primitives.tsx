@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils"
 import { Button, type ButtonProps } from "@/components/ui/button"
 import { Spinner } from "@craft-agent/ui"
+import { useTranslation } from "@/i18n/index"
 
 /* =============================================================================
    ADD WORKSPACE PRIMITIVES
@@ -95,13 +96,16 @@ interface AddWorkspacePrimaryButtonProps extends Omit<ButtonProps, 'variant' | '
  * Includes loading state with spinner.
  */
 export function AddWorkspacePrimaryButton({
-  children = 'Continue',
+  children,
   loading,
   loadingText,
   className,
   disabled,
   ...props
 }: AddWorkspacePrimaryButtonProps) {
+  const { t } = useTranslation('components/workspace/WorkspaceCreationScreen')
+  const defaultChildren = t('Continue')
+
   return (
     <Button
       className={cn("w-full", className)}
@@ -111,10 +115,10 @@ export function AddWorkspacePrimaryButton({
       {loading ? (
         <>
           <Spinner className="mr-2" />
-          {loadingText || children}
+          {loadingText || children || defaultChildren}
         </>
       ) : (
-        children
+        children || defaultChildren
       )}
     </Button>
   )

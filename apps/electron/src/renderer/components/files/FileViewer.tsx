@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { FileText } from 'lucide-react'
 import { Spinner } from '@craft-agent/ui'
+import { useTranslation } from '@/contexts/I18nContext'
 
 interface FileViewerProps {
   path: string | null
 }
 
 export function FileViewer({ path }: FileViewerProps) {
+  const { t } = useTranslation('components/files/FileViewer')
   const [content, setContent] = useState<string>('')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -42,8 +44,8 @@ export function FileViewer({ path }: FileViewerProps) {
         <div className="size-16 bg-muted rounded-2xl flex items-center justify-center mb-4">
           <FileText className="size-8 text-muted-foreground/50" />
         </div>
-        <p className="font-medium text-foreground">No file selected</p>
-        <p className="text-sm mt-1">Click a file path in the chat to view it here</p>
+        <p className="font-medium text-foreground">{t('No file selected')}</p>
+        <p className="text-sm mt-1">{t('Click a file path in the chat to view it here')}</p>
       </div>
     )
   }
@@ -64,11 +66,11 @@ export function FileViewer({ path }: FileViewerProps) {
           {isLoading ? (
             <div className="flex flex-col items-center justify-center h-32 text-muted-foreground gap-3">
               <Spinner className="text-lg" />
-              <span className="text-sm font-medium">Loading content...</span>
+              <span className="text-sm font-medium">{t('Loading content...')}</span>
             </div>
           ) : error ? (
             <div className="flex flex-col items-center justify-center h-32 text-destructive gap-2">
-              <p className="text-sm font-medium">Error loading file</p>
+              <p className="text-sm font-medium">{t('Error loading file')}</p>
               <p className="text-xs">{error}</p>
             </div>
           ) : (

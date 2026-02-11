@@ -1,7 +1,1 @@
-{
-  "API Key": "API Key",
-  "Endpoint": "Endpoint",
-  "https://your-api-endpoint.com": "https://your-api-endpoint.com",
-  "ollama pull": "ollama pull",
-  "provider/model-name": "provider/model-name"
-}
+{"API Key": "API Key", "Endpoint": "Endpoint", "https://your-api-endpoint.com": "https://your-api-endpoint.com", "ollama pull": "ollama pull", "provider/model-name": "provider/model-name", "Default model is required for compatible endpoints.": "Default model is required for compatible endpoints.", "Default Model": "Default Model", "required": "required", "optional": "optional", "e.g. openai/gpt-5.2-codex, openai/gpt-5.1-codex-mini": "e.g. openai/gpt-5.2-codex, openai/gpt-5.1-codex-mini", "e.g. anthropic/claude-opus-4.6, anthropic/claude-haiku-4.5": "e.g. anthropic/claude-opus-4.6, anthropic/claude-haiku-4.5", "Comma-separated list. The first model is the default. The last is used for summarization.": "Comma-separated list. The first model is the default. The last is used for summarization.", "Required for OpenRouter-compatible endpoints.": "Required for OpenRouter-compatible endpoints.", "Format: {code}.": "Format: {code}.", "Browse models": "Browse models", "Required for Vercel AI Gateway endpoints.": "Required for Vercel AI Gateway endpoints.", "View supported models": "View supported models", "Use any model pulled via {code}. No API key required.": "Use any model pulled via {code}. No API key required.", "Required for custom endpoints. Use the provider-specific model ID.": "Required for custom endpoints. Use the provider-specific model ID."}

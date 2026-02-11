@@ -1,6 +1,1 @@
-{
-  "C:\\Program Files\\Git\\bin\\bash.exe": "C:\\Program Files\\Git\\bin\\bash.exe",
-  "Craft Agent needs Git Bash to run shell commands on Windows. It was not found on your system.": "Craft Agent needs Git Bash to run shell commands on Windows. It was not found on your system.",
-  "Git Bash Required": "Git Bash Required",
-  "Promise": "Promise"
-}
+{"Git Bash Required": "Git Bash Required", "Craft Agent needs Git Bash to run shell commands on Windows. It was not found on your system.": "Craft Agent needs Git Bash to run shell commands on Windows. It was not found on your system.", "Install Git for Windows": "Install Git for Windows", "The easiest way to get Git Bash. It's free and includes everything you need.": "The easiest way to get Git Bash. It's free and includes everything you need.", "Download Git for Windows": "Download Git for Windows", "Already have Git installed?": "Already have Git installed?", "If Git is installed in a non-standard location, you can specify the path to bash.exe.": "If Git is installed in a non-standard location, you can specify the path to bash.exe.", "Use this path": "Use this path", "Checking...": "Checking...", "Re-check": "Re-check", "Browse...": "Browse..."}

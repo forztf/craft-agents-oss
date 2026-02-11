@@ -1,0 +1,1571 @@
+{
+  "report": {
+    "title": "apps/electron/src/renderer/components 国际化需求分析报告",
+    "generatedAt": "2026-02-11",
+    "scope": "通用组件分析 - files, info, markdown, icons, ui, preview, right-sidebar, chat, apisetup 等",
+    "summary": {
+      "totalFilesAnalyzed": 45,
+      "filesWithI18nNeeds": 10,
+      "alreadyInternationalized": 3,
+      "totalTextEntries": 147
+    }
+  },
+  "components": {
+    "apisetup": {
+      "OAuthConnect.tsx": {
+        "needsI18n": true,
+        "entries": [
+          {
+            "text": "Authorization Code",
+            "location": "OAuthConnect.tsx:60",
+            "context": "Label for authorization code input",
+            "type": "label",
+            "proposedKey": {
+              "namespace": "components/apisetup/OAuthConnect",
+              "key": "label",
+              "en": "Authorization Code",
+              "zh-CN": "授权码"
+            }
+          },
+          {
+            "text": "Paste your authorization code here",
+            "location": "OAuthConnect.tsx:70",
+            "context": "Placeholder for authorization code input",
+            "type": "placeholder",
+            "proposedKey": {
+              "namespace": "components/apisetup/OAuthConnect",
+              "key": "placeholder",
+              "en": "Paste your authorization code here",
+              "zh-CN": "在此粘贴您的授权码"
+            }
+          }
+        ]
+      },
+      "ApiKeyInput.tsx": {
+        "needsI18n": true,
+        "entries": [
+          {
+            "text": "API Key",
+            "location": "ApiKeyInput.tsx:182",
+            "context": "Label for API key input field",
+            "type": "label",
+            "proposedKey": {
+              "namespace": "components/apisetup/ApiKeyInput",
+              "key": "label",
+              "en": "API Key",
+              "zh-CN": "API 密钥"
+            }
+          },
+          {
+            "text": "Default model is required for compatible endpoints.",
+            "location": "ApiKeyInput.tsx:165",
+            "context": "Error message when default model is not specified for custom endpoints",
+            "type": "error",
+            "proposedKey": {
+              "namespace": "components/apisetup/ApiKeyInput",
+              "key": "modelRequiredError",
+              "en": "Default model is required for compatible endpoints.",
+              "zh-CN": "兼容端点需要指定默认模型。"
+            }
+          },
+          {
+            "text": "Base URL",
+            "location": "ApiKeyInput.tsx:212",
+            "context": "Label for base URL input field",
+            "type": "label",
+            "proposedKey": {
+              "namespace": "components/apisetup/ApiKeyInput",
+              "key": "baseUrlLabel",
+              "en": "Base URL",
+              "zh-CN": "基础 URL"
+            }
+          },
+          {
+            "text": "Default Model",
+            "location": "ApiKeyInput.tsx:236",
+            "context": "Label for default model input field",
+            "type": "label",
+            "proposedKey": {
+              "namespace": "components/apisetup/ApiKeyInput",
+              "key": "defaultModelLabel",
+              "en": "Default Model",
+              "zh-CN": "默认模型"
+            }
+          },
+          {
+            "text": "Enter model ID (comma-separated for multiple)",
+            "location": "ApiKeyInput.tsx:240",
+            "context": "Placeholder for model input field",
+            "type": "placeholder",
+            "proposedKey": {
+              "namespace": "components/apisetup/ApiKeyInput",
+              "key": "modelPlaceholder",
+              "en": "Enter model ID (comma-separated for multiple)",
+              "zh-CN": "输入模型 ID（多个用逗号分隔）"
+            }
+          }
+        ],
+        "presets": {
+          "anthropic": "Anthropic",
+          "openrouter": "OpenRouter",
+          "vercel": "Vercel AI Gateway",
+          "ollama": "Ollama",
+          "custom": "Custom",
+          "openai": "OpenAI"
+        }
+      }
+    },
+    "files": {
+      "FileViewer.tsx": {
+        "needsI18n": true,
+        "entries": [
+          {
+            "text": "No file selected",
+            "location": "FileViewer.tsx:45",
+            "context": "Empty state message when no file is selected",
+            "type": "emptyState",
+            "proposedKey": {
+              "namespace": "components/files/FileViewer",
+              "key": "noFileSelected",
+              "en": "No file selected",
+              "zh-CN": "未选择文件"
+            }
+          },
+          {
+            "text": "Click a file path in the chat to view it here",
+            "location": "FileViewer.tsx:46",
+            "context": "Hint text for empty state",
+            "type": "hint",
+            "proposedKey": {
+              "namespace": "components/files/FileViewer",
+              "key": "clickHint",
+              "en": "Click a file path in the chat to view it here",
+              "zh-CN": "点击聊天中的文件路径在此查看"
+            }
+          },
+          {
+            "text": "Loading content...",
+            "location": "FileViewer.tsx:67",
+            "context": "Loading message while fetching file content",
+            "type": "loading",
+            "proposedKey": {
+              "namespace": "components/files/FileViewer",
+              "key": "loadingContent",
+              "en": "Loading content...",
+              "zh-CN": "正在加载内容..."
+            }
+          },
+          {
+            "text": "Error loading file",
+            "location": "FileViewer.tsx:71",
+            "context": "Error message title",
+            "type": "error",
+            "proposedKey": {
+              "namespace": "components/files/FileViewer",
+              "key": "errorLoading",
+              "en": "Error loading file",
+              "zh-CN": "文件加载错误"
+            }
+          }
+        ]
+      }
+    },
+    "chat": {
+      "AuthRequestCard.tsx": {
+        "needsI18n": true,
+        "entries": [
+          {
+            "text": "Bearer Token",
+            "location": "AuthRequestCard.tsx:277",
+            "context": "Fallback label for bearer token authentication",
+            "type": "label",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "bearerToken",
+              "en": "Bearer Token",
+              "zh-CN": "Bearer 令牌"
+            }
+          },
+          {
+            "text": "Authentication",
+            "location": "AuthRequestCard.tsx:296",
+            "context": "Default auth type label",
+            "type": "label",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "authentication",
+              "en": "Authentication",
+              "zh-CN": "身份验证"
+            }
+          },
+          {
+            "text": "OAuth",
+            "location": "AuthRequestCard.tsx:287",
+            "context": "OAuth type label",
+            "type": "label",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "oauth",
+              "en": "OAuth",
+              "zh-CN": "OAuth"
+            }
+          },
+          {
+            "text": "Google Sign-In",
+            "location": "AuthRequestCard.tsx:289",
+            "context": "Google OAuth type label",
+            "type": "label",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "googleSignIn",
+              "en": "Google Sign-In",
+              "zh-CN": "Google 登录"
+            }
+          },
+          {
+            "text": "Slack Sign-In",
+            "location": "AuthRequestCard.tsx:291",
+            "context": "Slack OAuth type label",
+            "type": "label",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "slackSignIn",
+              "en": "Slack Sign-In",
+              "zh-CN": "Slack 登录"
+            }
+          },
+          {
+            "text": "Microsoft Sign-In",
+            "location": "AuthRequestCard.tsx:293",
+            "context": "Microsoft OAuth type label",
+            "type": "label",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "microsoftSignIn",
+              "en": "Microsoft Sign-In",
+              "zh-CN": "Microsoft 登录"
+            }
+          },
+          {
+            "text": "{source} Connected",
+            "location": "AuthRequestCard.tsx:322",
+            "context": "Success state with source name",
+            "type": "status",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "connected",
+              "en": "{source} Connected",
+              "zh-CN": "{source} 已连接"
+            }
+          },
+          {
+            "text": "{source} Cancelled",
+            "location": "AuthRequestCard.tsx:323",
+            "context": "Cancelled state with source name",
+            "type": "status",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "cancelled",
+              "en": "{source} Cancelled",
+              "zh-CN": "{source} 已取消"
+            }
+          },
+          {
+            "text": "{source} Failed",
+            "location": "AuthRequestCard.tsx:324",
+            "context": "Failed state with source name",
+            "type": "status",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "failed",
+              "en": "{source} Failed",
+              "zh-CN": "{source} 连接失败"
+            }
+          },
+          {
+            "text": "Signed in as {email}",
+            "location": "AuthRequestCard.tsx:326,357",
+            "context": "Success subtitle with email",
+            "type": "status",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "signedInAs",
+              "en": "Signed in as {email}",
+              "zh-CN": "已登录为 {email}"
+            }
+          },
+          {
+            "text": "Workspace: {workspace}",
+            "location": "AuthRequestCard.tsx:358",
+            "context": "Success subtitle with workspace name",
+            "type": "status",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "workspaceLabel",
+              "en": "Workspace: {workspace}",
+              "zh-CN": "工作区: {workspace}"
+            }
+          },
+          {
+            "text": "{source} Authenticating...",
+            "location": "AuthRequestCard.tsx:391",
+            "context": "Authenticating state with source name",
+            "type": "status",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "authenticating",
+              "en": "{source} Authenticating...",
+              "zh-CN": "{source} 正在验证..."
+            }
+          },
+          {
+            "text": "Complete authentication in your browser",
+            "location": "AuthRequestCard.tsx:394",
+            "context": "Subtitle during OAuth flow",
+            "type": "hint",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "completeAuthInBrowser",
+              "en": "Complete authentication in your browser",
+              "zh-CN": "在浏览器中完成身份验证"
+            }
+          },
+          {
+            "text": "{source} Authentication",
+            "location": "AuthRequestCard.tsx:414",
+            "context": "Credential form title",
+            "type": "title",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "authenticationTitle",
+              "en": "{source} Authentication",
+              "zh-CN": "{source} 身份验证"
+            }
+          },
+          {
+            "text": "Username",
+            "location": "AuthRequestCard.tsx:278,430,444",
+            "context": "Username field label",
+            "type": "label",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "username",
+              "en": "Username",
+              "zh-CN": "用户名"
+            }
+          },
+          {
+            "text": "Password",
+            "location": "AuthRequestCard.tsx:279,452,466",
+            "context": "Password field label",
+            "type": "label",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "password",
+              "en": "Password",
+              "zh-CN": "密码"
+            }
+          },
+          {
+            "text": "Enter {usernameLabel}",
+            "location": "AuthRequestCard.tsx:444",
+            "context": "Username field placeholder",
+            "type": "placeholder",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "enterUsername",
+              "en": "Enter {usernameLabel}",
+              "zh-CN": "输入 {usernameLabel}"
+            }
+          },
+          {
+            "text": "Enter {headerName}",
+            "location": "AuthRequestCard.tsx:502",
+            "context": "Header field placeholder",
+            "type": "placeholder",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "enterHeaderName",
+              "en": "Enter {headerName}",
+              "zh-CN": "输入 {headerName}"
+            }
+          },
+          {
+            "text": "Enter {credentialLabel}",
+            "location": "AuthRequestCard.tsx:540",
+            "context": "Credential field placeholder",
+            "type": "placeholder",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "enterCredential",
+              "en": "Enter {credentialLabel}",
+              "zh-CN": "输入 {credentialLabel}"
+            }
+          },
+          {
+            "text": "Sign in with {type}",
+            "location": "AuthRequestCard.tsx:575",
+            "context": "OAuth sign in button label",
+            "type": "button",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "signInWithType",
+              "en": "Sign in with {type}",
+              "zh-CN": "使用 {type} 登录"
+            }
+          },
+          {
+            "text": "Cancel",
+            "location": "AuthRequestCard.tsx:580,597",
+            "context": "Cancel button label",
+            "type": "button",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "cancel",
+              "en": "Cancel",
+              "zh-CN": "取消"
+            }
+          },
+          {
+            "text": "Saving...",
+            "location": "AuthRequestCard.tsx:591",
+            "context": "Save button loading state",
+            "type": "buttonLoading",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "saving",
+              "en": "Saving...",
+              "zh-CN": "正在保存..."
+            }
+          },
+          {
+            "text": "Save",
+            "location": "AuthRequestCard.tsx:591",
+            "context": "Save button label",
+            "type": "button",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "save",
+              "en": "Save",
+              "zh-CN": "保存"
+            }
+          },
+          {
+            "text": "Credentials are encrypted at rest",
+            "location": "AuthRequestCard.tsx:601",
+            "context": "Security hint below save button",
+            "type": "hint",
+            "proposedKey": {
+              "namespace": "components/chat/AuthRequestCard",
+              "key": "encryptedHint",
+              "en": "Credentials are encrypted at rest",
+              "zh-CN": "凭证使用静态加密存储"
+            }
+          }
+        ]
+      },
+      "EmptyStateHint.tsx": {
+        "needsI18n": true,
+        "entries": [
+          {
+            "text": "Summarize your {Gmail} inbox, draft replies, and save notes to {Craft}",
+            "location": "EmptyStateHint.tsx:51",
+            "context": "Workflow hint template",
+            "type": "hint",
+            "proposedKey": {
+              "namespace": "components/chat/EmptyStateHint",
+              "key": "hint1",
+              "en": "Summarize your {Gmail} inbox, draft replies, and save notes to {Craft}",
+              "zh-CN": "总结您的 {Gmail} 收件箱，起草回复，并保存笔记到 {Craft}"
+            }
+          },
+          {
+            "text": "Turn a {screenshot} into a working website in your {folder}",
+            "location": "EmptyStateHint.tsx:52",
+            "context": "Workflow hint template",
+            "type": "hint",
+            "proposedKey": {
+              "namespace": "components/chat/EmptyStateHint",
+              "key": "hint2",
+              "en": "Turn a {screenshot} into a working website in your {folder}",
+              "zh-CN": "将 {screenshot} 转换为可用的网站代码保存在您的 {folder}"
+            }
+          },
+          {
+            "text": "Pull issues from {Linear}, research in {Slack}, ship the fix",
+            "location": "EmptyStateHint.tsx:53",
+            "context": "Workflow hint template",
+            "type": "hint",
+            "proposedKey": {
+              "namespace": "components/chat/EmptyStateHint",
+              "key": "hint3",
+              "en": "Pull issues from {Linear}, research in {Slack}, ship the fix",
+              "zh-CN": "从 {Linear} 获取问题，在 {Slack} 中研究，发布修复"
+            }
+          },
+          {
+            "text": "Transcribe a {voice memo} and turn it into {Notion} tasks",
+            "location": "EmptyStateHint.tsx:54",
+            "context": "Workflow hint template",
+            "type": "hint",
+            "proposedKey": {
+              "namespace": "components/chat/EmptyStateHint",
+              "key": "hint4",
+              "en": "Transcribe a {voice memo} and turn it into {Notion} tasks",
+              "zh-CN": "转录 {voice memo} 并转换为 {Notion} 任务"
+            }
+          },
+          {
+            "text": "Analyze a {spreadsheet} and post insights to {Slack}",
+            "location": "EmptyStateHint.tsx:55",
+            "context": "Workflow hint template",
+            "type": "hint",
+            "proposedKey": {
+              "namespace": "components/chat/EmptyStateHint",
+              "key": "hint5",
+              "en": "Analyze a {spreadsheet} and post insights to {Slack}",
+              "zh-CN": "分析 {spreadsheet} 并将见解发布到 {Slack}"
+            }
+          },
+          {
+            "text": "Review {GitHub} PRs, then summarize changes in {Craft}",
+            "location": "EmptyStateHint.tsx:56",
+            "context": "Workflow hint template",
+            "type": "hint",
+            "proposedKey": {
+              "namespace": "components/chat/EmptyStateHint",
+              "key": "hint6",
+              "en": "Review {GitHub} PRs, then summarize changes in {Craft}",
+              "zh-CN": "审查 {GitHub} PR，然后在 {Craft} 中总结变更"
+            }
+          },
+          {
+            "text": "Parse an {invoice PDF} and log it to {Google Sheets}",
+            "location": "EmptyStateHint.tsx:57",
+            "context": "Workflow hint template",
+            "type": "hint",
+            "proposedKey": {
+              "namespace": "components/chat/EmptyStateHint",
+              "key": "hint7",
+              "en": "Parse an {invoice PDF} and log it to {Google Sheets}",
+              "zh-CN": "解析 {invoice PDF} 并记录到 {Google Sheets}"
+            }
+          },
+          {
+            "text": "Research with {Exa}, write it up, save to your {Obsidian} vault",
+            "location": "EmptyStateHint.tsx:58",
+            "context": "Workflow hint template",
+            "type": "hint",
+            "proposedKey": {
+              "namespace": "components/chat/EmptyStateHint",
+              "key": "hint8",
+              "en": "Research with {Exa}, write it up, save to your {Obsidian} vault",
+              "zh-CN": "使用 {Exa} 进行研究，撰写文章，保存到您的 {Obsidian} 仓库"
+            }
+          },
+          {
+            "text": "Refactor code in your {folder}, then push to {GitHub}",
+            "location": "EmptyStateHint.tsx:59",
+            "context": "Workflow hint template",
+            "type": "hint",
+            "proposedKey": {
+              "namespace": "components/chat/EmptyStateHint",
+              "key": "hint9",
+              "en": "Refactor code in your {folder}, then push to {GitHub}",
+              "zh-CN": "重构您的 {folder} 中的代码，然后推送到 {GitHub}"
+            }
+          },
+          {
+            "text": "Sync {Calendar} events with {Linear} project deadlines",
+            "location": "EmptyStateHint.tsx:60",
+            "context": "Workflow hint template",
+            "type": "hint",
+            "proposedKey": {
+              "namespace": "components/chat/EmptyStateHint",
+              "key": "hint10",
+              "en": "Sync {Calendar} events with {Linear} project deadlines",
+              "zh-CN": "同步 {Calendar} 事件与 {Linear} 项目截止日期"
+            }
+          },
+          {
+            "text": "Turn meeting {notes} into {Jira} tickets automatically",
+            "location": "EmptyStateHint.tsx:61",
+            "context": "Workflow hint template",
+            "type": "hint",
+            "proposedKey": {
+              "namespace": "components/chat/EmptyStateHint",
+              "key": "hint11",
+              "en": "Turn meeting {notes} into {Jira} tickets automatically",
+              "zh-CN": "将会议 {notes} 自动转换为 {Jira} 工单"
+            }
+          },
+          {
+            "text": "Query your {database} and visualize results in a new {document}",
+            "location": "EmptyStateHint.tsx:62",
+            "context": "Workflow hint template",
+            "type": "hint",
+            "proposedKey": {
+              "namespace": "components/chat/EmptyStateHint",
+              "key": "hint12",
+              "en": "Query your {database} and visualize results in a new {document}",
+              "zh-CN": "查询您的 {database} 并在新文档中可视化结果"
+            }
+          },
+          {
+            "text": "Fetch {Figma} designs and generate React components in your {folder}",
+            "location": "EmptyStateHint.tsx:63",
+            "context": "Workflow hint template",
+            "type": "hint",
+            "proposedKey": {
+              "namespace": "components/chat/EmptyStateHint",
+              "key": "hint13",
+              "en": "Fetch {Figma} designs and generate React components in your {folder}",
+              "zh-CN": "获取 {Figma} 设计并在您的 {folder} 中生成 React 组件"
+            }
+          },
+          {
+            "text": "Combine {Slack} threads into a weekly digest for {Notion}",
+            "location": "EmptyStateHint.tsx:64",
+            "context": "Workflow hint template",
+            "type": "hint",
+            "proposedKey": {
+              "namespace": "components/chat/EmptyStateHint",
+              "key": "hint14",
+              "en": "Combine {Slack} threads into a weekly digest for {Notion}",
+              "zh-CN": "将 {Slack} 主题汇总为每周 {Notion} 摘要"
+            }
+          },
+          {
+            "text": "Run a {skill} to analyze your codebase and fix issues in your {folder}",
+            "location": "EmptyStateHint.tsx:65",
+            "context": "Workflow hint template",
+            "type": "hint",
+            "proposedKey": {
+              "namespace": "components/chat/EmptyStateHint",
+              "key": "hint15",
+              "en": "Run a {skill} to analyze your codebase and fix issues in your {folder}",
+              "zh-CN": "运行 {skill} 分析您的代码库并修复 {folder} 中的问题"
+            }
+          }
+        ],
+        "note": "Entity placeholders {source:name}, {file:label}, {folder}, {skill} should be preserved as-is in translations"
+      }
+    },
+    "ui": {
+      "EditPopover.tsx": {
+        "needsI18n": true,
+        "entries": [
+          {
+            "text": "Just tell me what to change",
+            "location": "EditPopover.tsx:25",
+            "context": "Placeholder in compact mode - first rotation",
+            "type": "placeholder",
+            "proposedKey": {
+              "namespace": "components/ui/EditPopover",
+              "key": "placeholder1",
+              "en": "Just tell me what to change",
+              "zh-CN": "告诉我需要修改什么"
+            }
+          },
+          {
+            "text": "Describe the update",
+            "location": "EditPopover.tsx:26",
+            "context": "Placeholder in compact mode - second rotation",
+            "type": "placeholder",
+            "providedKey": {
+              "namespace": "components/ui/EditPopover",
+              "key": "placeholder2",
+              "en": "Describe the update",
+              "zh-CN": "描述更新内容"
+            }
+          },
+          {
+            "text": "What should I modify?",
+            "location": "EditPopover.tsx:27",
+            "context": "Placeholder in compact mode - third rotation",
+            "type": "placeholder",
+            "proposedKey": {
+              "namespace": "components/ui/EditPopover",
+              "key": "placeholder3",
+              "en": "What should I modify?",
+              "zh-CN": "我应该修改什么?"
+            }
+          },
+          {
+            "text": "Describe what you'd like to change...",
+            "location": "EditPopover.tsx:654",
+            "context": "Default placeholder for edit popover",
+            "type": "placeholder",
+            "proposedKey": {
+              "namespace": "components/ui/EditPopover",
+              "key": "defaultPlaceholder",
+              "en": "Describe what you'd like to change...",
+              "zh-CN": "描述您想要修改的内容..."
+            }
+          },
+          {
+            "text": "Edit",
+            "location": "EditPopover.tsx:1015",
+            "context": "Edit button label",
+            "type": "button",
+            "proposedKey": {
+              "namespace": "components/ui/EditPopover",
+              "key": "editButton",
+              "en": "Edit",
+              "zh-CN": "编辑"
+            }
+          }
+        ]
+      },
+      "empty.tsx": {
+        "needsI18n": false,
+        "note": "Empty component is a container - text is provided as children by parent components"
+      }
+    },
+    "onboarding": {
+      "WelcomeStep.tsx": {
+        "needsI18n": true,
+        "entries": [
+          {
+            "text": "Update Settings",
+            "location": "WelcomeStep.tsx:31",
+            "context": "Title for existing users",
+            "type": "title",
+            "proposedKey": {
+              "namespace": "components/onboarding/WelcomeStep",
+              "key": "updateSettings",
+              "en": "Update Settings",
+              "zh-CN": "更新设置"
+            }
+          },
+          {
+            "text": "Welcome to Craft Agents",
+            "location": "WelcomeStep.tsx:31",
+            "context": "Title for new users",
+            "type": "title",
+            "proposedKey": {
+              "namespace": "components/onboarding/WelcomeStep",
+              "key": "welcomeTitle",
+              "en": "Welcome to Craft Agents",
+              "zh-CN": "欢迎使用 Craft Agents"
+            }
+          },
+          {
+            "text": "Update your API connection or change your setup.",
+            "location": "WelcomeStep.tsx:34",
+            "context": "Description for existing users",
+            "type": "description",
+            "proposedKey": {
+              "namespace": "components/onboarding/WelcomeStep",
+              "key": "updateDescription",
+              "en": "Update your API connection or change your setup.",
+              "zh-CN": "更新您的 API 连接或更改设置。"
+            }
+          },
+          {
+            "text": "Agents with the UX they deserve. Connect anything. Organize your sessions. Everything you need to do the work of your life!",
+            "location": "WelcomeStep.tsx:35",
+            "context": "Description for new users",
+            "type": "description",
+            "proposedKey": {
+              "namespace": "components/onboarding/WelcomeStep",
+              "key": "welcomeDescription",
+              "en": "Agents with the UX they deserve. Connect anything. Organize your sessions. Everything you need to do the work of your life!",
+              "zh-CN": "拥有卓越用户体验的智能代理。连接任何内容。组织您的会话。完成所有工作所需的一切！"
+            }
+          },
+          {
+            "text": "Checking...",
+            "location": "WelcomeStep.tsx:38",
+            "context": "Loading text on continue button",
+            "type": "buttonLoading",
+            "proposedKey": {
+              "namespace": "components/onboarding/WelcomeStep",
+              "key": "checking",
+              "en": "Checking...",
+              "zh-CN": "正在检查..."
+            }
+          },
+          {
+            "text": "Continue",
+            "location": "WelcomeStep.tsx:39",
+            "context": "Continue button for existing users",
+            "type": "button",
+            "proposedKey": {
+              "namespace": "components/onboarding/WelcomeStep",
+              "key": "continue",
+              "en": "Continue",
+              "zh-CN": "继续"
+            }
+          },
+          {
+            "text": "Get Started",
+            "location": "WelcomeStep.tsx:39",
+            "context": "Continue button for new users",
+            "type": "button",
+            "proposedKey": {
+              "namespace": "components/onboarding/WelcomeStep",
+              "key": "getStarted",
+              "en": "Get Started",
+              "zh-CN": "开始使用"
+            }
+          }
+        ]
+      },
+      "APISetupStep.tsx": {
+        "needsI18n": true,
+        "entries": [
+          {
+            "text": "Set Up API Connection",
+            "location": "APISetupStep.tsx:156",
+            "context": "Step title",
+            "type": "title",
+            "proposedKey": {
+              "namespace": "components/onboarding/APISetupStep",
+              "key": "title",
+              "en": "Set Up API Connection",
+              "zh-CN": "设置 API 连接"
+            }
+          },
+          {
+            "text": "Select how you'd like to power your AI agents.",
+            "location": "APISetupStep.tsx:157",
+            "context": "Step description",
+            "type": "description",
+            "proposedKey": {
+              "namespace": "components/onboarding/APISetupStep",
+              "key": "description",
+              "en": "Select how you'd like to power your AI agents.",
+              "zh-CN": "选择您想要为 AI 代理提供动力的方式。"
+            }
+          },
+          {
+            "text": "Claude Pro/Max",
+            "location": "APISetupStep.tsx:47",
+            "context": "API setup option name",
+            "type": "option",
+            "proposedKey": {
+              "namespace": "components/onboarding/APISetupStep",
+              "key": "claudeProOption",
+              "en": "Claude Pro/Max",
+              "zh-CN": "Claude Pro/Max"
+            }
+          },
+          {
+            "text": "Use your Claude subscription for unlimited access.",
+            "location": "APISetupStep.tsx:48",
+            "context": "API setup option description",
+            "type": " description",
+            "proposedKey": {
+              "namespace": "components/onboarding/APISetupStep",
+              "key": "claudeProDescription",
+              "en": "Use your Claude subscription for unlimited access.",
+              "zh-CN": "使用您的 Claude 订阅获得无限访问权限。"
+            }
+          },
+          {
+            "text": "Anthropic API Key",
+            "location": "APISetupStep.tsx:54",
+            "context": "API setup option name",
+            "type": "option",
+            "proposedKey": {
+              "namespace": "components/onboarding/APISetupStep",
+              "key": "anthropicApiKeyOption",
+              "en": "Anthropic API Key",
+              "zh-CN": "Anthropic API 密钥"
+            }
+          },
+          {
+            "text": "Pay-as-you-go via Anthropic, OpenRouter, or compatible APIs.",
+            "location": "APISetupStep.tsx:55",
+            "context": "API setup option description",
+            "type": "description",
+            "proposedKey": {
+              "namespace": "components/onboarding/APISetupStep",
+              "key": "anthropicApiKeyDescription",
+              "en": "Pay-as-you-go via Anthropic, OpenRouter, or compatible APIs.",
+              "zh-CN": "通过 Anthropic、OpenRouter 或兼容 API 按使用付费。"
+            }
+          },
+          {
+            "text": "Codex · ChatGPT Plus/Pro",
+            "location": "APISetupStep.tsx:61",
+            "context": "API setup option name",
+            "type": "option",
+            "proposedKey": {
+              "namespace": "components/onboarding/APISetupStep",
+              "key": "chatgptOAuthOption",
+              "en": "Codex · ChatGPT Plus/Pro",
+              "zh-CN": "Codex · ChatGPT Plus/Pro"
+            }
+          },
+          {
+            "text": "Use your ChatGPT Plus or Pro subscription with Codex.",
+            "location": "APISetupStep.tsx:62",
+            "context": "API setup option description",
+            "type": "description",
+            "proposedKey": {
+              "namespace": "components/onboarding/APISetupStep",
+              "key": "chatgptOAuthDescription",
+              "en": "Use your ChatGPT Plus or Pro subscription with Codex.",
+              "zh-CN": "使用您的 ChatGPT Plus 或 Pro 订阅配合 Codex。"
+            }
+          },
+          {
+            "text": "Codex · OpenAI API Key",
+            "location": "APISetupStep.tsx:68",
+            "context": "API setup option name",
+            "type": "option",
+            "proposedKey": {
+              "namespace": "components/onboarding/APISetupStep",
+              "key": "openaiApiKeyOption",
+              "en": "Codex · OpenAI API Key",
+              "zh-CN": "Codex · OpenAI API 密钥"
+            }
+          },
+          {
+            "text": "Pay-as-you-go via OpenAI Platform, OpenRouter, or Vercel AI Gateway.",
+            "location": "APISetupStep.tsx:69",
+            "context": "API setup option description",
+            "type": "description",
+            "proposedKey": {
+              "namespace": "components/onboarding/APISetupStep",
+              "key": "openaiApiKeyDescription",
+              "en": "Pay-as-you-go via OpenAI Platform, OpenRouter, or Vercel AI Gateway.",
+              "zh-CN": "通过 OpenAI Platform、OpenRouter 或 Vercel AI Gateway 按使用付费。"
+            }
+          },
+          {
+            "text": "Anthropic",
+            "location": "APISetupStep.tsx:169",
+            "context": "Provider section header",
+            "type": "sectionHeader",
+            "proposedKey": {
+              "namespace": "components/onboarding/APISetupStep",
+              "key": "anthropicSection",
+              "en": "Anthropic",
+              "zh-CN": "Anthropic"
+            }
+          },
+          {
+            "text": "OpenAI",
+            "location": "APISetupStep.tsx:184",
+            "context": "Provider section header",
+            "type": "sectionHeader",
+            "proposedKey": {
+              "namespace": "components/onboarding/APISetupStep",
+              "key": "openaiSection",
+              "en": "OpenAI",
+              "zh-CN": "OpenAI"
+            }
+          }
+        ]
+      },
+      "CredentialsStep.tsx": {
+        "needsI18n": true,
+        "entries": [
+          {
+            "text": "Connect ChatGPT",
+            "location": "CredentialsStep.tsx:55",
+            "context": "Title for ChatGPT OAuth step",
+            "type": "title",
+            "proposedKey": {
+              "namespace": "components/onboarding/CredentialsStep",
+              "key": "connectChatGPT",
+              "en": "Connect ChatGPT",
+              "zh-CN": "连接 ChatGPT"
+            }
+          },
+          {
+            "text": "Use your ChatGPT Plus or Pro subscription to power Codex.",
+            "location": "CredentialsStep.tsx:56",
+            "context": "Description for ChatGPT OAuth step",
+            "type": "description",
+            "proposedKey": {
+              "namespace": "components/onboarding/CredentialsStep",
+              "key": "chatGPTDescription",
+              "en": "Use your ChatGPT Plus or Pro subscription to power Codex.",
+              "zh-CN": "使用您的 ChatGPT Plus 或 Pro 订阅为 Codex 提供动力。"
+            }
+          },
+          {
+            "text": "Connecting...",
+            "location": "CredentialsStep.tsx:64",
+            "context": "Loading text on continue button",
+            "type": "buttonLoading",
+            "proposedKey": {
+              "namespace": "components/onboarding/CredentialsStep",
+              "key": "connecting",
+              "en": "Connecting...",
+              "zh-CN": "正在连接..."
+            }
+          },
+          {
+            "text": "Sign in with ChatGPT",
+            "location": "CredentialsStep.tsx:67",
+            "context": "Sign in button label",
+            "type": "button",
+            "proposedKey": {
+              "namespace": "components/onboarding/CredentialsStep",
+              "key": "signInChatGPT",
+              "en": "Sign in with ChatGPT",
+              "zh-CN": "使用 ChatGPT 登录"
+            }
+          },
+          {
+            "text": "Click the button above to sign in with your OpenAI account. A browser window will open for authentication.",
+            "location": "CredentialsStep.tsx:74",
+            "context": "Instruction for ChatGPT OAuth flow",
+            "type": "instruction",
+            "proposedKey": {
+              "namespace": "components/onboarding/CredentialsStep",
+              "key": "webAuthInstruction",
+              "en": "Click the button above to sign in with your OpenAI account. A browser window will open for authentication.",
+              "zh-CN": "点击上方按钮使用您的 OpenAI 账户登录。将打开浏览器进行身份验证。"
+            }
+          },
+          {
+            "text": "Connected! Your ChatGPT subscription is ready.",
+            "location": "CredentialsStep.tsx:83",
+            "context": "Success message after ChatGPT connection",
+            "type": "success",
+            "proposedKey": {
+              "namespace": "components/onboarding/CredentialsStep",
+              "key": "chatGPTConnected",
+              "en": "Connected! Your ChatGPT subscription is ready.",
+              "zh-CN": "已连接！您的 ChatGPT 订阅已准备就绪。"
+            }
+          },
+          {
+            "text": "Enter Authorization Code",
+            "location": "CredentialsStep.tsx:97",
+            "context": "Title for authorization code entry",
+            "type": "title",
+            "proposedKey": {
+              "namespace": "components/onboarding/CredentialsStep",
+              "key": "enterAuthCode",
+              "en": "Enter Authorization Code",
+              "zh-CN": "输入授权码"
+            }
+          },
+          {
+            "text": "Copy the code from the browser page and paste it below.",
+            "location": "CredentialsStep.tsx:98",
+            "context": "Instruction for authorization code entry",
+            "type": "instruction",
+            "proposedKey": {
+              "namespace": "components/onboarding/CredentialsStep",
+              "key": "copyCodeInstruction",
+              "en": "Copy the code from the browser page and paste it below.",
+              "zh-CN": "从浏览器页面复制代码并粘贴到下方。"
+            }
+          },
+          {
+            "text": "Cancel",
+            "location": "CredentialsStep.tsx:101",
+            "context": "Cancel button for auth code entry",
+            "type": "button",
+            "proposedKey": {
+              "namespace": "components/onboarding/CredentialsStep",
+              "key": "cancelCodeEntry",
+              "en": "Cancel",
+              "zh-CN": "取消"
+            }
+          },
+          {
+            "text": "Connect Claude Account",
+            "location": "CredentialsStep.tsx:126",
+            "context": "Title for Claude OAuth step",
+            "type": "title",
+            "proposedKey": {
+              "namespace": "components/onboarding/CredentialsStep",
+              "key": "connectClaude",
+              "en": "Connect Claude Account",
+              "zh-CN": "连接 Claude 账户"
+            }
+          },
+          {
+            "text": "Use your Claude subscription to power multi-agent workflows.",
+            "location": "CredentialsStep.tsx:127",
+            "context": "Description for Claude OAuth step",
+            "type": "description",
+            "proposedKey": {
+              "namespace": "components/onboarding/CredentialsStep",
+              "key": "claudeDescription",
+              "en": "Use your Claude subscription to power multi-agent workflows.",
+              "zh-CN": "使用您的 Claude 订阅为多代理工作流提供动力。"
+            }
+          },
+          {
+            "text": "Sign in with Claude",
+            "location": "CredentialsStep.tsx:138",
+            "context": "Sign in button label",
+            "type": "button",
+            "proposedKey": {
+              "namespace": "components/onboarding/CredentialsStep",
+              "key": "signInClaude",
+              "en": "Sign in with Claude",
+              "zh-CN": "使用 Claude 登录"
+            }
+          },
+          {
+            "text": "API Configuration",
+            "location": "CredentialsStep.tsx:164",
+            "context": "Title for API key configuration",
+            "type": "title",
+            "proposedKey": {
+              "namespace": "components/onboarding/CredentialsStep",
+              "key": "apiConfigTitle",
+              "en": "API Configuration",
+              "zh-CN": "API 配置"
+            }
+          },
+          {
+            "text": "Enter your OpenAI API key. Optionally configure OpenRouter or Vercel AI Gateway.",
+            "location": "CredentialsStep.tsx:159",
+            "context": "Description for OpenAI API key setup",
+            "type": "description",
+            "proposedKey": {
+              "namespace": "components/onboarding/CredentialsStep",
+              "key": "openaiApiDescription",
+              "en": "Enter your OpenAI API key. Optionally configure OpenRouter or Vercel AI Gateway.",
+              "zh-CN": "输入您的 OpenAI API 密钥。可选配置 OpenRouter 或 Vercel AI Gateway。"
+            }
+          },
+          {
+            "text": "Enter your API key. Optionally configure a custom endpoint for OpenRouter, Ollama, or compatible APIs.",
+            "location": "CredentialsStep.tsx:160",
+            "context": "Description for Anthropic API key setup",
+            "type": "description",
+            "proposedKey": {
+              "namespace": "components/onboarding/CredentialsStep",
+              "key": "anthropicApiDescription",
+              "en": "Enter your API key. Optionally configure a custom endpoint for OpenRouter, Ollama, or compatible APIs.",
+              "zh-CN": "输入您的 API 密钥。可选为 OpenRouter、Ollama 或兼容 API 配置自定义端点。"
+            }
+          },
+          {
+            "text": "Validating...",
+            "location": "CredentialsStep.tsx:174",
+            "context": "Loading text on continue button",
+            "type": "buttonLoading",
+            "proposedKey": {
+              "namespace": "components/onboarding/CredentialsStep",
+              "key": "validating",
+              "en": "Validating...",
+              "zh-CN": "正在验证..."
+            }
+          }
+        ]
+      },
+      "CompletionStep.tsx": {
+        "needsI18n": true,
+        "entries": [
+          {
+            "text": "Setting up...",
+            "location": "CompletionStep.tsx:37",
+            "context": "Title while saving configuration",
+            "type": "title",
+            "proposedKey": {
+              "namespace": "components/onboarding/CompletionStep",
+              "key": "settingUp",
+              "en": "Setting up...",
+              "zh-CN": "正在设置..."
+            }
+          },
+          {
+            "text": "You're all set!",
+            "location": "CompletionStep.tsx:37",
+            "context": "Success title",
+            "type": "title",
+            "proposedKey": {
+              "namespace": "components/onboarding/CompletionStep",
+              "key": "allSet",
+              "en": "You're all set!",
+              "zh-CN": "一切准备就绪！"
+            }
+          },
+          {
+            "text": "Saving your configuration...",
+            "location": "CompletionStep.tsx:40",
+            "context": "Description while saving",
+            "type": "description",
+            "proposedKey": {
+              "namespace": "components/onboarding/CompletionStep",
+              "key": "savingConfig",
+              "en": "Saving your configuration...",
+              "zh-CN": "正在保存您的配置..."
+            }
+          },
+          {
+            "text": "Just start a chat and get to work.",
+            "location": "CompletionStep.tsx:42",
+            "context": "Success description",
+            "type": "description",
+            "proposedKey": {
+              "namespace": "components/onboarding/CompletionStep",
+              "key": "readyToWork",
+              "en": "Just start a chat and get to work.",
+              "zh-CN": "开始聊天，立即投入工作。"
+            }
+          },
+          {
+            "text": "Get Started",
+            "location": "CompletionStep.tsx:48",
+            "context": "Finish button label",
+            "type": "button",
+            "proposedKey": {
+              "namespace": "components/onboarding/CompletionStep",
+              "key": "getStarted",
+              "en": "Get Started",
+              "zh-CN": "开始使用"
+            }
+          }
+        ]
+      },
+      "GitBashWarning.tsx": {
+        "needsI18n": true,
+        "entries": [
+          {
+            "text": "Git Bash Required",
+            "location": "GitBashWarning.tsx:63",
+            "context": "Warning title",
+            "type": "title",
+            "proposedKey": {
+              "namespace": "components/onboarding/GitBashWarning",
+              "key": "gitBashRequired",
+              "en": "Git Bash Required",
+              "zh-CN": "需要 Git Bash"
+            }
+          },
+          {
+            "text": "Craft Agent needs Git Bash to run shell commands on Windows. It was not found on your system.",
+            "location": "GitBashWarning.tsx:64",
+            "context": "Warning description",
+            "type": "description",
+            "proposedKey": {
+              "namespace": "components/onboarding/GitBashWarning",
+              "key": "gitBashRequiredDescription",
+              "en": "Craft Agent needs Git Bash to run shell commands on Windows. It was not found on your system.",
+              "zh-CN": "Craft Agent 需要 Git Bash 在 Windows 上运行 shell 命令。您的系统上未找到它。"
+            }
+          },
+          {
+            "text": "Install Git for Windows",
+            "location": "GitBashWarning.tsx:70",
+            "context": "Primary action section title",
+            "type": "section",
+            "proposedKey": {
+              "namespace": "components/onboarding/GitBashWarning",
+              "key": "installGit",
+              "en": "Install Git for Windows",
+              "zh-CN": "安装 Git for Windows"
+            }
+          },
+          {
+            "text": "The easiest way to get Git Bash. It's free and includes everything you need.",
+            "location": "GitBashWarning.tsx:73",
+            "context": "Install git description",
+            "type": "description",
+            "proposedKey": {
+              "namespace": "components/onboarding/GitBashWarning",
+              "key": "installGitDescription",
+              "en": "The easiest way to get Git Bash. It's free and includes everything you need.",
+              "zh-CN": "获取 Git Bash 的最简单方法。它是免费的，并且包含您所需的一切。"
+            }
+          },
+          {
+            "text": "Download Git for Windows",
+            "location": "GitBashWarning.tsx:81",
+            "context": "Download button label",
+            "type": "button",
+            "proposedKey": {
+              "namespace": "components/onboarding/GitBashWarning",
+              "key": "downloadGit",
+              "en": "Download Git for Windows",
+              "zh-CN": "下载 Git for Windows"
+            }
+          },
+          {
+            "text": "Already have Git installed?",
+            "location": "GitBashWarning.tsx:88",
+            "context": "Secondary action section title",
+            "type": "section",
+            "proposedKey": {
+              "namespace": "components/onboarding/GitBashWarning",
+              "key": "alreadyHaveGit",
+              "en": "Already have Git installed?",
+              "zh-CN": "已安装 Git？"
+            }
+          },
+          {
+            "text": "If Git is installed in a non-standard location, you can specify the path to bash.exe.",
+            "location": "GitBashWarning.tsx:91",
+            "context": "Custom path description",
+            "type": "description",
+            "proposedKey": {
+              "namespace": "components/onboarding/GitBashWarning",
+              "key": "customPathDescription",
+              "en": "If Git is installed in a non-standard location, you can specify the path to bash.exe.",
+              "zh-CN": "如果 Git 安装在非标准位置，您可以指定 bash.exe 的路径。"
+            }
+          },
+          {
+            "text": "C:\\Program Files\\Git\\bin\\bash.exe",
+            "location": "GitBashWarning.tsx:102",
+            "context": "Placeholder for custom bash.exe path",
+            "type": "placeholder",
+            "proposedKey": {
+              "namespace": "components/onboarding/GitBashWarning",
+              "key": "bashPathPlaceholder",
+              "en": "C:\\Program Files\\Git\\bin\\bash.exe",
+              "zh-CN": "C:\\Program Files\\Git\\bin\\bash.exe"
+            }
+          },
+          {
+            "text": "Use this path",
+            "location": "GitBashWarning.tsx:111",
+            "context": "Button to use custom path",
+            "type": "button",
+            "proposedKey": {
+              "namespace": "components/onboarding/GitBashWarning",
+              "key": "usePath",
+              "en": "Use this path",
+              "zh-CN": "使用此路径"
+            }
+          },
+          {
+            "text": "Checking...",
+            "location": "GitBashWarning.tsx:126",
+            "context": "Loading text on re-check button",
+            "type": "buttonLoading",
+            "proposedKey": {
+              "namespace": "components/onboarding/GitBashWarning",
+              "key": "checking",
+              "en": "Checking...",
+              "zh-CN": "正在检查..."
+            }
+          },
+          {
+            "text": "Re-check",
+            "location": "GitBashWarning.tsx:126",
+            "context": "Re-check button label",
+            "type": "button",
+            "proposedKey": {
+              "namespace": "components/onboarding/GitBashWarning",
+              "key": "recheck",
+              "en": "Re-check",
+              "zh-CN": "重新检查"
+            }
+          },
+          {
+            "text": "Browse...",
+            "location": "GitBashWarning.tsx:134",
+            "context": "Browse button label",
+            "type": "button",
+            "proposedKey": {
+              "namespace": "components/onboarding/GitBashWarning",
+              "key": "browse",
+              "en": "Browse...",
+              "zh-CN": "浏览..."
+            }
+          }
+        ]
+      }
+    },
+    "info": {
+      "Info_Alert.tsx": {
+        "needsI18n": false,
+        "note": "Pure UI component - all content provided as children by parent components"
+      },
+      "Info_Badge.tsx": {
+        "needsI18n": false,
+        "note": "Pure UI component - content provided as children"
+      },
+      "Info_Section.tsx": {
+        "needsI18n": false,
+        "note": "Pure UI component - title and description provided as props"
+      },
+      "Info_Table.tsx": {
+        "needsI18n": false,
+        "note": "Pure UI component - labels provided as props"
+      }
+    },
+    "shiki": {
+      "ShikiCodeEditor.tsx": {
+        "needsI18n": false,
+        "note": "Code editor - no text content to internationalize"
+      },
+      "ShikiCodeViewer.tsx": {
+        "needsI18n": false,
+        "note": "Code viewer wrapper - no text content"
+      },
+      "ShikiDiffViewer.tsx": {
+        "needsI18n": false,
+        "note": "Diff viewer wrapper - no text content"
+      }
+    },
+    "settings": {
+      "SettingsCard.tsx": {
+        "needsI18n": false,
+        "note": "Pure UI container component"
+      },
+      "SettingsRow.tsx": {
+        "needsI18n": false,
+        "note": "Pure UI component - label provided as prop"
+      },
+      "SettingsSection.tsx": {
+        "needsI18n": false,
+        "note": "Pure UI component - title and description provided as props"
+      },
+      "SettingsToggle.tsx": {
+        "needsI18n": false,
+        "note": "Pure UI component - label and description provided as props"
+      },
+      "SettingsUIConstants.ts": {
+        "needsI18n": false,
+        "note": "Style constants - no text content"
+      }
+    },
+    "right-sidebar": {
+      "SessionFilesSection.tsx": {
+        "needsI18n": false,
+        "note": "Already internationalized - uses useTranslation hook"
+      },
+      "SessionMetadataPanel.tsx": {
+        "needsI18n": false,
+        "note": "Already internationalized - uses useTranslation hook"
+      }
+    },
+    "app-shell": {
+      "ActiveTasksBar.tsx": {
+        "needsI18n": false,
+        "note": "Container component - text from child TaskActionMenu (already i18n)"
+      },
+      "TaskActionMenu.tsx": {
+        "needsI18n": false,
+        "note": "Already internationalized - uses useTranslation hook"
+      },
+      "SessionMenuParts.tsx": {
+        "needsI18n": false,
+        "note": "Menu component - text from configuration files"
+      }
+    },
+    "KeyboardShortcuts.tsx": {
+      "needsI18n": false,
+      "note": "Uses useActionLabel hook - labels come from actions configuration"
+    },
+    "SplashScreen.tsx": {
+      "needsI18n": false,
+      "note": "No text content - only Logo display"
+    }
+  },
+  "implementationPlan": {
+    "priority": [
+      {
+        "level": "high",
+        "reason": "User-facing onboarding flow",
+        "components": [
+          "onboarding/WelcomeStep.tsx",
+          "onboarding/APISetupStep.tsx",
+          "onboarding/CredentialsStep.tsx",
+          "onboarding/CompletionStep.tsx",
+          "onboarding/GitBashWarning.tsx"
+        ]
+      },
+      {
+        "level": "high",
+        "reason": "Core authentication and API setup",
+        "components": [
+          "apisetup/OAuthConnect.tsx",
+          "apisetup/ApiKeyInput.tsx",
+          "chat/AuthRequestCard.tsx"
+        ]
+      },
+      {
+        "level": "medium",
+        "reason": "User hints and guidance",
+        "components": [
+          "chat/EmptyStateHint.tsx",
+          "ui/EditPopover.tsx"
+        ]
+      },
+      {
+        "level": "medium",
+        "reason": "File viewer feedback messages",
+        "components": [
+          "files/FileViewer.tsx"
+        ]
+      }
+    ],
+    "phases": [
+      {
+        "phase": "Phase 1: Setup and Onboarding",
+        "components": [
+          "onboarding/*",
+          "apisetup/*"
+        ],
+        "estimatedTextEntries": 60
+      },
+      {
+        "phase": "Phase 2: Authentication Flow",
+        "components": [
+          "chat/AuthRequestCard.tsx"
+        ],
+        "estimatedTextEntries": 25
+      },
+      {
+        "phase": "Phase 3: User Guidance",
+        "components": [
+          "chat/EmptyStateHint.tsx",
+          "ui/EditPopover.tsx"
+        ],
+        "estimatedTextEntries": 20
+      },
+      {
+        "phase": "Phase 4: File Viewer",
+        "components": [
+          "files/FileViewer.tsx"
+        ],
+        "estimatedTextEntries": 5
+      }
+    ]
+  },
+  "recommendations": {
+    "translationKeyNaming": {
+      "style": "readable-hierarchical",
+      "pattern": "components/{componentName}/{keyName}",
+      "examples": [
+        "components/onboarding/WelcomeStep/getStarted",
+        "components/chat/AuthRequestCard/signInWithType",
+        "components/apisetup/ApiKeyInput/modelRequiredError"
+      ]
+    },
+    "interpolationHandling": [
+      "Use {placeholder} syntax for dynamic values",
+      "Preserve HTML-like entity tokens in hints: {source:name}, {file:label}, {folder}, {skill}",
+      "Common patterns: {source}, {email}, {workspace}, {username}, {password}, {headerName}, {credentialLabel}, {type}"
+    ],
+    "componentPattern": {
+      "import": "import { useTranslation } from '@/contexts/I18nContext'",
+      "namespace": "const { t } = useTranslation('components/path/to/Component')",
+      "usage": "{t('key')}",
+      "withInterpolation": "{t('key', { variable: 'value' })}"
+    }
+  },
+  "notes": {
+    "alreadyInternationalized": [
+      "right-sidebar/SessionFilesSection.tsx",
+      "right-sidebar/SessionMetadataPanel.tsx",
+      "app-shell/TaskActionMenu.tsx"
+    ],
+    "noI18nNeeded": [
+      "KeyboardShortcuts.tsx - uses dynamic labels from actions config",
+      "SplashScreen.tsx - no text content",
+      "All info/ components - pure UI containers",
+      "All settings/ components - pure UI containers",
+      "All shiki/ components - code viewers, no user-facing text",
+      "icons/ - SVG only"
+    ]
+  }
+}

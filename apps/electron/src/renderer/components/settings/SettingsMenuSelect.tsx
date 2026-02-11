@@ -231,7 +231,7 @@ export function SettingsMenuSelectRow({
   value,
   onValueChange,
   options,
-  placeholder = 'Select...',
+  placeholder,
   disabled,
   className,
   inCard = true,

@@ -1,6 +1,1 @@
-{
-  "Anthropic": "Anthropic",
-  "OpenAI": "OpenAI",
-  "Select how you'd like to power your AI agents.": "Select how you'd like to power your AI agents.",
-  "Set Up API Connection": "Set Up API Connection"
-}
+{"Anthropic": "Anthropic", "OpenAI": "OpenAI", "Select how you'd like to power your AI agents.": "Select how you'd like to power your AI agents.", "Set Up API Connection": "Set Up API Connection", "Claude Pro/Max": "Claude Pro/Max", "Use your Claude subscription for unlimited access.": "Use your Claude subscription for unlimited access.", "Anthropic API Key": "Anthropic API Key", "Pay-as-you-go via Anthropic, OpenRouter, or compatible APIs.": "Pay-as-you-go via Anthropic, OpenRouter, or compatible APIs.", "Codex · ChatGPT Plus/Pro": "Codex · ChatGPT Plus/Pro", "Use your ChatGPT Plus or Pro subscription with Codex.": "Use your ChatGPT Plus or Pro subscription with Codex.", "Codex · OpenAI API Key": "Codex · OpenAI API Key", "Pay-as-you-go via OpenAI Platform, OpenRouter, or Vercel AI Gateway.": "Pay-as-you-go via OpenAI Platform, OpenRouter, or Vercel AI Gateway."}

@@ -1,6 +1,7 @@
 {
   "Click a file path in the chat to view it here": "Click a file path in the chat to view it here",
   "Error loading file": "Error loading file",
+  "Failed to load file": "Failed to load file",
   "Loading content...": "Loading content...",
   "No file selected": "No file selected"
 }
