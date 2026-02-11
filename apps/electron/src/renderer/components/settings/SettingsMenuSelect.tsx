@@ -11,6 +11,7 @@ import { Check, ChevronDown, Search } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { settingsUI } from './SettingsUIConstants'
+import { useTranslation } from '@/contexts/I18nContext'
 
 export interface SettingsMenuSelectOption {
   /** Value for this option */
@@ -55,18 +56,21 @@ export function SettingsMenuSelect({
   value,
   onValueChange,
   options,
-  placeholder = 'Select...',
+  placeholder,
   disabled,
   className,
   menuWidth = 280,
   onHover,
   searchable,
-  searchPlaceholder = 'Search...',
+  searchPlaceholder,
 }: SettingsMenuSelectProps) {
+  const { t } = useTranslation('components/settings/SettingsMenuSelect')
   const [isOpen, setIsOpen] = React.useState(false)
   const [searchQuery, setSearchQuery] = React.useState('')
   const searchInputRef = React.useRef<HTMLInputElement>(null)
 
+  const _placeholder = placeholder ?? t('Select...')
+  const _searchPlaceholder = searchPlaceholder ?? t('Search...')
   const selectedOption = options.find((o) => o.value === value)
 
   // Show search when explicitly enabled or when there are many options
@@ -118,7 +122,7 @@ export function SettingsMenuSelect({
             className
           )}
         >
-          <span className="truncate">{selectedOption?.label || placeholder}</span>
+          <span className="truncate">{selectedOption?.label || _placeholder}</span>
           <ChevronDown className="opacity-50 shrink-0 size-3.5" />
         </button>
       </PopoverTrigger>
@@ -138,7 +142,7 @@ export function SettingsMenuSelect({
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder={searchPlaceholder}
+              placeholder={_searchPlaceholder}
               className={cn(
                 'w-full h-8 pl-8 pr-3 text-sm rounded-md',
                 'bg-foreground/5 border-0',
@@ -151,7 +155,7 @@ export function SettingsMenuSelect({
         <div className="space-y-0.5 max-h-64 overflow-auto">
           {filteredOptions.length === 0 ? (
             <div className="px-2.5 py-3 text-sm text-muted-foreground text-center">
-              No results found
+              {t('No results found')}
             </div>
           ) : (
             filteredOptions.map((option) => {

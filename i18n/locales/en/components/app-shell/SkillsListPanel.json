@@ -1,3 +1,6 @@
 {
-  "No skills configured": "No skills configured"
+  "No skills configured": "No skills configured",
+  "Skills are reusable instructions that teach your agent specialized behaviors.": "Skills are reusable instructions that teach your agent specialized behaviors.",
+  "Learn more": "Learn more",
+  "Add Skill": "Add Skill"
 }

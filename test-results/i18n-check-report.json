@@ -1,0 +1,1682 @@
+{
+  "timestamp": "2026-02-11T06:11:55.174Z",
+  "summary": {
+    "errors": 0,
+    "warnings": 239
+  },
+  "issues": [
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 9,
+      "message": "[property] \"New Chat\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 10,
+      "message": "[property] \"Create a new chat session\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 16,
+      "message": "[property] \"Settings\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 17,
+      "message": "[property] \"Open application settings\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 23,
+      "message": "[property] \"Toggle Theme\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 24,
+      "message": "[property] \"Switch between light and dark mode\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 30,
+      "message": "[property] \"Search\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 31,
+      "message": "[property] \"Open search panel\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 37,
+      "message": "[property] \"Keyboard Shortcuts\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 38,
+      "message": "[property] \"Show keyboard shortcuts reference\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 44,
+      "message": "[property] \"New Window\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 45,
+      "message": "[property] \"Open a new window\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 51,
+      "message": "[property] \"Quit\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 52,
+      "message": "[property] \"Quit the application\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 62,
+      "message": "[property] \"Focus Sidebar\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 68,
+      "message": "[property] \"Focus Session List\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 74,
+      "message": "[property] \"Focus Chat\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 80,
+      "message": "[property] \"Focus Next Zone\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 86,
+      "message": "[property] \"Go Back\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 87,
+      "message": "[property] \"Navigate to previous session\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 93,
+      "message": "[property] \"Go Forward\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 94,
+      "message": "[property] \"Navigate to next session\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 100,
+      "message": "[property] \"Go Back\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 101,
+      "message": "[property] \"Navigate to previous session (arrow key)\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 107,
+      "message": "[property] \"Go Forward\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 108,
+      "message": "[property] \"Navigate to next session (arrow key)\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 118,
+      "message": "[property] \"Toggle Sidebar\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 124,
+      "message": "[property] \"Toggle Focus Mode\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 125,
+      "message": "[property] \"Hide both sidebars for distraction-free work\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 135,
+      "message": "[property] \"Select All Sessions\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 142,
+      "message": "[property] \"Clear Selection\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 154,
+      "message": "[property] \"Stop Processing\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 155,
+      "message": "[property] \"Cancel the current agent task (double-press)\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 163,
+      "message": "[property] \"Cycle Permission Mode\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 164,
+      "message": "[property] \"Switch between Explore, Ask, and Execute modes\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 170,
+      "message": "[property] \"Next Search Match\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\definitions.ts",
+      "line": 177,
+      "message": "[property] \"Previous Search Match\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\actions\\useHotkeyLabel.ts",
+      "line": 24,
+      "message": "[property] \"New Chat\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\App.tsx",
+      "line": 904,
+      "message": "[property] \", error)\r\n      updateSessionById(sessionId, (s) => ({\r\n        isProcessing: false,\r\n        messages: [\r\n          ...s.messages,\r\n          {\r\n            id: generateMessageId(),\r\n            role: \"",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\App.tsx",
+      "line": 331,
+      "message": "建议使用原文作为 key: t('focused') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\apisetup\\ApiKeyInput.tsx",
+      "line": 60,
+      "message": "[property] \"Anthropic\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\apisetup\\ApiKeyInput.tsx",
+      "line": 61,
+      "message": "[property] \"OpenRouter\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\apisetup\\ApiKeyInput.tsx",
+      "line": 62,
+      "message": "[property] \"Vercel AI Gateway\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\apisetup\\ApiKeyInput.tsx",
+      "line": 63,
+      "message": "[property] \"Ollama\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\apisetup\\ApiKeyInput.tsx",
+      "line": 64,
+      "message": "[property] \"Custom\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\apisetup\\ApiKeyInput.tsx",
+      "line": 70,
+      "message": "[property] \"OpenAI\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\apisetup\\ApiKeyInput.tsx",
+      "line": 71,
+      "message": "[property] \"OpenRouter\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\apisetup\\ApiKeyInput.tsx",
+      "line": 72,
+      "message": "[property] \"Vercel AI Gateway\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\apisetup\\ApiKeyInput.tsx",
+      "line": 73,
+      "message": "[property] \"Custom\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\apisetup\\OAuthConnect.tsx",
+      "line": 70,
+      "message": "[placeholder] \"Paste your authorization code here\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+      "line": 2472,
+      "message": "[placeholder] \"Search statuses & labels...\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
+      "line": 1665,
+      "message": "[property] \", err)\r\n    }\r\n  }, [activeWorkspace?.id])\r\n\r\n  // Handler for \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\app-shell\\ChatDisplay.tsx",
+      "line": 1859,
+      "message": "[title] \"Open in new window\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\app-shell\\ChatDisplay.tsx",
+      "line": 1421,
+      "message": "[property] \"Plan approved, please execute.\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\app-shell\\ChatDisplay.tsx",
+      "line": 1812,
+      "message": "[property] \")) && (\r\n                  <div className=\"",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\components\\app-shell\\ChatDisplay.tsx",
+      "line": 833,
+      "message": "建议使用原文作为 key: t('mark') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\components\\app-shell\\input\\FreeFormInput.tsx",
+      "line": 1411,
+      "message": "建议使用原文作为 key: t('files') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\components\\app-shell\\input\\FreeFormInput.tsx",
+      "line": 1468,
+      "message": "建议使用原文作为 key: t('sources') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\app-shell\\Panel.tsx",
+      "line": 14,
+      "message": "[title] \"Title\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\app-shell\\Panel.tsx",
+      "line": 14,
+      "message": "[title] \"Subtitle\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\app-shell\\PanelHeader.tsx",
+      "line": 14,
+      "message": "[title] \"Conversations\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\app-shell\\PanelHeader.tsx",
+      "line": 20,
+      "message": "[title] \"Chat Name\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\app-shell\\SessionList.tsx",
+      "line": 1694,
+      "message": "[placeholder] \"Enter session name...\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\app-shell\\SessionList.tsx",
+      "line": 1690,
+      "message": "[title] \"Rename Session\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\app-shell\\SessionList.tsx",
+      "line": 476,
+      "message": "[aria-label] \"Change todo state\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\app-shell\\SessionList.tsx",
+      "line": 1513,
+      "message": "[aria-label] \"Sessions\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\app-shell\\SessionList.tsx",
+      "line": 1011,
+      "message": "[property] \", error)\n        setContentSearchResults(new Map())\n      } finally {\n        if (!cancelled) {\n          setIsSearchingContent(false)\n        }\n      }\n    }, 100)\n\n    return () => {\n      cancelled = true\n      clearTimeout(timer)\n      setIsSearchingContent(false)\n    }\n  }, [workspaceId, isSearchMode, searchQuery])\n\n  // Focus search input when search becomes active\n  useEffect(() => {\n    if (searchActive) {\n      searchInputRef.current?.focus()\n    }\n  }, [searchActive])\n\n  // Sort by most recent activity first\n  const sortedItems = [...visibleItems].sort((a, b) =>\n    (b.lastMessageAt || 0) - (a.lastMessageAt || 0)\n  )\n\n  // Filter items by search query — ripgrep content search only for consistent results\n  // When not in search mode, apply current filter to maintain filtered view\n  const searchFilteredItems = useMemo(() => {\n    // Not in search mode: filter to current view (same as non-search mode)\n    if (!isSearchMode) {\n      return sortedItems.filter(item =>\n        sessionMatchesCurrentFilter(item, currentFilter, { evaluateViews, statusFilter, labelFilterMap })\n      )\n    }\n\n    // Search mode (2+ chars): show sessions with ripgrep content matches (from ALL sessions)\n    // Sort by: fuzzy title score first, then by match count\n    return sortedItems\n      .filter(item => contentSearchResults.has(item.id))\n      .sort((a, b) => {\n        const aScore = fuzzyScore(getSessionTitle(a), searchQuery)\n        const bScore = fuzzyScore(getSessionTitle(b), searchQuery)\n\n        // Title matches come first, sorted by fuzzy score (higher = better)\n        if (aScore > 0 && bScore === 0) return -1\n        if (aScore === 0 && bScore > 0) return 1\n        if (aScore !== bScore) return bScore - aScore\n\n        // Then sort by ripgrep match count\n        const countA = contentSearchResults.get(a.id)?.matchCount || 0\n        const countB = contentSearchResults.get(b.id)?.matchCount || 0\n        return countB - countA\n      })\n  }, [sortedItems, isSearchMode, searchQuery, contentSearchResults, currentFilter, evaluateViews, statusFilter, labelFilterMap])\n\n  // Split search results: sessions matching current filter vs all others\n  // Also limits total results to MAX_SEARCH_RESULTS (100)\n  const { matchingFilterItems, otherResultItems, exceededSearchLimit } = useMemo(() => {\n    // Check if ANY filtering is active (primary OR secondary)\n    const hasActiveFilters =\n      (currentFilter && currentFilter.kind !== \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\app-shell\\SessionSearchHeader.tsx",
+      "line": 78,
+      "message": "[title] \"Close search\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\AppMenu.tsx",
+      "line": 201,
+      "message": "[aria-label] \"Craft menu\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\AppMenu.tsx",
+      "line": 327,
+      "message": "[aria-label] \"Go back\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\AppMenu.tsx",
+      "line": 341,
+      "message": "[aria-label] \"Go forward\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\chat\\AuthRequestCard.tsx",
+      "line": 580,
+      "message": "[property] \"Cancel\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\chat\\AuthRequestCard.tsx",
+      "line": 597,
+      "message": "[property] \"Cancel\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
+      "line": 90,
+      "message": "[title] \"Label\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
+      "line": 102,
+      "message": "[title] \"Pattern\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
+      "line": 205,
+      "message": "[title] \"View Fullscreen\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\Info_Alert.tsx",
+      "line": 15,
+      "message": "[property] \"bg-destructive/5 border-destructive/30\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\Info_Badge.tsx",
+      "line": 28,
+      "message": "[property] \"text-[var(--success-text)]\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\Info_Badge.tsx",
+      "line": 34,
+      "message": "[property] \"text-[var(--info-text)]\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\Info_Badge.tsx",
+      "line": 40,
+      "message": "[property] \"text-[var(--destructive-text)]\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\Info_Badge.tsx",
+      "line": 46,
+      "message": "[property] \"text-foreground/70\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\Info_Badge.tsx",
+      "line": 52,
+      "message": "[property] \"text-foreground/70\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\Info_DataTable.tsx",
+      "line": 55,
+      "message": "[title] \"Name\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\Info_Markdown.tsx",
+      "line": 64,
+      "message": "[title] \"View Fullscreen\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\Info_StatusBadge.tsx",
+      "line": 13,
+      "message": "[property] \"Allowed\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\Info_StatusBadge.tsx",
+      "line": 14,
+      "message": "[property] \"Blocked\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\Info_StatusBadge.tsx",
+      "line": 15,
+      "message": "[property] \"Ask\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\LabelsDataTable.tsx",
+      "line": 94,
+      "message": "[title] \"Name\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\LabelsDataTable.tsx",
+      "line": 101,
+      "message": "[title] \"Type\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\LabelsDataTable.tsx",
+      "line": 147,
+      "message": "[title] \"View Fullscreen\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
+      "line": 90,
+      "message": "[title] \"Access\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
+      "line": 100,
+      "message": "[title] \"Type\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
+      "line": 112,
+      "message": "[title] \"Pattern\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
+      "line": 138,
+      "message": "[title] \"Access\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
+      "line": 148,
+      "message": "[title] \"Pattern\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
+      "line": 195,
+      "message": "[title] \"View Fullscreen\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\ToolsDataTable.tsx",
+      "line": 36,
+      "message": "[title] \"Access\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\info\\ToolsDataTable.tsx",
+      "line": 46,
+      "message": "[title] \"Tool\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+      "line": 32,
+      "message": "[property] \"Navigate items in list\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+      "line": 33,
+      "message": "[property] \"Go to first item\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+      "line": 34,
+      "message": "[property] \"Go to last item\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+      "line": 40,
+      "message": "[property] \"Focus chat input\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+      "line": 41,
+      "message": "[property] \"Delete session\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+      "line": 42,
+      "message": "[property] \"Rename session\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+      "line": 43,
+      "message": "[property] \"Open context menu\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+      "line": 49,
+      "message": "[property] \"Collapse folder\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+      "line": 50,
+      "message": "[property] \"Expand folder\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+      "line": 56,
+      "message": "[property] \"Send message\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+      "line": 57,
+      "message": "[property] \"New line\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx",
+      "line": 58,
+      "message": "[property] \"Close dialog / blur input\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\onboarding\\APISetupStep.tsx",
+      "line": 156,
+      "message": "[title] \"Set Up API Connection\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\onboarding\\APISetupStep.tsx",
+      "line": 48,
+      "message": "[property] \"Use your Claude subscription for unlimited access.\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\onboarding\\APISetupStep.tsx",
+      "line": 55,
+      "message": "[property] \"Pay-as-you-go via Anthropic, OpenRouter, or compatible APIs.\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\onboarding\\APISetupStep.tsx",
+      "line": 62,
+      "message": "[property] \"Use your ChatGPT Plus or Pro subscription with Codex.\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\onboarding\\APISetupStep.tsx",
+      "line": 69,
+      "message": "[property] \"Pay-as-you-go via OpenAI Platform, OpenRouter, or Vercel AI Gateway.\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\onboarding\\CredentialsStep.tsx",
+      "line": 55,
+      "message": "[title] \"Connect ChatGPT\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\onboarding\\CredentialsStep.tsx",
+      "line": 97,
+      "message": "[title] \"Enter Authorization Code\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\onboarding\\CredentialsStep.tsx",
+      "line": 126,
+      "message": "[title] \"Connect Claude Account\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\onboarding\\CredentialsStep.tsx",
+      "line": 164,
+      "message": "[title] \"API Configuration\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\onboarding\\GitBashWarning.tsx",
+      "line": 102,
+      "message": "[placeholder] \"C:\\Program Files\\Git\\bin\\bash.exe\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\onboarding\\GitBashWarning.tsx",
+      "line": 63,
+      "message": "[title] \"Git Bash Required\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\onboarding\\ReauthScreen.tsx",
+      "line": 47,
+      "message": "[title] \"Session Expired\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ResetConfirmationDialog.tsx",
+      "line": 92,
+      "message": "[placeholder] \"Enter answer\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\settings\\SearchableModelInput.tsx",
+      "line": 134,
+      "message": "[placeholder] \"Search models...\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\settings\\SettingsInput.tsx",
+      "line": 54,
+      "message": "[placeholder] \"Enter your name...\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\settings\\SettingsSection.tsx",
+      "line": 33,
+      "message": "[title] \"Billing\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\settings\\SettingsSection.tsx",
+      "line": 85,
+      "message": "[title] \"Workspace\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\settings\\SettingsSection.tsx",
+      "line": 86,
+      "message": "[title] \"Model\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\settings\\SettingsSection.tsx",
+      "line": 87,
+      "message": "[title] \"Permissions\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\settings\\SettingsSegmentedControl.tsx",
+      "line": 41,
+      "message": "[property] \"System\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\settings\\SettingsSegmentedControl.tsx",
+      "line": 42,
+      "message": "[property] \"Light\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\settings\\SettingsSegmentedControl.tsx",
+      "line": 43,
+      "message": "[property] \"Dark\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\settings\\SettingsSelect.tsx",
+      "line": 58,
+      "message": "[placeholder] \"Select timezone...\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\settings\\SettingsUIConstants.ts",
+      "line": 9,
+      "message": "[property] \"text-sm font-medium\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\settings\\SettingsUIConstants.ts",
+      "line": 12,
+      "message": "[property] \"text-sm text-muted-foreground\"",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\context-menu.tsx",
+      "line": 122,
+      "message": "建议使用原文作为 key: t('keydown') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\data-table.tsx",
+      "line": 297,
+      "message": "[title] \"Name\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 114,
+      "message": "[property] \"Permission Settings\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 116,
+      "message": "[property] \"The user is on the Settings Screen and pressed the edit button on Workspace Permission settings. \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 132,
+      "message": "[property] \"Default Permissions\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 134,
+      "message": "[property] \"The user is editing app-level default permissions (~/.craft-agent/permissions/default.json). \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 152,
+      "message": "[property] \"Skill Instructions\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 154,
+      "message": "[property] \"The user is editing skill instructions in SKILL.md. \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 170,
+      "message": "[property] \"Skill Metadata\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 172,
+      "message": "[property] \"The user is editing skill metadata in the YAML frontmatter of SKILL.md. \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 188,
+      "message": "[property] \"Source Documentation\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 190,
+      "message": "[property] \"The user is editing source documentation (guide.md). \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 204,
+      "message": "[property] \"Source Configuration\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 206,
+      "message": "[property] \"The user is editing source configuration (config.json). \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 221,
+      "message": "[property] \"Source Permissions\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 223,
+      "message": "[property] \"The user is editing source-level permissions (permissions.json). \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 238,
+      "message": "[property] \"Tool Permissions\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 240,
+      "message": "[property] \"The user is viewing the Tools list for an MCP source and wants to modify tool permissions. \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 258,
+      "message": "[property] \"Preferences Notes\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 260,
+      "message": "[property] \"The user is editing the notes field in their preferences (~/.craft-agent/preferences.json). \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 276,
+      "message": "[property] \"Add Source\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 278,
+      "message": "[property] \"The user wants to add a new source to their workspace. \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 293,
+      "message": "[property] \"Add API\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 295,
+      "message": "[property] \"The user is viewing API sources and wants to add a new REST API. \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 310,
+      "message": "[property] \"Add MCP Server\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 312,
+      "message": "[property] \"The user is viewing MCP sources and wants to add a new MCP server. \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 327,
+      "message": "[property] \"Add Local Folder\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 329,
+      "message": "[property] \"The user wants to add a local folder source. \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 345,
+      "message": "[property] \"Add Skill\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 347,
+      "message": "[property] \"The user wants to add a new skill to their workspace. \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 362,
+      "message": "[property] \"Status Configuration\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 364,
+      "message": "[property] \"The user wants to customize session statuses (workflow states). \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 382,
+      "message": "[property] \"Label Configuration\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 384,
+      "message": "[property] \"The user wants to customize session labels (tagging/categorization). \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 403,
+      "message": "[property] \"Auto-Apply Rules\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 405,
+      "message": "[property] \"The user wants to edit auto-apply rules (regex patterns that auto-tag sessions). \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 423,
+      "message": "[property] \"Add Label\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 425,
+      "message": "[property] \"The user wants to create a new label from the # inline menu. \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 444,
+      "message": "[property] \"Views Configuration\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 446,
+      "message": "[property] \"The user wants to edit views (dynamic, expression-based filters). \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 465,
+      "message": "[property] \"Tool Icons\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
+      "line": 467,
+      "message": "[property] \"The user wants to edit CLI tool icon mappings. \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\label-value-popover.tsx",
+      "line": 202,
+      "message": "[placeholder] \"tomorrow, next friday...\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\label-value-popover.tsx",
+      "line": 215,
+      "message": "[aria-label] \"Select date\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
+      "line": 137,
+      "message": "[property] \"Results\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
+      "line": 482,
+      "message": "[property] \"Skills\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
+      "line": 497,
+      "message": "[property] \"Sources\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
+      "line": 514,
+      "message": "[property] \"Files\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
+      "line": 570,
+      "message": "[property] \", String(err))\r\n            }\r\n          }, 150)\r\n        }\r\n      } else {\r\n        window.electronAPI.debugLog(\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\rich-text-input.tsx",
+      "line": 141,
+      "message": "[title] \"${tooltip.replace(/\"",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\rich-text-input.tsx",
+      "line": 238,
+      "message": "建议使用原文作为 key: t('div') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\rich-text-input.tsx",
+      "line": 554,
+      "message": "建议使用原文作为 key: t('span') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
+      "line": 94,
+      "message": "[property] \"Ultrathink\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
+      "line": 95,
+      "message": "[property] \"Extended reasoning for complex problems\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
+      "line": 564,
+      "message": "[property] \"Modes\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
+      "line": 571,
+      "message": "[property] \"Features\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
+      "line": 586,
+      "message": "[property] \"Recent Working Directories\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+      "line": 43,
+      "message": "[property] \"Connected\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+      "line": 44,
+      "message": "[property] \"Source is connected and working\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+      "line": 49,
+      "message": "[property] \"Needs Authentication\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+      "line": 50,
+      "message": "[property] \"Source requires authentication to connect\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+      "line": 55,
+      "message": "[property] \"Connection Failed\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+      "line": 56,
+      "message": "[property] \"Failed to connect to source\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+      "line": 61,
+      "message": "[property] \"Not Tested\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+      "line": 62,
+      "message": "[property] \"Connection has not been tested\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+      "line": 67,
+      "message": "[property] \"Disabled\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
+      "line": 68,
+      "message": "[property] \"Local MCP servers are disabled in Settings\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\ui\\todo-filter-menu.tsx",
+      "line": 95,
+      "message": "[placeholder] \"Filter statuses...\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\workspace\\AddWorkspaceStep_Choice.tsx",
+      "line": 63,
+      "message": "[title] \"Add Workspace\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\workspace\\AddWorkspaceStep_Choice.tsx",
+      "line": 70,
+      "message": "[title] \"Create new\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\workspace\\AddWorkspaceStep_Choice.tsx",
+      "line": 78,
+      "message": "[title] \"Open folder\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\workspace\\AddWorkspaceStep_CreateNew.tsx",
+      "line": 123,
+      "message": "[placeholder] \"My Workspace\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\workspace\\AddWorkspaceStep_CreateNew.tsx",
+      "line": 109,
+      "message": "[title] \"Create workspace\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\workspace\\AddWorkspaceStep_CreateNew.tsx",
+      "line": 146,
+      "message": "[title] \"Default location\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\workspace\\AddWorkspaceStep_CreateNew.tsx",
+      "line": 147,
+      "message": "[title] \"under .craft-agent folder\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\workspace\\AddWorkspaceStep_CreateNew.tsx",
+      "line": 156,
+      "message": "[title] \"Choose a location\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\workspace\\AddWorkspaceStep_OpenFolder.tsx",
+      "line": 94,
+      "message": "[placeholder] \"My Workspace\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\workspace\\AddWorkspaceStep_OpenFolder.tsx",
+      "line": 58,
+      "message": "[title] \"Choose existing folder\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\components\\workspace\\WorkspaceCreationScreen.tsx",
+      "line": 166,
+      "message": "[aria-label] \"Close\"",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\context\\ThemeContext.tsx",
+      "line": 261,
+      "message": "建议使用原文作为 key: t('style') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\contexts\\NavigationContext.tsx",
+      "line": 780,
+      "message": "[property] \"The content may have been moved or deleted.\"",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\contexts\\NavigationContext.tsx",
+      "line": 484,
+      "message": "建议使用原文作为 key: t('sidebar') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\contexts\\NavigationContext.tsx",
+      "line": 503,
+      "message": "建议使用原文作为 key: t('route') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\contexts\\NavigationContext.tsx",
+      "line": 703,
+      "message": "建议使用原文作为 key: t('route') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\contexts\\NavigationContext.tsx",
+      "line": 735,
+      "message": "建议使用原文作为 key: t('route') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\contexts\\NavigationContext.tsx",
+      "line": 736,
+      "message": "建议使用原文作为 key: t('sidebar') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\hooks\\useNotifications.ts",
+      "line": 24,
+      "message": "建议使用原文作为 key: t('canvas') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\hooks\\useOnboarding.ts",
+      "line": 173,
+      "message": "[property] \", error)\r\n      setState(s => ({\r\n        ...s,\r\n        errorMessage: error instanceof Error ? error.message : \"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\hooks\\useUpdateChecker.ts",
+      "line": 51,
+      "message": "[property] \"Restart to apply the update.\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\hooks\\useUpdateChecker.ts",
+      "line": 54,
+      "message": "[property] \"Restart\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\hooks\\useUpdateChecker.ts",
+      "line": 70,
+      "message": "[property] \"The app will restart automatically.\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\pages\\ChatPage.tsx",
+      "line": 330,
+      "message": "[property] \"Open\"",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\pages\\settings\\LabelsSettingsPage.tsx",
+      "line": 78,
+      "message": "建议使用原文作为 key: t('value') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\pages\\settings\\PreferencesPage.tsx",
+      "line": 236,
+      "message": "[property] \"English\"",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "file": "apps\\electron\\src\\renderer\\pages\\settings\\PreferencesPage.tsx",
+      "line": 237,
+      "message": "[property] \"简体中文\"",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\pages\\SourceInfoPage.tsx",
+      "line": 53,
+      "message": "建议使用原文作为 key: t('minute') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\pages\\SourceInfoPage.tsx",
+      "line": 53,
+      "message": "建议使用原文作为 key: t('s') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\pages\\SourceInfoPage.tsx",
+      "line": 53,
+      "message": "建议使用原文作为 key: t('ago') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\pages\\SourceInfoPage.tsx",
+      "line": 54,
+      "message": "建议使用原文作为 key: t('hour') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\pages\\SourceInfoPage.tsx",
+      "line": 54,
+      "message": "建议使用原文作为 key: t('s') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\pages\\SourceInfoPage.tsx",
+      "line": 54,
+      "message": "建议使用原文作为 key: t('ago') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\pages\\SourceInfoPage.tsx",
+      "line": 55,
+      "message": "建议使用原文作为 key: t('day') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\pages\\SourceInfoPage.tsx",
+      "line": 55,
+      "message": "建议使用原文作为 key: t('s') → t('Full English text')",
+      "severity": "warning"
+    },
+    {
+      "type": "format-error",
+      "file": "apps\\electron\\src\\renderer\\pages\\SourceInfoPage.tsx",
+      "line": 55,
+      "message": "建议使用原文作为 key: t('ago') → t('Full English text')",
+      "severity": "warning"
+    }
+  ]
+}

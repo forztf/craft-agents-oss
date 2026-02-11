@@ -12,6 +12,7 @@ import {
 import { ContextMenuProvider } from '@/components/ui/menu-context'
 import { SidebarMenu, type SidebarMenuType } from './SidebarMenu'
 import { SortableList, type SortableItemData } from '@/components/ui/sortable-list'
+import { useTranslation } from '@/contexts/I18nContext'
 
 /** Context menu configuration for sidebar items */
 export interface SidebarContextMenuConfig {
@@ -162,6 +163,8 @@ const itemVariants: Variants = {
  * - Two-phase drop animation: overlay fades out, ghost fades in
  */
 export function LeftSidebar({ links, isCollapsed, getItemProps, focusedItemId, isNested }: LeftSidebarProps) {
+  const { t } = useTranslation('components/app-shell/LeftSidebar')
+
   // For nested sidebars, wrap in motion container for stagger effect
   const NavWrapper = isNested ? motion.nav : 'nav'
   const navProps = isNested ? {
@@ -179,7 +182,7 @@ export function LeftSidebar({ links, isCollapsed, getItemProps, focusedItemId, i
           isNested ? "pl-5 pr-0 relative" : "px-2"
         )}
         role="navigation"
-        aria-label={isNested ? "Sub navigation" : "Main navigation"}
+        aria-label={isNested ? t('Sub navigation') : t('Main navigation')}
         {...navProps}
       >
         {/* Vertical line for nested items - 4px left of chevron center */}

@@ -1,3 +1,5 @@
 {
-  "Search models...": "搜索模型..."
+  "Search models...": "搜索模型...",
+  "No models found": "未找到模型",
+  "e.g., anthropic/claude-3.5-sonnet": "例如：anthropic/claude-3.5-sonnet"
 }

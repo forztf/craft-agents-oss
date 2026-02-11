@@ -1,0 +1,12 @@
+{
+  "Connection required": "Connection required",
+  "API credentials required": "API credentials required",
+  "Something went wrong": "Something went wrong",
+  "Connect to required services to continue.": "Connect to required services to continue.",
+  "Enter API credentials to continue.": "Enter API credentials to continue.",
+  "Something went wrong. Tap to retry.": "Something went wrong. Tap to retry.",
+  "Connect": "Connect",
+  "Add Credentials": "Add Credentials",
+  "Retry": "Retry",
+  "Continue": "Continue"
+}

@@ -15,6 +15,7 @@ import { useDynamicStack } from '@/hooks/useDynamicStack'
 import type { TodoState } from '@/config/todo-states'
 import { getState } from '@/config/todo-states'
 import { TodoStateMenu } from '@/components/ui/todo-filter-menu'
+import { useTranslation } from '@/contexts/I18nContext'
 
 // ============================================================================
 // Permission Mode Icon Component
@@ -104,6 +105,8 @@ export function ActiveOptionBadges({
   onTodoStateChange,
   className,
 }: ActiveOptionBadgesProps) {
+  const { t } = useTranslation('components/app-shell/ActiveOptionBadges')
+
   // Resolve session label entries to their config objects + parsed values.
   // Entries may be bare IDs ("bug") or valued ("priority::3").
   // Preserves the raw value and original index for editing/removal.
@@ -168,7 +171,7 @@ export function ActiveOptionBadges({
           style={{ '--shadow-color': '147, 51, 234' } as React.CSSProperties}
         >
           <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Ultrathink
+            {t('Ultrathink')}
           </span>
           <X className="h-3 w-3 text-purple-500 opacity-60 hover:opacity-100 translate-y-px" />
         </button>

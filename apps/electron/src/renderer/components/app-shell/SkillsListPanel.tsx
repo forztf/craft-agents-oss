@@ -12,6 +12,7 @@ import { SkillAvatar } from '@/components/ui/skill-avatar'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription, EmptyContent } from '@/components/ui/empty'
 import { getDocUrl } from '@craft-agent/shared/docs/doc-links'
+import { useTranslation } from '@/contexts/I18nContext'
 import { Separator } from '@/components/ui/separator'
 import {
   DropdownMenu,
@@ -49,6 +50,8 @@ export function SkillsListPanel({
   workspaceRootPath,
   className,
 }: SkillsListPanelProps) {
+  const { t } = useTranslation('components/app-shell/SkillsListPanel')
+
   // Empty state - rendered outside ScrollArea for proper vertical centering
   if (skills.length === 0) {
     return (
@@ -58,9 +61,9 @@ export function SkillsListPanel({
             <EmptyMedia variant="icon">
               <Zap />
             </EmptyMedia>
-            <EmptyTitle>No skills configured</EmptyTitle>
+            <EmptyTitle>{t('No skills configured')}</EmptyTitle>
             <EmptyDescription>
-              Skills are reusable instructions that teach your agent specialized behaviors.
+              {t('Skills are reusable instructions that teach your agent specialized behaviors.')}
             </EmptyDescription>
           </EmptyHeader>
           <EmptyContent>
@@ -68,14 +71,14 @@ export function SkillsListPanel({
               onClick={() => window.electronAPI.openUrl(getDocUrl('skills'))}
               className="inline-flex items-center h-7 px-3 text-xs font-medium rounded-[8px] bg-foreground/[0.02] shadow-minimal hover:bg-foreground/[0.05] transition-colors"
             >
-              Learn more
+              {t('Learn more')}
             </button>
             {workspaceRootPath && (
               <EditPopover
                 align="center"
                 trigger={
                   <button className="inline-flex items-center h-7 px-3 text-xs font-medium rounded-[8px] bg-background shadow-minimal hover:bg-foreground/[0.03] transition-colors">
-                    Add Skill
+                    {t('Add Skill')}
                   </button>
                 }
                 {...getEditConfig('add-skill', workspaceRootPath)}

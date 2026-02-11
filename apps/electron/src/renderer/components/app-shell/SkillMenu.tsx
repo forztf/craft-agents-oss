@@ -21,6 +21,7 @@ import {
   AppWindow,
 } from 'lucide-react'
 import { useMenuComponents } from '@/components/ui/menu-context'
+import { useTranslation } from '@/contexts/I18nContext'
 
 export interface SkillMenuProps {
   /** Skill slug */
@@ -46,19 +47,20 @@ export function SkillMenu({
 }: SkillMenuProps) {
   // Get menu components from context (works with both DropdownMenu and ContextMenu)
   const { MenuItem, Separator } = useMenuComponents()
+  const { t } = useTranslation('components/app-shell/SkillMenu')
 
   return (
     <>
       {/* Open in New Window */}
       <MenuItem onClick={onOpenInNewWindow}>
         <AppWindow className="h-3.5 w-3.5" />
-        <span className="flex-1">Open in New Window</span>
+        <span className="flex-1">{t('Open in New Window')}</span>
       </MenuItem>
 
       {/* Show in Finder */}
       <MenuItem onClick={onShowInFinder}>
         <FolderOpen className="h-3.5 w-3.5" />
-        <span className="flex-1">Show in Finder</span>
+        <span className="flex-1">{t('Show in Finder')}</span>
       </MenuItem>
 
       <Separator />
@@ -66,7 +68,7 @@ export function SkillMenu({
       {/* Delete */}
       <MenuItem onClick={onDelete} variant="destructive">
         <Trash2 className="h-3.5 w-3.5" />
-        <span className="flex-1">Delete Skill</span>
+        <span className="flex-1">{t('Delete Skill')}</span>
       </MenuItem>
     </>
   )

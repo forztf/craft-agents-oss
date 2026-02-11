@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { cn } from '@/lib/utils'
+import { useTranslation } from '@/contexts/I18nContext'
 import type { CredentialRequest as CredentialRequestType, CredentialResponse } from '../../../../../shared/types'
 import { validateBasicAuthCredentials, getPasswordValue, getPasswordLabel, getPasswordPlaceholder } from '@/utils/auth-validation'
 
@@ -24,6 +25,7 @@ interface CredentialRequestProps {
  * - query: API Key for query parameter auth
  */
 export function CredentialRequest({ request, onResponse, unstyled = false }: CredentialRequestProps) {
+  const { t } = useTranslation('components/app-shell/input/structured/CredentialRequest')
   const [value, setValue] = useState('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -99,9 +101,9 @@ export function CredentialRequest({ request, onResponse, unstyled = false }: Cre
 
   // Get field labels
   const credentialLabel = request.labels?.credential ||
-    (request.mode === 'bearer' ? 'Bearer Token' : 'API Key')
-  const usernameLabel = request.labels?.username || 'Username'
-  const basePasswordLabel = request.labels?.password || 'Password'
+    (request.mode === 'bearer' ? t('Bearer Token') : t('API Key'))
+  const usernameLabel = request.labels?.username || t('Username')
+  const basePasswordLabel = request.labels?.password || t('Password')
   const passwordLabel = getPasswordLabel(basePasswordLabel, passwordRequired)
   const passwordPlaceholder = getPasswordPlaceholder(basePasswordLabel, passwordRequired)
 
@@ -128,7 +130,7 @@ export function CredentialRequest({ request, onResponse, unstyled = false }: Cre
             <div className="flex-1 min-w-0 space-y-1">
               <div className="flex items-center gap-2">
                 <span className="text-sm font-medium text-foreground">
-                  Authentication Required
+                  {t('Authentication Required')}
                 </span>
                 <span className="text-xs text-muted-foreground">
                   ({request.sourceName})
@@ -160,7 +162,7 @@ export function CredentialRequest({ request, onResponse, unstyled = false }: Cre
                       onChange={(e) => setUsername(e.target.value)}
                       onKeyDown={handleKeyDown}
                       className="pl-9"
-                      placeholder={`Enter ${usernameLabel.toLowerCase()}`}
+                      placeholder={t('Enter username')}
                       autoFocus
                     />
                   </div>
@@ -216,7 +218,7 @@ export function CredentialRequest({ request, onResponse, unstyled = false }: Cre
                         }))}
                         onKeyDown={handleKeyDown}
                         className="pl-9 pr-9"
-                        placeholder={`Enter ${headerName}`}
+                        placeholder={t('Enter value')}
                         autoFocus={index === 0}
                       />
                       <button
@@ -253,7 +255,7 @@ export function CredentialRequest({ request, onResponse, unstyled = false }: Cre
                     onChange={(e) => setValue(e.target.value)}
                     onKeyDown={handleKeyDown}
                     className="pl-9 pr-9"
-                    placeholder={`Enter ${credentialLabel.toLowerCase()}`}
+                    placeholder={t('Enter credential')}
                     autoFocus
                   />
                   <button
@@ -287,7 +289,7 @@ export function CredentialRequest({ request, onResponse, unstyled = false }: Cre
             disabled={!isValid}
           >
             <Check className="h-3.5 w-3.5" />
-            Save
+            {t('Save')}
           </Button>
           <Button
             type="button"
@@ -297,13 +299,13 @@ export function CredentialRequest({ request, onResponse, unstyled = false }: Cre
             onClick={handleCancel}
           >
             <X className="h-3.5 w-3.5" />
-            Cancel
+            {t('Cancel')}
           </Button>
 
           <div className="flex-1" />
 
           <span className="text-[10px] text-muted-foreground">
-            Credentials are encrypted at rest
+            {t('Credentials are encrypted at rest')}
           </span>
         </div>
       </form>

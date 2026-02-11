@@ -12,6 +12,7 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Spinner } from '@craft-agent/ui'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
+import { useTranslation } from '@/contexts/I18nContext'
 
 export interface ModelOption {
   id: string
@@ -43,16 +44,18 @@ export function SearchableModelInput({
   value,
   onChange,
   onBlur,
-  placeholder = 'e.g., anthropic/claude-3.5-sonnet',
+  placeholder,
   models,
   isLoading,
   onFetchModels,
   fetchDisabled,
   className,
 }: SearchableModelInputProps) {
+  const { t } = useTranslation('components/settings/SearchableModelInput')
   const [isOpen, setIsOpen] = React.useState(false)
   const [searchQuery, setSearchQuery] = React.useState('')
   const searchInputRef = React.useRef<HTMLInputElement>(null)
+  const _placeholder = placeholder ?? t('e.g., anthropic/claude-3.5-sonnet')
 
   // Filter models based on search query
   const filteredModels = React.useMemo(() => {
@@ -94,7 +97,7 @@ export function SearchableModelInput({
   return (
     <div className={cn('relative', className)}>
       <Input
-        placeholder={placeholder}
+        placeholder={_placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         onBlur={onBlur}
@@ -128,7 +131,7 @@ export function SearchableModelInput({
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search models..."
+                placeholder={t('Search models...')}
                 className={cn(
                   'w-full h-8 pl-8 pr-3 text-sm rounded-md',
                   'bg-foreground/5 border-0',
@@ -141,7 +144,7 @@ export function SearchableModelInput({
             <div className="max-h-64 overflow-auto space-y-0.5">
               {filteredModels.length === 0 ? (
                 <div className="px-2.5 py-3 text-sm text-muted-foreground text-center">
-                  No models found
+                  {t('No models found')}
                 </div>
               ) : (
                 filteredModels.map((model) => (

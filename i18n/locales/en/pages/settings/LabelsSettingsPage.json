@@ -5,6 +5,7 @@
   "Auto-apply rules": "Auto-apply rules",
   "Label Hierarchy": "Label Hierarchy",
   "Labels": "Labels",
+  "Learn more": "Learn more",
   "No labels configured.": "No labels configured.",
   "Regex patterns that automatically apply labels when matched in user messages. For example, paste a Linear issue URL and automatically tag the session with the project name and issue ID.": "Regex patterns that automatically apply labels when matched in user messages. For example, paste a Linear issue URL and automatically tag the session with the project name and issue ID.",
   "labels/config.json": "labels/config.json",

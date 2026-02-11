@@ -1,4 +1,6 @@
 {
   "Open in new window": "在新窗口中打开",
-  "Select workspace": "选择工作区"
+  "Select workspace": "选择工作区",
+  "Add Workspace...": "添加工作区...",
+  "Created workspace \"{name}\"": "已创建工作区 \"{name}\""
 }

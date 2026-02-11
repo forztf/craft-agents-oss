@@ -1,3 +1,8 @@
 {
-  "Name": "Name"
+  "Name": "Name",
+  "No results.": "No results.",
+  "{n} total": "{n} total",
+  "Previous": "Previous",
+  "Next": "Next",
+  "Page {n} of {m}": "Page {n} of {m}"
 }

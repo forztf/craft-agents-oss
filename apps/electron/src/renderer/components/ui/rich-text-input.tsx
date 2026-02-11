@@ -10,6 +10,7 @@ import {
 } from '@/lib/icon-cache'
 import type { LoadedSkill, LoadedSource } from '../../../shared/types'
 import type { MentionItemType } from './mention-menu'
+import { useTranslation } from '@/contexts/I18nContext'
 
 // ============================================================================
 // Types
@@ -478,7 +479,7 @@ export const RichTextInput = React.forwardRef<RichTextInputHandle, RichTextInput
     {
       value,
       onChange,
-      placeholder = 'Type a message...',
+      placeholder,
       skills = [],
       sources = [],
       workspaceId,
@@ -494,6 +495,8 @@ export const RichTextInput = React.forwardRef<RichTextInputHandle, RichTextInput
     },
     forwardedRef
   ) {
+    const { t } = useTranslation('components/ui/rich-text-input')
+    const defaultPlaceholder = t('Type a message...')
     const divRef = React.useRef<HTMLDivElement>(null)
     const [isFocused, setIsFocused] = React.useState(false)
     const isComposing = React.useRef(false)

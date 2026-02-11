@@ -9,6 +9,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { useRegisterModal } from "@/context/ModalContext"
+import { useTranslation } from "@/contexts/I18nContext"
 
 interface RenameDialogProps {
   open: boolean
@@ -27,9 +28,11 @@ export function RenameDialog({
   value,
   onValueChange,
   onSubmit,
-  placeholder = "Enter a name...",
+  placeholder,
 }: RenameDialogProps) {
+  const { t } = useTranslation('components/ui/rename-dialog')
   const inputRef = useRef<HTMLInputElement>(null)
+  const defaultPlaceholder = t("Enter a name...")
 
   // Register with modal context so X button / Cmd+W closes this dialog first
   useRegisterModal(open, () => onOpenChange(false))
@@ -61,7 +64,7 @@ export function RenameDialog({
             ref={inputRef}
             value={value}
             onChange={(e) => onValueChange(e.target.value)}
-            placeholder={placeholder}
+            placeholder={placeholder ?? defaultPlaceholder}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
                 handleSubmit()
@@ -71,10 +74,10 @@ export function RenameDialog({
         </div>
         <DialogFooter>
           <Button variant="outline" onClick={() => onOpenChange(false)}>
-            Cancel
+            {t('Cancel')}
           </Button>
           <Button onClick={handleSubmit} disabled={!value.trim()}>
-            Save
+            {t('Save')}
           </Button>
         </DialogFooter>
       </DialogContent>

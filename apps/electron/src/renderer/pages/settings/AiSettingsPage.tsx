@@ -404,7 +404,7 @@ function WorkspaceOverrideCard({ workspace, llmConnections, onSettingsChange }: 
                     value: conn.slug,
                     label: conn.name,
                     description: conn.providerType === 'anthropic' ? t('Anthropic') :
-                      conn.providerType === 'openai' ? t(t('OpenAI')) :
+                      conn.providerType === 'openai' ? t('OpenAI') :
                         conn.providerType || t('Unknown'),
                   })),
                 ]}

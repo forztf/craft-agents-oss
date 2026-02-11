@@ -799,11 +799,11 @@ export function FreeFormInput({
 
     // Store the prefill text (e.g., "Test" from "#Test") to pre-fill the popover
     // Format: "Add new label {prefill}" so user can just press enter or modify
-    setAddLabelPrefill(prefill ? `Add new label ${prefill}` : '')
+    setAddLabelPrefill(prefill ? t("Add new label {name}", { name: prefill }) : '')
 
     // Open the EditPopover for label creation
     setAddLabelPopoverOpen(true)
-  }, [workspaceRootPath, inlineLabel, syncToParent])
+  }, [workspaceRootPath, inlineLabel, syncToParent, t])
 
   // Memoize the add-label config so the EditPopover doesn't recreate on every render
   const addLabelEditConfig = React.useMemo(() => {
@@ -1415,7 +1415,7 @@ export function FreeFormInput({
             hasSelection={attachments.length > 0}
             showChevron={false}
             onClick={handleAttachClick}
-            tooltip="Attach files"
+            tooltip={t("Attach files")}
             disabled={disabled}
           />
 
@@ -1489,7 +1489,7 @@ export function FreeFormInput({
                   }
                   setSourceDropdownOpen(!sourceDropdownOpen)
                 }}
-                tooltip="Sources"
+                tooltip={t("Sources")}
               />
               {sourceDropdownOpen && sourceDropdownPosition && ReactDOM.createPortal(
                 <>
@@ -1510,9 +1510,9 @@ export function FreeFormInput({
                   >
                     {sources.length === 0 ? (
                       <div className="text-xs text-muted-foreground p-3 select-none">
-                        No sources configured.
+                        {t("No sources configured.")}
                         <br />
-                        Add sources in Settings.
+                        {t("Add sources in Settings.")}
                       </div>
                     ) : (
                       <CommandPrimitive
@@ -1613,7 +1613,7 @@ export function FreeFormInput({
                     {connectionUnavailable ? (
                       <>
                         <AlertCircle className="h-3.5 w-3.5 shrink-0" />
-                        Unavailable
+                        {t("Unavailable")}
                       </>
                     ) : (
                       <>
@@ -1624,16 +1624,16 @@ export function FreeFormInput({
                   </button>
                 </DropdownMenuTrigger>
               </TooltipTrigger>
-              <TooltipContent side="top">Model</TooltipContent>
+              <TooltipContent side="top">{t("Model")}</TooltipContent>
             </Tooltip>
             <StyledDropdownMenuContent side="top" align="end" sideOffset={8} className="min-w-[260px]">
               {/* Connection unavailable message */}
               {connectionUnavailable ? (
                 <div className="flex flex-col items-center justify-center py-6 px-4 text-center">
                   <AlertCircle className="h-8 w-8 text-destructive mb-2" />
-                  <div className="font-medium text-sm mb-1">Connection Unavailable</div>
+                  <div className="font-medium text-sm mb-1">{t("Connection Unavailable")}</div>
                   <div className="text-xs text-muted-foreground">
-                    The connection used by this session has been removed. Create a new session to continue.
+                    {t("The connection used by this session has been removed. Create a new session to continue.")}
                   </div>
                 </div>
               ) : connectionDefaultModel ? (
@@ -1643,7 +1643,7 @@ export function FreeFormInput({
                 >
                   <div className="text-left">
                     <div className="font-medium text-sm">{connectionDefaultModel}</div>
-                    <div className="text-xs text-muted-foreground">Connection default</div>
+                    <div className="text-xs text-muted-foreground">{t("Connection default")}</div>
                   </div>
                   <Check className="h-4 w-4 text-foreground shrink-0 ml-3" />
                 </StyledDropdownMenuItem>
@@ -1673,7 +1673,7 @@ export function FreeFormInput({
                                 {isCurrentConnection && <Check className="h-3 w-3 text-foreground" />}
                               </div>
                               {!isAuthenticated && (
-                                <div className="text-xs text-muted-foreground">Not authenticated</div>
+                                <div className="text-xs text-muted-foreground">{t("Not authenticated")}</div>
                               )}
                             </div>
                           </StyledDropdownMenuSubTrigger>
@@ -1722,7 +1722,7 @@ export function FreeFormInput({
                     <>
                       <div className="flex items-center gap-2 px-2 py-1.5 text-xs text-muted-foreground select-none">
                         <Lock className="h-3 w-3" />
-                        <span>Using {currentConnectionDetails.name}</span>
+                        <span>{t("Using {name}", { name: currentConnectionDetails.name })}</span>
                       </div>
                       <StyledDropdownMenuSeparator className="my-1" />
                     </>
@@ -1764,7 +1764,7 @@ export function FreeFormInput({
                     <StyledDropdownMenuSubTrigger className="flex items-center justify-between px-2 py-2 rounded-lg">
                       <div className="text-left flex-1">
                         <div className="font-medium text-sm">{getThinkingLevelName(thinkingLevel)}</div>
-                        <div className="text-xs text-muted-foreground">Extended reasoning depth</div>
+                        <div className="text-xs text-muted-foreground">{t("Extended reasoning depth")}</div>
                       </div>
                     </StyledDropdownMenuSubTrigger>
                     <StyledDropdownMenuSubContent className="min-w-[220px]">
@@ -1797,12 +1797,12 @@ export function FreeFormInput({
                   <StyledDropdownMenuSeparator className="my-1" />
                   <div className="px-2 py-1.5 select-none">
                     <div className="flex items-center justify-between text-xs text-muted-foreground">
-                      <span>Context</span>
+                      <span>{t("Context")}</span>
                       <span className="flex items-center gap-1.5">
                         {contextStatus.isCompacting && (
                           <Loader2 className="h-3 w-3 animate-spin" />
                         )}
-                        {formatTokenCount(contextStatus.inputTokens)} tokens used
+                        {t("{count} tokens used", { count: formatTokenCount(contextStatus.inputTokens) })}
                       </span>
                     </div>
                   </div>
@@ -1855,7 +1855,7 @@ export function FreeFormInput({
                     </DropdownMenuTrigger>
                   </TooltipTrigger>
                   <TooltipContent side="top">
-                    {usagePercent}% context used
+                    {t("{percent}% context used", { percent: usagePercent })}
                   </TooltipContent>
                 </Tooltip>
                 <StyledDropdownMenuContent align="center" side="top" sideOffset={8}>
@@ -1863,7 +1863,7 @@ export function FreeFormInput({
                     onClick={handleCompactClick}
                     disabled={isProcessing}
                   >
-                    Compact
+                    {t("Compact")}
                   </StyledDropdownMenuItem>
                 </StyledDropdownMenuContent>
               </DropdownMenu>
@@ -1915,6 +1915,7 @@ function addRecentDir(path: string): void {
 
 /**
  * Format path for display, with home directory shortened
+ * Note: Returns a pattern that needs to be translated by the caller
  */
 function formatPathForDisplay(path: string, homeDir: string): string {
   let displayPath = path
@@ -1925,7 +1926,7 @@ function formatPathForDisplay(path: string, homeDir: string): string {
       ? relativePath.slice(1)
       : (relativePath || PATH_SEP)
   }
-  return `in ${displayPath}`
+  return displayPath
 }
 
 /**
@@ -1943,6 +1944,7 @@ function WorkingDirectoryBadge({
   sessionFolderPath?: string
   isEmptySession?: boolean
 }) {
+  const { t } = useTranslation('components/app-shell/input/FreeFormInput')
   const [recentDirs, setRecentDirs] = React.useState<string[]>([])
   const [popoverOpen, setPopoverOpen] = React.useState(false)
   const [homeDir, setHomeDir] = React.useState<string>('')
@@ -2019,7 +2021,7 @@ function WorkingDirectoryBadge({
 
   // Determine label - "Work in Folder" if not set or at session root, otherwise folder name
   const hasFolder = !!workingDirectory && workingDirectory !== sessionFolderPath
-  const folderName = hasFolder ? (getPathBasename(workingDirectory) || 'Folder') : 'Work in Folder'
+  const folderName = hasFolder ? (getPathBasename(workingDirectory) || t('Folder')) : t('Work in Folder')
 
   // Show reset option when a folder is selected and it differs from session folder
   const showReset = hasFolder && sessionFolderPath && sessionFolderPath !== workingDirectory
@@ -2043,9 +2045,9 @@ function WorkingDirectoryBadge({
             tooltip={
               hasFolder ? (
                 <span className="flex flex-col gap-0.5">
-                  <span className="font-medium">Working directory</span>
-                  <span className="text-xs opacity-70">{formatPathForDisplay(workingDirectory, homeDir)}</span>
-                  {gitBranch && <span className="text-xs opacity-70">on {gitBranch}</span>}
+                  <span className="font-medium">{t("Working directory")}</span>
+                  <span className="text-xs opacity-70">{t("in {path}", { path: formatPathForDisplay(workingDirectory, homeDir) })}</span>
+                  {gitBranch && <span className="text-xs opacity-70">{t("on {branch}", { branch: gitBranch })}</span>}
                 </span>
               ) : t("Choose working directory")
             }
@@ -2078,7 +2080,7 @@ function WorkingDirectoryBadge({
                 <Icon_Folder className="h-4 w-4 shrink-0 text-muted-foreground" />
                 <span className="flex-1 min-w-0 truncate">
                   <span>{folderName}</span>
-                  <span className="text-muted-foreground ml-1.5">{formatPathForDisplay(workingDirectory, homeDir)}</span>
+                  <span className="text-muted-foreground ml-1.5">{t("in {path}", { path: formatPathForDisplay(workingDirectory, homeDir) })}</span>
                 </span>
                 <Check className="h-4 w-4 shrink-0" />
               </CommandPrimitive.Item>
@@ -2091,7 +2093,7 @@ function WorkingDirectoryBadge({
 
             {/* Recent Directories - filterable (current directory already filtered out via filteredRecent) */}
             {filteredRecent.map((path) => {
-              const recentFolderName = getPathBasename(path) || 'Folder'
+              const recentFolderName = getPathBasename(path) || t('Folder')
               return (
                 <CommandPrimitive.Item
                   key={path}
@@ -2102,7 +2104,7 @@ function WorkingDirectoryBadge({
                   <Icon_Folder className="h-4 w-4 shrink-0 text-muted-foreground" />
                   <span className="flex-1 min-w-0 truncate">
                     <span>{recentFolderName}</span>
-                    <span className="text-muted-foreground ml-1.5">{formatPathForDisplay(path, homeDir)}</span>
+                    <span className="text-muted-foreground ml-1.5">{t("in {path}", { path: formatPathForDisplay(path, homeDir) })}</span>
                   </span>
                 </CommandPrimitive.Item>
               )
@@ -2123,7 +2125,7 @@ function WorkingDirectoryBadge({
               onClick={handleChooseFolder}
               className={cn(MENU_ITEM_STYLE, 'w-full hover:bg-foreground/5')}
             >
-              Choose Folder...
+              {t("Choose Folder...")}
             </button>
             {showReset && (
               <button
@@ -2131,7 +2133,7 @@ function WorkingDirectoryBadge({
                 onClick={handleReset}
                 className={cn(MENU_ITEM_STYLE, 'w-full hover:bg-foreground/5')}
               >
-                Reset
+                {t("Reset")}
               </button>
             )}
           </div>

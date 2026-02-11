@@ -12,6 +12,7 @@ import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { settingsUI } from './SettingsUIConstants'
+import { useTranslation } from '@/contexts/I18nContext'
 
 export interface SettingsInputProps {
   /** Input label */
@@ -242,15 +243,17 @@ export function SettingsSecretInput({
   description,
   value,
   onChange,
-  placeholder = 'Enter value...',
+  placeholder,
   disabled,
   error,
   className,
   inCard = false,
   onBlur,
 }: SettingsSecretInputProps) {
+  const { t } = useTranslation('components/settings/SettingsInput')
   const id = React.useId()
   const [showValue, setShowValue] = React.useState(false)
+  const _placeholder = placeholder ?? t('Enter value...')
 
   return (
     <div
@@ -279,7 +282,7 @@ export function SettingsSecretInput({
           type={showValue ? 'text' : 'password'}
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          placeholder={placeholder}
+          placeholder={_placeholder}
           disabled={disabled}
           onBlur={onBlur}
           className="pr-10 bg-transparent border-0 shadow-none focus-visible:ring-0 focus-visible:outline-none"

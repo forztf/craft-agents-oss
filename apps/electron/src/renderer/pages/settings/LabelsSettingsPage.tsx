@@ -86,7 +86,7 @@ export default function LabelsSettingsPage() {
                             onClick={() => window.electronAPI?.openUrl(getDocUrl('labels'))}
                             className="text-foreground/70 hover:text-foreground underline underline-offset-2"
                           >
-                            Learn more
+                            {t('Learn more')}
                           </button>
                         </p>
                       </div>

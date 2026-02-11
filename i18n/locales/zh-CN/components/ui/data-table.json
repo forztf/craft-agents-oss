@@ -1,3 +1,8 @@
 {
-  "Name": "名称"
+  "Name": "名称",
+  "No results.": "无结果。",
+  "{n} total": "共 {n} 条",
+  "Previous": "上一页",
+  "Next": "下一页",
+  "Page {n} of {m}": "第 {n} 页，共 {m} 页"
 }
