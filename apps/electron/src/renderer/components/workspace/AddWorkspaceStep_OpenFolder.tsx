@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react"
 import { ArrowLeft } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { useTranslation } from '@/i18n/index'
+import { useTranslation } from '@/contexts/I18nContext'
 import { Input } from "../ui/input"
 import { AddWorkspaceContainer, AddWorkspaceStepHeader, AddWorkspaceSecondaryButton, AddWorkspacePrimaryButton } from "./primitives"
 

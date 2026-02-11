@@ -1,3 +1,1 @@
-{
-  "= 0 && hintIndex": "= 0 && hintIndex"
-}
+{"hint.0": "总结您的 {source:Gmail} 收件箱，起草回复，并将笔记保存到 {source:Craft}", "hint.1": "将 {file:screenshot} 转换为您 {folder} 中的可运行网站", "hint.2": "从 {source:Linear} 拉取问题，在 {source:Slack} 中调研，发布修复", "hint.3": "转录 {file:voice memo} 并将其转换为 {source:Notion} 任务", "hint.4": "分析 {file:spreadsheet} 并将见解发布到 {source:Slack}", "hint.5": "审查 {source:GitHub} PR，然后在 {source:Craft} 中总结变更", "hint.6": "解析 {file:invoice PDF} 并将其记录到 {source:Google Sheets}", "hint.7": "使用 {source:Exa} 进行研究，撰写文档，保存到您的 {source:Obsidian} 库", "hint.8": "重构您的 {folder} 中的代码，然后推送到 {source:GitHub}", "hint.9": "将 {source:Calendar} 事件与 {source:Linear} 项目截止日期同步", "hint.10": "自动将会议 {file:notes} 转换为 {source:Jira} 工单", "hint.11": "查询您的 {source:database} 并在新 {file:document} 中可视化结果", "hint.12": "获取 {source:Figma} 设计并在您的 {folder} 中生成 React 组件", "hint.13": "将 {source:Slack} 主题合并为 {source:Notion} 的每周摘要", "hint.14": "运行 {skill} 分析您的代码库并修复 {folder} 中的问题"}

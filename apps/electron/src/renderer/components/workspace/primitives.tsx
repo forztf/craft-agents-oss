@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils"
 import { Button, type ButtonProps } from "@/components/ui/button"
 import { Spinner } from "@craft-agent/ui"
-import { useTranslation } from "@/i18n/index"
+import { useTranslation } from '@/contexts/I18nContext'
 
 /* =============================================================================
    ADD WORKSPACE PRIMITIVES

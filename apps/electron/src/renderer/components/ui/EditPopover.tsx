@@ -19,13 +19,16 @@ import type { ContentBadge, Session, CreateSessionOptions } from '../../../share
 import { useActiveWorkspace, useAppShellContext, useSession } from '@/context/AppShellContext'
 import { useEscapeInterrupt } from '@/context/EscapeInterruptContext'
 import { ChatDisplay } from '../app-shell/ChatDisplay'
+import { useTranslation } from '@/contexts/I18nContext'
 
 /** Rotating placeholders for compact mode input - short, action-oriented */
-const COMPACT_PLACEHOLDERS = [
-  'Just tell me what to change',
-  'Describe the update',
-  'What should I modify?',
-]
+function getCompactPlaceholders(t: (key: string) => string): string[] {
+  return [
+    t('Just tell me what to change'),
+    t('Describe the update'),
+    t('What should I modify?'),
+  ]
+}
 
 /**
  * Context passed to the new chat session so the agent knows exactly
@@ -643,15 +646,17 @@ export function EditPopover({
   defaultValue = '',
   inlineExecution = false,
 }: EditPopoverProps) {
+  const { t } = useTranslation('components/ui/EditPopover')
   const { onOpenFile, onOpenUrl } = usePlatform()
   const workspace = useActiveWorkspace()
 
   // Build placeholder: for inline execution use rotating array, otherwise build descriptive string
   // overridePlaceholder allows contexts like add-source/add-skill to say "add" instead of "change"
+  const compactPlaceholders = getCompactPlaceholders(t)
   const placeholder = inlineExecution
-    ? COMPACT_PLACEHOLDERS
+    ? compactPlaceholders
     : (() => {
-        const basePlaceholder = overridePlaceholder ?? "Describe what you'd like to change..."
+        const basePlaceholder = overridePlaceholder ?? t("Describe what you'd like to change...")
         return example
           ? `${basePlaceholder.replace(/\.{3}$/, '')}, e.g., "${example}"`
           : basePlaceholder
@@ -1003,6 +1008,7 @@ export const EditButton = React.forwardRef<
   HTMLButtonElement,
   React.ComponentPropsWithoutRef<typeof Button>
 >(function EditButton({ className, ...props }, ref) {
+  const { t } = useTranslation('components/ui/EditPopover')
   return (
     <Button
       ref={ref}
@@ -1012,7 +1018,26 @@ export const EditButton = React.forwardRef<
       className={cn("h-8 px-3 rounded-[6px] bg-background shadow-minimal text-foreground/70 hover:text-foreground", className)}
       {...props}
     >
-      Edit
+      {t('Edit')}
+    </Button>
+  )
+})
+
+/** Standard Edit button with i18n support - uses translation function */
+export const LocalizedEditButton = React.forwardRef<
+  HTMLButtonElement,
+  React.ComponentPropsWithoutRef<typeof Button>
+>(function LocalizedEditButton({ className, ...props }, ref) {
+  const { t } = useTranslation('components/ui/EditPopover')
+  return (
+    <Button
+      ref={ref}
+      variant="ghost"
+      size="sm"
+      className={cn("h-8 px-3 rounded-[6px] bg-background shadow-minimal text-foreground/70 hover:text-foreground", className)}
+      {...props}
+    >
+      {t('Edit')}
     </Button>
   )
 })

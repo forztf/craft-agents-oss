@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-02-11T11:23:11.867Z",
+  "timestamp": "2026-02-11T11:30:50.009Z",
   "summary": {
-    "totalFiles": 64,
-    "totalIssues": 685,
+    "totalFiles": 63,
+    "totalIssues": 683,
     "bySeverity": {
-      "high": 215,
+      "high": 213,
       "medium": 400,
       "low": 70
     },
     "byType": {
-      "string-literal": 580,
+      "string-literal": 578,
       "placeholder": 10,
       "title": 30,
       "jsx-text": 42,
@@ -514,24 +514,6 @@
         "type": "aria-label",
         "context": "Forward}\r\n            disabled={!canGoForward}\r\n            aria-label=\"Go forward\"\r\n          >\r\n            <Icons.Che",
         "severity": "low"
-      }
-    ],
-    "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\chat\\AuthRequestCard.tsx": [
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\chat\\AuthRequestCard.tsx",
-        "line": 580,
-        "text": "Cancel",
-        "type": "string-literal",
-        "context": "button',\r\n          }}\r\n          secondary={{\r\n            label: 'Cancel',\r\n            onClick: handleCancel,",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\chat\\AuthRequestCard.tsx",
-        "line": 597,
-        "text": "Cancel",
-        "type": "string-literal",
-        "context": "isSubmitting,\r\n        }}\r\n        secondary={{\r\n          label: 'Cancel',\r\n          onClick: handleCancel,",
-        "severity": "high"
       }
     ],
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx": [
@@ -5580,7 +5562,7 @@
     ]
   },
   "recommendations": [
-    "发现 215 处高优先级硬编码文本，建议优先处理",
+    "发现 213 处高优先级硬编码文本，建议优先处理",
     "发现 400 处中优先级硬编码文本，应该逐步翻译"
   ]
 }

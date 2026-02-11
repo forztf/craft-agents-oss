@@ -14,6 +14,7 @@
 
 import * as React from 'react'
 import { cn } from '@/lib/utils'
+import { useTranslation } from '@/contexts/I18nContext'
 
 // ============================================================================
 // Types
@@ -34,20 +35,14 @@ interface ParsedHint {
 }
 
 // ============================================================================
-// Hint Templates
+// Hint Templates (English - keys for translation)
 // ============================================================================
 
 /**
- * Hint templates with entity placeholders.
- * Format: {type:label} or {type} for default label
- *
- * Supported tokens:
- * - {source:name} - Source with specific provider (gmail, slack, github, etc.)
- * - {file:label} - File attachment with custom label
- * - {folder} - Working directory
- * - {skill} - Custom skill
+ * Hint template keys for translation.
+ * Using full English text as translation keys per project convention.
  */
-const HINT_TEMPLATES = [
+const HINT_TEMPLATE_KEYS = [
   'Summarize your {source:Gmail} inbox, draft replies, and save notes to {source:Craft}',
   'Turn a {file:screenshot} into a working website in your {folder}',
   'Pull issues from {source:Linear}, research in {source:Slack}, ship the fix',
@@ -125,10 +120,13 @@ function parseHintTemplate(template: string, id: string): ParsedHint {
 }
 
 /**
- * Parse all hint templates
+ * Parse all hint templates from translated strings
  */
-function parseAllHints(): ParsedHint[] {
-  return HINT_TEMPLATES.map((template, index) => parseHintTemplate(template, `hint-${index}`))
+function parseAllHints(t: (key: string) => string): ParsedHint[] {
+  return HINT_TEMPLATE_KEYS.map((key, index) => {
+    const template = t(key)
+    return parseHintTemplate(template, `hint-${index}`)
+  })
 }
 
 // ============================================================================
@@ -170,8 +168,10 @@ export interface EmptyStateHintProps {
  * example workflows with inline entity badges.
  */
 export function EmptyStateHint({ hintIndex, className }: EmptyStateHintProps) {
+  const { t } = useTranslation('components/chat/EmptyStateHint')
+
   // Parse all hints once
-  const allHints = React.useMemo(() => parseAllHints(), [])
+  const allHints = React.useMemo(() => parseAllHints(t), [t])
 
   // Select a hint - either specified index or random on mount
   const [selectedIndex] = React.useState(() => {
@@ -216,12 +216,12 @@ export function EmptyStateHint({ hintIndex, className }: EmptyStateHintProps) {
  * Get the total number of available hints (for playground variant generation)
  */
 export function getHintCount(): number {
-  return HINT_TEMPLATES.length
+  return HINT_TEMPLATE_KEYS.length
 }
 
 /**
- * Get hint template by index (for debugging/testing)
+ * Get hint template key by index (for debugging/testing)
  */
-export function getHintTemplate(index: number): string {
-  return HINT_TEMPLATES[index % HINT_TEMPLATES.length]
+export function getHintTemplateKey(index: number): string {
+  return HINT_TEMPLATE_KEYS[index % HINT_TEMPLATE_KEYS.length]
 }

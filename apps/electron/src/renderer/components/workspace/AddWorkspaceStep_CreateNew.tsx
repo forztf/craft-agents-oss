@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react"
 import { ArrowLeft } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { slugify } from "@/lib/slugify"
-import { useTranslation } from "@/i18n/index"
+import { useTranslation } from '@/contexts/I18nContext'
 import { Input } from "../ui/input"
 import { Button } from "../ui/button"
 import { AddWorkspaceContainer, AddWorkspaceStepHeader, AddWorkspaceSecondaryButton, AddWorkspacePrimaryButton } from "./primitives"

@@ -1,6 +1,6 @@
 import { FolderPlus, FolderOpen } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { useTranslation } from '@/i18n/index'
+import { useTranslation } from '@/contexts/I18nContext'
 import { AddWorkspaceContainer, AddWorkspaceStepHeader } from "./primitives"
 
 interface AddWorkspaceStep_ChoiceProps {

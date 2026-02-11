@@ -5,7 +5,7 @@ import { Dithering } from "@paper-design/shaders-react"
 import { FullscreenOverlayBase } from "@craft-agent/ui"
 import { cn } from "@/lib/utils"
 import { overlayTransitionIn } from "@/lib/animations"
-import { useTranslation } from '@/i18n/index'
+import { useTranslation } from '@/contexts/I18nContext'
 import { AddWorkspaceStep_Choice } from "./AddWorkspaceStep_Choice"
 import { AddWorkspaceStep_CreateNew } from "./AddWorkspaceStep_CreateNew"
 import { AddWorkspaceStep_OpenFolder } from "./AddWorkspaceStep_OpenFolder"

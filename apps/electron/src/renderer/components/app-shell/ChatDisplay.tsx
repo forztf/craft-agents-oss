@@ -13,7 +13,7 @@ import {
   X,
 } from "lucide-react"
 import { motion, AnimatePresence } from "motion/react"
-import { useTranslation } from '@/i18n/index'
+import { useTranslation } from '@/contexts/I18nContext'
 
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { cn } from "@/lib/utils"
