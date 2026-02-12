@@ -2716,9 +2716,9 @@ function FilterModeBadge({ mode }: { mode: FilterMode }) {
                                 Shows matching statuses and labels in a single flat list.
                                 Supports keyboard navigation (ArrowUp/Down/Enter in input). */}
                             {filterDropdownResults.states.length === 0 && filterDropdownResults.labels.length === 0 ? (
-                              <div className="px-3 py-4 text-center text-xs text-muted-foreground">
-                                {t('{t('No matching statuses or labels')}')}
-                              </div>
+                                <div className="px-3 py-4 text-center text-xs text-muted-foreground">
+                                {t('No matching statuses or labels')}
+                                </div>
                             ) : (
                               <div ref={filterDropdownListRef} className="max-h-[240px] overflow-y-auto py-1">
                                 {/* Matched statuses */}
