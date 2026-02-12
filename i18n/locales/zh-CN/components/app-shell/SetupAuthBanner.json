@@ -1,10 +1,10 @@
 {
   "Connection required": "需要连接",
   "API credentials required": "需要 API 凭据",
-  "Something went wrong": "出错了",
-  "Connect to required services to continue.": "连接所需服务以继续。",
+  "Something went wrong": "出了点问题",
+  "Connect to required services to continue.": "连接到所需服务以继续。",
   "Enter API credentials to continue.": "输入 API 凭据以继续。",
-  "Something went wrong. Tap to retry.": "出错了。点击重试。",
+  "Something went wrong. Tap to retry.": "出了点问题。点击重试。",
   "Connect": "连接",
   "Add Credentials": "添加凭据",
   "Retry": "重试",

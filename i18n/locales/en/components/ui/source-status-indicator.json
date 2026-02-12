@@ -1,0 +1,12 @@
+{
+  "Connected": "Connected",
+  "Source is connected and working": "Source is connected and working",
+  "Needs Authentication": "Needs Authentication",
+  "Source requires authentication to connect": "Source requires authentication to connect",
+  "Connection Failed": "Connection Failed",
+  "Failed to connect to source": "Failed to connect to source",
+  "Not Tested": "Not Tested",
+  "Connection has not been tested": "Connection has not been tested",
+  "Disabled": "Disabled",
+  "Local MCP servers are disabled in Settings": "Local MCP servers are disabled in Settings"
+}

@@ -1,3 +1,9 @@
 {
-  "(prev": "(prev"
+  "(prev": "(prev",
+  "Search commands...": "搜索命令...",
+  "No commands found": "未找到命令",
+  "Modes": "模式",
+  "Features": "功能",
+  "Recent Working Directories": "最近的工作目录",
+  "Use @ for skills and files": "使用 @ 提及技能和文件"
 }

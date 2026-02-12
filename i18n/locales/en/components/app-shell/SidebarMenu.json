@@ -1,15 +1,15 @@
 {
-  "Add New Label": "Add New Label",
-  "Add Skill": "Add Skill",
-  "Add Source": "Add Source",
-  "Configure Statuses": "Configure Statuses",
-  "Delete Label": "Delete Label",
-  "Delete View": "Delete View",
-  "Edit Labels": "Edit Labels",
-  "Edit Views": "Edit Views",
   "Open in New Window": "Open in New Window",
+  "Configure Statuses": "Configure Statuses",
+  "Add New Label": "Add New Label",
+  "Edit Labels": "Edit Labels",
+  "Delete Label": "Delete Label",
+  "Edit Views": "Edit Views",
+  "Delete View": "Delete View",
   "Learn More about APIs": "Learn More about APIs",
   "Learn More about MCP": "Learn More about MCP",
   "Learn More about Local Folders": "Learn More about Local Folders",
-  "Learn More about Sources": "Learn More about Sources"
+  "Learn More about Sources": "Learn More about Sources",
+  "Add Source": "Add Source",
+  "Add Skill": "Add Skill"
 }

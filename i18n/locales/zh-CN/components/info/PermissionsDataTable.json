@@ -1,7 +1,14 @@
 {
+  "Pattern copied to clipboard": "已复制模式到剪贴板",
+  "Failed to copy pattern": "复制模式失败",
   "Access": "访问权限",
-  "Comment": "评论",
-  "Pattern": "模式",
   "Type": "类型",
+  "Pattern": "模式",
+  "Comment": "注释",
+  "Search patterns...": "搜索模式...",
+  "No permissions configured": "未配置权限",
+  "Permissions": "权限",
+  "rule": "条规则",
+  "rules": "条规则",
   "View Fullscreen": "全屏查看"
 }

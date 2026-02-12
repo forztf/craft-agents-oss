@@ -1,3 +1,4 @@
 {
-  "Authenticate with this source to view available tools": "向此来源验证以查看可用工具"
+  "Source requires authentication": "数据源需要身份验证",
+  "Authenticate with this source to view available tools": "使用此数据源进行身份验证以查看可用工具"
 }

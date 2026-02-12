@@ -1,0 +1,12 @@
+{
+  "Connected": "已连接",
+  "Source is connected and working": "数据源已连接并正常工作",
+  "Needs Authentication": "需要认证",
+  "Source requires authentication to connect": "数据源需要认证才能连接",
+  "Connection Failed": "连接失败",
+  "Failed to connect to source": "无法连接到数据源",
+  "Not Tested": "未测试",
+  "Connection has not been tested": "连接尚未测试",
+  "Disabled": "已禁用",
+  "Local MCP servers are disabled in Settings": "本地 MCP 服务器在设置中已禁用"
+}

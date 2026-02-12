@@ -1,1 +1,11 @@
-{"Back": "返回", "Choose existing folder": "选择现有文件夹", "Choose any folder to use as workspace.": "选择任意文件夹作为工作区。", "No folder selected": "未选择文件夹", "Browse": "浏览", "Workspace name": "工作区名称", "My Workspace": "我的工作区", "Opening...": "打开中...", "Open": "打开"}
+{
+  "Back": "返回",
+  "Choose existing folder": "选择现有文件夹",
+  "Choose any folder to use as workspace.": "选择任意文件夹作为工作区。",
+  "No folder selected": "未选择文件夹",
+  "Browse": "浏览",
+  "Workspace name": "工作区名称",
+  "My Workspace": "我的工作区",
+  "Opening...": "打开中...",
+  "Open": "打开"
+}

@@ -1,1 +1,9 @@
-{"1 Chat selected": "已选择 1 个对话", "{count} Chats selected": "已选择 {count} 个对话", "Use Command+Click to toggle, Shift+Click for range": "使用 Command+Click 切换，Shift+Click 选择范围", "Press Esc to clear selection": "按 Esc 清除选择", "Change Status": "更改状态", "Set Labels": "设置标签", "Archive": "归档"}
+{
+  "1 Chat selected": "已选择 1 个对话",
+  "{count} Chats selected": "已选择 {count} 个对话",
+  "Use Command+Click to toggle, Shift+Click for range": "使用 Command+Click 切换，Shift+Click 选择范围",
+  "Press Esc to clear selection": "按 Esc 清除选择",
+  "Change Status": "更改状态",
+  "Set Labels": "设置标签",
+  "Archive": "归档"
+}

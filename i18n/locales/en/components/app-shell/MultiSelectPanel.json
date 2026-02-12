@@ -1,1 +1,9 @@
-{"1 Chat selected": "1 Chat selected", "{count} Chats selected": "{count} Chats selected", "Use Command+Click to toggle, Shift+Click for range": "Use Command+Click to toggle, Shift+Click for range", "Press Esc to clear selection": "Press Esc to clear selection", "Change Status": "Change Status", "Set Labels": "Set Labels", "Archive": "Archive"}
+{
+  "1 Chat selected": "1 Chat selected",
+  "{count} Chats selected": "{count} Chats selected",
+  "Use Command+Click to toggle, Shift+Click for range": "Use Command+Click to toggle, Shift+Click for range",
+  "Press Esc to clear selection": "Press Esc to clear selection",
+  "Change Status": "Change Status",
+  "Set Labels": "Set Labels",
+  "Archive": "Archive"
+}

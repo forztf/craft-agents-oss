@@ -1,1 +1,24 @@
-{"Bearer Token": "Bearer Token", "API Key": "API Key", "Username": "Username", "Password": "Password", "OAuth": "OAuth", "Google Sign-In": "Google Sign-In", "Slack Sign-In": "Slack Sign-In", "Microsoft Sign-In": "Microsoft Sign-In", "Authentication": "Authentication", "Connected": "Connected", "Cancelled": "Cancelled", "Failed": "Failed", "Signed in as {email}": "Signed in as {email}", "Authenticating...": "Authenticating...", "Complete authentication in your browser": "Complete authentication in your browser", "Sign in with {provider}": "Sign in with {provider}", "Cancel": "Cancel", "Saving...": "Saving...", "Save": "Save", "Credentials are encrypted at rest": "Credentials are encrypted at rest", "Enter {label}": "Enter {label}", "Workspace: {workspace}": "Workspace: {workspace}"}
+{
+  "Bearer Token": "Bearer Token",
+  "API Key": "API Key",
+  "Username": "Username",
+  "Password": "Password",
+  "OAuth": "OAuth",
+  "Google Sign-In": "Google Sign-In",
+  "Slack Sign-In": "Slack Sign-In",
+  "Microsoft Sign-In": "Microsoft Sign-In",
+  "Authentication": "Authentication",
+  "Connected": "Connected",
+  "Cancelled": "Cancelled",
+  "Failed": "Failed",
+  "Signed in as {email}": "Signed in as {email}",
+  "Authenticating...": "Authenticating...",
+  "Complete authentication in your browser": "Complete authentication in your browser",
+  "Sign in with {provider}": "Sign in with {provider}",
+  "Cancel": "Cancel",
+  "Saving...": "Saving...",
+  "Save": "Save",
+  "Credentials are encrypted at rest": "Credentials are encrypted at rest",
+  "Enter {label}": "Enter {label}",
+  "Workspace: {workspace}": "Workspace: {workspace}"
+}

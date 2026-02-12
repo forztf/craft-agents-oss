@@ -86,17 +86,6 @@ function formatTokenCount(tokens: number): string {
 /** Platform-specific modifier key for keyboard shortcuts */
 const cmdKey = isMac ? '⌘' : 'Ctrl'
 
-/** Default rotating placeholders for onboarding/empty state */
-const DEFAULT_PLACEHOLDERS = [
-  'What would you like to work on?',
-  'Use Shift + Tab to switch between Explore and Execute',
-  'Type @ to mention files, folders, or skills',
-  'Type # to apply labels to this conversation',
-  'Press Shift + Return to add a new line',
-  `Press ${cmdKey} + B to toggle the sidebar`,
-  `Press ${cmdKey} + . for focus mode`,
-]
-
 /** Fisher-Yates shuffle — returns a new array in random order */
 function shuffleArray<T>(array: T[]): T[] {
   const shuffled = [...array]
@@ -211,7 +200,7 @@ export interface FreeFormInputProps {
  * - Active option badges
  */
 export function FreeFormInput({
-  placeholder = DEFAULT_PLACEHOLDERS,
+  placeholder,
   disabled = false,
   isProcessing = false,
   onSubmit,
@@ -339,7 +328,19 @@ export function FreeFormInput({
 
   // Shuffle placeholder order once per mount so each session feels fresh
   const shuffledPlaceholder = React.useMemo(
-    () => Array.isArray(placeholder) ? shuffleArray(placeholder) : placeholder,
+    () => {
+      // Default rotating placeholders for onboarding/empty state
+      const defaultPlaceholders = [
+        t('What would you like to work on?'),
+        t('Use Shift + Tab to switch between Explore and Execute'),
+        t('Type @ to mention files, folders, or skills'),
+        t('Type # to apply labels to this conversation'),
+        t('Press Shift + Return to add a new line'),
+        t('Press {cmdKey} + B to toggle the sidebar', { cmdKey }),
+        t('Press {cmdKey} + . for focus mode', { cmdKey }),
+      ]
+      return Array.isArray(placeholder) ? shuffleArray(placeholder) : (placeholder || defaultPlaceholders)
+    },
     [] // eslint-disable-line react-hooks/exhaustive-deps -- intentionally shuffle only on mount
   )
 

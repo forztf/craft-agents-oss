@@ -17,6 +17,7 @@ import { cn } from '@/lib/utils'
 import { parseDate } from 'chrono-node'
 import { format, parse } from 'date-fns'
 import type { LabelConfig } from '@craft-agent/shared/labels'
+import { useTranslation } from '@/contexts/I18nContext'
 
 export interface LabelValuePopoverProps {
   /** Label configuration (color, name, valueType) */
@@ -44,6 +45,8 @@ export function LabelValuePopover({
   onOpenChange,
   children,
 }: LabelValuePopoverProps) {
+  const { t } = useTranslation('components/ui/label-value-popover')
+
   // Local draft value — resets to prop value when popover opens
   const [draft, setDraft] = React.useState(value ?? '')
   // Whether the inline calendar picker is visible (date labels only)
@@ -199,7 +202,7 @@ export function LabelValuePopover({
                       onValueChange?.(undefined)
                     }
                   }}
-                  placeholder="tomorrow, next friday..."
+                  placeholder={t("tomorrow, next friday...")}
                   className={cn(
                     'flex-1 h-7 px-2 text-[13px]',
                     'bg-transparent',
@@ -212,7 +215,7 @@ export function LabelValuePopover({
                   <PopoverTrigger asChild>
                     <button
                       type="button"
-                      aria-label="Select date"
+                      aria-label={t('Select date')}
                       className={cn(
                         'flex items-center justify-center w-7 h-7 rounded-[5px]',
                         'hover:bg-foreground/5 transition-colors cursor-pointer',
@@ -266,7 +269,7 @@ export function LabelValuePopover({
               onChange={(e) => setDraft(e.target.value)}
               onKeyDown={handleKeyDown}
               onBlur={commitValue}
-              placeholder={label.valueType === 'number' ? 'Enter number...' : 'Enter value...'}
+              placeholder={label.valueType === 'number' ? t('Enter number...') : t('Enter value...')}
               className={cn(
                 'w-full h-7 px-2 text-[13px]',
                 'bg-transparent',
@@ -294,7 +297,7 @@ export function LabelValuePopover({
             )}
           >
             <Trash2 className="w-3.5 h-3.5" />
-            <span>Remove</span>
+            <span>{t('Remove')}</span>
           </button>
         </div>
       </PopoverContent>

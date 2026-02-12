@@ -1,5 +1,6 @@
 {
   "Access": "访问权限",
+  "Tool": "工具",
   "Description": "描述",
-  "Tool": "工具"
+  "No tools available": "无可用工具"
 }

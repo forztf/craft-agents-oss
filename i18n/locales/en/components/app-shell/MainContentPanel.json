@@ -1,1 +1,7 @@
-{"No skills configured": "No skills configured", "No sources configured": "No sources configured", "Select a conversation to get started": "Select a conversation to get started", "No flagged conversations": "No flagged conversations", "No conversations yet": "No conversations yet"}
+{
+  "No skills configured": "No skills configured",
+  "No sources configured": "No sources configured",
+  "Select a conversation to get started": "Select a conversation to get started",
+  "No flagged conversations": "No flagged conversations",
+  "No conversations yet": "No conversations yet"
+}

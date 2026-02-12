@@ -1,8 +1,15 @@
 {
-  "Description": "描述",
-  "Flags": "标记",
+  "Pattern copied to clipboard": "已复制模式到剪贴板",
+  "Failed to copy pattern": "复制模式失败",
+  "Auto-Apply Rules": "自动应用规则",
   "Label": "标签",
   "Pattern": "模式",
+  "Flags": "标志",
   "Template": "模板",
-  "View Fullscreen": "全屏查看"
+  "Description": "描述",
+  "Search rules...": "搜索规则...",
+  "No auto-apply rules configured": "未配置自动应用规则",
+  "View Fullscreen": "全屏查看",
+  "rule": "条规则",
+  "rules": "条规则"
 }

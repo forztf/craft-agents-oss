@@ -1,1 +1,10 @@
-{"Session Expired": "会话已过期", "Your Craft session has expired or is no longer valid.": "您的 Craft 会话已过期或不再有效。", "Please log in again to continue using Craft Agents.": "请重新登录以继续使用 Craft Agents。", "Your conversations and settings are preserved.": "您的对话和设置已保留。", "Logging in...": "登录中...", "Log In with Craft": "使用 Craft 登录", "Reset app and start fresh...": "重置应用程序并重新开始...", "Login failed": "登录失败"}
+{
+  "Session Expired": "会话已过期",
+  "Your Craft session has expired or is no longer valid.": "您的 Craft 会话已过期或不再有效。",
+  "Please log in again to continue using Craft Agents.": "请重新登录以继续使用 Craft Agents。",
+  "Your conversations and settings are preserved.": "您的对话和设置已保留。",
+  "Logging in...": "登录中...",
+  "Log In with Craft": "使用 Craft 登录",
+  "Reset app and start fresh...": "重置应用程序并重新开始...",
+  "Login failed": "登录失败"
+}

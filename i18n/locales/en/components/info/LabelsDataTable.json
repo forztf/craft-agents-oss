@@ -2,5 +2,10 @@
   "Color": "Color",
   "Name": "Name",
   "Type": "Type",
+  "Search labels...": "Search labels...",
+  "No labels configured": "No labels configured",
+  "Labels": "Labels",
+  "label": "label",
+  "labels": "labels",
   "View Fullscreen": "View Fullscreen"
 }

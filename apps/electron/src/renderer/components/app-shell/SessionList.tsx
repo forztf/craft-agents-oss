@@ -1463,7 +1463,7 @@ export function SessionList({
           <EmptyMedia variant="icon">
             <Inbox />
           </EmptyMedia>
-          <EmptyTitle>No sessions yet</EmptyTitle>
+          <EmptyTitle>{t('No sessions yet')}</EmptyTitle>
           <EmptyDescription>
             {t('Sessions with your agent appear here. Start one to get going.')}
           </EmptyDescription>

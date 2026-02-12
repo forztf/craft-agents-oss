@@ -11,6 +11,7 @@ import { DataTable, SortableHeader } from '@/components/ui/data-table'
 import { Input } from '@/components/ui/input'
 import { Spinner } from '@craft-agent/ui'
 import { cn } from '@/lib/utils'
+import { useTranslation } from '@/contexts/I18nContext'
 
 export interface Info_DataTableProps<TData, TValue> {
   /** TanStack Table column definitions */
@@ -77,19 +78,20 @@ export function Info_DataTable<TData, TValue>({
   getSubRows,
   className,
 }: Info_DataTableProps<TData, TValue>) {
+  const { t } = useTranslation('components/info/Info_DataTable')
   const [searchValue, setSearchValue] = React.useState('')
 
   // Parse searchable prop
   const searchConfig = React.useMemo(() => {
     if (!searchable) return null
     if (searchable === true) {
-      return { placeholder: 'Search...', column: undefined }
+      return { placeholder: t('Search...'), column: undefined }
     }
     return {
-      placeholder: searchable.placeholder ?? 'Search...',
+      placeholder: searchable.placeholder ?? t('Search...'),
       column: searchable.column,
     }
-  }, [searchable])
+  }, [searchable, t])
 
   // Loading state
   if (loading) {
@@ -105,7 +107,7 @@ export function Info_DataTable<TData, TValue>({
     return (
       <div className="px-4 py-6 text-sm text-muted-foreground">
         {error === 'Source requires authentication' ? (
-          <span>Authenticate with this source to view available data</span>
+          <span>{t('Authenticate with this source to view available data')}</span>
         ) : (
           <span>{error}</span>
         )}

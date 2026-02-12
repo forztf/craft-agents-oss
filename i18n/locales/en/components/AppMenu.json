@@ -1,5 +1,19 @@
 {
   "Craft menu": "Craft menu",
+  "New Chat": "New Chat",
+  "New Window": "New Window",
+  "Settings": "Settings",
+  "Settings...": "Settings...",
+  "Help": "Help",
+  "Help & Documentation": "Help & Documentation",
+  "Keyboard Shortcuts": "Keyboard Shortcuts",
+  "Debug": "Debug",
+  "Check for Updates": "Check for Updates",
+  "Install Update": "Install Update",
+  "Toggle DevTools": "Toggle DevTools",
+  "Quit Craft Agents": "Quit Craft Agents",
+  "Back": "Back",
+  "Forward": "Forward",
   "Go back": "Go back",
   "Go forward": "Go forward"
 }

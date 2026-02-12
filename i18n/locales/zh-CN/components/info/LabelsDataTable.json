@@ -2,5 +2,10 @@
   "Color": "颜色",
   "Name": "名称",
   "Type": "类型",
+  "Search labels...": "搜索标签...",
+  "No labels configured": "未配置标签",
+  "Labels": "标签",
+  "label": "个标签",
+  "labels": "个标签",
   "View Fullscreen": "全屏查看"
 }

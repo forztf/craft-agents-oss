@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-02-11T10:41:09.265Z",
+  "timestamp": "2026-02-12T00:04:46.570Z",
   "summary": {
     "totalFiles": 292,
-    "totalIssues": 556
+    "totalIssues": 495
   },
   "files": {
     "apps\\electron\\src\\renderer\\actions\\definitions.ts": [
@@ -312,199 +312,6 @@
         "type": "string-literal"
       }
     ],
-    "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx": [
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 191,
-        "column": 32,
-        "text": "Include",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 198,
-        "column": 32,
-        "text": "Exclude",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 205,
-        "column": 32,
-        "text": "Clear",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2277,
-        "column": 48,
-        "text": "Sources",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2282,
-        "column": 48,
-        "text": "Skills",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2287,
-        "column": 48,
-        "text": "Statuses",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2292,
-        "column": 48,
-        "text": "Permissions",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2298,
-        "column": 48,
-        "text": "All Documentation",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2393,
-        "column": 85,
-        "text": "Filter Chats",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2601,
-        "column": 56,
-        "text": "Statuses",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2673,
-        "column": 56,
-        "text": "Labels",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2678,
-        "column": 75,
-        "text": "No labels configured",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2698,
-        "column": 54,
-        "text": "Search",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2084,
-        "column": 22,
-        "text": "All Sessions",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2092,
-        "column": 22,
-        "text": "Flagged",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2101,
-        "column": 22,
-        "text": "Status",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2133,
-        "column": 22,
-        "text": "Labels",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2152,
-        "column": 22,
-        "text": "Archived",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2163,
-        "column": 22,
-        "text": "Sources",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2179,
-        "column": 26,
-        "text": "APIs",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2192,
-        "column": 26,
-        "text": "MCPs",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2205,
-        "column": 26,
-        "text": "Local Folders",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2220,
-        "column": 22,
-        "text": "Skills",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2235,
-        "column": 22,
-        "text": "Settings",
-        "type": "string-literal"
-      }
-    ],
-    "apps\\electron\\src\\renderer\\components\\app-shell\\MainContentPanel.tsx": [
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\MainContentPanel.tsx",
-        "line": 162,
-        "column": 32,
-        "text": "No sources configured",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\MainContentPanel.tsx",
-        "line": 184,
-        "column": 32,
-        "text": "No skills configured",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\MainContentPanel.tsx",
-        "line": 236,
-        "column": 30,
-        "text": "Select a conversation to get started",
-        "type": "jsx-text"
-      }
-    ],
     "apps\\electron\\src\\renderer\\components\\app-shell\\PanelHeader.tsx": [
       {
         "file": "apps\\electron\\src\\renderer\\components\\app-shell\\PanelHeader.tsx",
@@ -521,169 +328,13 @@
         "type": "jsx-text"
       }
     ],
-    "apps\\electron\\src\\renderer\\components\\app-shell\\SessionList.tsx": [
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\app-shell\\SessionList.tsx",
-        "line": 1466,
-        "column": 21,
-        "text": "No sessions yet",
-        "type": "jsx-text"
-      }
-    ],
-    "apps\\electron\\src\\renderer\\components\\chat\\AuthRequestCard.tsx": [
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\chat\\AuthRequestCard.tsx",
-        "line": 580,
-        "column": 12,
-        "text": "Cancel",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\chat\\AuthRequestCard.tsx",
-        "line": 597,
-        "column": 10,
-        "text": "Cancel",
-        "type": "string-literal"
-      }
-    ],
-    "apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx": [
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
-        "line": 113,
-        "column": 48,
-        "text": "Flags",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
-        "line": 126,
-        "column": 48,
-        "text": "Template",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
-        "line": 143,
-        "column": 48,
-        "text": "Description",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
-        "line": 216,
-        "column": 35,
-        "text": "Search rules...",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
-        "line": 235,
-        "column": 39,
-        "text": "Search rules...",
-        "type": "string-literal"
-      }
-    ],
     "apps\\electron\\src\\renderer\\components\\info\\Info_DataTable.tsx": [
       {
         "file": "apps\\electron\\src\\renderer\\components\\info\\Info_DataTable.tsx",
-        "line": 63,
+        "line": 64,
         "column": 19,
         "text": "Search tools...",
         "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\info\\Info_DataTable.tsx",
-        "line": 86,
-        "column": 15,
-        "text": "Search...",
-        "type": "string-literal"
-      }
-    ],
-    "apps\\electron\\src\\renderer\\components\\info\\Info_Page.tsx": [
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\info\\Info_Page.tsx",
-        "line": 84,
-        "column": 44,
-        "text": "Error loading content",
-        "type": "jsx-text"
-      }
-    ],
-    "apps\\electron\\src\\renderer\\components\\info\\Info_StatusBadge.tsx": [
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\info\\Info_StatusBadge.tsx",
-        "line": 13,
-        "column": 13,
-        "text": "Allowed",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\info\\Info_StatusBadge.tsx",
-        "line": 14,
-        "column": 13,
-        "text": "Blocked",
-        "type": "string-literal"
-      }
-    ],
-    "apps\\electron\\src\\renderer\\components\\info\\LabelsDataTable.tsx": [
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\info\\LabelsDataTable.tsx",
-        "line": 79,
-        "column": 48,
-        "text": "Color",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\info\\LabelsDataTable.tsx",
-        "line": 163,
-        "column": 35,
-        "text": "Search labels...",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\info\\LabelsDataTable.tsx",
-        "line": 183,
-        "column": 39,
-        "text": "Search labels...",
-        "type": "string-literal"
-      }
-    ],
-    "apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx": [
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
-        "line": 123,
-        "column": 48,
-        "text": "Comment",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
-        "line": 159,
-        "column": 48,
-        "text": "Comment",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
-        "line": 206,
-        "column": 35,
-        "text": "Search patterns...",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
-        "line": 225,
-        "column": 39,
-        "text": "Search patterns...",
-        "type": "string-literal"
-      }
-    ],
-    "apps\\electron\\src\\renderer\\components\\info\\ToolsDataTable.tsx": [
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\info\\ToolsDataTable.tsx",
-        "line": 59,
-        "column": 48,
-        "text": "Description",
-        "type": "jsx-text"
       }
     ],
     "apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx": [
@@ -828,203 +479,203 @@
     "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx": [
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 114,
+        "line": 117,
         "column": 6,
         "text": "Permission Settings",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 116,
+        "line": 119,
         "column": 9,
         "text": "The user is on the Settings Screen and pressed the edit button on Workspace Permission settings.",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 132,
+        "line": 135,
         "column": 6,
         "text": "Default Permissions",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 152,
+        "line": 155,
         "column": 6,
         "text": "Skill Instructions",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 154,
+        "line": 157,
         "column": 9,
         "text": "The user is editing skill instructions in SKILL.md.",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 170,
+        "line": 173,
         "column": 6,
         "text": "Skill Metadata",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 172,
+        "line": 175,
         "column": 9,
         "text": "The user is editing skill metadata in the YAML frontmatter of SKILL.md.",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 188,
+        "line": 191,
         "column": 6,
         "text": "Source Documentation",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 204,
+        "line": 207,
         "column": 6,
         "text": "Source Configuration",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 221,
+        "line": 224,
         "column": 6,
         "text": "Source Permissions",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 238,
+        "line": 241,
         "column": 6,
         "text": "Tool Permissions",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 240,
+        "line": 243,
         "column": 9,
         "text": "The user is viewing the Tools list for an MCP source and wants to modify tool permissions.",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 258,
+        "line": 261,
         "column": 6,
         "text": "Preferences Notes",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 276,
+        "line": 279,
         "column": 6,
         "text": "Add Source",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 278,
+        "line": 281,
         "column": 9,
         "text": "The user wants to add a new source to their workspace.",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 293,
+        "line": 296,
         "column": 6,
         "text": "Add API",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 295,
+        "line": 298,
         "column": 9,
         "text": "The user is viewing API sources and wants to add a new REST API.",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 310,
+        "line": 313,
         "column": 6,
         "text": "Add MCP Server",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 312,
+        "line": 315,
         "column": 9,
         "text": "The user is viewing MCP sources and wants to add a new MCP server.",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 327,
+        "line": 330,
         "column": 6,
         "text": "Add Local Folder",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 329,
+        "line": 332,
         "column": 9,
         "text": "The user wants to add a local folder source.",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 345,
+        "line": 348,
         "column": 6,
         "text": "Add Skill",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 347,
+        "line": 350,
         "column": 9,
         "text": "The user wants to add a new skill to their workspace.",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 362,
+        "line": 365,
         "column": 6,
         "text": "Status Configuration",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 382,
+        "line": 385,
         "column": 6,
         "text": "Label Configuration",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 423,
+        "line": 426,
         "column": 6,
         "text": "Add Label",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 444,
+        "line": 447,
         "column": 6,
         "text": "Views Configuration",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 465,
+        "line": 468,
         "column": 6,
         "text": "Tool Icons",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 467,
+        "line": 470,
         "column": 9,
         "text": "The user wants to edit CLI tool icon mappings.",
         "type": "string-literal"
@@ -1052,15 +703,6 @@
         "line": 296,
         "column": 41,
         "text": "Add New Label",
-        "type": "jsx-text"
-      }
-    ],
-    "apps\\electron\\src\\renderer\\components\\ui\\label-value-popover.tsx": [
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\label-value-popover.tsx",
-        "line": 297,
-        "column": 17,
-        "text": "Remove",
         "type": "jsx-text"
       }
     ],
@@ -1104,109 +746,16 @@
     "apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx": [
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
-        "line": 94,
+        "line": 95,
         "column": 2,
         "text": "Ultrathink",
         "type": "string-literal"
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
-        "line": 95,
+        "line": 96,
         "column": 2,
         "text": "Extended reasoning for complex problems",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
-        "line": 564,
-        "column": 6,
-        "text": "Modes",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
-        "line": 571,
-        "column": 6,
-        "text": "Features",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
-        "line": 586,
-        "column": 8,
-        "text": "Recent Working Directories",
-        "type": "string-literal"
-      }
-    ],
-    "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx": [
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 43,
-        "column": 4,
-        "text": "Connected",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 44,
-        "column": 4,
-        "text": "Source is connected and working",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 49,
-        "column": 4,
-        "text": "Needs Authentication",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 50,
-        "column": 4,
-        "text": "Source requires authentication to connect",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 55,
-        "column": 4,
-        "text": "Connection Failed",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 56,
-        "column": 4,
-        "text": "Failed to connect to source",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 61,
-        "column": 4,
-        "text": "Not Tested",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 62,
-        "column": 4,
-        "text": "Connection has not been tested",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 67,
-        "column": 4,
-        "text": "Disabled",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 68,
-        "column": 4,
-        "text": "Local MCP servers are disabled in Settings",
         "type": "string-literal"
       }
     ],

@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-02-11T11:30:50.009Z",
+  "timestamp": "2026-02-12T00:07:09.204Z",
   "summary": {
-    "totalFiles": 63,
-    "totalIssues": 683,
+    "totalFiles": 52,
+    "totalIssues": 624,
     "bySeverity": {
-      "high": 213,
-      "medium": 400,
-      "low": 70
+      "high": 192,
+      "medium": 384,
+      "low": 48
     },
     "byType": {
-      "string-literal": 578,
-      "placeholder": 10,
-      "title": 30,
-      "jsx-text": 42,
-      "aria-label": 6,
-      "label-attr": 17
+      "string-literal": 555,
+      "placeholder": 9,
+      "title": 15,
+      "jsx-text": 30,
+      "aria-label": 2,
+      "label-attr": 13
     }
   },
   "issues": {
@@ -318,7 +318,7 @@
         "line": 61,
         "text": "Anthropic', url:",
         "type": "string-literal",
-        "context": "onst ANTHROPIC_PRESETS: Preset[] = [\r\n  { key: 'anthropic', label: 'Anthropic', url: 'https://api.anthropic.com' },\r\n  {",
+        "context": "const ANTHROPIC_PRESETS: Preset[] = [\n  { key: 'anthropic', label: 'Anthropic', url: 'https://api.anthropic.com' },\n  {",
         "severity": "medium"
       },
       {
@@ -326,7 +326,7 @@
         "line": 62,
         "text": "OpenRouter', url:",
         "type": "string-literal",
-        "context": "url: 'https://api.anthropic.com' },\r\n  { key: 'openrouter', label: 'OpenRouter', url: 'https://openrouter.ai/api' },",
+        "context": "url: 'https://api.anthropic.com' },\n  { key: 'openrouter', label: 'OpenRouter', url: 'https://openrouter.ai/api' },\n  {",
         "severity": "medium"
       },
       {
@@ -334,7 +334,7 @@
         "line": 63,
         "text": "Vercel AI Gateway', url:",
         "type": "string-literal",
-        "context": "r', url: 'https://openrouter.ai/api' },\r\n  { key: 'vercel', label: 'Vercel AI Gateway', url: 'https://ai-gateway.vercel.",
+        "context": "er', url: 'https://openrouter.ai/api' },\n  { key: 'vercel', label: 'Vercel AI Gateway', url: 'https://ai-gateway.vercel.",
         "severity": "medium"
       },
       {
@@ -342,7 +342,7 @@
         "line": 64,
         "text": "Ollama', url:",
         "type": "string-literal",
-        "context": "url: 'https://ai-gateway.vercel.sh' },\r\n  { key: 'ollama', label: 'Ollama', url: 'http://localhost:11434' },\r\n  { key:",
+        "context": ", url: 'https://ai-gateway.vercel.sh' },\n  { key: 'ollama', label: 'Ollama', url: 'http://localhost:11434' },\n  { key: '",
         "severity": "medium"
       },
       {
@@ -350,7 +350,7 @@
         "line": 65,
         "text": "Custom', url: '",
         "type": "string-literal",
-        "context": "lama', url: 'http://localhost:11434' },\r\n  { key: 'custom', label: 'Custom', url: '' },\r\n]\r\n\r\n// OpenAI provider presets",
+        "context": "llama', url: 'http://localhost:11434' },\n  { key: 'custom', label: 'Custom', url: '' },\n]\n\n// OpenAI provider presets -",
         "severity": "medium"
       },
       {
@@ -358,7 +358,7 @@
         "line": 71,
         "text": "OpenAI', url: '",
         "type": "string-literal",
-        "context": "int\r\nconst OPENAI_PRESETS: Preset[] = [\r\n  { key: 'openai', label: 'OpenAI', url: '' },\r\n  { key: 'openrouter', label: '",
+        "context": "point\nconst OPENAI_PRESETS: Preset[] = [\n  { key: 'openai', label: 'OpenAI', url: '' },\n  { key: 'openrouter', label: 'O",
         "severity": "medium"
       },
       {
@@ -366,7 +366,7 @@
         "line": 72,
         "text": "OpenRouter', url:",
         "type": "string-literal",
-        "context": "penai', label: 'OpenAI', url: '' },\r\n  { key: 'openrouter', label: 'OpenRouter', url: 'https://openrouter.ai/api/v1' },",
+        "context": "openai', label: 'OpenAI', url: '' },\n  { key: 'openrouter', label: 'OpenRouter', url: 'https://openrouter.ai/api/v1' },",
         "severity": "medium"
       },
       {
@@ -374,7 +374,7 @@
         "line": 73,
         "text": "Vercel AI Gateway', url:",
         "type": "string-literal",
-        "context": "url: 'https://openrouter.ai/api/v1' },\r\n  { key: 'vercel', label: 'Vercel AI Gateway', url: 'https://ai-gateway.vercel.",
+        "context": ", url: 'https://openrouter.ai/api/v1' },\n  { key: 'vercel', label: 'Vercel AI Gateway', url: 'https://ai-gateway.vercel.",
         "severity": "medium"
       },
       {
@@ -382,7 +382,7 @@
         "line": 74,
         "text": "Custom', url: '",
         "type": "string-literal",
-        "context": "l: 'https://ai-gateway.vercel.sh/v1' },\r\n  { key: 'custom', label: 'Custom', url: '' },\r\n]\r\n\r\nconst COMPAT_ANTHROPIC_DEF",
+        "context": "rl: 'https://ai-gateway.vercel.sh/v1' },\n  { key: 'custom', label: 'Custom', url: '' },\n]\n\nconst COMPAT_ANTHROPIC_DEFAUL",
         "severity": "medium"
       }
     ],
@@ -402,7 +402,7 @@
         "line": 14,
         "text": "Title",
         "type": "title",
-        "context": "e:\r\n * ```tsx\r\n * <Panel variant=\"grow\">\r\n *   <PanelHeader title=\"Title\" subtitle=\"Subtitle\" />\r\n *   <Separator />\r\n *",
+        "context": "sage:\n * ```tsx\n * <Panel variant=\"grow\">\n *   <PanelHeader title=\"Title\" subtitle=\"Subtitle\" />\n *   <Separator />\n *",
         "severity": "low"
       },
       {
@@ -410,7 +410,7 @@
         "line": 14,
         "text": "Subtitle",
         "type": "title",
-        "context": "<Panel variant=\"grow\">\r\n *   <PanelHeader title=\"Title\" subtitle=\"Subtitle\" />\r\n *   <Separator />\r\n *   {content}\r\n *",
+        "context": "* <Panel variant=\"grow\">\n *   <PanelHeader title=\"Title\" subtitle=\"Subtitle\" />\n *   <Separator />\n *   {content}\n * </P",
         "severity": "low"
       }
     ],
@@ -420,7 +420,7 @@
         "line": 14,
         "text": "Conversations",
         "type": "title",
-        "context": "htContext)\r\n *\r\n * Usage:\r\n * ```tsx\r\n * <PanelHeader\r\n *   title=\"Conversations\"\r\n *   actions={<Button>Add</Button>}",
+        "context": "oplightContext)\n *\n * Usage:\n * ```tsx\n * <PanelHeader\n *   title=\"Conversations\"\n *   actions={<Button>Add</Button>}\n *",
         "severity": "medium"
       },
       {
@@ -428,7 +428,7 @@
         "line": 20,
         "text": "Chat Name",
         "type": "title",
-        "context": "* // With interactive title menu:\r\n * <PanelHeader\r\n *   title=\"Chat Name\"\r\n *   titleMenu={<><MenuItem>Rename</MenuI",
+        "context": "*\n * // With interactive title menu:\n * <PanelHeader\n *   title=\"Chat Name\"\n *   titleMenu={<><MenuItem>Rename</MenuIt",
         "severity": "low"
       },
       {
@@ -436,7 +436,7 @@
         "line": 21,
         "text": "Rename",
         "type": "jsx-text",
-        "context": "lHeader\r\n *   title=\"Chat Name\"\r\n *   titleMenu={<><MenuItem>Rename</MenuItem><MenuItem>Delete</MenuItem></>}\r\n * />\r\n *",
+        "context": "nelHeader\n *   title=\"Chat Name\"\n *   titleMenu={<><MenuItem>Rename</MenuItem><MenuItem>Delete</MenuItem></>}\n * />\n * `",
         "severity": "high"
       },
       {
@@ -444,7 +444,7 @@
         "line": 21,
         "text": "Delete",
         "type": "jsx-text",
-        "context": "ame\"\r\n *   titleMenu={<><MenuItem>Rename</MenuItem><MenuItem>Delete</MenuItem></>}\r\n * />\r\n * ```\r\n *\r\n * The header aut",
+        "context": "Name\"\n *   titleMenu={<><MenuItem>Rename</MenuItem><MenuItem>Delete</MenuItem></>}\n * />\n * ```\n *\n * The header automat",
         "severity": "high"
       }
     ],
@@ -456,14 +456,6 @@
         "type": "aria-label",
         "context": "aria-expanded={todoMenuOpen}\n                aria-label=\"Change todo state\"\n                onContextMenu",
         "severity": "medium"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\app-shell\\SessionList.tsx",
-        "line": 1466,
-        "text": "No sessions yet",
-        "type": "jsx-text",
-        "context": "<Inbox />\n          </EmptyMedia>\n          <EmptyTitle>No sessions yet</EmptyTitle>\n          <EmptyDescription>",
-        "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\app-shell\\SessionList.tsx",
@@ -490,344 +482,22 @@
         "severity": "medium"
       }
     ],
-    "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\AppMenu.tsx": [
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\AppMenu.tsx",
-        "line": 201,
-        "text": "Craft menu",
-        "type": "aria-label",
-        "context": "<DropdownMenuTrigger asChild>\r\n          <TopBarButton aria-label=\"Craft menu\">\r\n            <CraftAgentsSymbol cla",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\AppMenu.tsx",
-        "line": 327,
-        "text": "Go back",
-        "type": "aria-label",
-        "context": "ck={onBack}\r\n            disabled={!canGoBack}\r\n            aria-label=\"Go back\"\r\n          >\r\n            <Icons.Chevro",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\AppMenu.tsx",
-        "line": 341,
-        "text": "Go forward",
-        "type": "aria-label",
-        "context": "Forward}\r\n            disabled={!canGoForward}\r\n            aria-label=\"Go forward\"\r\n          >\r\n            <Icons.Che",
-        "severity": "low"
-      }
-    ],
-    "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx": [
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
-        "line": 90,
-        "text": "Label",
-        "type": "title",
-        "context": "header: ({ column }) => <SortableHeader column={column} title=\"Label\" />,\r\n    accessorFn: (row) => row.label.name,",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
-        "line": 102,
-        "text": "Pattern",
-        "type": "title",
-        "context": "header: ({ column }) => <SortableHeader column={column} title=\"Pattern\" />,\r\n    accessorFn: (row) => row.rule.patte",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
-        "line": 113,
-        "text": "Flags",
-        "type": "jsx-text",
-        "context": ": 'flags',\r\n    header: () => <span className=\"p-1.5 pl-2.5\">Flags</span>,\r\n    accessorFn: (row) => row.rule.flags ?? '",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
-        "line": 126,
-        "text": "Template",
-        "type": "jsx-text",
-        "context": "template',\r\n    header: () => <span className=\"p-1.5 pl-2.5\">Template</span>,\r\n    accessorFn: (row) => row.rule.valueTe",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
-        "line": 143,
-        "text": "Description",
-        "type": "jsx-text",
-        "context": "cription',\r\n    header: () => <span className=\"p-1.5 pl-2.5\">Description</span>,\r\n    accessorFn: (row) => row.rule.desc",
-        "severity": "medium"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
-        "line": 205,
-        "text": "View Fullscreen",
-        "type": "title",
-        "context": "sible:ring-ring focus-visible:opacity-100'\r\n      )}\r\n      title=\"View Fullscreen\"\r\n    >\r\n      <Maximize2 className=\"",
-        "severity": "medium"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
-        "line": 216,
-        "text": "Search rules...",
-        "type": "string-literal",
-        "context": "s}\r\n        data={rows}\r\n        searchable={searchable ? { placeholder: 'Search rules...' } : false}\r\n        maxHeight",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\AutoRulesDataTable.tsx",
-        "line": 235,
-        "text": "Search rules...",
-        "type": "string-literal",
-        "context": "data={rows}\r\n            searchable={searchable ? { placeholder: 'Search rules...' } : false}\r\n            empty",
-        "severity": "high"
-      }
-    ],
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\Info_DataTable.tsx": [
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\Info_DataTable.tsx",
-        "line": 55,
+        "line": 56,
         "text": "Name",
         "type": "title",
-        "context": "header: ({ column }) => <SortableHeader column={column} title=\"Name\" />,\r\n *   },\r\n *   // ...\r\n * ]\r\n *\r\n * <Info_D",
+        "context": "header: ({ column }) => <SortableHeader column={column} title=\"Name\" />,\n *   },\n *   // ...\n * ]\n *\n * <Info_DataTa",
         "severity": "low"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\Info_DataTable.tsx",
-        "line": 63,
+        "line": 64,
         "text": "Search tools...",
         "type": "string-literal",
-        "context": "columns={columns}\r\n *   data={tools}\r\n *   searchable={{ placeholder: 'Search tools...' }}\r\n *   maxHeight={400}\r\n *",
+        "context": "*   columns={columns}\n *   data={tools}\n *   searchable={{ placeholder: 'Search tools...' }}\n *   maxHeight={400}\n * />",
         "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\Info_DataTable.tsx",
-        "line": 86,
-        "text": "Search...",
-        "type": "string-literal",
-        "context": "return null\r\n    if (searchable === true) {\r\n      return { placeholder: 'Search...', column: undefined }\r\n    }\r\n    re",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\Info_DataTable.tsx",
-        "line": 108,
-        "text": "Authenticate with this source to view available data",
-        "type": "jsx-text",
-        "context": "or === 'Source requires authentication' ? (\r\n          <span>Authenticate with this source to view available data</span>",
-        "severity": "medium"
-      }
-    ],
-    "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\Info_GroupedList.tsx": [
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\Info_GroupedList.tsx",
-        "line": 76,
-        "text": "Authenticate with this source to view available tools",
-        "type": "jsx-text",
-        "context": "or === 'Source requires authentication' ? (\r\n          <span>Authenticate with this source to view available tools</span",
-        "severity": "medium"
-      }
-    ],
-    "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\Info_Markdown.tsx": [
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\Info_Markdown.tsx",
-        "line": 64,
-        "text": "View Fullscreen",
-        "type": "title",
-        "context": "ing focus-visible:opacity-100'\r\n            )}\r\n            title=\"View Fullscreen\"\r\n          >\r\n            <Maximize2",
-        "severity": "medium"
-      }
-    ],
-    "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\Info_Page.tsx": [
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\Info_Page.tsx",
-        "line": 84,
-        "text": "Error loading content",
-        "type": "jsx-text",
-        "context": "estructive\" />\r\n          <p className=\"text-sm font-medium\">Error loading content</p>\r\n          <p className=\"text-xs",
-        "severity": "high"
-      }
-    ],
-    "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\Info_StatusBadge.tsx": [
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\Info_StatusBadge.tsx",
-        "line": 13,
-        "text": "Allowed', color: 'success",
-        "type": "string-literal",
-        "context": "us, { label: string; color: BadgeColor }> = {\r\n  allowed: { label: 'Allowed', color: 'success' },\r\n  blocked: { label: '",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\Info_StatusBadge.tsx",
-        "line": 14,
-        "text": "Blocked', color: 'destructive",
-        "type": "string-literal",
-        "context": "owed: { label: 'Allowed', color: 'success' },\r\n  blocked: { label: 'Blocked', color: 'destructive' },\r\n  'requires-permi",
-        "severity": "medium"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\Info_StatusBadge.tsx",
-        "line": 15,
-        "text": "Ask', color: 'warning",
-        "type": "string-literal",
-        "context": "ocked', color: 'destructive' },\r\n  'requires-permission': { label: 'Ask', color: 'warning' },\r\n}\r\n\r\nexport interface Inf",
-        "severity": "high"
-      }
-    ],
-    "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\LabelsDataTable.tsx": [
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\LabelsDataTable.tsx",
-        "line": 79,
-        "text": "Color",
-        "type": "jsx-text",
-        "context": ": 'color',\r\n    header: () => <span className=\"p-1.5 pl-2.5\">Color</span>,\r\n    cell: ({ row }) => (\r\n      <div classNa",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\LabelsDataTable.tsx",
-        "line": 94,
-        "text": "Name",
-        "type": "title",
-        "context": "header: ({ column }) => <SortableHeader column={column} title=\"Name\" />,\r\n    cell: ({ row }) => <ExpandableNameCell",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\LabelsDataTable.tsx",
-        "line": 101,
-        "text": "Type",
-        "type": "title",
-        "context": "header: ({ column }) => <SortableHeader column={column} title=\"Type\" />,\r\n    cell: ({ row }) => (\r\n      <div class",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\LabelsDataTable.tsx",
-        "line": 147,
-        "text": "View Fullscreen",
-        "type": "title",
-        "context": "sible:ring-ring focus-visible:opacity-100'\r\n      )}\r\n      title=\"View Fullscreen\"\r\n    >\r\n      <Maximize2 className=\"",
-        "severity": "medium"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\LabelsDataTable.tsx",
-        "line": 163,
-        "text": "Search labels...",
-        "type": "string-literal",
-        "context": "s}\r\n        data={data}\r\n        searchable={searchable ? { placeholder: 'Search labels...' } : false}\r\n        maxHeigh",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\LabelsDataTable.tsx",
-        "line": 183,
-        "text": "Search labels...",
-        "type": "string-literal",
-        "context": "data={data}\r\n            searchable={searchable ? { placeholder: 'Search labels...' } : false}\r\n            empt",
-        "severity": "high"
-      }
-    ],
-    "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx": [
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
-        "line": 123,
-        "text": "Comment",
-        "type": "jsx-text",
-        "context": "'comment',\r\n    header: () => <span className=\"p-1.5 pl-2.5\">Comment</span>,\r\n    cell: ({ row }) => (\r\n      <div class",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
-        "line": 159,
-        "text": "Comment",
-        "type": "jsx-text",
-        "context": "'comment',\r\n    header: () => <span className=\"p-1.5 pl-2.5\">Comment</span>,\r\n    cell: ({ row }) => (\r\n      <div class",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
-        "line": 90,
-        "text": "Access",
-        "type": "title",
-        "context": "header: ({ column }) => <SortableHeader column={column} title=\"Access\" />,\r\n    cell: ({ row }) => (\r\n      <div cla",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
-        "line": 100,
-        "text": "Type",
-        "type": "title",
-        "context": "header: ({ column }) => <SortableHeader column={column} title=\"Type\" />,\r\n    cell: ({ row }) => (\r\n      <div class",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
-        "line": 112,
-        "text": "Pattern",
-        "type": "title",
-        "context": "header: ({ column }) => <SortableHeader column={column} title=\"Pattern\" />,\r\n    cell: ({ row }) => (\r\n      <div cl",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
-        "line": 138,
-        "text": "Access",
-        "type": "title",
-        "context": "header: ({ column }) => <SortableHeader column={column} title=\"Access\" />,\r\n    cell: ({ row }) => (\r\n      <div cla",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
-        "line": 148,
-        "text": "Pattern",
-        "type": "title",
-        "context": "header: ({ column }) => <SortableHeader column={column} title=\"Pattern\" />,\r\n    cell: ({ row }) => (\r\n      <div cl",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
-        "line": 195,
-        "text": "View Fullscreen",
-        "type": "title",
-        "context": "sible:ring-ring focus-visible:opacity-100'\r\n      )}\r\n      title=\"View Fullscreen\"\r\n    >\r\n      <Maximize2 className=\"",
-        "severity": "medium"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
-        "line": 206,
-        "text": "Search patterns...",
-        "type": "string-literal",
-        "context": "s}\r\n        data={data}\r\n        searchable={searchable ? { placeholder: 'Search patterns...' } : false}\r\n        maxHei",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\PermissionsDataTable.tsx",
-        "line": 225,
-        "text": "Search patterns...",
-        "type": "string-literal",
-        "context": "data={data}\r\n            searchable={searchable ? { placeholder: 'Search patterns...' } : false}\r\n            em",
-        "severity": "high"
-      }
-    ],
-    "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\ToolsDataTable.tsx": [
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\ToolsDataTable.tsx",
-        "line": 59,
-        "text": "Description",
-        "type": "jsx-text",
-        "context": "cription',\r\n    header: () => <span className=\"p-1.5 pl-2.5\">Description</span>,\r\n    cell: ({ row }) => (\r\n      <div c",
-        "severity": "medium"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\ToolsDataTable.tsx",
-        "line": 36,
-        "text": "Access",
-        "type": "title",
-        "context": "header: ({ column }) => <SortableHeader column={column} title=\"Access\" />,\r\n    cell: ({ row }) => (\r\n      <div cla",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\info\\ToolsDataTable.tsx",
-        "line": 46,
-        "text": "Tool",
-        "type": "title",
-        "context": "header: ({ column }) => <SortableHeader column={column} title=\"Tool\" />,\r\n    cell: ({ row }) => (\r\n      <div class",
-        "severity": "low"
       }
     ],
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\KeyboardShortcutsDialog.tsx": [
@@ -836,7 +506,7 @@
         "line": 31,
         "text": "List Navigation",
         "type": "string-literal",
-        "context": "componentSpecificSections: ShortcutSection[] = [\r\n  {\r\n    title: 'List Navigation',\r\n    shortcuts: [\r\n      { keys: [",
+        "context": "st componentSpecificSections: ShortcutSection[] = [\n  {\n    title: 'List Navigation',\n    shortcuts: [\n      { keys: ['↑",
         "severity": "medium"
       },
       {
@@ -844,7 +514,7 @@
         "line": 33,
         "text": "Navigate items in list",
         "type": "string-literal",
-        "context": "t Navigation',\r\n    shortcuts: [\r\n      { keys: ['↑', '↓'], description: 'Navigate items in list' },\r\n      { keys: ['Ho",
+        "context": "ist Navigation',\n    shortcuts: [\n      { keys: ['↑', '↓'], description: 'Navigate items in list' },\n      { keys: ['Hom",
         "severity": "medium"
       },
       {
@@ -852,7 +522,7 @@
         "line": 34,
         "text": "Go to first item",
         "type": "string-literal",
-        "context": "ption: 'Navigate items in list' },\r\n      { keys: ['Home'], description: 'Go to first item' },\r\n      { keys: ['End'], d",
+        "context": "iption: 'Navigate items in list' },\n      { keys: ['Home'], description: 'Go to first item' },\n      { keys: ['End'], de",
         "severity": "medium"
       },
       {
@@ -860,7 +530,7 @@
         "line": 35,
         "text": "Go to last item",
         "type": "string-literal",
-        "context": "description: 'Go to first item' },\r\n      { keys: ['End'], description: 'Go to last item' },\r\n    ],\r\n  },\r\n  {\r\n    ti",
+        "context": ", description: 'Go to first item' },\n      { keys: ['End'], description: 'Go to last item' },\n    ],\n  },\n  {\n    title:",
         "severity": "medium"
       },
       {
@@ -868,7 +538,7 @@
         "line": 39,
         "text": "Session List",
         "type": "string-literal",
-        "context": ", description: 'Go to last item' },\r\n    ],\r\n  },\r\n  {\r\n    title: 'Session List',\r\n    shortcuts: [\r\n      { keys: ['En",
+        "context": "nd'], description: 'Go to last item' },\n    ],\n  },\n  {\n    title: 'Session List',\n    shortcuts: [\n      { keys: ['Ente",
         "severity": "medium"
       },
       {
@@ -876,7 +546,7 @@
         "line": 41,
         "text": "Focus chat input",
         "type": "string-literal",
-        "context": "'Session List',\r\n    shortcuts: [\r\n      { keys: ['Enter'], description: 'Focus chat input' },\r\n      { keys: ['Delete']",
+        "context": ": 'Session List',\n    shortcuts: [\n      { keys: ['Enter'], description: 'Focus chat input' },\n      { keys: ['Delete'],",
         "severity": "medium"
       },
       {
@@ -884,7 +554,7 @@
         "line": 42,
         "text": "Delete session",
         "type": "string-literal",
-        "context": "scription: 'Focus chat input' },\r\n      { keys: ['Delete'], description: 'Delete session' },\r\n      { keys: ['R'], descr",
+        "context": "escription: 'Focus chat input' },\n      { keys: ['Delete'], description: 'Delete session' },\n      { keys: ['R'], descri",
         "severity": "high"
       },
       {
@@ -892,7 +562,7 @@
         "line": 43,
         "text": "Rename session",
         "type": "string-literal",
-        "context": "e'], description: 'Delete session' },\r\n      { keys: ['R'], description: 'Rename session' },\r\n      { keys: ['Right-clic",
+        "context": "te'], description: 'Delete session' },\n      { keys: ['R'], description: 'Rename session' },\n      { keys: ['Right-click",
         "severity": "high"
       },
       {
@@ -900,7 +570,7 @@
         "line": 44,
         "text": "Open context menu",
         "type": "string-literal",
-        "context": "iption: 'Rename session' },\r\n      { keys: ['Right-click'], description: 'Open context menu' },\r\n    ],\r\n  },\r\n  {",
+        "context": "ription: 'Rename session' },\n      { keys: ['Right-click'], description: 'Open context menu' },\n    ],\n  },\n  {\n    titl",
         "severity": "medium"
       },
       {
@@ -908,7 +578,7 @@
         "line": 48,
         "text": "Agent Tree",
         "type": "string-literal",
-        "context": "description: 'Open context menu' },\r\n    ],\r\n  },\r\n  {\r\n    title: 'Agent Tree',\r\n    shortcuts: [\r\n      { keys: ['←'],",
+        "context": "'], description: 'Open context menu' },\n    ],\n  },\n  {\n    title: 'Agent Tree',\n    shortcuts: [\n      { keys: ['←'], d",
         "severity": "low"
       },
       {
@@ -916,7 +586,7 @@
         "line": 50,
         "text": "Collapse folder",
         "type": "string-literal",
-        "context": "itle: 'Agent Tree',\r\n    shortcuts: [\r\n      { keys: ['←'], description: 'Collapse folder' },\r\n      { keys: ['→'], desc",
+        "context": "title: 'Agent Tree',\n    shortcuts: [\n      { keys: ['←'], description: 'Collapse folder' },\n      { keys: ['→'], descr",
         "severity": "medium"
       },
       {
@@ -924,7 +594,7 @@
         "line": 51,
         "text": "Expand folder",
         "type": "string-literal",
-        "context": "'], description: 'Collapse folder' },\r\n      { keys: ['→'], description: 'Expand folder' },\r\n    ],\r\n  },\r\n  {\r\n    titl",
+        "context": "←'], description: 'Collapse folder' },\n      { keys: ['→'], description: 'Expand folder' },\n    ],\n  },\n  {\n    title: '",
         "severity": "medium"
       },
       {
@@ -932,7 +602,7 @@
         "line": 55,
         "text": "Chat Input",
         "type": "string-literal",
-        "context": "'], description: 'Expand folder' },\r\n    ],\r\n  },\r\n  {\r\n    title: 'Chat Input',\r\n    shortcuts: [\r\n      { keys: ['Ente",
+        "context": "['→'], description: 'Expand folder' },\n    ],\n  },\n  {\n    title: 'Chat Input',\n    shortcuts: [\n      { keys: ['Enter'",
         "severity": "low"
       },
       {
@@ -940,7 +610,7 @@
         "line": 57,
         "text": "Send message",
         "type": "string-literal",
-        "context": ": 'Chat Input',\r\n    shortcuts: [\r\n      { keys: ['Enter'], description: 'Send message' },\r\n      { keys: ['Shift', 'Ent",
+        "context": "le: 'Chat Input',\n    shortcuts: [\n      { keys: ['Enter'], description: 'Send message' },\n      { keys: ['Shift', 'Ente",
         "severity": "medium"
       },
       {
@@ -948,7 +618,7 @@
         "line": 58,
         "text": "New line",
         "type": "string-literal",
-        "context": "ption: 'Send message' },\r\n      { keys: ['Shift', 'Enter'], description: 'New line' },\r\n      { keys: ['Esc'], descripti",
+        "context": "iption: 'Send message' },\n      { keys: ['Shift', 'Enter'], description: 'New line' },\n      { keys: ['Esc'], descriptio",
         "severity": "low"
       }
     ],
@@ -958,7 +628,7 @@
         "line": 105,
         "text": "C:\\Program Files\\Git\\bin\\bash.exe",
         "type": "placeholder",
-        "context": "onClearError?.()\r\n                }}\r\n                placeholder='C:\\Program Files\\Git\\bin\\bash.exe'",
+        "context": "onClearError?.()\n                }}\n                placeholder='C:\\Program Files\\Git\\bin\\bash.exe'",
         "severity": "medium"
       }
     ],
@@ -968,7 +638,7 @@
         "line": 25,
         "text": "Option 1",
         "type": "label-attr",
-        "context": "s\r\n *\r\n * @example\r\n * <SettingsCard>\r\n *   <SettingsToggle label=\"Option 1\" ... />\r\n *   <SettingsToggle label=\"Option",
+        "context": "tings\n *\n * @example\n * <SettingsCard>\n *   <SettingsToggle label=\"Option 1\" ... />\n *   <SettingsToggle label=\"Option 2",
         "severity": "low"
       },
       {
@@ -976,7 +646,7 @@
         "line": 26,
         "text": "Option 2",
         "type": "label-attr",
-        "context": "ettingsToggle label=\"Option 1\" ... />\r\n *   <SettingsToggle label=\"Option 2\" ... />\r\n * </SettingsCard>\r\n */\r\nexport fun",
+        "context": "SettingsToggle label=\"Option 1\" ... />\n *   <SettingsToggle label=\"Option 2\" ... />\n * </SettingsCard>\n */\nexport functi",
         "severity": "low"
       }
     ],
@@ -986,7 +656,7 @@
         "line": 54,
         "text": "Enter your name...",
         "type": "placeholder",
-        "context": "el=\"Name\"\r\n *   value={name}\r\n *   onChange={setName}\r\n *   placeholder=\"Enter your name...\"\r\n * />\r\n */\r\nexport functio",
+        "context": "label=\"Name\"\n *   value={name}\n *   onChange={setName}\n *   placeholder=\"Enter your name...\"\n * />\n */\nexport function S",
         "severity": "medium"
       },
       {
@@ -994,7 +664,7 @@
         "line": 51,
         "text": "Name",
         "type": "label-attr",
-        "context": "input with label\r\n *\r\n * @example\r\n * <SettingsInput\r\n *   label=\"Name\"\r\n *   value={name}\r\n *   onChange={setName}\r\n *",
+        "context": "Text input with label\n *\n * @example\n * <SettingsInput\n *   label=\"Name\"\n *   value={name}\n *   onChange={setName}\n *",
         "severity": "low"
       }
     ],
@@ -1004,7 +674,7 @@
         "line": 48,
         "text": "Opus 4.6",
         "type": "label-attr",
-        "context": "lueChange={setModel}>\r\n *   <SettingsRadioCard value=\"opus\" label=\"Opus 4.6\" description=\"Most capable\" />\r\n *   <Settin",
+        "context": "alueChange={setModel}>\n *   <SettingsRadioCard value=\"opus\" label=\"Opus 4.6\" description=\"Most capable\" />\n *   <Setting",
         "severity": "low"
       },
       {
@@ -1012,7 +682,7 @@
         "line": 49,
         "text": "Sonnet 4.5",
         "type": "label-attr",
-        "context": "n=\"Most capable\" />\r\n *   <SettingsRadioCard value=\"sonnet\" label=\"Sonnet 4.5\" description=\"Balanced\" />\r\n * </SettingsR",
+        "context": "on=\"Most capable\" />\n *   <SettingsRadioCard value=\"sonnet\" label=\"Sonnet 4.5\" description=\"Balanced\" />\n * </SettingsRa",
         "severity": "low"
       },
       {
@@ -1020,7 +690,7 @@
         "line": 120,
         "text": "API Key",
         "type": "label-attr",
-        "context": "@example\r\n * <SettingsRadioCard\r\n *   value=\"api_key\"\r\n *   label=\"API Key\"\r\n *   description=\"Pay-as-you-go with your A",
+        "context": "* @example\n * <SettingsRadioCard\n *   value=\"api_key\"\n *   label=\"API Key\"\n *   description=\"Pay-as-you-go with your An",
         "severity": "low"
       }
     ],
@@ -1030,7 +700,7 @@
         "line": 36,
         "text": "Change",
         "type": "jsx-text",
-        "context": "~/Documents\"\r\n *   action={<Button variant=\"ghost\" size=\"sm\">Change</Button>}\r\n * />\r\n */\r\nexport function SettingsRow({",
+        "context": "\"~/Documents\"\n *   action={<Button variant=\"ghost\" size=\"sm\">Change</Button>}\n * />\n */\nexport function SettingsRow({",
         "severity": "low"
       },
       {
@@ -1038,7 +708,7 @@
         "line": 34,
         "text": "Working Directory",
         "type": "label-attr",
-        "context": "om settings layouts\r\n *\r\n * @example\r\n * <SettingsRow\r\n *   label=\"Working Directory\"\r\n *   description=\"~/Documents\"",
+        "context": "custom settings layouts\n *\n * @example\n * <SettingsRow\n *   label=\"Working Directory\"\n *   description=\"~/Documents\"\n *",
         "severity": "medium"
       },
       {
@@ -1046,7 +716,7 @@
         "line": 83,
         "text": "Theme",
         "type": "label-attr",
-        "context": "outside SettingsRow\r\n *\r\n * @example\r\n * <SettingsRowLabel label=\"Theme\" />\r\n * <SettingsSegmentedControl ... />\r\n */",
+        "context": "use outside SettingsRow\n *\n * @example\n * <SettingsRowLabel label=\"Theme\" />\n * <SettingsSegmentedControl ... />\n */\nexp",
         "severity": "high"
       }
     ],
@@ -1056,7 +726,7 @@
         "line": 33,
         "text": "Billing",
         "type": "title",
-        "context": "title and description\r\n *\r\n * @example\r\n * <SettingsSection title=\"Billing\" description=\"Choose how you pay\">\r\n *   <Set",
+        "context": "th title and description\n *\n * @example\n * <SettingsSection title=\"Billing\" description=\"Choose how you pay\">\n *   <Sett",
         "severity": "low"
       },
       {
@@ -1064,7 +734,7 @@
         "line": 85,
         "text": "Workspace",
         "type": "title",
-        "context": ", \"App\" vs \"Workspace\")\r\n *\r\n * @example\r\n * <SettingsGroup title=\"Workspace\">\r\n *   <SettingsSection title=\"Model\">...<",
+        "context": ".g., \"App\" vs \"Workspace\")\n *\n * @example\n * <SettingsGroup title=\"Workspace\">\n *   <SettingsSection title=\"Model\">...</",
         "severity": "low"
       },
       {
@@ -1072,7 +742,7 @@
         "line": 86,
         "text": "Model",
         "type": "title",
-        "context": "* <SettingsGroup title=\"Workspace\">\r\n *   <SettingsSection title=\"Model\">...</SettingsSection>\r\n *   <SettingsSection t",
+        "context": "* <SettingsGroup title=\"Workspace\">\n *   <SettingsSection title=\"Model\">...</SettingsSection>\n *   <SettingsSection ti",
         "severity": "low"
       },
       {
@@ -1080,7 +750,7 @@
         "line": 87,
         "text": "Permissions",
         "type": "title",
-        "context": "title=\"Model\">...</SettingsSection>\r\n *   <SettingsSection title=\"Permissions\">...</SettingsSection>\r\n * </SettingsGrou",
+        "context": "n title=\"Model\">...</SettingsSection>\n *   <SettingsSection title=\"Permissions\">...</SettingsSection>\n * </SettingsGroup",
         "severity": "medium"
       }
     ],
@@ -1090,7 +760,7 @@
         "line": 41,
         "text": "System",
         "type": "string-literal",
-        "context": "ange={setTheme}\r\n *   options={[\r\n *     { value: 'system', label: 'System', icon: <Monitor /> },\r\n *     { value: 'ligh",
+        "context": "Change={setTheme}\n *   options={[\n *     { value: 'system', label: 'System', icon: <Monitor /> },\n *     { value: 'light",
         "severity": "low"
       },
       {
@@ -1098,7 +768,7 @@
         "line": 42,
         "text": "Light",
         "type": "string-literal",
-        "context": "l: 'System', icon: <Monitor /> },\r\n *     { value: 'light', label: 'Light', icon: <Sun /> },\r\n *     { value: 'dark', la",
+        "context": "el: 'System', icon: <Monitor /> },\n *     { value: 'light', label: 'Light', icon: <Sun /> },\n *     { value: 'dark', lab",
         "severity": "low"
       }
     ],
@@ -1108,7 +778,7 @@
         "line": 58,
         "text": "Select timezone...",
         "type": "placeholder",
-        "context": "eChange={setTimezone}\r\n *   options={timezoneOptions}\r\n *   placeholder=\"Select timezone...\"\r\n * />\r\n */\r\nexport functio",
+        "context": "lueChange={setTimezone}\n *   options={timezoneOptions}\n *   placeholder=\"Select timezone...\"\n * />\n */\nexport function S",
         "severity": "medium"
       },
       {
@@ -1116,7 +786,7 @@
         "line": 54,
         "text": "Timezone",
         "type": "label-attr",
-        "context": "elect with label\r\n *\r\n * @example\r\n * <SettingsSelect\r\n *   label=\"Timezone\"\r\n *   value={timezone}\r\n *   onValueChange=",
+        "context": "wn select with label\n *\n * @example\n * <SettingsSelect\n *   label=\"Timezone\"\n *   value={timezone}\n *   onValueChange={s",
         "severity": "low"
       }
     ],
@@ -1126,7 +796,7 @@
         "line": 43,
         "text": "Notes",
         "type": "label-attr",
-        "context": "haracter count\r\n *\r\n * @example\r\n * <SettingsTextarea\r\n *   label=\"Notes\"\r\n *   description=\"Additional context for the",
+        "context": "th character count\n *\n * @example\n * <SettingsTextarea\n *   label=\"Notes\"\n *   description=\"Additional context for the A",
         "severity": "high"
       }
     ],
@@ -1136,7 +806,7 @@
         "line": 36,
         "text": "Desktop notifications",
         "type": "label-attr",
-        "context": "* @example\r\n * <SettingsCard>\r\n *   <SettingsToggle\r\n *     label=\"Desktop notifications\"\r\n *     description=\"Get notif",
+        "context": "*\n * @example\n * <SettingsCard>\n *   <SettingsToggle\n *     label=\"Desktop notifications\"\n *     description=\"Get notifi",
         "severity": "high"
       }
     ],
@@ -1146,249 +816,249 @@
         "line": 297,
         "text": "Name",
         "type": "title",
-        "context": "ns: header: ({ column }) => <SortableHeader column={column} title=\"Name\" />\r\n */\r\ninterface SortableHeaderProps<TData, T",
+        "context": "ns: header: ({ column }) => <SortableHeader column={column} title=\"Name\" />\n */\ninterface SortableHeaderProps<TData, TVa",
         "severity": "low"
       }
     ],
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx": [
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 114,
+        "line": 117,
         "text": "Permission Settings",
         "type": "string-literal",
-        "context": "space-permissions': (location) => ({\r\n    context: {\r\n      label: 'Permission Settings',\r\n      filePath: `${location}/",
+        "context": "rkspace-permissions': (location) => ({\n    context: {\n      label: 'Permission Settings',\n      filePath: `${location}/p",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 116,
+        "line": 119,
         "text": "The user is on the Settings Screen and pressed the edit button on Workspace Permission settings.",
         "type": "string-literal",
-        "context": "filePath: `${location}/permissions.json`,\r\n      context:\r\n        'The user is on the Settings Screen and press",
+        "context": "',\n      filePath: `${location}/permissions.json`,\n      context:\n        'The user is on the Settings Screen and presse",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 132,
+        "line": 135,
         "text": "Default Permissions",
         "type": "string-literal",
-        "context": "fault-permissions': (location) => ({\r\n    context: {\r\n      label: 'Default Permissions',\r\n      filePath: location, //",
+        "context": "default-permissions': (location) => ({\n    context: {\n      label: 'Default Permissions',\n      filePath: location, // l",
         "severity": "medium"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 152,
+        "line": 155,
         "text": "Skill Instructions",
         "type": "string-literal",
-        "context": "kill-instructions': (location) => ({\r\n    context: {\r\n      label: 'Skill Instructions',\r\n      filePath: `${location}/S",
+        "context": "'skill-instructions': (location) => ({\n    context: {\n      label: 'Skill Instructions',\n      filePath: `${location}/SK",
         "severity": "medium"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 154,
+        "line": 157,
         "text": "The user is editing skill instructions in SKILL.md.",
         "type": "string-literal",
-        "context": "ctions',\r\n      filePath: `${location}/SKILL.md`,\r\n      context:\r\n        'The user is editing skill instructions in SK",
+        "context": "ructions',\n      filePath: `${location}/SKILL.md`,\n      context:\n        'The user is editing skill instructions in SKI",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 170,
+        "line": 173,
         "text": "Skill Metadata",
         "type": "string-literal",
-        "context": "'skill-metadata': (location) => ({\r\n    context: {\r\n      label: 'Skill Metadata',\r\n      filePath: `${location}/SKILL",
+        "context": "'skill-metadata': (location) => ({\n    context: {\n      label: 'Skill Metadata',\n      filePath: `${location}/SKILL.",
         "severity": "medium"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 172,
+        "line": 175,
         "text": "The user is editing skill metadata in the YAML frontmatter of SKILL.md.",
         "type": "string-literal",
-        "context": "tadata',\r\n      filePath: `${location}/SKILL.md`,\r\n      context:\r\n        'The user is editing skill metadata in the YA",
+        "context": "Metadata',\n      filePath: `${location}/SKILL.md`,\n      context:\n        'The user is editing skill metadata in the YAM",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 188,
+        "line": 191,
         "text": "Source Documentation",
         "type": "string-literal",
-        "context": "'source-guide': (location) => ({\r\n    context: {\r\n      label: 'Source Documentation',\r\n      filePath: `${location}",
+        "context": "xts\n  'source-guide': (location) => ({\n    context: {\n      label: 'Source Documentation',\n      filePath: `${location}/",
         "severity": "medium"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 204,
+        "line": 207,
         "text": "Source Configuration",
         "type": "string-literal",
-        "context": "'source-config': (location) => ({\r\n    context: {\r\n      label: 'Source Configuration',\r\n      filePath: `${location}",
+        "context": ",\n\n  'source-config': (location) => ({\n    context: {\n      label: 'Source Configuration',\n      filePath: `${location}/",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 221,
+        "line": 224,
         "text": "Source Permissions",
         "type": "string-literal",
-        "context": "ource-permissions': (location) => ({\r\n    context: {\r\n      label: 'Source Permissions',\r\n      filePath: `${location}/p",
+        "context": "'source-permissions': (location) => ({\n    context: {\n      label: 'Source Permissions',\n      filePath: `${location}/pe",
         "severity": "medium"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 238,
+        "line": 241,
         "text": "Tool Permissions",
         "type": "string-literal",
-        "context": "-tool-permissions': (location) => ({\r\n    context: {\r\n      label: 'Tool Permissions',\r\n      filePath: `${location}/per",
+        "context": "ce-tool-permissions': (location) => ({\n    context: {\n      label: 'Tool Permissions',\n      filePath: `${location}/perm",
         "severity": "medium"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 240,
+        "line": 243,
         "text": "The user is viewing the Tools list for an MCP source and wants to modify tool permissions.",
         "type": "string-literal",
-        "context": "filePath: `${location}/permissions.json`,\r\n      context:\r\n        'The user is viewing the Tools list for an MC",
+        "context": "',\n      filePath: `${location}/permissions.json`,\n      context:\n        'The user is viewing the Tools list for an MCP",
         "severity": "medium"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 258,
+        "line": 261,
         "text": "Preferences Notes",
         "type": "string-literal",
-        "context": "preferences-notes': (location) => ({\r\n    context: {\r\n      label: 'Preferences Notes',\r\n      filePath: location, // lo",
+        "context": "'preferences-notes': (location) => ({\n    context: {\n      label: 'Preferences Notes',\n      filePath: location, // loc",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 276,
+        "line": 279,
         "text": "Add Source",
         "type": "string-literal",
-        "context": "ts\r\n  'add-source': (location) => ({\r\n    context: {\r\n      label: 'Add Source',\r\n      filePath: `${location}/sources/`",
+        "context": "ompts\n  'add-source': (location) => ({\n    context: {\n      label: 'Add Source',\n      filePath: `${location}/sources/`,",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 278,
+        "line": 281,
         "text": "The user wants to add a new source to their workspace.",
         "type": "string-literal",
-        "context": "sources/`, // location is the workspace root path\r\n      context:\r\n        'The user wants to add a new source to their",
+        "context": "/sources/`, // location is the workspace root path\n      context:\n        'The user wants to add a new source to their w",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 293,
+        "line": 296,
         "text": "Add API",
         "type": "string-literal",
-        "context": "'add-source-api': (location) => ({\r\n    context: {\r\n      label: 'Add API',\r\n      filePath: `${location}/sources/`,",
+        "context": "e\n  'add-source-api': (location) => ({\n    context: {\n      label: 'Add API',\n      filePath: `${location}/sources/`,",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 295,
+        "line": 298,
         "text": "The user is viewing API sources and wants to add a new REST API.",
         "type": "string-literal",
-        "context": "dd API',\r\n      filePath: `${location}/sources/`,\r\n      context:\r\n        'The user is viewing API sources and wants to",
+        "context": "'Add API',\n      filePath: `${location}/sources/`,\n      context:\n        'The user is viewing API sources and wants to",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 310,
+        "line": 313,
         "text": "Add MCP Server",
         "type": "string-literal",
-        "context": "'add-source-mcp': (location) => ({\r\n    context: {\r\n      label: 'Add MCP Server',\r\n      filePath: `${location}/sourc",
+        "context": "'add-source-mcp': (location) => ({\n    context: {\n      label: 'Add MCP Server',\n      filePath: `${location}/source",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 312,
+        "line": 315,
         "text": "The user is viewing MCP sources and wants to add a new MCP server.",
         "type": "string-literal",
-        "context": "Server',\r\n      filePath: `${location}/sources/`,\r\n      context:\r\n        'The user is viewing MCP sources and wants to",
+        "context": "P Server',\n      filePath: `${location}/sources/`,\n      context:\n        'The user is viewing MCP sources and wants to",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 327,
+        "line": 330,
         "text": "Add Local Folder",
         "type": "string-literal",
-        "context": "'add-source-local': (location) => ({\r\n    context: {\r\n      label: 'Add Local Folder',\r\n      filePath: `${location}/sou",
+        "context": "'add-source-local': (location) => ({\n    context: {\n      label: 'Add Local Folder',\n      filePath: `${location}/sour",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 329,
+        "line": 332,
         "text": "The user wants to add a local folder source.",
         "type": "string-literal",
-        "context": "Folder',\r\n      filePath: `${location}/sources/`,\r\n      context:\r\n        'The user wants to add a local folder source.",
+        "context": "l Folder',\n      filePath: `${location}/sources/`,\n      context:\n        'The user wants to add a local folder source.",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 345,
+        "line": 348,
         "text": "Add Skill",
         "type": "string-literal",
-        "context": ",\r\n\r\n  'add-skill': (location) => ({\r\n    context: {\r\n      label: 'Add Skill',\r\n      filePath: `${location}/skills/`,",
+        "context": "}),\n\n  'add-skill': (location) => ({\n    context: {\n      label: 'Add Skill',\n      filePath: `${location}/skills/`, /",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 347,
+        "line": 350,
         "text": "The user wants to add a new skill to their workspace.",
         "type": "string-literal",
-        "context": "/skills/`, // location is the workspace root path\r\n      context:\r\n        'The user wants to add a new skill to their w",
+        "context": "}/skills/`, // location is the workspace root path\n      context:\n        'The user wants to add a new skill to their wo",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 362,
+        "line": 365,
         "text": "Status Configuration",
         "type": "string-literal",
-        "context": "'edit-statuses': (location) => ({\r\n    context: {\r\n      label: 'Status Configuration',\r\n      filePath: `${location}",
+        "context": "xt\n  'edit-statuses': (location) => ({\n    context: {\n      label: 'Status Configuration',\n      filePath: `${location}/",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 382,
+        "line": 385,
         "text": "Label Configuration",
         "type": "string-literal",
-        "context": "t\r\n  'edit-labels': (location) => ({\r\n    context: {\r\n      label: 'Label Configuration',\r\n      filePath: `${location}/",
+        "context": "text\n  'edit-labels': (location) => ({\n    context: {\n      label: 'Label Configuration',\n      filePath: `${location}/l",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 403,
+        "line": 406,
         "text": "Auto-Apply Rules",
         "type": "string-literal",
-        "context": "'edit-auto-rules': (location) => ({\r\n    context: {\r\n      label: 'Auto-Apply Rules',\r\n      filePath: `${location}/lab",
+        "context": "'edit-auto-rules': (location) => ({\n    context: {\n      label: 'Auto-Apply Rules',\n      filePath: `${location}/labe",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 423,
+        "line": 426,
         "text": "Add Label",
         "type": "string-literal",
-        "context": "ch)\r\n  'add-label': (location) => ({\r\n    context: {\r\n      label: 'Add Label',\r\n      filePath: `${location}/labels/con",
+        "context": "match)\n  'add-label': (location) => ({\n    context: {\n      label: 'Add Label',\n      filePath: `${location}/labels/conf",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 444,
+        "line": 447,
         "text": "Views Configuration",
         "type": "string-literal",
-        "context": "xt\r\n  'edit-views': (location) => ({\r\n    context: {\r\n      label: 'Views Configuration',\r\n      filePath: `${location}/",
+        "context": "ntext\n  'edit-views': (location) => ({\n    context: {\n      label: 'Views Configuration',\n      filePath: `${location}/v",
         "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 465,
+        "line": 468,
         "text": "Tool Icons",
         "type": "string-literal",
-        "context": "'edit-tool-icons': (location) => ({\r\n    context: {\r\n      label: 'Tool Icons',\r\n      filePath: location, // location",
+        "context": "'edit-tool-icons': (location) => ({\n    context: {\n      label: 'Tool Icons',\n      filePath: location, // location i",
         "severity": "low"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 467,
+        "line": 470,
         "text": "The user wants to edit CLI tool icon mappings.",
         "type": "string-literal",
-        "context": ", // location is the full path to tool-icons.json\r\n      context:\r\n        'The user wants to edit CLI tool icon mapping",
+        "context": "n, // location is the full path to tool-icons.json\n      context:\n        'The user wants to edit CLI tool icon mappings",
         "severity": "high"
       }
     ],
@@ -1398,7 +1068,7 @@
         "line": 19,
         "text": "Long text that might overflow",
         "type": "jsx-text",
-        "context": "when overflow is detected.\r\n *\r\n * @example\r\n * <FadingText>Long text that might overflow</FadingText>\r\n * <FadingText",
+        "context": "* when overflow is detected.\n *\n * @example\n * <FadingText>Long text that might overflow</FadingText>\n * <FadingText f",
         "severity": "medium"
       },
       {
@@ -1406,7 +1076,7 @@
         "line": 20,
         "text": "Custom fade width",
         "type": "jsx-text",
-        "context": "t might overflow</FadingText>\r\n * <FadingText fadeWidth={36}>Custom fade width</FadingText>\r\n */\r\nexport function Fading",
+        "context": "at might overflow</FadingText>\n * <FadingText fadeWidth={36}>Custom fade width</FadingText>\n */\nexport function FadingTe",
         "severity": "medium"
       }
     ],
@@ -1416,34 +1086,8 @@
         "line": 296,
         "text": "Add New Label",
         "type": "jsx-text",
-        "context": "</div>\r\n            <span className=\"text-[13px]\">Add New Label</span>\r\n          </div>\r\n        ) : (",
+        "context": "</div>\n            <span className=\"text-[13px]\">Add New Label</span>\n          </div>\n        ) : (",
         "severity": "high"
-      }
-    ],
-    "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\label-value-popover.tsx": [
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\label-value-popover.tsx",
-        "line": 297,
-        "text": "Remove",
-        "type": "jsx-text",
-        "context": "<Trash2 className=\"w-3.5 h-3.5\" />\r\n            <span>Remove</span>\r\n          </button>\r\n        </div>\r\n      <",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\label-value-popover.tsx",
-        "line": 202,
-        "text": "tomorrow, next friday...",
-        "type": "placeholder",
-        "context": "}\r\n                  }}\r\n                  placeholder=\"tomorrow, next friday...\"\r\n                  cl",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\label-value-popover.tsx",
-        "line": 215,
-        "text": "Select date",
-        "type": "aria-label",
-        "context": "type=\"button\"\r\n                      aria-label=\"Select date\"\r\n                      className={c",
-        "severity": "medium"
       }
     ],
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx": [
@@ -1452,7 +1096,7 @@
         "line": 276,
         "text": "No results",
         "type": "jsx-text",
-        "context": "v className=\"px-3 py-2 text-[12px] text-muted-foreground/60\">No results</div>\r\n        )}\r\n        {flatItems.map((item,",
+        "context": "v className=\"px-3 py-2 text-[12px] text-muted-foreground/60\">No results</div>\n        )}\n        {flatItems.map((item, i",
         "severity": "high"
       },
       {
@@ -1460,7 +1104,7 @@
         "line": 137,
         "text": "Results",
         "type": "string-literal",
-        "context": "ngItems.length === 0) return []\r\n  return [{ id: 'results', label: 'Results', items: matchingItems }]\r\n}\r\n\r\nfunction fla",
+        "context": "ingItems.length === 0) return []\n  return [{ id: 'results', label: 'Results', items: matchingItems }]\n}\n\nfunction flatte",
         "severity": "low"
       },
       {
@@ -1468,7 +1112,7 @@
         "line": 482,
         "text": "Skills",
         "type": "string-literal",
-        "context": "> 0) {\r\n      result.push({\r\n        id: 'skills',\r\n        label: 'Skills',\r\n        items: skills.map(skill => ({",
+        "context": "th > 0) {\n      result.push({\n        id: 'skills',\n        label: 'Skills',\n        items: skills.map(skill => ({",
         "severity": "low"
       },
       {
@@ -1476,7 +1120,7 @@
         "line": 497,
         "text": "Sources",
         "type": "string-literal",
-        "context": "0) {\r\n      result.push({\r\n        id: 'sources',\r\n        label: 'Sources',\r\n        items: sources\r\n          .filter",
+        "context": "h > 0) {\n      result.push({\n        id: 'sources',\n        label: 'Sources',\n        items: sources\n          .filter(s",
         "severity": "low"
       },
       {
@@ -1484,7 +1128,7 @@
         "line": 514,
         "text": "Files",
         "type": "string-literal",
-        "context": "> 0) {\r\n      result.push({\r\n        id: 'files',\r\n        label: 'Files',\r\n        items: fileResults,\r\n      })",
+        "context": "gth > 0) {\n      result.push({\n        id: 'files',\n        label: 'Files',\n        items: fileResults,\n      })\n    }",
         "severity": "low"
       }
     ],
@@ -1494,132 +1138,26 @@
         "line": 141,
         "text": "${tooltip.replace(/",
         "type": "title",
-        "context": "t;').replace(/>/g, '&gt;')\r\n  const titleAttr = tooltip ? ` title=\"${tooltip.replace(/\"/g, '&quot;')}\"` : ''\r\n\r\n  // Lin",
+        "context": "lt;').replace(/>/g, '&gt;')\n  const titleAttr = tooltip ? ` title=\"${tooltip.replace(/\"/g, '&quot;')}\"` : ''\n\n  // Line",
         "severity": "low"
       }
     ],
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx": [
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
-        "line": 94,
-        "text": "Ultrathink',\r\n  description: 'Extended reasoning for complex problems",
+        "line": 95,
+        "text": "Ultrathink',\n  description: 'Extended reasoning for complex problems",
         "type": "string-literal",
-        "context": "ultrathinkCommand: SlashCommand = {\r\n  id: 'ultrathink',\r\n  label: 'Ultrathink',\r\n  description: 'Extended reasoning for",
+        "context": "t ultrathinkCommand: SlashCommand = {\n  id: 'ultrathink',\n  label: 'Ultrathink',\n  description: 'Extended reasoning for",
         "severity": "medium"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
-        "line": 95,
+        "line": 96,
         "text": "Extended reasoning for complex problems",
         "type": "string-literal",
-        "context": "Command = {\r\n  id: 'ultrathink',\r\n  label: 'Ultrathink',\r\n  description: 'Extended reasoning for complex problems',\r\n  i",
+        "context": "ashCommand = {\n  id: 'ultrathink',\n  label: 'Ultrathink',\n  description: 'Extended reasoning for complex problems',\n  ic",
         "severity": "medium"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
-        "line": 564,
-        "text": "Modes",
-        "type": "string-literal",
-        "context": "Modes section\r\n    result.push({\r\n      id: 'modes',\r\n      label: 'Modes',\r\n      items: permissionModeCommands,\r\n    }",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
-        "line": 571,
-        "text": "Features",
-        "type": "string-literal",
-        "context": "es section\r\n    result.push({\r\n      id: 'features',\r\n      label: 'Features',\r\n      items: [ultrathinkCommand],\r\n    }",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\slash-command-menu.tsx",
-        "line": 586,
-        "text": "Recent Working Directories",
-        "type": "string-literal",
-        "context": "})\r\n\r\n      result.push({\r\n        id: 'folders',\r\n        label: 'Recent Working Directories',\r\n        items: sortedF",
-        "severity": "medium"
-      }
-    ],
-    "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx": [
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 43,
-        "text": "Connected',\r\n    description: 'Source is connected and working",
-        "type": "string-literal",
-        "context": "color: 'bg-success',\r\n    pulseColor: 'bg-success/80',\r\n    label: 'Connected',\r\n    description: 'Source is connected a",
-        "severity": "medium"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 44,
-        "text": "Source is connected and working",
-        "type": "string-literal",
-        "context": "pulseColor: 'bg-success/80',\r\n    label: 'Connected',\r\n    description: 'Source is connected and working',\r\n  },\r\n  nee",
-        "severity": "medium"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 49,
-        "text": "Needs Authentication',\r\n    description: 'Source requires authentication to connect",
-        "type": "string-literal",
-        "context": "color: 'bg-info',\r\n    pulseColor: 'bg-info/80',\r\n    label: 'Needs Authentication',\r\n    description: 'Source req",
-        "severity": "medium"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 50,
-        "text": "Source requires authentication to connect",
-        "type": "string-literal",
-        "context": "lor: 'bg-info/80',\r\n    label: 'Needs Authentication',\r\n    description: 'Source requires authentication to connect',",
-        "severity": "medium"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 55,
-        "text": "Connection Failed',\r\n    description: 'Failed to connect to source",
-        "type": "string-literal",
-        "context": "bg-destructive',\r\n    pulseColor: 'bg-destructive/80',\r\n    label: 'Connection Failed',\r\n    description: 'Failed to con",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 56,
-        "text": "Failed to connect to source",
-        "type": "string-literal",
-        "context": "'bg-destructive/80',\r\n    label: 'Connection Failed',\r\n    description: 'Failed to connect to source',\r\n  },\r\n  unteste",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 61,
-        "text": "Not Tested',\r\n    description: 'Connection has not been tested",
-        "type": "string-literal",
-        "context": "g-foreground/40',\r\n    pulseColor: 'bg-foreground/30',\r\n    label: 'Not Tested',\r\n    description: 'Connection has not b",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 62,
-        "text": "Connection has not been tested",
-        "type": "string-literal",
-        "context": "seColor: 'bg-foreground/30',\r\n    label: 'Not Tested',\r\n    description: 'Connection has not been tested',\r\n  },\r\n  loca",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 67,
-        "text": "Disabled',\r\n    description: 'Local MCP servers are disabled in Settings",
-        "type": "string-literal",
-        "context": "g-foreground/30',\r\n    pulseColor: 'bg-foreground/20',\r\n    label: 'Disabled',\r\n    description: 'Local MCP servers are",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\source-status-indicator.tsx",
-        "line": 68,
-        "text": "Local MCP servers are disabled in Settings",
-        "type": "string-literal",
-        "context": "ulseColor: 'bg-foreground/20',\r\n    label: 'Disabled',\r\n    description: 'Local MCP servers are disabled in Settings',",
-        "severity": "high"
       }
     ],
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\todo-filter-menu.tsx": [
@@ -1628,7 +1166,7 @@
         "line": 95,
         "text": "Filter statuses...",
         "type": "placeholder",
-        "context": "ue={filter}\r\n          onValueChange={setFilter}\r\n          placeholder=\"Filter statuses...\"\r\n          className=\"w-ful",
+        "context": "alue={filter}\n          onValueChange={setFilter}\n          placeholder=\"Filter statuses...\"\n          className=\"w-full",
         "severity": "high"
       }
     ],
@@ -2549,14 +2087,6 @@
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\playground\\registry\\input.tsx": [
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
-        "line": 155,
-        "text": "Input Transitions Test",
-        "type": "jsx-text",
-        "context": "<h2 className=\"text-sm font-medium text-foreground/80\">Input Transitions Test</h2>\r\n          <div className=\"text",
-        "severity": "medium"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
         "line": 107,
         "text": "Can you help me plan a trip to Barcelona?",
         "type": "string-literal",
@@ -2577,6 +2107,14 @@
         "text": "Permission', color:",
         "type": "string-literal",
         "context": "orm', label: 'Input', color: null },\r\n  { id: 'permission', label: 'Permission', color: 'bg-amber-500' },\r\n]\r\n\r\ntype Hei",
+        "severity": "medium"
+      },
+      {
+        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\playground\\registry\\input.tsx",
+        "line": 155,
+        "text": "Input Transitions Test",
+        "type": "jsx-text",
+        "context": "<h2 className=\"text-sm font-medium text-foreground/80\">Input Transitions Test</h2>\r\n          <div className=\"text",
         "severity": "medium"
       },
       {
@@ -5562,7 +5100,7 @@
     ]
   },
   "recommendations": [
-    "发现 213 处高优先级硬编码文本，建议优先处理",
-    "发现 400 处中优先级硬编码文本，应该逐步翻译"
+    "发现 192 处高优先级硬编码文本，建议优先处理",
+    "发现 384 处中优先级硬编码文本，应该逐步翻译"
   ]
 }

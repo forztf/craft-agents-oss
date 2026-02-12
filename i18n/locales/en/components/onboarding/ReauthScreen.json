@@ -1,1 +1,10 @@
-{"Session Expired": "Session Expired", "Your Craft session has expired or is no longer valid.": "Your Craft session has expired or is no longer valid.", "Please log in again to continue using Craft Agents.": "Please log in again to continue using Craft Agents.", "Your conversations and settings are preserved.": "Your conversations and settings are preserved.", "Logging in...": "Logging in...", "Log In with Craft": "Log In with Craft", "Reset app and start fresh...": "Reset app and start fresh...", "Login failed": "Login failed"}
+{
+  "Session Expired": "Session Expired",
+  "Your Craft session has expired or is no longer valid.": "Your Craft session has expired or is no longer valid.",
+  "Please log in again to continue using Craft Agents.": "Please log in again to continue using Craft Agents.",
+  "Your conversations and settings are preserved.": "Your conversations and settings are preserved.",
+  "Logging in...": "Logging in...",
+  "Log In with Craft": "Log In with Craft",
+  "Reset app and start fresh...": "Reset app and start fresh...",
+  "Login failed": "Login failed"
+}

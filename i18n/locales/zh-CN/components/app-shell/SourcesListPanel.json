@@ -2,14 +2,14 @@
   "API": "API",
   "MCP": "MCP",
   "local folder": "本地文件夹",
-  "Local": "本地",
-  "No sources configured.": "未配置数据源。",
   "No {type} sources configured.": "未配置 {type} 数据源。",
-  "Sources connect your agent to external data — MCP servers, REST APIs, and local folders.": "数据源将您的智能体连接到外部数据 — MCP 服务器、REST API 和本地文件夹。",
+  "No sources configured.": "未配置数据源。",
+  "Sources connect your agent to external data — MCP servers, REST APIs, and local folders.": "数据源将您的代理连接到外部数据 — MCP 服务器、REST API 和本地文件夹。",
   "Learn more": "了解更多",
   "Add Source": "添加数据源",
+  "Local": "本地",
   "Auth Required": "需要认证",
-  "Disconnected": "已断开",
+  "Disconnected": "已断开连接",
   "Not Tested": "未测试",
   "Disabled": "已禁用"
 }

@@ -1,1 +1,16 @@
-{"Back": "Back", "Create workspace": "Create workspace", "Enter a name and choose where to store your workspace.": "Enter a name and choose where to store your workspace.", "Workspace name": "Workspace name", "My Workspace": "My Workspace", "Location": "Location", "Default location": "Default location", "under .craft-agent folder": "under .craft-agent folder", "Choose a location": "Choose a location", "Pick a place to put your new workspace.": "Pick a place to put your new workspace.", "Browse": "Browse", "Creating...": "Creating...", "Create": "Create", "A workspace named \"{slug}\" already exists": "A workspace named \"{slug}\" already exists"}
+{
+  "Back": "Back",
+  "Create workspace": "Create workspace",
+  "Enter a name and choose where to store your workspace.": "Enter a name and choose where to store your workspace.",
+  "Workspace name": "Workspace name",
+  "My Workspace": "My Workspace",
+  "Location": "Location",
+  "Default location": "Default location",
+  "under .craft-agent folder": "under .craft-agent folder",
+  "Choose a location": "Choose a location",
+  "Pick a place to put your new workspace.": "Pick a place to put your new workspace.",
+  "Browse": "Browse",
+  "Creating...": "Creating...",
+  "Create": "Create",
+  "A workspace named \"{slug}\" already exists": "A workspace named \"{slug}\" already exists"
+}

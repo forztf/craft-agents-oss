@@ -16,6 +16,7 @@ import { DataTableOverlay } from '@craft-agent/ui'
 import { LabelIcon } from '@/components/ui/label-icon'
 import { cn } from '@/lib/utils'
 import { useTheme } from '@/hooks/useTheme'
+import { useTranslation } from '@/contexts/I18nContext'
 import type { LabelConfig } from '@craft-agent/shared/labels'
 
 interface LabelsDataTableProps {
@@ -76,7 +77,7 @@ function ExpandableNameCell({ row }: { row: Row<LabelConfig> }) {
 const columns: ColumnDef<LabelConfig>[] = [
   {
     id: 'color',
-    header: () => <span className="p-1.5 pl-2.5">Color</span>,
+    header: () => <span className="p-1.5 pl-2.5">{t('Color')}</span>,
     cell: ({ row }) => (
       <div className="p-1.5 pl-2.5">
         <LabelIcon
@@ -91,14 +92,14 @@ const columns: ColumnDef<LabelConfig>[] = [
   },
   {
     accessorKey: 'name',
-    header: ({ column }) => <SortableHeader column={column} title="Name" />,
+    header: ({ column }) => <SortableHeader column={column} title={t('Name')} />,
     cell: ({ row }) => <ExpandableNameCell row={row} />,
     meta: { fillWidth: true },
   },
   {
     id: 'valueType',
     accessorKey: 'valueType',
-    header: ({ column }) => <SortableHeader column={column} title="Type" />,
+    header: ({ column }) => <SortableHeader column={column} title={t('Type')} />,
     cell: ({ row }) => (
       <div className="p-1.5 pl-2.5">
         {row.original.valueType ? (
@@ -130,6 +131,7 @@ export function LabelsDataTable({
   fullscreenTitle = 'Labels',
   className,
 }: LabelsDataTableProps) {
+  const { t } = useTranslation('components/info/LabelsDataTable')
   const [isFullscreen, setIsFullscreen] = useState(false)
   const { isDark } = useTheme()
 
@@ -144,7 +146,7 @@ export function LabelsDataTable({
         'text-muted-foreground/50 hover:text-foreground',
         'focus:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:opacity-100'
       )}
-      title="View Fullscreen"
+      title={t('View Fullscreen')}
     >
       <Maximize2 className="w-3.5 h-3.5" />
     </button>
@@ -160,9 +162,9 @@ export function LabelsDataTable({
       <Info_DataTable
         columns={columns}
         data={data}
-        searchable={searchable ? { placeholder: 'Search labels...' } : false}
+        searchable={searchable ? { placeholder: t('Search labels...') } : false}
         maxHeight={maxHeight}
-        emptyContent="No labels configured"
+        emptyContent={t('No labels configured')}
         floatingAction={fullscreenButton}
         className={cn(fullscreen && 'group', className)}
         getSubRows={getSubRows}
@@ -174,14 +176,14 @@ export function LabelsDataTable({
           isOpen={isFullscreen}
           onClose={() => setIsFullscreen(false)}
           title={fullscreenTitle}
-          subtitle={`${totalCount} ${totalCount === 1 ? 'label' : 'labels'}`}
+          subtitle={`${totalCount} ${totalCount === 1 ? t('label') : t('labels')}`}
           theme={isDark ? 'dark' : 'light'}
         >
           <Info_DataTable
             columns={columns}
             data={data}
-            searchable={searchable ? { placeholder: 'Search labels...' } : false}
-            emptyContent="No labels configured"
+            searchable={searchable ? { placeholder: t('Search labels...') } : false}
+            emptyContent={t('No labels configured')}
             getSubRows={getSubRows}
           />
         </DataTableOverlay>

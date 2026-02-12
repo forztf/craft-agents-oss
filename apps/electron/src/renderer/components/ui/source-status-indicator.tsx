@@ -18,6 +18,7 @@ import {
   TooltipTrigger,
 } from '@craft-agent/ui'
 import type { SourceConnectionStatus } from '../../../shared/types'
+import { useTranslation } from '@/contexts/I18nContext'
 
 export interface SourceStatusIndicatorProps {
   /** Connection status */
@@ -30,58 +31,60 @@ export interface SourceStatusIndicatorProps {
   className?: string
 }
 
-// Status configurations
-const STATUS_CONFIG: Record<SourceConnectionStatus, {
-  color: string
-  pulseColor: string
-  label: string
-  description: string
-}> = {
-  connected: {
-    color: 'bg-success',
-    pulseColor: 'bg-success/80',
-    label: 'Connected',
-    description: 'Source is connected and working',
-  },
-  needs_auth: {
-    color: 'bg-info',
-    pulseColor: 'bg-info/80',
-    label: 'Needs Authentication',
-    description: 'Source requires authentication to connect',
-  },
-  failed: {
-    color: 'bg-destructive',
-    pulseColor: 'bg-destructive/80',
-    label: 'Connection Failed',
-    description: 'Failed to connect to source',
-  },
-  untested: {
-    color: 'bg-foreground/40',
-    pulseColor: 'bg-foreground/30',
-    label: 'Not Tested',
-    description: 'Connection has not been tested',
-  },
-  local_disabled: {
-    color: 'bg-foreground/30',
-    pulseColor: 'bg-foreground/20',
-    label: 'Disabled',
-    description: 'Local MCP servers are disabled in Settings',
-  },
-}
-
-// Size configurations
-const SIZE_CONFIG: Record<'xs' | 'sm' | 'md', string> = {
-  xs: 'h-1.5 w-1.5',
-  sm: 'h-2 w-2',
-  md: 'h-2.5 w-2.5',
-}
-
 export function SourceStatusIndicator({
   status = 'untested',
   errorMessage,
   size = 'sm',
   className,
 }: SourceStatusIndicatorProps) {
+  const { t } = useTranslation('components/ui/source-status-indicator')
+
+  // Status configurations
+  const STATUS_CONFIG: Record<SourceConnectionStatus, {
+    color: string
+    pulseColor: string
+    label: string
+    description: string
+  }> = {
+    connected: {
+      color: 'bg-success',
+      pulseColor: 'bg-success/80',
+      label: t('Connected'),
+      description: t('Source is connected and working'),
+    },
+    needs_auth: {
+      color: 'bg-info',
+      pulseColor: 'bg-info/80',
+      label: t('Needs Authentication'),
+      description: t('Source requires authentication to connect'),
+    },
+    failed: {
+      color: 'bg-destructive',
+      pulseColor: 'bg-destructive/80',
+      label: t('Connection Failed'),
+      description: t('Failed to connect to source'),
+    },
+    untested: {
+      color: 'bg-foreground/40',
+      pulseColor: 'bg-foreground/30',
+      label: t('Not Tested'),
+      description: t('Connection has not been tested'),
+    },
+    local_disabled: {
+      color: 'bg-foreground/30',
+      pulseColor: 'bg-foreground/20',
+      label: t('Disabled'),
+      description: t('Local MCP servers are disabled in Settings'),
+    },
+  }
+
+  // Size configurations
+  const SIZE_CONFIG: Record<'xs' | 'sm' | 'md', string> = {
+    xs: 'h-1.5 w-1.5',
+    sm: 'h-2 w-2',
+    md: 'h-2.5 w-2.5',
+  }
+
   const config = STATUS_CONFIG[status]
   const sizeClass = SIZE_CONFIG[size]
 

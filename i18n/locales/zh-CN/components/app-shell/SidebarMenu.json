@@ -1,15 +1,15 @@
 {
-  "Add New Label": "添加新标签",
-  "Add Skill": "添加技能",
-  "Add Source": "添加来源",
-  "Configure Statuses": "配置状态",
-  "Delete Label": "删除标签",
-  "Delete View": "删除视图",
-  "Edit Labels": "编辑标签",
-  "Edit Views": "编辑视图",
   "Open in New Window": "在新窗口中打开",
-  "Learn More about APIs": "了解更多关于 API",
-  "Learn More about MCP": "了解更多关于 MCP",
-  "Learn More about Local Folders": "了解更多关于本地文件夹",
-  "Learn More about Sources": "了解更多关于来源"
+  "Configure Statuses": "配置状态",
+  "Add New Label": "添加新标签",
+  "Edit Labels": "编辑标签",
+  "Delete Label": "删除标签",
+  "Edit Views": "编辑视图",
+  "Delete View": "删除视图",
+  "Learn More about APIs": "了解 API",
+  "Learn More about MCP": "了解 MCP",
+  "Learn More about Local Folders": "了解本地文件夹",
+  "Learn More about Sources": "了解数据源",
+  "Add Source": "添加数据源",
+  "Add Skill": "添加技能"
 }

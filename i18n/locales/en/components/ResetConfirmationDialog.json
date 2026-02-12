@@ -1,1 +1,12 @@
-{"This will <strong>permanently delete</strong>:": "This will <strong>permanently delete</strong>:", "All credentials and API keys": "All credentials and API keys", "All preferences and session data": "All preferences and session data", "All workspaces and their settings": "All workspaces and their settings", "Back up any important data first!": "Back up any important data first!", "Cancel": "Cancel", "Enter answer": "Enter answer", "Reset App": "Reset App", "This action cannot be undone.": "This action cannot be undone.", "To confirm, solve:": "To confirm, solve:"}
+{
+  "This will <strong>permanently delete</strong>:": "This will <strong>permanently delete</strong>:",
+  "All credentials and API keys": "All credentials and API keys",
+  "All preferences and session data": "All preferences and session data",
+  "All workspaces and their settings": "All workspaces and their settings",
+  "Back up any important data first!": "Back up any important data first!",
+  "Cancel": "Cancel",
+  "Enter answer": "Enter answer",
+  "Reset App": "Reset App",
+  "This action cannot be undone.": "This action cannot be undone.",
+  "To confirm, solve:": "To confirm, solve:"
+}

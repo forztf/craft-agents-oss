@@ -1,8 +1,15 @@
 {
-  "Description": "Description",
-  "Flags": "Flags",
+  "Pattern copied to clipboard": "Pattern copied to clipboard",
+  "Failed to copy pattern": "Failed to copy pattern",
+  "Auto-Apply Rules": "Auto-Apply Rules",
   "Label": "Label",
   "Pattern": "Pattern",
+  "Flags": "Flags",
   "Template": "Template",
-  "View Fullscreen": "View Fullscreen"
+  "Description": "Description",
+  "Search rules...": "Search rules...",
+  "No auto-apply rules configured": "No auto-apply rules configured",
+  "View Fullscreen": "View Fullscreen",
+  "rule": "rule",
+  "rules": "rules"
 }

@@ -1,1 +1,5 @@
-{"Delete Source": "删除来源", "Open in New Window": "在新窗口中打开", "Show in Finder": "在资源管理器中查看"}
+{
+  "Open in New Window": "在新窗口中打开",
+  "Show in Finder": "在 Finder 中显示",
+  "Delete Source": "删除数据源"
+}
