@@ -1,0 +1,12 @@
+{
+  "Update v{{version}} ready": "更新 v{{version}} 已就绪",
+  "Restart to apply the update.": "重启以应用更新。",
+  "Restart": "重启",
+  "Installing update...": "正在安装更新...",
+  "The app will restart automatically.": "应用将自动重启。",
+  "Failed to install update": "安装更新失败",
+  "You're up to date": "已是最新版本",
+  "Version {{version}} is the latest.": "版本 {{version}} 已是最新。",
+  "Failed to check for updates": "检查更新失败",
+  "Unknown error": "未知错误"
+}

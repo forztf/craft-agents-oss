@@ -1,0 +1,12 @@
+{
+  "Update v{{version}} ready": "Update v{{version}} ready",
+  "Restart to apply the update.": "Restart to apply the update.",
+  "Restart": "Restart",
+  "Installing update...": "Installing update...",
+  "The app will restart automatically.": "The app will restart automatically.",
+  "Failed to install update": "Failed to install update",
+  "You're up to date": "You're up to date",
+  "Version {{version}} is the latest.": "Version {{version}} is the latest.",
+  "Failed to check for updates": "Failed to check for updates",
+  "Unknown error": "Unknown error"
+}

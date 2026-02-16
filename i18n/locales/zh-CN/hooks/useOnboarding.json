@@ -1,0 +1,15 @@
+{
+  "Failed to save configuration": "保存配置失败",
+  "Please enter a valid OpenAI API key": "请输入有效的 OpenAI API 密钥",
+  "Please enter a valid API key": "请输入有效的 API 密钥",
+  "Connection test failed": "连接测试失败",
+  "Validation failed": "验证失败",
+  "Select an authentication method first.": "请先选择认证方式。",
+  "ChatGPT authentication failed": "ChatGPT 认证失败",
+  "This connection uses API keys, not OAuth.": "此连接使用 API 密钥，而非 OAuth。",
+  "Failed to start OAuth": "启动 OAuth 失败",
+  "OAuth failed": "OAuth 失败",
+  "Please enter the authorization code": "请输入授权码",
+  "Failed to exchange code": "兑换授权码失败",
+  "Invalid path": "无效路径"
+}

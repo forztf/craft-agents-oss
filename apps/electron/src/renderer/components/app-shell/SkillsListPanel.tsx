@@ -51,6 +51,7 @@ export function SkillsListPanel({
   className,
 }: SkillsListPanelProps) {
   const { t } = useTranslation('components/app-shell/SkillsListPanel')
+  const { t: tEdit } = useTranslation('components/ui/EditPopover')
 
   // Empty state - rendered outside ScrollArea for proper vertical centering
   if (skills.length === 0) {
@@ -81,7 +82,7 @@ export function SkillsListPanel({
                     {t('Add Skill')}
                   </button>
                 }
-                {...getEditConfig('add-skill', workspaceRootPath)}
+                {...getEditConfig('add-skill', workspaceRootPath, tEdit)}
               />
             )}
           </EmptyContent>

@@ -95,6 +95,7 @@ export default function PreferencesPage() {
   const isInitialLoadRef = useRef(true)
   const { setLanguage } = useI18n()
   const { t } = useTranslation('pages/settings/PreferencesPage')
+  const { t: tEdit } = useTranslation('components/ui/EditPopover')
   const formStateRef = useRef(formState)
   const lastSavedRef = useRef<string | null>(null)
 
@@ -276,7 +277,7 @@ export default function PreferencesPage() {
                 preferencesPath ? (
                   <EditPopover
                     trigger={<EditButton />}
-                    {...getEditConfig('preferences-notes', preferencesPath)}
+                    {...getEditConfig('preferences-notes', preferencesPath, tEdit)}
                     secondaryAction={{
                       label: t('Edit File'),
                       filePath: preferencesPath!,

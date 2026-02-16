@@ -134,6 +134,7 @@ export default function PermissionsSettingsPage() {
   const { activeWorkspaceId } = useAppShellContext()
   const activeWorkspace = useActiveWorkspace()
   const { t } = useTranslation('pages/settings/PermissionsSettingsPage')
+  const { t: tEdit } = useTranslation('components/ui/EditPopover')
 
   // Loading and data state
   const [isLoading, setIsLoading] = useState(true)
@@ -238,7 +239,7 @@ export default function PermissionsSettingsPage() {
                       defaultPermissionsPath ? (
                         <EditPopover
                           trigger={<EditButton />}
-                          {...getEditConfig('default-permissions', defaultPermissionsPath)}
+                          {...getEditConfig('default-permissions', defaultPermissionsPath, tEdit)}
                           secondaryAction={{
                             label: t('Edit File'),
                             filePath: defaultPermissionsPath,
@@ -274,7 +275,7 @@ export default function PermissionsSettingsPage() {
                     action={
                       (() => {
                         // Get centralized edit config - all strings defined in EditPopover.tsx
-                        const { context, example } = getEditConfig('workspace-permissions', activeWorkspace?.rootPath || '')
+                        const { context, example } = getEditConfig('workspace-permissions', activeWorkspace?.rootPath || '', tEdit)
                         return (
                           <EditPopover
                             trigger={<EditButton />}

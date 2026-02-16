@@ -8,6 +8,7 @@ import {
   getStateIcon,
   getStateColor,
 } from '@/config/todo-states'
+import { useTranslation } from '@/contexts/I18nContext'
 
 // Re-export types for backwards compatibility
 export { type TodoStateId, type TodoState, getStateIcon, getStateColor }
@@ -68,6 +69,7 @@ export function TodoStateMenu({
   onUnarchive,
   className,
 }: TodoStateMenuProps) {
+  const { t } = useTranslation('components/ui/todo-filter-menu')
   const [filter, setFilter] = React.useState('')
   const inputRef = React.useRef<HTMLInputElement>(null)
 
@@ -133,7 +135,7 @@ export function TodoStateMenu({
               <span className="shrink-0 flex items-center opacity-60">
                 {isArchived ? <ArchiveRestore className="w-3.5 h-3.5" /> : <Archive className="w-3.5 h-3.5" />}
               </span>
-              <div className="flex-1 min-w-0">{isArchived ? 'Unarchive' : 'Archive'}</div>
+              <div className="flex-1 min-w-0">{isArchived ? t('Unarchive') : t('Archive')}</div>
             </CommandPrimitive.Item>
           </>
         )}

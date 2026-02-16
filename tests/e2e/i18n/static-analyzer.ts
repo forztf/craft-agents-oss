@@ -15,21 +15,10 @@ interface HardcodedString {
   type: 'jsx-text' | 'string-literal' | 'template-literal'
 }
 
-interface NamingConventionIssue {
-  file: string
-  line: number
-  column: number
-  key: string
-  suggestion?: string
-  type: 'short-key' | 'underscore-key' | 'non-readable-key'
-}
-
 interface AnalysisResult {
   totalFiles: number
   totalIssues: number
-  namingIssues: number
   files: Map<string, HardcodedString[]>
-  namingIssuesByFile: Map<string, NamingConventionIssue[]>
 }
 
 // 需要翻译的常见文本模式
@@ -38,10 +27,10 @@ const TRANSLATE_PATTERNS = {
   jsxText: />([A-Z][a-zA-Z\s,\.\!?]{3,50})</g,
 
   // 字符串字面量：赋值给常见UI属性
-  stringLiteral: /(?:(?:label|title|placeholder|text|message|error|description|hint|aria-label|heading):\s*)["']([A-Z][a-zA-Z\s,\.\!?]{3,100})["']/g,
+  stringLiteral: /(?:(?:label|title|placeholder|text|message|error|description|hint|aria-label|ariaLabel|alt|heading)\s*(?:=|:)\s*)["']([A-Z][a-zA-Z0-9\s,\.\!?\-]{3,100})["']/g,
 
   // 模板字符串：动态构建的文本
-  templateLiteral: /`([A-Z][a-zA-Z\s,\.\!?]{3,100})`/g,
+  templateLiteral: /`([^`]{3,200})`/g,
 }
 
 // 应该忽略的文本模式（技术术语、代码等）
@@ -60,6 +49,8 @@ const IGNORE_PATTERNS = [
   /^\.\.?\//,
   // 单词模式（变量名等）
   /^[a-z][a-zA-Z0-9]*$/,
+  // 常见技术术语/缩写
+  /^(?:AI|API|MCP|OAuth|Claude|GPT|OpenAI|GitHub|Windows|macOS|Linux|JSON|YAML|TypeScript|JavaScript|React|Electron)$/,
 ]
 
 function shouldIgnore(text: string): boolean {
@@ -70,7 +61,6 @@ function shouldIgnore(text: string): boolean {
 function analyzeFile(filePath: string): HardcodedString[] {
   const issues: HardcodedString[] = []
   const content = fs.readFileSync(filePath, 'utf-8')
-  const lines = content.split('\n')
 
   // 分析 JSX 文本
   let match
@@ -127,6 +117,36 @@ function analyzeFile(filePath: string): HardcodedString[] {
       column: columnNum,
       text,
       type: 'string-literal',
+    })
+  }
+
+  const templateRegex = new RegExp(TRANSLATE_PATTERNS.templateLiteral.source, 'g')
+  while ((match = templateRegex.exec(content)) !== null) {
+    const raw = match[1]
+    if (!raw) continue
+    if (raw.includes('${')) continue
+    const text = raw.replace(/\s+/g, ' ').trim()
+    if (!/^[A-Z][a-zA-Z0-9\s,\.\!?\-]{3,100}$/.test(text)) continue
+
+    const contextStart = Math.max(0, match.index - 50)
+    const context = content.substring(contextStart, match.index)
+
+    if (context.includes('t(') || shouldIgnore(text)) {
+      continue
+    }
+
+    const textBefore = content.substring(0, match.index)
+    const lineNum = textBefore.split('\n').length
+    const columnNum = textBefore.lastIndexOf('\n') >= 0
+      ? textBefore.length - textBefore.lastIndexOf('\n') - 1
+      : textBefore.length
+
+    issues.push({
+      file: path.relative(process.cwd(), filePath),
+      line: lineNum,
+      column: columnNum,
+      text,
+      type: 'template-literal',
     })
   }
 
@@ -219,7 +239,7 @@ function saveReport(result: AnalysisResult, outputPath: string) {
 }
 
 function main() {
-  const projectRoot = path.resolve(__dirname, '..', '..', '..')
+  const projectRoot = process.cwd()
   const sourceDir = path.join(projectRoot, 'apps', 'electron', 'src', 'renderer')
 
   console.log('🔍 扫描源代码中的硬编码文本...\n')

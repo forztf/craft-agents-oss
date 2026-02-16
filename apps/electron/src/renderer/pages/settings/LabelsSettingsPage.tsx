@@ -42,11 +42,12 @@ export default function LabelsSettingsPage() {
   const activeWorkspace = useActiveWorkspace()
   const { labels, isLoading } = useLabels(activeWorkspaceId)
   const { t } = useTranslation('pages/settings/LabelsSettingsPage')
+  const { t: tEdit } = useTranslation('components/ui/EditPopover')
 
   // Resolve edit configs using the workspace root path
   const rootPath = activeWorkspace?.rootPath || ''
-  const labelsEditConfig = getEditConfig('edit-labels', rootPath)
-  const autoRulesEditConfig = getEditConfig('edit-auto-rules', rootPath)
+  const labelsEditConfig = getEditConfig('edit-labels', rootPath, tEdit)
+  const autoRulesEditConfig = getEditConfig('edit-auto-rules', rootPath, tEdit)
 
   // Secondary action: open the labels config file directly in system editor
   const editFileAction = rootPath ? {

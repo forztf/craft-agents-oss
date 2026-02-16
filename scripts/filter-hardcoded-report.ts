@@ -51,6 +51,9 @@ async function filterReport() {
       } else if (filePath.includes('/components/chat/') || filePath.includes('/components/ui/')) {
         categories.other.count += issues.length
         categories.other.files.push(filePath)
+      } else {
+        // 未分类的文件
+        console.log(`  ⚠️  未分类: ${filePath} (${issues.length} 问题)`)
       }
     }
 

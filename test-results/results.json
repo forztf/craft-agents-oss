@@ -1,0 +1,491 @@
+{
+  "config": {
+    "configFile": "C:\\code\\AI\\craft-agents-i18n\\playwright.config.ts",
+    "rootDir": "C:/code/AI/craft-agents-i18n/tests/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/code/AI/craft-agents-i18n/test-results/playwright",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "electron",
+        "name": "electron",
+        "testDir": "C:/code/AI/craft-agents-i18n/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "test-results/html"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "list",
+        null
+      ],
+      [
+        "dot",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "runAgents": "none",
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.58.2",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "i18n\\i18n-e2e.spec.ts",
+      "file": "i18n/i18n-e2e.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "I18n 完整性测试套件",
+          "file": "i18n/i18n-e2e.spec.ts",
+          "line": 430,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Chat 页面硬编码文本检测",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 0,
+                      "error": {
+                        "message": "Error: ENOENT: no such file or directory, scandir 'C:\\code\\AI\\craft-agents-i18n\\tests\\i18n\\locales\\en'",
+                        "stack": "Error: ENOENT: no such file or directory, scandir 'C:\\code\\AI\\craft-agents-i18n\\tests\\i18n\\locales\\en'\n    at walkDir (C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts:136:21)\n    at loadTranslationKeys (C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts:157:3)\n    at getAllTranslationKeys (C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts:166:22)\n    at C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts:371:24",
+                        "location": {
+                          "file": "C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts",
+                          "column": 21,
+                          "line": 136
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 134 |\u001b[39m\n \u001b[90m 135 |\u001b[39m   \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m walkDir(dir\u001b[33m:\u001b[39m string\u001b[33m,\u001b[39m basePath\u001b[33m:\u001b[39m string \u001b[33m=\u001b[39m \u001b[32m''\u001b[39m) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 136 |\u001b[39m     \u001b[36mconst\u001b[39m entries \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m fs\u001b[33m.\u001b[39mreaddir(dir\u001b[33m,\u001b[39m { withFileTypes\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 137 |\u001b[39m\n \u001b[90m 138 |\u001b[39m     \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m entry \u001b[36mof\u001b[39m entries) {\n \u001b[90m 139 |\u001b[39m       \u001b[36mconst\u001b[39m fullPath \u001b[33m=\u001b[39m path\u001b[33m.\u001b[39mjoin(dir\u001b[33m,\u001b[39m entry\u001b[33m.\u001b[39mname)\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts",
+                            "column": 21,
+                            "line": 136
+                          },
+                          "message": "Error: ENOENT: no such file or directory, scandir 'C:\\code\\AI\\craft-agents-i18n\\tests\\i18n\\locales\\en'\n\n\u001b[0m \u001b[90m 134 |\u001b[39m\n \u001b[90m 135 |\u001b[39m   \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m walkDir(dir\u001b[33m:\u001b[39m string\u001b[33m,\u001b[39m basePath\u001b[33m:\u001b[39m string \u001b[33m=\u001b[39m \u001b[32m''\u001b[39m) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 136 |\u001b[39m     \u001b[36mconst\u001b[39m entries \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m fs\u001b[33m.\u001b[39mreaddir(dir\u001b[33m,\u001b[39m { withFileTypes\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 137 |\u001b[39m\n \u001b[90m 138 |\u001b[39m     \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m entry \u001b[36mof\u001b[39m entries) {\n \u001b[90m 139 |\u001b[39m       \u001b[36mconst\u001b[39m fullPath \u001b[33m=\u001b[39m path\u001b[33m.\u001b[39mjoin(dir\u001b[33m,\u001b[39m entry\u001b[33m.\u001b[39mname)\u001b[0m\n\u001b[2m    at walkDir (C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts:136:21)\u001b[22m\n\u001b[2m    at loadTranslationKeys (C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts:157:3)\u001b[22m\n\u001b[2m    at getAllTranslationKeys (C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts:166:22)\u001b[22m\n\u001b[2m    at C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts:371:24\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts",
+                            "column": 12,
+                            "line": 426
+                          },
+                          "message": "TypeError: Cannot read properties of undefined (reading 'printReport')\n\n\u001b[0m \u001b[90m 424 |\u001b[39m\n \u001b[90m 425 |\u001b[39m   \u001b[90m// 生成报告\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 426 |\u001b[39m   reporter\u001b[33m.\u001b[39mprintReport()\n \u001b[90m     |\u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 427 |\u001b[39m   \u001b[36mawait\u001b[39m reporter\u001b[33m.\u001b[39msaveReport()\n \u001b[90m 428 |\u001b[39m })\n \u001b[90m 429 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts:426:12\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "🚀 启动 Electron 应用...\n\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-16T10:22:16.815Z",
+                      "annotations": [],
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts",
+                        "column": 21,
+                        "line": 136
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "fcfb652bd3ffd794a76e-cbf65e543f364d6ad982",
+              "file": "i18n/i18n-e2e.spec.ts",
+              "line": 431,
+              "column": 3
+            },
+            {
+              "title": "Settings 页面硬编码文本检测",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-16T10:22:16.877Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fcfb652bd3ffd794a76e-762abd5aedc1dac6ee33",
+              "file": "i18n/i18n-e2e.spec.ts",
+              "line": 491,
+              "column": 3
+            },
+            {
+              "title": "Sidebar 区域检测",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-16T10:22:16.878Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fcfb652bd3ffd794a76e-d27cb9b755b784202a36",
+              "file": "i18n/i18n-e2e.spec.ts",
+              "line": 566,
+              "column": 3
+            },
+            {
+              "title": "按钮文本检测",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-16T10:22:16.879Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fcfb652bd3ffd794a76e-d0462fb00e4fac95ce0f",
+              "file": "i18n/i18n-e2e.spec.ts",
+              "line": 613,
+              "column": 3
+            },
+            {
+              "title": "Placeholder 文本检测",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-16T10:22:16.880Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fcfb652bd3ffd794a76e-bcdd6b0db0cbc365c7d7",
+              "file": "i18n/i18n-e2e.spec.ts",
+              "line": 676,
+              "column": 3
+            },
+            {
+              "title": "语言文件完整性验证",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-16T10:22:16.881Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fcfb652bd3ffd794a76e-d11d736ce0d42135fc41",
+              "file": "i18n/i18n-e2e.spec.ts",
+              "line": 728,
+              "column": 3
+            },
+            {
+              "title": "HTML 属性文本检测",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-16T10:22:16.882Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fcfb652bd3ffd794a76e-1f43e7c282465dc47ee4",
+              "file": "i18n/i18n-e2e.spec.ts",
+              "line": 845,
+              "column": 3
+            },
+            {
+              "title": "自动化巡检 (Crawler)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-16T10:22:16.883Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fcfb652bd3ffd794a76e-ad05c480824f6002ac3e",
+              "file": "i18n/i18n-e2e.spec.ts",
+              "line": 905,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "UI 交互检测",
+          "file": "i18n/i18n-e2e.spec.ts",
+          "line": 945,
+          "column": 6,
+          "specs": [
+            {
+              "title": "语言切换功能",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-16T10:22:16.883Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fcfb652bd3ffd794a76e-26743c49e3d5bd1ba696",
+              "file": "i18n/i18n-e2e.spec.ts",
+              "line": 946,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "静态代码分析集成",
+          "file": "i18n/i18n-e2e.spec.ts",
+          "line": 1003,
+          "column": 6,
+          "specs": [
+            {
+              "title": "生成静态代码分析报告",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-16T10:22:16.884Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fcfb652bd3ffd794a76e-85beb6a3f5dfe183a91a",
+              "file": "i18n/i18n-e2e.spec.ts",
+              "line": 1004,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-02-16T10:22:15.091Z",
+    "duration": 2137.719,
+    "expected": 0,
+    "skipped": 9,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

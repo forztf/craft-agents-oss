@@ -8,8 +8,9 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: 1,
   timeout: 60000, // 60 秒超时，因为 Electron 启动较慢
+  outputDir: 'test-results/playwright',
   reporter: [
-    ['html', { outputFolder: 'test-results/html' }],
+    ['html', { outputFolder: 'test-results/html', open: 'never' }],
     ['json', { outputFile: 'test-results/results.json' }],
     ['list'],
     // 简化的控制台输出

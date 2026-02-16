@@ -19,6 +19,7 @@ import type {
 } from '@/components/onboarding'
 import type { ApiKeySubmitData } from '@/components/apisetup'
 import type { SetupNeeds, GitBashStatus, LlmConnectionSetup } from '../../shared/types'
+import { useTranslation } from '@/contexts/I18nContext'
 
 interface UseOnboardingOptions {
   /** Called when onboarding is complete */
@@ -110,6 +111,7 @@ export function useOnboarding({
   onDismiss,
   onConfigSaved,
 }: UseOnboardingOptions): UseOnboardingReturn {
+  const { t } = useTranslation('hooks/useOnboarding')
   // Main wizard state
   const [state, setState] = useState<OnboardingState>({
     step: initialStep,
@@ -166,17 +168,17 @@ export function useOnboarding({
         setState(s => ({
           ...s,
           completionStatus: 'saving',
-          errorMessage: result.error || 'Failed to save configuration',
+          errorMessage: result.error || t('Failed to save configuration'),
         }))
       }
     } catch (error) {
       console.error('[Onboarding] handleSaveConfig error:', error)
       setState(s => ({
         ...s,
-        errorMessage: error instanceof Error ? error.message : 'Failed to save configuration',
+        errorMessage: error instanceof Error ? error.message : t('Failed to save configuration'),
       }))
     }
-  }, [state.apiSetupMethod, onConfigSaved])
+  }, [state.apiSetupMethod, onConfigSaved, t])
 
   // Continue to next step
   const handleContinue = useCallback(async () => {
@@ -253,7 +255,7 @@ export function useOnboarding({
           setState(s => ({
             ...s,
             credentialStatus: 'error',
-            errorMessage: 'Please enter a valid OpenAI API key',
+            errorMessage: t('Please enter a valid OpenAI API key'),
           }))
           return
         }
@@ -263,7 +265,7 @@ export function useOnboarding({
           setState(s => ({
             ...s,
             credentialStatus: 'error',
-            errorMessage: 'Please enter a valid API key',
+            errorMessage: t('Please enter a valid API key'),
           }))
           return
         }
@@ -292,7 +294,7 @@ export function useOnboarding({
         setState(s => ({
           ...s,
           credentialStatus: 'error',
-          errorMessage: testResult.error || 'Connection test failed',
+          errorMessage: testResult.error || t('Connection test failed'),
         }))
         return
       }
@@ -312,10 +314,10 @@ export function useOnboarding({
       setState(s => ({
         ...s,
         credentialStatus: 'error',
-        errorMessage: error instanceof Error ? error.message : 'Validation failed',
+        errorMessage: error instanceof Error ? error.message : t('Validation failed'),
       }))
     }
-  }, [handleSaveConfig, state.apiSetupMethod])
+  }, [handleSaveConfig, state.apiSetupMethod, t])
 
   // Two-step OAuth flow state
   const [isWaitingForCode, setIsWaitingForCode] = useState(false)
@@ -340,7 +342,7 @@ export function useOnboarding({
       setState(s => ({
         ...s,
         credentialStatus: 'error',
-        errorMessage: 'Select an authentication method first.',
+        errorMessage: t('Select an authentication method first.'),
       }))
       return
     }
@@ -363,7 +365,7 @@ export function useOnboarding({
           setState(s => ({
             ...s,
             credentialStatus: 'error',
-            errorMessage: result.error || 'ChatGPT authentication failed',
+            errorMessage: result.error || t('ChatGPT authentication failed'),
           }))
         }
         return
@@ -374,7 +376,7 @@ export function useOnboarding({
         setState(s => ({
           ...s,
           credentialStatus: 'error',
-          errorMessage: 'This connection uses API keys, not OAuth.',
+          errorMessage: t('This connection uses API keys, not OAuth.'),
         }))
         return
       }
@@ -389,17 +391,17 @@ export function useOnboarding({
         setState(s => ({
           ...s,
           credentialStatus: 'error',
-          errorMessage: result.error || 'Failed to start OAuth',
+          errorMessage: result.error || t('Failed to start OAuth'),
         }))
       }
     } catch (error) {
       setState(s => ({
         ...s,
         credentialStatus: 'error',
-        errorMessage: error instanceof Error ? error.message : 'OAuth failed',
+        errorMessage: error instanceof Error ? error.message : t('OAuth failed'),
       }))
     }
-  }, [state.apiSetupMethod, handleSaveConfig])
+  }, [state.apiSetupMethod, handleSaveConfig, t])
 
   // Submit authorization code (second step of OAuth flow)
   const handleSubmitAuthCode = useCallback(async (code: string) => {
@@ -407,7 +409,7 @@ export function useOnboarding({
       setState(s => ({
         ...s,
         credentialStatus: 'error',
-        errorMessage: 'Please enter the authorization code',
+        errorMessage: t('Please enter the authorization code'),
       }))
       return
     }
@@ -432,17 +434,17 @@ export function useOnboarding({
         setState(s => ({
           ...s,
           credentialStatus: 'error',
-          errorMessage: result.error || 'Failed to exchange code',
+          errorMessage: result.error || t('Failed to exchange code'),
         }))
       }
     } catch (error) {
       setState(s => ({
         ...s,
         credentialStatus: 'error',
-        errorMessage: error instanceof Error ? error.message : 'Failed to exchange code',
+        errorMessage: error instanceof Error ? error.message : t('Failed to exchange code'),
       }))
     }
-  }, [handleSaveConfig])
+  }, [handleSaveConfig, t])
 
   // Cancel OAuth flow
   const handleCancelOAuth = useCallback(async () => {
@@ -469,10 +471,10 @@ export function useOnboarding({
     } else {
       setState(s => ({
         ...s,
-        errorMessage: result.error || 'Invalid path',
+        errorMessage: result.error || t('Invalid path'),
       }))
     }
-  }, [])
+  }, [t])
 
   const handleRecheckGitBash = useCallback(async () => {
     setState(s => ({ ...s, isRecheckingGitBash: true }))

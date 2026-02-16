@@ -1,0 +1,15 @@
+{
+  "Failed to save configuration": "Failed to save configuration",
+  "Please enter a valid OpenAI API key": "Please enter a valid OpenAI API key",
+  "Please enter a valid API key": "Please enter a valid API key",
+  "Connection test failed": "Connection test failed",
+  "Validation failed": "Validation failed",
+  "Select an authentication method first.": "Select an authentication method first.",
+  "ChatGPT authentication failed": "ChatGPT authentication failed",
+  "This connection uses API keys, not OAuth.": "This connection uses API keys, not OAuth.",
+  "Failed to start OAuth": "Failed to start OAuth",
+  "OAuth failed": "OAuth failed",
+  "Please enter the authorization code": "Please enter the authorization code",
+  "Failed to exchange code": "Failed to exchange code",
+  "Invalid path": "Invalid path"
+}

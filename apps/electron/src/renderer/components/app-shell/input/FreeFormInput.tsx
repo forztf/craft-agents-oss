@@ -246,6 +246,7 @@ export function FreeFormInput({
   const appShellCtx = useOptionalAppShellContext()
   const llmConnections = appShellCtx?.llmConnections ?? []
   const { t } = useTranslation('components/app-shell/input/FreeFormInput')
+  const { t: tEdit } = useTranslation('components/ui/EditPopover')
   const workspaceDefaultConnection = appShellCtx?.workspaceDefaultLlmConnection
 
   // Derive connectionDefaultModel per-session from the effective connection.
@@ -809,7 +810,7 @@ export function FreeFormInput({
   // Memoize the add-label config so the EditPopover doesn't recreate on every render
   const addLabelEditConfig = React.useMemo(() => {
     if (!workspaceRootPath) return null
-    return getEditConfig('add-label', workspaceRootPath)
+    return getEditConfig('add-label', workspaceRootPath, tEdit)
   }, [workspaceRootPath])
 
   // Report height changes to parent (for external animation sync)

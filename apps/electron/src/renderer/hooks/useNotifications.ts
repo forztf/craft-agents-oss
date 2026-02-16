@@ -11,6 +11,7 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import { useAtomValue } from 'jotai'
 import type { Session } from '../../shared/types'
 import { sessionMetaMapAtom, type SessionMeta } from '@/atoms/sessions'
+import { useTranslation } from '@/contexts/I18nContext'
 
 /**
  * Draw a badge onto an icon image using Canvas
@@ -108,6 +109,7 @@ export function useNotifications({
   onNavigateToSession,
   enabled = true,
 }: UseNotificationsOptions): UseNotificationsResult {
+  const { t } = useTranslation('hooks/useNotifications')
   const [isWindowFocused, setIsWindowFocused] = useState(true)
   const onNavigateToSessionRef = useRef(onNavigateToSession)
   const lastBadgeCountRef = useRef<number | null>(null)
@@ -201,16 +203,16 @@ export function useNotifications({
     if (!workspaceId) return
 
     // Get session title for notification
-    const title = session.name || 'New message'
+    const title = session.name || t('New message')
 
     // Get message preview (truncate if needed)
-    let body = messagePreview || 'Craft Agent has a new message for you'
+    let body = messagePreview || t('Craft Agent has a new message for you')
     if (body.length > 100) {
       body = body.substring(0, 97) + '...'
     }
 
     window.electronAPI.showNotification(title, body, workspaceId, session.id)
-  }, [enabled, isWindowFocused, workspaceId])
+  }, [enabled, isWindowFocused, workspaceId, t])
 
   return {
     isWindowFocused,

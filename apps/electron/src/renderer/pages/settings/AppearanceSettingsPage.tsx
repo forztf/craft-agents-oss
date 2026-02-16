@@ -49,6 +49,7 @@ export const meta: DetailsPageMeta = {
 export default function AppearanceSettingsPage() {
   const { mode, setMode, colorTheme, setColorTheme, font, setFont, activeWorkspaceId, setWorkspaceColorTheme } = useTheme()
   const { t } = useTranslation('pages/settings/AppearanceSettingsPage')
+  const { t: tEdit } = useTranslation('components/ui/EditPopover')
   const { workspaces } = useAppShellContext()
 
   // Fetch workspace icons as data URLs (file:// URLs don't work in renderer)
@@ -309,7 +310,7 @@ export default function AppearanceSettingsPage() {
                   toolIconsJsonPath ? (
                     <EditPopover
                       trigger={<EditButton />}
-                      {...getEditConfig('edit-tool-icons', toolIconsJsonPath)}
+                      {...getEditConfig('edit-tool-icons', toolIconsJsonPath, tEdit)}
                       secondaryAction={{
                         label: t('Edit File'),
                         filePath: toolIconsJsonPath,

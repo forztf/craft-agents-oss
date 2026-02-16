@@ -170,6 +170,7 @@ function getPermissionsDescription(source: LoadedSource, t: (key: string) => str
 
 export default function SourceInfoPage({ sourceSlug, workspaceId, onDelete }: SourceInfoPageProps) {
   const { t } = useTranslation('pages/SourceInfoPage')
+  const { t: tEdit } = useTranslation('components/ui/EditPopover')
   const { navigateToSource } = useNavigation()
   const [source, setSource] = useState<LoadedSource | null>(null)
   const [loading, setLoading] = useState(true)
@@ -402,10 +403,10 @@ export default function SourceInfoPage({ sourceSlug, workspaceId, onDelete }: So
             actions={
               // EditPopover for AI-assisted config.json editing with "Edit File" as secondary action
               <EditPopover
-                trigger={<EditButton />}
-                {...getEditConfig('source-config', source.folderPath)}
-                secondaryAction={{
-                  label: t('Edit File'),
+                  trigger={<EditButton />}
+                  {...getEditConfig('source-config', source.folderPath, tEdit)}
+                  secondaryAction={{
+                    label: t('Edit File'),
                   filePath: `${source.folderPath}/config.json`,
                 }}
               />
@@ -445,7 +446,7 @@ export default function SourceInfoPage({ sourceSlug, workspaceId, onDelete }: So
                 // EditPopover for AI-assisted permissions.json editing
                 <EditPopover
                   trigger={<EditButton />}
-                  {...getEditConfig('source-permissions', source.folderPath)}
+                  {...getEditConfig('source-permissions', source.folderPath, tEdit)}
                   secondaryAction={{
                     label: t('Edit File'),
                     filePath: `${source.folderPath}/permissions.json`,
@@ -466,7 +467,7 @@ export default function SourceInfoPage({ sourceSlug, workspaceId, onDelete }: So
                 // EditPopover for AI-assisted tool permissions editing
                 <EditPopover
                   trigger={<EditButton />}
-                  {...getEditConfig('source-tool-permissions', source.folderPath)}
+                  {...getEditConfig('source-tool-permissions', source.folderPath, tEdit)}
                   secondaryAction={{
                     label: t('Edit File'),
                     filePath: `${source.folderPath}/permissions.json`,
@@ -491,7 +492,7 @@ export default function SourceInfoPage({ sourceSlug, workspaceId, onDelete }: So
                 // EditPopover for AI-assisted permissions.json editing
                 <EditPopover
                   trigger={<EditButton />}
-                  {...getEditConfig('source-permissions', source.folderPath)}
+                  {...getEditConfig('source-permissions', source.folderPath, tEdit)}
                   secondaryAction={{
                     label: t('Edit File'),
                     filePath: `${source.folderPath}/permissions.json`,
@@ -512,7 +513,7 @@ export default function SourceInfoPage({ sourceSlug, workspaceId, onDelete }: So
                 // EditPopover for AI-assisted guide.md editing with "Edit File" as secondary action
                 <EditPopover
                   trigger={<EditButton />}
-                  {...getEditConfig('source-guide', source.folderPath)}
+                  {...getEditConfig('source-guide', source.folderPath, tEdit)}
                   secondaryAction={{
                     label: t('Edit File'),
                     filePath: `${source.folderPath}/guide.md`,

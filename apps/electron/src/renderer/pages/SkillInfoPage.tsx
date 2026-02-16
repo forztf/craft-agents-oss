@@ -30,6 +30,7 @@ interface SkillInfoPageProps {
 
 export default function SkillInfoPage({ skillSlug, workspaceId }: SkillInfoPageProps) {
   const { t } = useTranslation('pages/SkillInfoPage')
+  const { t: tEdit } = useTranslation('components/ui/EditPopover')
   const [skill, setSkill] = useState<LoadedSkill | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -162,7 +163,7 @@ export default function SkillInfoPage({ skillSlug, workspaceId }: SkillInfoPageP
               // EditPopover for AI-assisted metadata editing (name, description in frontmatter)
               <EditPopover
                 trigger={<EditButton />}
-                {...getEditConfig('skill-metadata', skill.path)}
+                {...getEditConfig('skill-metadata', skill.path, tEdit)}
                 secondaryAction={{
                   label: t('Edit File'),
                   filePath: `${skill.path}/SKILL.md`,
@@ -232,7 +233,7 @@ export default function SkillInfoPage({ skillSlug, workspaceId }: SkillInfoPageP
               // EditPopover for AI-assisted editing with "Edit File" as secondary action
               <EditPopover
                 trigger={<EditButton />}
-                {...getEditConfig('skill-instructions', skill.path)}
+                {...getEditConfig('skill-instructions', skill.path, tEdit)}
                 secondaryAction={{
                   label: t('Edit File'),
                   filePath: `${skill.path}/SKILL.md`,

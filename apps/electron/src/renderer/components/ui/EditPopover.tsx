@@ -57,7 +57,7 @@ export interface EditContext {
  * To add a new edit context:
  * 1. Add a new key to EditContextKey type
  * 2. Add the config to EDIT_CONFIGS
- * 3. Use via getEditConfig(key, location)
+ * 3. Use via getEditConfig(key, location, t)
  *
  * This pattern ensures:
  * - All edit prompts and examples are reviewed in one place
@@ -111,10 +111,10 @@ export interface EditConfig {
  * Registry of all edit configurations.
  * Each entry contains all strings needed for the edit popover and agent context.
  */
-const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
-  'workspace-permissions': (location) => ({
+const EDIT_CONFIGS: Record<EditContextKey, (location: string, t: (k: string) => string) => EditConfig> = {
+  'workspace-permissions': (location, t) => ({
     context: {
-      label: 'Permission Settings',
+      label: t('Permission Settings'),
       filePath: `${location}/permissions.json`,
       context:
         'The user is on the Settings Screen and pressed the edit button on Workspace Permission settings. ' +
@@ -124,15 +124,15 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'After editing, call config_validate with target "permissions" to verify the changes. ' +
         'Confirm clearly when done.',
     },
-    example: "Allow running 'make build' in Explore mode",
+    example: t("Allow running 'make build' in Explore mode"),
     model: 'sonnet',
     systemPromptPreset: 'mini',
     inlineExecution: true,
   }),
 
-  'default-permissions': (location) => ({
+  'default-permissions': (location, t) => ({
     context: {
-      label: 'Default Permissions',
+      label: t('Default Permissions'),
       filePath: location, // location is the full path for default permissions
       context:
         'The user is editing app-level default permissions (~/.craft-agent/permissions/default.json). ' +
@@ -143,16 +143,16 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'After editing, call config_validate with target "permissions" to verify the changes. ' +
         'Confirm clearly when done.',
     },
-    example: 'Allow git fetch command',
+    example: t('Allow git fetch command'),
     model: 'sonnet',
     systemPromptPreset: 'mini',
     inlineExecution: true,
   }),
 
   // Skill editing contexts
-  'skill-instructions': (location) => ({
+  'skill-instructions': (location, t) => ({
     context: {
-      label: 'Skill Instructions',
+      label: t('Skill Instructions'),
       filePath: `${location}/SKILL.md`,
       context:
         'The user is editing skill instructions in SKILL.md. ' +
@@ -162,15 +162,15 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'After editing, call skill_validate with the skill slug to verify the changes. ' +
         'Confirm clearly when done.',
     },
-    example: 'Add error handling guidelines',
+    example: t('Add error handling guidelines'),
     model: 'haiku',
     systemPromptPreset: 'mini',
     inlineExecution: true,
   }),
 
-  'skill-metadata': (location) => ({
+  'skill-metadata': (location, t) => ({
     context: {
-      label: 'Skill Metadata',
+      label: t('Skill Metadata'),
       filePath: `${location}/SKILL.md`,
       context:
         'The user is editing skill metadata in the YAML frontmatter of SKILL.md. ' +
@@ -179,16 +179,16 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'After editing, call skill_validate with the skill slug to verify the changes. ' +
         'Confirm clearly when done.',
     },
-    example: 'Update the skill description',
+    example: t('Update the skill description'),
     model: 'haiku',
     systemPromptPreset: 'mini',
     inlineExecution: true,
   }),
 
   // Source editing contexts
-  'source-guide': (location) => ({
+  'source-guide': (location, t) => ({
     context: {
-      label: 'Source Documentation',
+      label: t('Source Documentation'),
       filePath: `${location}/guide.md`,
       context:
         'The user is editing source documentation (guide.md). ' +
@@ -196,15 +196,15 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'Keep content clear and actionable. ' +
         'Confirm clearly when done.',
     },
-    example: 'Add rate limit documentation',
+    example: t('Add rate limit documentation'),
     model: 'haiku',
     systemPromptPreset: 'mini',
     inlineExecution: true,
   }),
 
-  'source-config': (location) => ({
+  'source-config': (location, t) => ({
     context: {
-      label: 'Source Configuration',
+      label: t('Source Configuration'),
       filePath: `${location}/config.json`,
       context:
         'The user is editing source configuration (config.json). ' +
@@ -213,15 +213,15 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'After editing, call source_test with the source slug to verify the configuration. ' +
         'Confirm clearly when done.',
     },
-    example: 'Update the display name',
+    example: t('Update the display name'),
     model: 'sonnet',
     systemPromptPreset: 'mini',
     inlineExecution: true,
   }),
 
-  'source-permissions': (location) => ({
+  'source-permissions': (location, t) => ({
     context: {
-      label: 'Source Permissions',
+      label: t('Source Permissions'),
       filePath: `${location}/permissions.json`,
       context:
         'The user is editing source-level permissions (permissions.json). ' +
@@ -230,15 +230,15 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'After editing, call config_validate with target "permissions" and the source slug to verify the changes. ' +
         'Confirm clearly when done.',
     },
-    example: 'Allow list operations in Explore mode',
+    example: t('Allow list operations in Explore mode'),
     model: 'sonnet',
     systemPromptPreset: 'mini',
     inlineExecution: true,
   }),
 
-  'source-tool-permissions': (location) => ({
+  'source-tool-permissions': (location, t) => ({
     context: {
-      label: 'Tool Permissions',
+      label: t('Tool Permissions'),
       filePath: `${location}/permissions.json`,
       context:
         'The user is viewing the Tools list for an MCP source and wants to modify tool permissions. ' +
@@ -249,16 +249,16 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'After editing, call config_validate with target "permissions" and the source slug to verify the changes. ' +
         'Confirm clearly when done.',
     },
-    example: 'Only allow read operations (list, get, search)',
+    example: t('Only allow read operations (list, get, search)'),
     model: 'sonnet',
     systemPromptPreset: 'mini',
     inlineExecution: true,
   }),
 
   // Preferences editing context
-  'preferences-notes': (location) => ({
+  'preferences-notes': (location, t) => ({
     context: {
-      label: 'Preferences Notes',
+      label: t('Preferences Notes'),
       filePath: location, // location is the full path for preferences
       context:
         'The user is editing the notes field in their preferences (~/.craft-agent/preferences.json). ' +
@@ -267,16 +267,16 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'After editing, call config_validate with target "preferences" to verify the changes. ' +
         'Confirm clearly when done.',
     },
-    example: 'Add coding style preferences',
+    example: t('Add coding style preferences'),
     model: 'haiku',
     systemPromptPreset: 'mini',
     inlineExecution: true,
   }),
 
   // Add new source/skill contexts - use overridePlaceholder for inspiring, contextual prompts
-  'add-source': (location) => ({
+  'add-source': (location, t) => ({
     context: {
-      label: 'Add Source',
+      label: t('Add Source'),
       filePath: `${location}/sources/`, // location is the workspace root path
       context:
         'The user wants to add a new source to their workspace. ' +
@@ -286,14 +286,14 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'Follow the patterns in ~/.craft-agent/docs/sources.md. ' +
         'After creating the source, call source_test with the source slug to verify the configuration.',
     },
-    example: 'Connect to my Craft space',
-    overridePlaceholder: 'What would you like to connect?',
+    example: t('Connect to my Craft space'),
+    overridePlaceholder: t('What would you like to connect?'),
   }),
 
   // Filter-specific add-source contexts: user is viewing a filtered list and wants to add that type
-  'add-source-api': (location) => ({
+  'add-source-api': (location, t) => ({
     context: {
-      label: 'Add API',
+      label: t('Add API'),
       filePath: `${location}/sources/`,
       context:
         'The user is viewing API sources and wants to add a new REST API. ' +
@@ -304,13 +304,13 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'Follow the patterns in ~/.craft-agent/docs/sources.md. ' +
         'After creating the source, call source_test with the source slug to verify the configuration.',
     },
-    example: 'Connect to the OpenAI API',
-    overridePlaceholder: 'What API would you like to connect?',
+    example: t('Connect to the OpenAI API'),
+    overridePlaceholder: t('What API would you like to connect?'),
   }),
 
-  'add-source-mcp': (location) => ({
+  'add-source-mcp': (location, t) => ({
     context: {
-      label: 'Add MCP Server',
+      label: t('Add MCP Server'),
       filePath: `${location}/sources/`,
       context:
         'The user is viewing MCP sources and wants to add a new MCP server. ' +
@@ -321,13 +321,13 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'Follow the patterns in ~/.craft-agent/docs/sources.md. ' +
         'After creating the source, call source_test with the source slug to verify the configuration.',
     },
-    example: 'Connect to Linear',
-    overridePlaceholder: 'What MCP server would you like to connect?',
+    example: t('Connect to Linear'),
+    overridePlaceholder: t('What MCP server would you like to connect?'),
   }),
 
-  'add-source-local': (location) => ({
+  'add-source-local': (location, t) => ({
     context: {
-      label: 'Add Local Folder',
+      label: t('Add Local Folder'),
       filePath: `${location}/sources/`,
       context:
         'The user wants to add a local folder source. ' +
@@ -339,13 +339,13 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'Follow the patterns in ~/.craft-agent/docs/sources.md. ' +
         'After creating the source, call source_test with the source slug to verify the configuration.',
     },
-    example: 'Connect to my Obsidian vault',
-    overridePlaceholder: 'What folder would you like to connect?',
+    example: t('Connect to my Obsidian vault'),
+    overridePlaceholder: t('What folder would you like to connect?'),
   }),
 
-  'add-skill': (location) => ({
+  'add-skill': (location, t) => ({
     context: {
-      label: 'Add Skill',
+      label: t('Add Skill'),
       filePath: `${location}/skills/`, // location is the workspace root path
       context:
         'The user wants to add a new skill to their workspace. ' +
@@ -355,14 +355,14 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'Follow the patterns in ~/.craft-agent/docs/skills.md. ' +
         'After creating the skill, call skill_validate with the skill slug to verify the SKILL.md file.',
     },
-    example: 'Review PRs following our code standards',
-    overridePlaceholder: 'What should I learn to do?',
+    example: t('Review PRs following our code standards'),
+    overridePlaceholder: t('What should I learn to do?'),
   }),
 
   // Status configuration context
-  'edit-statuses': (location) => ({
+  'edit-statuses': (location, t) => ({
     context: {
-      label: 'Status Configuration',
+      label: t('Status Configuration'),
       filePath: `${location}/statuses/config.json`,
       context:
         'The user wants to customize session statuses (workflow states). ' +
@@ -373,16 +373,16 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'After editing, call config_validate with target "statuses" to verify the changes. ' +
         'Confirm clearly when done.',
     },
-    example: 'Add a "Blocked" status',
+    example: t('Add a "Blocked" status'),
     model: 'haiku',               // Use fast model for quick config edits
     systemPromptPreset: 'mini',   // Use focused mini prompt
     inlineExecution: true,        // Execute inline in popover
   }),
 
   // Label configuration context
-  'edit-labels': (location) => ({
+  'edit-labels': (location, t) => ({
     context: {
-      label: 'Label Configuration',
+      label: t('Label Configuration'),
       filePath: `${location}/labels/config.json`,
       context:
         'The user wants to customize session labels (tagging/categorization). ' +
@@ -394,16 +394,16 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'Read ~/.craft-agent/docs/labels.md for full format reference. ' +
         'Confirm clearly when done.',
     },
-    example: 'Add a "Bug" label with red color',
+    example: t('Add a "Bug" label with red color'),
     model: 'haiku',               // Use fast model for quick config edits
     systemPromptPreset: 'mini',   // Use focused mini prompt
     inlineExecution: true,        // Execute inline in popover
   }),
 
   // Auto-label rules context (focused on regex patterns within labels)
-  'edit-auto-rules': (location) => ({
+  'edit-auto-rules': (location, t) => ({
     context: {
-      label: 'Auto-Apply Rules',
+      label: t('Auto-Apply Rules'),
       filePath: `${location}/labels/config.json`,
       context:
         'The user wants to edit auto-apply rules (regex patterns that auto-tag sessions). ' +
@@ -414,16 +414,16 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'Read ~/.craft-agent/docs/labels.md for full format reference. ' +
         'Confirm clearly when done.',
     },
-    example: 'Add a rule to detect GitHub issue URLs',
+    example: t('Add a rule to detect GitHub issue URLs'),
     model: 'haiku',               // Use fast model for quick config edits
     systemPromptPreset: 'mini',   // Use focused mini prompt
     inlineExecution: true,        // Execute inline in popover
   }),
 
   // Add new label context (triggered from the # menu when no labels match)
-  'add-label': (location) => ({
+  'add-label': (location, t) => ({
     context: {
-      label: 'Add Label',
+      label: t('Add Label'),
       filePath: `${location}/labels/config.json`,
       context:
         'The user wants to create a new label from the # inline menu. ' +
@@ -434,17 +434,17 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'Read ~/.craft-agent/docs/labels.md for full format reference. ' +
         'Confirm clearly when done.',
     },
-    example: 'A red "Bug" label',
-    overridePlaceholder: 'What label would you like to create?',
+    example: t('A red "Bug" label'),
+    overridePlaceholder: t('What label would you like to create?'),
     model: 'haiku',               // Use fast model for quick config edits
     systemPromptPreset: 'mini',   // Use focused mini prompt
     inlineExecution: true,        // Execute inline in popover
   }),
 
   // Views configuration context
-  'edit-views': (location) => ({
+  'edit-views': (location, t) => ({
     context: {
-      label: 'Views Configuration',
+      label: t('Views Configuration'),
       filePath: `${location}/views.json`,
       context:
         'The user wants to edit views (dynamic, expression-based filters). ' +
@@ -456,16 +456,16 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'Colors use EntityColor format: string shorthand (e.g. "orange") or { light, dark } object. ' +
         'Confirm clearly when done.',
     },
-    example: 'Add a "Stale" view for sessions inactive > 7 days',
+    example: t('Add a "Stale" view for sessions inactive > 7 days'),
     model: 'haiku',               // Use fast model for quick config edits
     systemPromptPreset: 'mini',   // Use focused mini prompt
     inlineExecution: true,        // Execute inline in popover
   }),
 
   // Tool icons configuration context
-  'edit-tool-icons': (location) => ({
+  'edit-tool-icons': (location, t) => ({
     context: {
-      label: 'Tool Icons',
+      label: t('Tool Icons'),
       filePath: location, // location is the full path to tool-icons.json
       context:
         'The user wants to edit CLI tool icon mappings. ' +
@@ -477,7 +477,7 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
         'After editing, call config_validate with target "tool-icons" to verify the changes are valid. ' +
         'Confirm clearly when done.',
     },
-    example: 'Add an icon for my custom CLI tool "deploy"',
+    example: t('Add an icon for my custom CLI tool "deploy"'),
     model: 'haiku',               // Use fast model for quick config edits
     systemPromptPreset: 'mini',   // Use focused mini prompt
     inlineExecution: true,        // Execute inline in popover
@@ -489,16 +489,17 @@ const EDIT_CONFIGS: Record<EditContextKey, (location: string) => EditConfig> = {
  *
  * @param key - The edit context key
  * @param location - Base path (e.g., workspace root path)
+ * @param t - Translation function
  *
  * @example
- * const { context, example } = getEditConfig('workspace-permissions', workspace.rootPath)
+ * const { context, example } = getEditConfig('workspace-permissions', workspace.rootPath, t)
  */
-export function getEditConfig(key: EditContextKey, location: string): EditConfig {
+export function getEditConfig(key: EditContextKey, location: string, t: (key: string) => string): EditConfig {
   const factory = EDIT_CONFIGS[key]
   if (!factory) {
     throw new Error(`Unknown edit context key: ${key}. Add it to EDIT_CONFIGS in EditPopover.tsx`)
   }
-  return factory(location)
+  return factory(location, t)
 }
 
 /**

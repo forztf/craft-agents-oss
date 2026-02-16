@@ -73,6 +73,7 @@ export function SourcesListPanel({
   className,
 }: SourcesListPanelProps) {
   const { t } = useTranslation('components/app-shell/SourcesListPanel')
+  const { t: tEdit } = useTranslation('components/ui/EditPopover')
 
   // Filter sources based on type filter if active
   const filteredSources = React.useMemo(() => {
@@ -121,7 +122,8 @@ export function SourcesListPanel({
               }
               {...getEditConfig(
                 sourceFilter?.kind === 'type' ? `add-source-${sourceFilter.sourceType}` as EditContextKey : 'add-source',
-                workspaceRootPath
+                workspaceRootPath,
+                tEdit
               )}
             />
           )}

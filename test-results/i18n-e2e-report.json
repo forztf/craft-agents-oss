@@ -1,0 +1,382 @@
+{
+  "timestamp": "2026-02-16T10:53:39.600Z",
+  "summary": {
+    "total": 50,
+    "errors": 30,
+    "warnings": 20,
+    "infos": 0,
+    "duration": 446
+  },
+  "issues": [
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (components\\apisetup\\ApiKeyInput.json)",
+      "selector": "components\\apisetup\\ApiKeyInput.json",
+      "text": "API Key",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (components\\apisetup\\ApiKeyInput.json)",
+      "selector": "components\\apisetup\\ApiKeyInput.json",
+      "text": "ollama pull",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "All Sessions",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Status",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Archived",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "APIs",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "MCPs",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Local Folders",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Settings",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "No matching statuses or labels",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "No sources configured",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "No skills configured",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Select a conversation to get started",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Rename",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Delete",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "No sessions yet",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Cancel",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Flags",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Template",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Description",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Search rules...",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Search tools...",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Search...",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Error loading content",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Allowed",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Blocked",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Color",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Search labels...",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
+      "selector": "components\\app-shell\\AppShell.json",
+      "text": "Search statuses & labels...",
+      "severity": "error"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (components\\app-shell\\SessionList.json)",
+      "selector": "components\\app-shell\\SessionList.json",
+      "text": "Promise",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (components\\app-shell\\TaskActionMenu.json)",
+      "selector": "components\\app-shell\\TaskActionMenu.json",
+      "text": "Shell",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (components\\icons\\CraftAppIcon.json)",
+      "selector": "components\\icons\\CraftAppIcon.json",
+      "text": "Craft",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\info\\Info_GroupedList.json)",
+      "selector": "components\\info\\Info_GroupedList.json",
+      "text": "Source requires authentication",
+      "severity": "error"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (components\\onboarding\\APISetupStep.json)",
+      "selector": "components\\onboarding\\APISetupStep.json",
+      "text": "Anthropic",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (components\\onboarding\\APISetupStep.json)",
+      "selector": "components\\onboarding\\APISetupStep.json",
+      "text": "Claude Pro/Max",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (components\\onboarding\\APISetupStep.json)",
+      "selector": "components\\onboarding\\APISetupStep.json",
+      "text": "Anthropic API Key",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (components\\onboarding\\OnboardingWizard.json)",
+      "selector": "components\\onboarding\\OnboardingWizard.json",
+      "text": "Promise",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (components\\onboarding\\OnboardingWizard.json)",
+      "selector": "components\\onboarding\\OnboardingWizard.json",
+      "text": "Claude Pro/Max",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (components\\onboarding\\OnboardingWizard.json)",
+      "selector": "components\\onboarding\\OnboardingWizard.json",
+      "text": "Anthropic",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\settings\\SettingsInput.json)",
+      "selector": "components\\settings\\SettingsInput.json",
+      "text": "Enter your name...",
+      "severity": "error"
+    },
+    {
+      "type": "missing-key",
+      "page": "Translation Keys (components\\settings\\SettingsInput.json)",
+      "selector": "components\\settings\\SettingsInput.json",
+      "text": "Name",
+      "severity": "error"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (pages\\settings\\AiSettingsPage.json)",
+      "selector": "pages\\settings\\AiSettingsPage.json",
+      "text": "Anthropic",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (pages\\settings\\AiSettingsPage.json)",
+      "selector": "pages\\settings\\AiSettingsPage.json",
+      "text": "Anthropic API",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (pages\\settings\\AiSettingsPage.json)",
+      "selector": "pages\\settings\\AiSettingsPage.json",
+      "text": "AWS Bedrock",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (pages\\settings\\AiSettingsPage.json)",
+      "selector": "pages\\settings\\AiSettingsPage.json",
+      "text": "Google Vertex",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (pages\\settings\\AiSettingsPage.json)",
+      "selector": "pages\\settings\\AiSettingsPage.json",
+      "text": "OpenAI API",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (pages\\settings\\AppearanceSettingsPage.json)",
+      "selector": "pages\\settings\\AppearanceSettingsPage.json",
+      "text": "Inter",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (pages\\settings\\InputSettingsPage.json)",
+      "selector": "pages\\settings\\InputSettingsPage.json",
+      "text": "Enter",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (pages\\settings\\PreferencesPage.json)",
+      "selector": "pages\\settings\\PreferencesPage.json",
+      "text": "English",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (pages\\SkillInfoPage.json)",
+      "selector": "pages\\SkillInfoPage.json",
+      "text": "Slug",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    }
+  ]
+}

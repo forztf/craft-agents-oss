@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-12T08:08:57.226Z",
+  "timestamp": "2026-02-16T10:53:39.965Z",
   "summary": {
     "totalFiles": 52,
     "totalIssues": 624,
@@ -389,10 +389,10 @@
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx": [
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2482,
+        "line": 2471,
         "text": "Search statuses & labels...",
         "type": "placeholder",
-        "context": "}}\n                              placeholder=\"Search statuses & labels...\"",
+        "context": "}}\r\n                                placeholder=\"Search statuses & labels...\"",
         "severity": "high"
       }
     ],

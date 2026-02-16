@@ -487,6 +487,8 @@ function AppShellContent({
     openNewChat,
   } = contextValue
 
+  const { t: tEdit } = useTranslation('components/ui/EditPopover')
+
   // Get hotkey labels from centralized action registry
   const newChatHotkey = useActionLabel('app.newChat').hotkey
 
@@ -2893,9 +2895,7 @@ function AppShellContent({
                           />
                         }
                         {...getEditConfig(
-                          sourceFilter?.kind === 'type' ? `add-source-${sourceFilter.sourceType}` as EditContextKey : 'add-source',
-                          activeWorkspace.rootPath
-                        )}
+                          sourceFilter?.kind === 'type' ? `add-source-${sourceFilter.sourceType}` as EditContextKey : 'add-source', activeWorkspace.rootPath, tEdit)}
                       />
                     )}
                     {/* Add Skill button (only for skills mode) */}
@@ -2908,7 +2908,7 @@ function AppShellContent({
                             data-tutorial="add-skill-button"
                           />
                         }
-                        {...getEditConfig('add-skill', activeWorkspace.rootPath)}
+                        {...getEditConfig('add-skill', activeWorkspace.rootPath, tEdit)}
                       />
                     )}
                   </>
@@ -3154,7 +3154,7 @@ function AppShellContent({
               label: t('Edit File'),
               filePath: `${activeWorkspace.rootPath}/statuses/config.json`,
             }}
-            {...getEditConfig('edit-statuses', activeWorkspace.rootPath)}
+            {...getEditConfig('edit-statuses', activeWorkspace.rootPath, tEdit)}
           />
           {/* Configure Labels EditPopover - anchored near sidebar */}
           <EditPopover
@@ -3176,7 +3176,7 @@ function AppShellContent({
             }}
             {...(() => {
               // Spread base config, override context to include which label was right-clicked
-              const config = getEditConfig('edit-labels', activeWorkspace.rootPath)
+              const config = getEditConfig('edit-labels', activeWorkspace.rootPath, tEdit)
               const targetLabel = editLabelTargetId.current
                 ? findLabelById(labelConfigs, editLabelTargetId.current)
                 : undefined
@@ -3210,7 +3210,7 @@ function AppShellContent({
               label: t('Edit File'),
               filePath: `${activeWorkspace.rootPath}/views.json`,
             }}
-            {...getEditConfig('edit-views', activeWorkspace.rootPath)}
+            {...getEditConfig('edit-views', activeWorkspace.rootPath, tEdit)}
           />
           {/* Add Source EditPopovers - one for each variant (generic + filter-specific)
            * editPopoverOpen can be: 'add-source', 'add-source-api', 'add-source-mcp', 'add-source-local'
@@ -3230,7 +3230,7 @@ function AppShellContent({
               }
               side="bottom"
               align="start"
-              {...getEditConfig(variant, activeWorkspace.rootPath)}
+              {...getEditConfig(variant, activeWorkspace.rootPath, tEdit)}
             />
           ))}
           {/* Add Skill EditPopover */}
@@ -3247,7 +3247,7 @@ function AppShellContent({
             }
             side="bottom"
             align="start"
-            {...getEditConfig('add-skill', activeWorkspace.rootPath)}
+            {...getEditConfig('add-skill', activeWorkspace.rootPath, tEdit)}
           />
           {/* Add Label EditPopover - triggered from "Add New Label" context menu on labels */}
           <EditPopover
@@ -3269,7 +3269,7 @@ function AppShellContent({
             }}
             {...(() => {
               // Spread base config, override context to include which label was right-clicked
-              const config = getEditConfig('add-label', activeWorkspace.rootPath)
+              const config = getEditConfig('add-label', activeWorkspace.rootPath, tEdit)
               const targetLabel = editLabelTargetId.current
                 ? findLabelById(labelConfigs, editLabelTargetId.current)
                 : undefined

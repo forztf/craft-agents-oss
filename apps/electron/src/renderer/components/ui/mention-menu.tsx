@@ -4,6 +4,7 @@ import { FadingText } from '@/components/ui/fading-text'
 import { SkillAvatar } from '@/components/ui/skill-avatar'
 import { SourceAvatar } from '@/components/ui/source-avatar'
 import type { LoadedSkill, LoadedSource, FileSearchResult } from '../../../shared/types'
+import { useTranslation } from '@/contexts/I18nContext'
 
 // ============================================================================
 // Types
@@ -104,7 +105,7 @@ function getMatchScore(text: string, filter: string): number {
   return 0
 }
 
-function filterSections(sections: MentionSection[], filter: string): MentionSection[] {
+function filterSections(sections: MentionSection[], filter: string, t: (key: string) => string): MentionSection[] {
   if (!filter) return sections
   const lowerFilter = filter.toLowerCase()
 
@@ -134,7 +135,7 @@ function filterSections(sections: MentionSection[], filter: string): MentionSect
 
   // Return as flat list in a single virtual section (headers hidden when filtering)
   if (matchingItems.length === 0) return []
-  return [{ id: 'results', label: 'Results', items: matchingItems }]
+  return [{ id: 'results', label: t('Results'), items: matchingItems }]
 }
 
 function flattenItems(sections: MentionSection[]): MentionItem[] {
@@ -180,10 +181,11 @@ export function InlineMentionMenu({
   maxWidth = 280,
   className,
 }: InlineMentionMenuProps) {
+  const { t } = useTranslation('components/ui/mention-menu')
   const menuRef = React.useRef<HTMLDivElement>(null)
   const listRef = React.useRef<HTMLDivElement>(null)
   const [selectedIndex, setSelectedIndex] = React.useState(0)
-  const filteredSections = filterSections(sections, filter)
+  const filteredSections = filterSections(sections, filter, t)
   const flatItems = flattenItems(filteredSections)
 
   // Reset selection when filter changes
@@ -268,12 +270,12 @@ export function InlineMentionMenu({
     >
       {/* Menu header — sticky above scroll area */}
       <div className="px-3 py-1.5 text-[12px] font-medium text-muted-foreground border-b border-foreground/5">
-        Mention files, skills, sources
+        {t('Mention files, skills, sources')}
       </div>
 
       <div ref={listRef} className={MENU_LIST_STYLE}>
         {flatItems.length === 0 && filter && (
-          <div className="px-3 py-2 text-[12px] text-muted-foreground/60">No results</div>
+          <div className="px-3 py-2 text-[12px] text-muted-foreground/60">{t('No results')}</div>
         )}
         {flatItems.map((item, itemIndex) => {
           const isSelected = itemIndex === selectedIndex
@@ -328,7 +330,7 @@ export function InlineMentionMenu({
                     <span className="truncate block">{item.label}</span>
                   </div>
                   <span className={MENU_TYPE_BADGE}>
-                    {item.type === 'skill' ? 'Skill' : 'Source'}
+                    {item.type === 'skill' ? t('Skill') : t('Source')}
                   </span>
                 </>
               )}
@@ -445,6 +447,7 @@ export function useInlineMention({
   onSelect,
   workspaceId,
 }: UseInlineMentionOptions): UseInlineMentionReturn {
+  const { t } = useTranslation('components/ui/mention-menu')
   const [isOpen, setIsOpen] = React.useState(false)
   const [filter, setFilter] = React.useState('')
   // committedFilter: only updates when IPC returns (or immediately when no IPC needed).
@@ -479,7 +482,7 @@ export function useInlineMention({
     if (skills.length > 0) {
       result.push({
         id: 'skills',
-        label: 'Skills',
+        label: t('Skills'),
         items: skills.map(skill => ({
           id: skill.slug,
           type: 'skill' as const,
@@ -511,13 +514,13 @@ export function useInlineMention({
     if (fileResults.length > 0) {
       result.push({
         id: 'files',
-        label: 'Files',
+        label: t('Files'),
         items: fileResults,
       })
     }
 
     return result
-  }, [skills, sources, fileResults])
+  }, [skills, sources, fileResults, t])
 
   const handleInputChange = React.useCallback((value: string, cursorPosition: number) => {
     // Store current state for handleSelect

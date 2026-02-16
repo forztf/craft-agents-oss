@@ -12,9 +12,16 @@
 import { test, expect, ElectronApplication, Page } from '@playwright/test'
 import { _electron as electron } from 'playwright'
 import { promises as fs } from 'fs'
+import os from 'os'
 import path from 'path'
+import { fileURLToPath } from 'url'
+import { routes } from '../../../apps/electron/src/shared/routes'
+import { SETTINGS_PAGES } from '../../../apps/electron/src/shared/settings-registry'
 
-const projectRoot = path.resolve(__dirname, '..', '..')
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+const projectRoot = path.resolve(__dirname, '..', '..', '..')
 const mainWindowSelectors = {
   settingsButton: '[data-testid="settings-menu-entry"], button:has-text("Settings"), button[aria-label*="Settings"]',
   workspaceButton: '[data-testid="workspace-switcher"], .workspace-switcher',
@@ -39,8 +46,12 @@ interface I18nIssue {
 class I18nTestReporter {
   private issues: I18nIssue[] = []
   private startTime: Date = new Date()
+  private issueKeys = new Set<string>()
 
   addIssue(issue: I18nIssue) {
+    const key = `${issue.type}|${issue.page}|${issue.selector}|${issue.text}`
+    if (this.issueKeys.has(key)) return
+    this.issueKeys.add(key)
     this.issues.push(issue)
   }
 
@@ -96,7 +107,8 @@ class I18nTestReporter {
   }
 
   async saveReport() {
-    const reportPath = path.join(projectRoot, 'test-results', 'i18n-e2e-report.json')
+    const reportPath = path.join(projectRoot, 'test-results', 'i18n-report.json')
+    const legacyReportPath = path.join(projectRoot, 'test-results', 'i18n-e2e-report.json')
     const reportDir = path.dirname(reportPath)
 
     await fs.mkdir(reportDir, { recursive: true })
@@ -108,6 +120,7 @@ class I18nTestReporter {
     }
 
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2))
+    await fs.writeFile(legacyReportPath, JSON.stringify(report, null, 2))
     console.log(`\n📝 报告已保存至: ${reportPath}`)
   }
 }
@@ -172,12 +185,53 @@ function isLikelyHardcodedText(text: string): boolean {
   if (/^https?:\/\//.test(trimmed)) return false // URL
   if (/^[A-Z_]+$/.test(trimmed) && !trimmed.includes(' ')) return false // 常量
   if (/^[.\/]/.test(trimmed)) return false // 文件路径
+  if (/[\u4e00-\u9fff]/.test(trimmed)) return false // 已包含中文
 
-  // 检查是否是英文用户文本（大写字母开头，包含单词）
-  const userTextPattern = /^[A-Z][a-zA-Z\s,\.\!?]{2,}$/
-  if (!userTextPattern.test(trimmed)) return false
+  const properNouns = new Set([
+    'AI',
+    'API',
+    'MCP',
+    'OAuth',
+    'Claude',
+    'GPT',
+    'OpenAI',
+    'GitHub',
+    'Windows',
+    'macOS',
+    'Linux',
+    'JSON',
+    'YAML',
+    'TypeScript',
+    'JavaScript',
+    'React',
+    'Electron',
+  ])
+  if (properNouns.has(trimmed)) return false
+
+  const ascii = trimmed.replace(/[^\x00-\x7F]/g, '')
+  if (ascii.length !== trimmed.length) return false
+
+  const letters = (trimmed.match(/[A-Za-z]/g) || []).length
+  if (letters < 3) return false
+
+  const words = trimmed.split(/\s+/).filter(Boolean)
+  const hasMultipleWords = words.length >= 2 && words.every(w => /[A-Za-z]{2,}/.test(w))
+  const isSingleWordUiText = words.length === 1 && /^[A-Z][a-zA-Z]{3,30}$/.test(trimmed) && !properNouns.has(trimmed)
+
+  if (!hasMultipleWords && !isSingleWordUiText) return false
 
   return true
+}
+
+function isMissingTranslationKey(text: string): boolean {
+  const trimmed = text.trim()
+  if (trimmed.length < 5) return false
+  if (trimmed.length > 120) return false
+  if (/\s/.test(trimmed)) return false
+  if (/^https?:\/\//.test(trimmed)) return false
+  if (/^[A-Za-z]:[\\/]/.test(trimmed)) return false
+  if (trimmed.includes('@')) return false
+  return /^[a-z][a-z0-9_-]*(?:\.[a-z0-9_-]+){1,}$/.test(trimmed)
 }
 
 /**
@@ -201,6 +255,114 @@ let electronApp: ElectronApplication
 let page: Page
 let reporter: I18nTestReporter
 let allTranslationKeys: Set<string>
+let testConfigDir: string | undefined
+
+async function collectVisibleStrings(page: Page): Promise<Array<{ selector: string; text: string; kind: 'text' | 'attr'; attr?: string }>> {
+  return page.evaluate(() => {
+    const results: Array<{ selector: string; text: string; kind: 'text' | 'attr'; attr?: string }> = []
+
+    const isVisibleEl = (el: Element | null) => {
+      if (!el || !(el instanceof HTMLElement)) return false
+      const style = window.getComputedStyle(el)
+      if (style.display === 'none' || style.visibility === 'hidden') return false
+      if (Number(style.opacity) === 0) return false
+      const rect = el.getBoundingClientRect()
+      if (rect.width === 0 || rect.height === 0) return false
+      return true
+    }
+
+    const getSelector = (el: Element) => {
+      const testId = el.getAttribute('data-testid')
+      if (testId) return `[data-testid="${testId}"]`
+      const id = el.getAttribute('id')
+      if (id) return `#${CSS.escape(id)}`
+      const aria = el.getAttribute('aria-label')
+      if (aria) return `${el.tagName.toLowerCase()}[aria-label="${aria}"]`
+      const cls = (el.getAttribute('class') || '').trim().split(/\s+/).filter(Boolean)[0]
+      if (cls) return `${el.tagName.toLowerCase()}.${cls}`
+      return el.tagName.toLowerCase()
+    }
+
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT)
+    let node: Node | null
+    while ((node = walker.nextNode())) {
+      const raw = node.textContent
+      if (!raw) continue
+      const text = raw.replace(/\s+/g, ' ').trim()
+      if (!text) continue
+      const parent = node.parentElement
+      if (!parent) continue
+      const tag = parent.tagName.toLowerCase()
+      if (tag === 'script' || tag === 'style' || tag === 'noscript') continue
+      if (!isVisibleEl(parent)) continue
+      results.push({ selector: getSelector(parent), text, kind: 'text' })
+    }
+
+    const attrs = ['title', 'aria-label', 'placeholder', 'alt'] as const
+    for (const attr of attrs) {
+      const elements = Array.from(document.querySelectorAll(`[${attr}]`))
+      for (const el of elements) {
+        if (!isVisibleEl(el)) continue
+        const val = el.getAttribute(attr)
+        if (!val) continue
+        const text = val.replace(/\s+/g, ' ').trim()
+        if (!text) continue
+        results.push({ selector: `${getSelector(el)}[${attr}]`, text, kind: 'attr', attr })
+      }
+    }
+
+    return results
+  })
+}
+
+async function scanPageForI18nIssues(page: Page, pageName: string) {
+  const items = await collectVisibleStrings(page)
+  for (const item of items) {
+    if (isMissingTranslationKey(item.text)) {
+      reporter.addIssue({
+        type: 'missing-key',
+        page: pageName,
+        selector: item.selector,
+        text: item.text,
+        severity: 'error',
+      })
+      continue
+    }
+
+    if (!isLikelyHardcodedText(item.text)) continue
+
+    if (allTranslationKeys.has(item.text)) {
+      reporter.addIssue({
+        type: 'incomplete-translation',
+        page: pageName,
+        selector: item.selector,
+        text: item.text,
+        severity: 'warning',
+      })
+      continue
+    }
+
+    reporter.addIssue({
+      type: 'hardcoded',
+      page: pageName,
+      selector: item.selector,
+      text: item.text,
+      severity: 'warning',
+    })
+  }
+}
+
+async function navigateToRoute(page: Page, route: string) {
+  await page.evaluate((r) => {
+    window.dispatchEvent(
+      new CustomEvent('craft-agent-navigate', {
+        detail: { route: r },
+        bubbles: true,
+      })
+    )
+  }, route)
+  await page.waitForTimeout(1200)
+}
 
 test.beforeAll(async () => {
   console.log('🚀 启动 Electron 应用...\n')
@@ -223,11 +385,19 @@ test.beforeAll(async () => {
   }
 
   try {
+    testConfigDir = await fs.mkdtemp(path.join(os.tmpdir(), 'craft-agent-e2e-'))
+    await fs.writeFile(
+      path.join(testConfigDir, 'preferences.json'),
+      JSON.stringify({ language: 'zh-CN' }, null, 2),
+      'utf-8'
+    )
+
     electronApp = await electron.launch({
       args: [mainPath],
       env: {
         ...process.env,
         NODE_ENV: 'test',
+        CRAFT_CONFIG_DIR: testConfigDir,
       },
     })
 
@@ -247,6 +417,9 @@ test.afterAll(async () => {
   if (electronApp) {
     console.log('\n🧹 清理资源...')
     await electronApp.close()
+  }
+  if (testConfigDir) {
+    await fs.rm(testConfigDir, { recursive: true, force: true }).catch(() => undefined)
   }
 
   // 生成报告
@@ -276,11 +449,27 @@ test.describe('I18n 完整性测试套件', () => {
         const texts = await getAllTextContent(page, selector)
 
         for (const text of texts) {
-          if (isLikelyHardcodedText(text)) {
-            // 检查是否在翻译文件中
-            const hasTranslation = allTranslationKeys.has(text)
+          if (isMissingTranslationKey(text)) {
+            reporter.addIssue({
+              type: 'missing-key',
+              page: 'Chat',
+              selector,
+              text,
+              severity: 'error',
+            })
+            continue
+          }
 
-            if (!hasTranslation) {
+          if (isLikelyHardcodedText(text)) {
+            if (allTranslationKeys.has(text)) {
+              reporter.addIssue({
+                type: 'incomplete-translation',
+                page: 'Chat',
+                selector,
+                text,
+                severity: 'warning',
+              })
+            } else {
               reporter.addIssue({
                 type: 'hardcoded',
                 page: 'Chat',
@@ -334,10 +523,27 @@ test.describe('I18n 完整性测试套件', () => {
           const texts = await getAllTextContent(page, selector)
 
           for (const text of texts) {
-            if (isLikelyHardcodedText(text)) {
-              const hasTranslation = allTranslationKeys.has(text)
+            if (isMissingTranslationKey(text)) {
+              reporter.addIssue({
+                type: 'missing-key',
+                page: 'Settings',
+                selector,
+                text,
+                severity: 'error',
+              })
+              continue
+            }
 
-              if (!hasTranslation) {
+            if (isLikelyHardcodedText(text)) {
+              if (allTranslationKeys.has(text)) {
+                reporter.addIssue({
+                  type: 'incomplete-translation',
+                  page: 'Settings',
+                  selector,
+                  text,
+                  severity: 'warning',
+                })
+              } else {
                 reporter.addIssue({
                   type: 'hardcoded',
                   page: 'Settings',
@@ -368,16 +574,34 @@ test.describe('I18n 完整性测试套件', () => {
     const sidebarTexts = await getAllTextContent(page, mainWindowSelectors.sidebar)
 
     for (const text of sidebarTexts) {
-      if (isLikelyHardcodedText(text)) {
-        const hasTranslation = allTranslationKeys.has(text)
+      if (isMissingTranslationKey(text)) {
+        reporter.addIssue({
+          type: 'missing-key',
+          page: 'Sidebar',
+          selector: mainWindowSelectors.sidebar,
+          text,
+          severity: 'error',
+        })
+        continue
+      }
 
-        if (!hasTranslation) {
+      if (isLikelyHardcodedText(text)) {
+        const severity = text.includes('Error') || text.includes('Failed') ? 'error' : 'warning'
+        if (allTranslationKeys.has(text)) {
+          reporter.addIssue({
+            type: 'incomplete-translation',
+            page: 'Sidebar',
+            selector: mainWindowSelectors.sidebar,
+            text,
+            severity,
+          })
+        } else {
           reporter.addIssue({
             type: 'hardcoded',
             page: 'Sidebar',
             selector: mainWindowSelectors.sidebar,
             text,
-            severity: text.includes('Error') || text.includes('Failed') ? 'error' : 'warning',
+            severity,
           })
         }
       }
@@ -404,18 +628,31 @@ test.describe('I18n 完整性测试套件', () => {
         if (text && text.trim()) {
           const trimmed = text.trim()
 
-          if (isLikelyHardcodedText(trimmed)) {
-            const hasTranslation = allTranslationKeys.has(trimmed)
+          if (isMissingTranslationKey(trimmed)) {
+            reporter.addIssue({
+              type: 'missing-key',
+              page: 'Buttons',
+              selector: 'button',
+              text: trimmed,
+              severity: 'error',
+            })
+          } else if (isLikelyHardcodedText(trimmed)) {
+            const selector = await button.evaluate(el => {
+              const selector = el.getAttribute('data-testid') ||
+                             el.getAttribute('aria-label') ||
+                             el.className
+              return selector ? selector : 'button'
+            })
 
-            if (!hasTranslation) {
-              const selector = await button.evaluate(el => {
-                // 获取选择器
-                const selector = el.getAttribute('data-testid') ||
-                               el.getAttribute('aria-label') ||
-                               el.className
-                return selector ? selector : 'button'
+            if (allTranslationKeys.has(trimmed)) {
+              reporter.addIssue({
+                type: 'incomplete-translation',
+                page: 'Buttons',
+                selector: `button[${selector}]`,
+                text: trimmed,
+                severity: 'warning',
               })
-
+            } else {
               reporter.addIssue({
                 type: 'hardcoded',
                 page: 'Buttons',
@@ -452,11 +689,24 @@ test.describe('I18n 完整性测试套件', () => {
         if (placeholder && placeholder.trim()) {
           const trimmed = placeholder.trim()
 
-          // placeholder 格式：通常是小写或驼峰，但如果有完整句子需要翻译
-          if (trimmed.length > 20 || trimmed.includes(' ')) {
-            const hasTranslation = allTranslationKeys.has(trimmed)
-
-            if (!hasTranslation) {
+          if (isMissingTranslationKey(trimmed)) {
+            reporter.addIssue({
+              type: 'missing-key',
+              page: 'Placeholders',
+              selector: 'input[placeholder]',
+              text: trimmed,
+              severity: 'error',
+            })
+          } else if (isLikelyHardcodedText(trimmed)) {
+            if (allTranslationKeys.has(trimmed)) {
+              reporter.addIssue({
+                type: 'incomplete-translation',
+                page: 'Placeholders',
+                selector: 'input[placeholder]',
+                text: trimmed,
+                severity: 'warning',
+              })
+            } else {
               reporter.addIssue({
                 type: 'hardcoded',
                 page: 'Placeholders',
@@ -551,6 +801,7 @@ test.describe('I18n 完整性测试套件', () => {
 
         const missingInZhKeys = enKeys.filter(k => !zhKeys.includes(k))
         const missingInEnKeys = zhKeys.filter(k => !enKeys.includes(k))
+        const incompleteZhKeys = enKeys.filter(k => zhKeys.includes(k) && zhJson[k] === k && isLikelyHardcodedText(k))
 
         for (const key of missingInZhKeys) {
           reporter.addIssue({
@@ -569,6 +820,17 @@ test.describe('I18n 完整性测试套件', () => {
             selector: enFile,
             text: key,
             severity: 'error',
+          })
+        }
+
+        for (const key of incompleteZhKeys) {
+          reporter.addIssue({
+            type: 'incomplete-translation',
+            page: `Translation Values (${enFile})`,
+            selector: enFile,
+            text: key,
+            context: 'zh-CN value equals key',
+            severity: 'warning',
           })
         }
       } catch (e) {
@@ -600,10 +862,24 @@ test.describe('I18n 完整性测试套件', () => {
             if (attrValue && attrValue.trim()) {
               const trimmed = attrValue.trim()
 
-              if (trimmed.length > 3 && isLikelyHardcodedText(trimmed)) {
-                const hasTranslation = allTranslationKeys.has(trimmed)
-
-                if (!hasTranslation) {
+              if (isMissingTranslationKey(trimmed)) {
+                reporter.addIssue({
+                  type: 'missing-key',
+                  page: 'HTML Attributes',
+                  selector: `[${attr}]`,
+                  text: trimmed,
+                  severity: 'error',
+                })
+              } else if (trimmed.length > 3 && isLikelyHardcodedText(trimmed)) {
+                if (allTranslationKeys.has(trimmed)) {
+                  reporter.addIssue({
+                    type: 'incomplete-translation',
+                    page: 'HTML Attributes',
+                    selector: `[${attr}]`,
+                    text: trimmed,
+                    severity: 'warning',
+                  })
+                } else {
                   reporter.addIssue({
                     type: 'hardcoded',
                     page: 'HTML Attributes',
@@ -624,6 +900,45 @@ test.describe('I18n 完整性测试套件', () => {
     }
 
     console.log(`  ✓ HTML 属性检查完成`)
+  })
+
+  test('自动化巡检 (Crawler)', async () => {
+    if (!page) {
+      test.skip()
+      return
+    }
+
+    console.log('\n🧭 自动化巡检应用路由...')
+
+    const targets: Array<{ name: string; route: string }> = [
+      { name: 'Chat', route: routes.view.allSessions() },
+      { name: 'Sources', route: routes.view.sources() },
+      { name: 'Skills', route: routes.view.skills() },
+    ]
+
+    for (const p of SETTINGS_PAGES) {
+      targets.push({ name: `Settings/${p.id}`, route: routes.view.settings(p.id) })
+    }
+
+    for (const target of targets) {
+      try {
+        console.log(`  → ${target.name}`)
+        await navigateToRoute(page, target.route)
+        await page.waitForLoadState('domcontentloaded')
+        await page.waitForTimeout(800)
+        await scanPageForI18nIssues(page, target.name)
+      } catch (e) {
+        reporter.addIssue({
+          type: 'format-error',
+          page: target.name,
+          selector: target.route,
+          text: 'Navigation or scan failed',
+          severity: 'error',
+        })
+      }
+    }
+
+    console.log('  ✓ 路由巡检完成')
   })
 })
 

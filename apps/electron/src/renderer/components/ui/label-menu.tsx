@@ -172,6 +172,7 @@ export function InlineLabelMenu({
   activeStateId,
   onSelectState,
 }: InlineLabelMenuProps) {
+  const { t } = useTranslation('components/ui/label-menu')
   const menuRef = React.useRef<HTMLDivElement>(null)
   const listRef = React.useRef<HTMLDivElement>(null)
   const [selectedIndex, setSelectedIndex] = React.useState(0)
@@ -353,7 +354,7 @@ export function InlineLabelMenu({
               <>
                 {showSectionHeaders && (
                   <div className="px-3 pt-1.5 pb-1 text-[11px] font-medium text-muted-foreground/60 uppercase tracking-wider">
-                    Labels
+                    {t('Labels')}
                   </div>
                 )}
                 {filteredItems.map((item, index) => {

@@ -100,10 +100,11 @@ function ActionShortcutRow({ actionId }: { actionId: ActionId }) {
  * Renders a section of shortcuts from the registry
  */
 function RegistrySection({ category, actionIds }: { category: string; actionIds: ActionId[] }) {
+  const { t } = useTranslation('actions/definitions')
   return (
     <div>
       <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
-        {category}
+        {t(category)}
       </h3>
       <div className="space-y-1.5">
         {actionIds.map(actionId => (
