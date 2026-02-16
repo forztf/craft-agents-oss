@@ -59,7 +59,18 @@ export default defineConfig({
     dedupe: ['react', 'react-dom']
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'jotai', 'filtrex', 'pdfjs-dist'],
+    include: [
+      'react', 'react-dom', 'jotai', 'filtrex', 'pdfjs-dist',
+      // Pre-bundle these to avoid 504 "Outdated Optimize Dep" in Electron
+      'zod',
+      '@radix-ui/react-slot',
+      '@radix-ui/react-tooltip',
+      '@radix-ui/react-separator',
+      '@radix-ui/react-scroll-area',
+      '@radix-ui/react-collapsible',
+      'class-variance-authority',
+      'date-fns',
+    ],
     exclude: ['@craft-agent/ui'],
     esbuildOptions: {
       supported: { 'top-level-await': true },

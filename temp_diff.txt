@@ -1,0 +1,400 @@
+﻿diff --git a/apps/electron/src/renderer/components/app-shell/AppShell.tsx b/apps/electron/src/renderer/components/app-shell/AppShell.tsx
+index 917deac..97db083 100644
+--- a/apps/electron/src/renderer/components/app-shell/AppShell.tsx
++++ b/apps/electron/src/renderer/components/app-shell/AppShell.tsx
+@@ -78,6 +78,7 @@ import { getResizeGradientStyle } from "@/hooks/useResizeGradient"
+ import { useAction, useActionLabel } from "@/actions"
+ import { useFocusZone } from "@/hooks/keyboard"
+ import { useFocusContext } from "@/context/FocusContext"
++import { useTranslation } from "@/contexts/I18nContext"
+ import { getSessionTitle } from "@/utils/session"
+ import { useSetAtom } from "jotai"
+ import type { Session, Workspace, FileAttachment, PermissionRequest, LoadedSource, LoadedSkill, PermissionMode, SourceFilter } from "../../../shared/types"
+@@ -175,10 +176,12 @@ function FilterModeSubMenuItems({
+   mode,
+   onChangeMode,
+   onRemove,
++  t,
+ }: {
+   mode: FilterMode
+   onChangeMode: (mode: FilterMode) => void
+   onRemove: () => void
++  t: (key: string) => string
+ }) {
+   return (
+     <>
+@@ -187,21 +190,21 @@ function FilterModeSubMenuItems({
+         className={cn(mode === 'include' && "bg-foreground/[0.03]")}
+       >
+         <Check className="h-3.5 w-3.5 shrink-0" />
+-        <span className="flex-1">Include</span>
++        <span className="flex-1">{t('Include')}</span>
+       </StyledDropdownMenuItem>
+       <StyledDropdownMenuItem
+         onClick={(e) => { e.preventDefault(); onChangeMode('exclude') }}
+         className={cn(mode === 'exclude' && "bg-foreground/[0.03]")}
+       >
+         <X className="h-3.5 w-3.5 shrink-0" />
+-        <span className="flex-1">Exclude</span>
++        <span className="flex-1">{t('Exclude')}</span>
+       </StyledDropdownMenuItem>
+       <StyledDropdownMenuSeparator />
+       <StyledDropdownMenuItem
+         onClick={(e) => { e.preventDefault(); onRemove() }}
+       >
+         <Trash2 className="h-3.5 w-3.5 shrink-0" />
+-        <span className="flex-1">Clear</span>
++        <span className="flex-1">{t('Clear')}</span>
+       </StyledDropdownMenuItem>
+     </>
+   )
+@@ -340,7 +343,7 @@ function FilterLabelItems({
+                         />
+                       </StyledDropdownMenuSubTrigger>
+                       <StyledDropdownMenuSubContent minWidth="min-w-[140px]">
+-                        <FilterModeSubMenuItems mode={mode} {...makeModeCallbacks(label.id)} />
++                        <FilterModeSubMenuItems mode={mode} {...makeModeCallbacks(label.id)} t={t} />
+                       </StyledDropdownMenuSubContent>
+                     </DropdownMenuSub>
+                     <StyledDropdownMenuSeparator />
+@@ -395,7 +398,7 @@ function FilterLabelItems({
+                 />
+               </StyledDropdownMenuSubTrigger>
+               <StyledDropdownMenuSubContent minWidth="min-w-[140px]">
+-                <FilterModeSubMenuItems mode={mode} {...makeModeCallbacks(label.id)} />
++                <FilterModeSubMenuItems mode={mode} {...makeModeCallbacks(label.id)} t={t} />
+               </StyledDropdownMenuSubContent>
+             </DropdownMenuSub>
+           )
+@@ -536,15 +539,8 @@ function AppShellContent({
+   const [session, setSession] = useSession()
+   const { resolvedMode, isDark, setMode } = useTheme()
+   const { canGoBack, canGoForward, goBack, goForward, navigateToSource, navigateToSession } = useNavigation()
+-
++  const { t } = useTranslation('components/app-shell/AppShell')
+   // Double-Esc interrupt feature: first Esc shows warning, second Esc interrupts
+-  const { handleEscapePress } = useEscapeInterrupt()
+-
+-  // UNIFIED NAVIGATION STATE - single source of truth from NavigationContext
+-  // All sidebar/navigator/main panel state is derived from this
+-  const navState = useNavigationState()
+-
+-  // Derive chat filter from navigation state (only when in chats navigator)
+   const sessionFilter = isSessionsNavigation(navState) ? navState.filter : null
+ 
+   // Derive source filter from navigation state (only when in sources navigator)
+@@ -2079,7 +2075,7 @@ function AppShellContent({
+                     // --- Sessions Section ---
+                     {
+                       id: "nav:allSessions",
+-                      title: "All Sessions",
++                      title: t('All Sessions'),
+                       label: String(workspaceSessionMetas.length),
+                       icon: Inbox,
+                       variant: sessionFilter?.kind === 'allSessions' ? "default" : "ghost",
+@@ -2087,7 +2083,7 @@ function AppShellContent({
+                     },
+                     {
+                       id: "nav:flagged",
+-                      title: "Flagged",
++                      title: t('Flagged'),
+                       label: String(flaggedCount),
+                       icon: <Flag className="h-3.5 w-3.5" />,
+                       variant: sessionFilter?.kind === 'flagged' ? "default" : "ghost",
+@@ -2096,7 +2092,7 @@ function AppShellContent({
+                     // States: expandable section with status sub-items (drag-and-drop reorder)
+                     {
+                       id: "nav:states",
+-                      title: "Status",
++                      title: t('Status'),
+                       icon: CheckCircle2,
+                       variant: "ghost",
+                       onClick: () => toggleExpanded('nav:states'),
+@@ -2128,7 +2124,7 @@ function AppShellContent({
+                     // Labels: navigable header (shows all labeled sessions) + hierarchical tree (drag-and-drop reorder + re-parent)
+                     {
+                       id: "nav:labels",
+-                      title: "Labels",
++                      title: t('Labels'),
+                       icon: Tag,
+                       // Only highlighted when "Labels" itself is selected (not sub-labels)
+                       variant: (sessionFilter?.kind === 'label' && sessionFilter.labelId === '__all__') ? "default" as const : "ghost" as const,
+@@ -2147,7 +2143,7 @@ function AppShellContent({
+                     // --- Archived Section ---
+                     {
+                       id: "nav:archived",
+-                      title: "Archived",
++                      title: t('Archived'),
+                       label: archivedCount > 0 ? String(archivedCount) : undefined,
+                       icon: Archive,
+                       variant: sessionFilter?.kind === 'archived' ? "default" : "ghost",
+@@ -2158,7 +2154,7 @@ function AppShellContent({
+                     // --- Sources & Skills Section ---
+                     {
+                       id: "nav:sources",
+-                      title: "Sources",
++                      title: t('Sources'),
+                       label: String(sources.length),
+                       icon: DatabaseZap,
+                       variant: (isSourcesNavigation(navState) && !sourceFilter) ? "default" : "ghost",
+@@ -2174,7 +2170,7 @@ function AppShellContent({
+                       items: [
+                         {
+                           id: "nav:sources:api",
+-                          title: "APIs",
++                          title: t('APIs'),
+                           label: String(sourceTypeCounts.api),
+                           icon: Globe,
+                           variant: (sourceFilter?.kind === 'type' && sourceFilter.sourceType === 'api') ? "default" : "ghost",
+@@ -2187,7 +2183,7 @@ function AppShellContent({
+                         },
+                         {
+                           id: "nav:sources:mcp",
+-                          title: "MCPs",
++                          title: t('MCPs'),
+                           label: String(sourceTypeCounts.mcp),
+                           icon: <McpIcon className="h-3.5 w-3.5" />,
+                           variant: (sourceFilter?.kind === 'type' && sourceFilter.sourceType === 'mcp') ? "default" : "ghost",
+@@ -2200,7 +2196,7 @@ function AppShellContent({
+                         },
+                         {
+                           id: "nav:sources:local",
+-                          title: "Local Folders",
++                          title: t('Local Folders'),
+                           label: String(sourceTypeCounts.local),
+                           icon: FolderOpen,
+                           variant: (sourceFilter?.kind === 'type' && sourceFilter.sourceType === 'local') ? "default" : "ghost",
+@@ -2215,7 +2211,7 @@ function AppShellContent({
+                     },
+                     {
+                       id: "nav:skills",
+-                      title: "Skills",
++                      title: t('Skills'),
+                       label: String(skills.length),
+                       icon: Zap,
+                       variant: isSkillsNavigation(navState) ? "default" : "ghost",
+@@ -2230,7 +2226,7 @@ function AppShellContent({
+                     // --- Settings ---
+                     {
+                       id: "nav:settings",
+-                      title: "Settings",
++                      title: t('Settings'),
+                       icon: Settings,
+                       variant: isSettingsNavigation(navState) ? "default" : "ghost",
+                       onClick: () => handleSettingsClick('app'),
+@@ -2267,33 +2263,33 @@ function AppShellContent({
+                           </button>
+                         </DropdownMenuTrigger>
+                       </TooltipTrigger>
+-                      <TooltipContent side="top">Help & Documentation</TooltipContent>
++                      <TooltipContent side="top">{t('Help & Documentation')}</TooltipContent>
+                     </Tooltip>
+                     <StyledDropdownMenuContent align="end" side="top" sideOffset={8}>
+                       <StyledDropdownMenuItem onClick={() => window.electronAPI.openUrl(getDocUrl('sources'))}>
+                         <DatabaseZap className="h-3.5 w-3.5" />
+-                        <span className="flex-1">Sources</span>
++                        <span className="flex-1">{t('Sources')}</span>
+                         <ExternalLink className="h-3 w-3 text-muted-foreground" />
+                       </StyledDropdownMenuItem>
+                       <StyledDropdownMenuItem onClick={() => window.electronAPI.openUrl(getDocUrl('skills'))}>
+                         <Zap className="h-3.5 w-3.5" />
+-                        <span className="flex-1">Skills</span>
++                        <span className="flex-1">{t('Skills')}</span>
+                         <ExternalLink className="h-3 w-3 text-muted-foreground" />
+                       </StyledDropdownMenuItem>
+                       <StyledDropdownMenuItem onClick={() => window.electronAPI.openUrl(getDocUrl('statuses'))}>
+                         <CheckCircle2 className="h-3.5 w-3.5" />
+-                        <span className="flex-1">Statuses</span>
++                        <span className="flex-1">{t('Statuses')}</span>
+                         <ExternalLink className="h-3 w-3 text-muted-foreground" />
+                       </StyledDropdownMenuItem>
+                       <StyledDropdownMenuItem onClick={() => window.electronAPI.openUrl(getDocUrl('permissions'))}>
+                         <Settings className="h-3.5 w-3.5" />
+-                        <span className="flex-1">Permissions</span>
++                        <span className="flex-1">{t('Permissions')}</span>
+                         <ExternalLink className="h-3 w-3 text-muted-foreground" />
+                       </StyledDropdownMenuItem>
+                       <StyledDropdownMenuSeparator />
+                       <StyledDropdownMenuItem onClick={() => window.electronAPI.openUrl('https://agents.craft.do/docs')}>
+                         <ExternalLink className="h-3.5 w-3.5" />
+-                        <span className="flex-1">All Documentation</span>
++                        <span className="flex-1">{t('All Documentation')}</span>
+                       </StyledDropdownMenuItem>
+                     </StyledDropdownMenuContent>
+                   </DropdownMenu>
+@@ -2388,7 +2384,7 @@ function AppShellContent({
+                       >
+                         {/* Header with title and clear button (only clears user-added filters, never pinned) */}
+                         <div className="flex items-center justify-between px-2 py-1.5">
+-                          <span className="text-xs font-medium text-muted-foreground">Filter Chats</span>
++                          <span className="text-xs font-medium text-muted-foreground">{t('Filter Chats')}</span>
+                           {(listFilter.size > 0 || labelFilter.size > 0) && (
+                             <button
+                               onClick={(e) => {
+@@ -2487,7 +2483,7 @@ function AppShellContent({
+                                   <StyledDropdownMenuItem disabled>
+                                     <FilterMenuRow
+                                       icon={<Flag className="h-3.5 w-3.5" />}
+-                                      label="Flagged"
++                                      label="{t('Flagged')}"
+                                       accessory={<Check className="h-3 w-3 text-muted-foreground" />}
+                                     />
+                                   </StyledDropdownMenuItem>
+@@ -2540,8 +2536,7 @@ function AppShellContent({
+                                         />
+                                       </StyledDropdownMenuSubTrigger>
+                                       <StyledDropdownMenuSubContent minWidth="min-w-[140px]">
+-                                        <FilterModeSubMenuItems
+-                                          mode={mode}
++                                        <FilterModeSubMenuItems mode={mode}
+                                           onChangeMode={(newMode) => setListFilter(prev => {
+                                             const next = new Map(prev)
+                                             next.set(state.id, newMode)
+@@ -2552,6 +2547,7 @@ function AppShellContent({
+                                             next.delete(state.id)
+                                             return next
+                                           })}
++                                          t={t}
+                                         />
+                                       </StyledDropdownMenuSubContent>
+                                     </DropdownMenuSub>
+@@ -2571,8 +2567,7 @@ function AppShellContent({
+                                         />
+                                       </StyledDropdownMenuSubTrigger>
+                                       <StyledDropdownMenuSubContent minWidth="min-w-[140px]">
+-                                        <FilterModeSubMenuItems
+-                                          mode={mode}
++                                        <FilterModeSubMenuItems mode={mode}
+                                           onChangeMode={(newMode) => setLabelFilter(prev => {
+                                             const next = new Map(prev)
+                                             next.set(labelId, newMode)
+@@ -2596,7 +2591,7 @@ function AppShellContent({
+                             <DropdownMenuSub>
+                               <StyledDropdownMenuSubTrigger>
+                                 <Inbox className="h-3.5 w-3.5" />
+-                                <span className="flex-1">Statuses</span>
++                                <span className="flex-1">{t('Statuses')}</span>
+                               </StyledDropdownMenuSubTrigger>
+                               <StyledDropdownMenuSubContent minWidth="min-w-[180px]">
+                                 {effectiveTodoStates.map(state => {
+@@ -2618,7 +2613,7 @@ function AppShellContent({
+                                           />
+                                         </StyledDropdownMenuSubTrigger>
+                                         <StyledDropdownMenuSubContent minWidth="min-w-[140px]">
+-                                          <FilterModeSubMenuItems
++                                          <FilterModeSubMenuItems mode={mode}
+                                             mode={currentMode}
+                                             onChangeMode={(newMode) => setListFilter(prev => {
+                                               const next = new Map(prev)
+@@ -2668,12 +2663,12 @@ function AppShellContent({
+                             <DropdownMenuSub>
+                               <StyledDropdownMenuSubTrigger>
+                                 <Tag className="h-3.5 w-3.5" />
+-                                <span className="flex-1">Labels</span>
++                                <span className="flex-1">{t('Labels')}</span>
+                               </StyledDropdownMenuSubTrigger>
+                               <StyledDropdownMenuSubContent minWidth="min-w-[180px]">
+                                 {labelConfigs.length === 0 ? (
+                                   <StyledDropdownMenuItem disabled>
+-                                    <span className="text-muted-foreground">No labels configured</span>
++                                    <span className="text-muted-foreground">{t('No labels configured')}</span>
+                                   </StyledDropdownMenuItem>
+                                 ) : (
+                                   <FilterLabelItems
+@@ -2693,7 +2688,7 @@ function AppShellContent({
+                               }}
+                             >
+                               <Search className="h-3.5 w-3.5" />
+-                              <span className="flex-1">Search</span>
++                              <span className="flex-1">{t('Search')}</span>
+                             </StyledDropdownMenuItem>
+                           </>
+                         ) : (
+@@ -2703,17 +2698,17 @@ function AppShellContent({
+                                 Shows matching statuses and labels in a single flat list.
+                                 Supports keyboard navigation (ArrowUp/Down/Enter in input). */}
+                             {filterDropdownResults.states.length === 0 && filterDropdownResults.labels.length === 0 ? (
+-                              <div className="px-3 py-4 text-center text-xs text-muted-foreground">
+-                                No matching statuses or labels
+-                              </div>
++                                <div className="px-3 py-4 text-center text-xs text-muted-foreground">
++                                {t('No matching statuses or labels')}
++                                </div>
+                             ) : (
+                               <div ref={filterDropdownListRef} className="max-h-[240px] overflow-y-auto py-1">
+                                 {/* Matched statuses */}
+                                 {filterDropdownResults.states.length > 0 && (
+                                   <>
+                                     <div className="px-3 pt-1.5 pb-1 text-[11px] font-medium text-muted-foreground/60 uppercase tracking-wider">
+-                                      Statuses
+-                                    </div>
++{t('Statuses')}
++</div>
+                                     {filterDropdownResults.states.map((state, index) => {
+                                       const applyColor = state.iconColorable
+                                       const isPinned = state.id === pinnedFilters.pinnedStatusId
+@@ -2739,7 +2734,7 @@ function AppShellContent({
+                                               />
+                                             </StyledDropdownMenuSubTrigger>
+                                             <StyledDropdownMenuSubContent minWidth="min-w-[140px]">
+-                                              <FilterModeSubMenuItems
++                                              <FilterModeSubMenuItems mode={mode}
+                                                 mode={currentMode}
+                                                 onChangeMode={(newMode) => setListFilter(prev => {
+                                                   const next = new Map(prev)
+@@ -2799,8 +2794,8 @@ function AppShellContent({
+                                 {filterDropdownResults.labels.length > 0 && (
+                                   <>
+                                     <div className="px-3 pt-1.5 pb-1 text-[11px] font-medium text-muted-foreground/60 uppercase tracking-wider">
+-                                      Labels
+-                                    </div>
++{t('Labels')}
++</div>
+                                     {filterDropdownResults.labels.map((item, index) => {
+                                       // Offset by state count for unified index
+                                       const flatIndex = filterDropdownResults.states.length + index
+@@ -2828,7 +2823,7 @@ function AppShellContent({
+                                               />
+                                             </StyledDropdownMenuSubTrigger>
+                                             <StyledDropdownMenuSubContent minWidth="min-w-[140px]">
+-                                              <FilterModeSubMenuItems
++                                              <FilterModeSubMenuItems mode={mode}
+                                                 mode={currentMode}
+                                                 onChangeMode={(newMode) => setLabelFilter(prev => {
+                                                   const next = new Map(prev)
+@@ -3154,7 +3149,7 @@ function AppShellContent({
+             side="bottom"
+             align="start"
+             secondaryAction={{
+-              label: 'Edit File',
++              label: t('Edit File'),
+               filePath: `${activeWorkspace.rootPath}/statuses/config.json`,
+             }}
+             {...getEditConfig('edit-statuses', activeWorkspace.rootPath)}
+@@ -3174,7 +3169,7 @@ function AppShellContent({
+             side="bottom"
+             align="start"
+             secondaryAction={{
+-              label: 'Edit File',
++              label: t('Edit File'),
+               filePath: `${activeWorkspace.rootPath}/labels/config.json`,
+             }}
+             {...(() => {
+@@ -3210,7 +3205,7 @@ function AppShellContent({
+             side="bottom"
+             align="start"
+             secondaryAction={{
+-              label: 'Edit File',
++              label: t('Edit File'),
+               filePath: `${activeWorkspace.rootPath}/views.json`,
+             }}
+             {...getEditConfig('edit-views', activeWorkspace.rootPath)}
+@@ -3267,7 +3262,7 @@ function AppShellContent({
+             side="bottom"
+             align="start"
+             secondaryAction={{
+-              label: 'Edit File',
++              label: t('Edit File'),
+               filePath: `${activeWorkspace.rootPath}/labels/config.json`,
+             }}
+             {...(() => {

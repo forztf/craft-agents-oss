@@ -95,8 +95,8 @@ export class WindowManager {
       height: windowHeight,
       minWidth: 800,
       minHeight: 600,
-      show: false, // Don't show until ready-to-show event (faster perceived startup)
-      title: '',
+      show: true, // Show immediately for debugging window visibility issue
+      title: 'Craft Agents',
       icon: iconExists ? iconPath : undefined,
       // macOS-specific: hidden title bar with inset traffic lights
       ...(isMac && {
