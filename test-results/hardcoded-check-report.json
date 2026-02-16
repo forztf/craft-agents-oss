@@ -1,18 +1,18 @@
 {
-  "timestamp": "2026-02-16T10:53:39.965Z",
+  "timestamp": "2026-02-16T13:08:16.249Z",
   "summary": {
-    "totalFiles": 52,
-    "totalIssues": 624,
+    "totalFiles": 50,
+    "totalIssues": 596,
     "bySeverity": {
-      "high": 192,
-      "medium": 384,
-      "low": 48
+      "high": 177,
+      "medium": 377,
+      "low": 42
     },
     "byType": {
-      "string-literal": 555,
+      "string-literal": 528,
       "placeholder": 9,
       "title": 15,
-      "jsx-text": 30,
+      "jsx-text": 29,
       "aria-label": 2,
       "label-attr": 13
     }
@@ -389,7 +389,7 @@
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx": [
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2471,
+        "line": 2473,
         "text": "Search statuses & labels...",
         "type": "placeholder",
         "context": "}}\r\n                                placeholder=\"Search statuses & labels...\"",
@@ -823,115 +823,35 @@
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx": [
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 117,
-        "text": "Permission Settings",
-        "type": "string-literal",
-        "context": "rkspace-permissions': (location) => ({\n    context: {\n      label: 'Permission Settings',\n      filePath: `${location}/p",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
         "line": 119,
         "text": "The user is on the Settings Screen and pressed the edit button on Workspace Permission settings.",
         "type": "string-literal",
-        "context": "',\n      filePath: `${location}/permissions.json`,\n      context:\n        'The user is on the Settings Screen and presse",
+        "context": "),\n      filePath: `${location}/permissions.json`,\n      context:\n        'The user is on the Settings Screen and presse",
         "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 135,
-        "text": "Default Permissions",
-        "type": "string-literal",
-        "context": "default-permissions': (location) => ({\n    context: {\n      label: 'Default Permissions',\n      filePath: location, // l",
-        "severity": "medium"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 155,
-        "text": "Skill Instructions",
-        "type": "string-literal",
-        "context": "'skill-instructions': (location) => ({\n    context: {\n      label: 'Skill Instructions',\n      filePath: `${location}/SK",
-        "severity": "medium"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
         "line": 157,
         "text": "The user is editing skill instructions in SKILL.md.",
         "type": "string-literal",
-        "context": "ructions',\n      filePath: `${location}/SKILL.md`,\n      context:\n        'The user is editing skill instructions in SKI",
+        "context": "uctions'),\n      filePath: `${location}/SKILL.md`,\n      context:\n        'The user is editing skill instructions in SKI",
         "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 173,
-        "text": "Skill Metadata",
-        "type": "string-literal",
-        "context": "'skill-metadata': (location) => ({\n    context: {\n      label: 'Skill Metadata',\n      filePath: `${location}/SKILL.",
-        "severity": "medium"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
         "line": 175,
         "text": "The user is editing skill metadata in the YAML frontmatter of SKILL.md.",
         "type": "string-literal",
-        "context": "Metadata',\n      filePath: `${location}/SKILL.md`,\n      context:\n        'The user is editing skill metadata in the YAM",
+        "context": "etadata'),\n      filePath: `${location}/SKILL.md`,\n      context:\n        'The user is editing skill metadata in the YAM",
         "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 191,
-        "text": "Source Documentation",
-        "type": "string-literal",
-        "context": "xts\n  'source-guide': (location) => ({\n    context: {\n      label: 'Source Documentation',\n      filePath: `${location}/",
-        "severity": "medium"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 207,
-        "text": "Source Configuration",
-        "type": "string-literal",
-        "context": ",\n\n  'source-config': (location) => ({\n    context: {\n      label: 'Source Configuration',\n      filePath: `${location}/",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 224,
-        "text": "Source Permissions",
-        "type": "string-literal",
-        "context": "'source-permissions': (location) => ({\n    context: {\n      label: 'Source Permissions',\n      filePath: `${location}/pe",
-        "severity": "medium"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 241,
-        "text": "Tool Permissions",
-        "type": "string-literal",
-        "context": "ce-tool-permissions': (location) => ({\n    context: {\n      label: 'Tool Permissions',\n      filePath: `${location}/perm",
-        "severity": "medium"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
         "line": 243,
         "text": "The user is viewing the Tools list for an MCP source and wants to modify tool permissions.",
         "type": "string-literal",
-        "context": "',\n      filePath: `${location}/permissions.json`,\n      context:\n        'The user is viewing the Tools list for an MCP",
+        "context": "),\n      filePath: `${location}/permissions.json`,\n      context:\n        'The user is viewing the Tools list for an MCP",
         "severity": "medium"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 261,
-        "text": "Preferences Notes",
-        "type": "string-literal",
-        "context": "'preferences-notes': (location) => ({\n    context: {\n      label: 'Preferences Notes',\n      filePath: location, // loc",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 279,
-        "text": "Add Source",
-        "type": "string-literal",
-        "context": "ompts\n  'add-source': (location) => ({\n    context: {\n      label: 'Add Source',\n      filePath: `${location}/sources/`,",
-        "severity": "high"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
@@ -943,26 +863,10 @@
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 296,
-        "text": "Add API",
-        "type": "string-literal",
-        "context": "e\n  'add-source-api': (location) => ({\n    context: {\n      label: 'Add API',\n      filePath: `${location}/sources/`,",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
         "line": 298,
         "text": "The user is viewing API sources and wants to add a new REST API.",
         "type": "string-literal",
-        "context": "'Add API',\n      filePath: `${location}/sources/`,\n      context:\n        'The user is viewing API sources and wants to",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 313,
-        "text": "Add MCP Server",
-        "type": "string-literal",
-        "context": "'add-source-mcp': (location) => ({\n    context: {\n      label: 'Add MCP Server',\n      filePath: `${location}/source",
+        "context": "Add API'),\n      filePath: `${location}/sources/`,\n      context:\n        'The user is viewing API sources and wants to",
         "severity": "high"
       },
       {
@@ -970,15 +874,7 @@
         "line": 315,
         "text": "The user is viewing MCP sources and wants to add a new MCP server.",
         "type": "string-literal",
-        "context": "P Server',\n      filePath: `${location}/sources/`,\n      context:\n        'The user is viewing MCP sources and wants to",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 330,
-        "text": "Add Local Folder",
-        "type": "string-literal",
-        "context": "'add-source-local': (location) => ({\n    context: {\n      label: 'Add Local Folder',\n      filePath: `${location}/sour",
+        "context": "Server'),\n      filePath: `${location}/sources/`,\n      context:\n        'The user is viewing MCP sources and wants to",
         "severity": "high"
       },
       {
@@ -986,15 +882,7 @@
         "line": 332,
         "text": "The user wants to add a local folder source.",
         "type": "string-literal",
-        "context": "l Folder',\n      filePath: `${location}/sources/`,\n      context:\n        'The user wants to add a local folder source.",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 348,
-        "text": "Add Skill",
-        "type": "string-literal",
-        "context": "}),\n\n  'add-skill': (location) => ({\n    context: {\n      label: 'Add Skill',\n      filePath: `${location}/skills/`, /",
+        "context": "Folder'),\n      filePath: `${location}/sources/`,\n      context:\n        'The user wants to add a local folder source.",
         "severity": "high"
       },
       {
@@ -1004,54 +892,6 @@
         "type": "string-literal",
         "context": "}/skills/`, // location is the workspace root path\n      context:\n        'The user wants to add a new skill to their wo",
         "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 365,
-        "text": "Status Configuration",
-        "type": "string-literal",
-        "context": "xt\n  'edit-statuses': (location) => ({\n    context: {\n      label: 'Status Configuration',\n      filePath: `${location}/",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 385,
-        "text": "Label Configuration",
-        "type": "string-literal",
-        "context": "text\n  'edit-labels': (location) => ({\n    context: {\n      label: 'Label Configuration',\n      filePath: `${location}/l",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 406,
-        "text": "Auto-Apply Rules",
-        "type": "string-literal",
-        "context": "'edit-auto-rules': (location) => ({\n    context: {\n      label: 'Auto-Apply Rules',\n      filePath: `${location}/labe",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 426,
-        "text": "Add Label",
-        "type": "string-literal",
-        "context": "match)\n  'add-label': (location) => ({\n    context: {\n      label: 'Add Label',\n      filePath: `${location}/labels/conf",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 447,
-        "text": "Views Configuration",
-        "type": "string-literal",
-        "context": "ntext\n  'edit-views': (location) => ({\n    context: {\n      label: 'Views Configuration',\n      filePath: `${location}/v",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 468,
-        "text": "Tool Icons",
-        "type": "string-literal",
-        "context": "'edit-tool-icons': (location) => ({\n    context: {\n      label: 'Tool Icons',\n      filePath: location, // location i",
-        "severity": "low"
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
@@ -1083,7 +923,7 @@
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\label-menu.tsx": [
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\label-menu.tsx",
-        "line": 296,
+        "line": 297,
         "text": "Add New Label",
         "type": "jsx-text",
         "context": "</div>\n            <span className=\"text-[13px]\">Add New Label</span>\n          </div>\n        ) : (",
@@ -1093,42 +933,10 @@
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx": [
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
-        "line": 276,
-        "text": "No results",
-        "type": "jsx-text",
-        "context": "v className=\"px-3 py-2 text-[12px] text-muted-foreground/60\">No results</div>\n        )}\n        {flatItems.map((item, i",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
-        "line": 137,
-        "text": "Results",
-        "type": "string-literal",
-        "context": "ingItems.length === 0) return []\n  return [{ id: 'results', label: 'Results', items: matchingItems }]\n}\n\nfunction flatte",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
-        "line": 482,
-        "text": "Skills",
-        "type": "string-literal",
-        "context": "th > 0) {\n      result.push({\n        id: 'skills',\n        label: 'Skills',\n        items: skills.map(skill => ({",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
-        "line": 497,
+        "line": 500,
         "text": "Sources",
         "type": "string-literal",
         "context": "h > 0) {\n      result.push({\n        id: 'sources',\n        label: 'Sources',\n        items: sources\n          .filter(s",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
-        "line": 514,
-        "text": "Files",
-        "type": "string-literal",
-        "context": "gth > 0) {\n      result.push({\n        id: 'files',\n        label: 'Files',\n        items: fileResults,\n      })\n    }",
         "severity": "low"
       }
     ],
@@ -1163,7 +971,7 @@
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\todo-filter-menu.tsx": [
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\todo-filter-menu.tsx",
-        "line": 95,
+        "line": 97,
         "text": "Filter statuses...",
         "type": "placeholder",
         "context": "alue={filter}\n          onValueChange={setFilter}\n          placeholder=\"Filter statuses...\"\n          className=\"w-full",
@@ -1178,32 +986,6 @@
         "type": "string-literal",
         "context": "toast\r\n          toast.error('Invalid link', {\r\n            description: 'The content may have been moved or deleted.',",
         "severity": "high"
-      }
-    ],
-    "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\hooks\\useUpdateChecker.ts": [
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\hooks\\useUpdateChecker.ts",
-        "line": 51,
-        "text": "Restart to apply the update.",
-        "type": "string-literal",
-        "context": "te v${version} ready`, {\r\n      id: UPDATE_TOAST_ID,\r\n      description: 'Restart to apply the update.',\r\n      duration",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\hooks\\useUpdateChecker.ts",
-        "line": 54,
-        "text": "Restart",
-        "type": "string-literal",
-        "context": "// 10 seconds, then auto-dismiss\r\n      action: {\r\n        label: 'Restart',\r\n        onClick: onInstall,\r\n      },",
-        "severity": "low"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\hooks\\useUpdateChecker.ts",
-        "line": 70,
-        "text": "The app will restart automatically.",
-        "type": "string-literal",
-        "context": "ST_ID)\r\n      toast.info('Installing update...', {\r\n        description: 'The app will restart automatically.',",
-        "severity": "medium"
       }
     ],
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\main.tsx": [
@@ -1222,16 +1004,6 @@
         "type": "jsx-text",
         "context": "\">Something went wrong</p>\r\n      <p className=\"text-[13px]\">Please restart the app. The error has been reported.</p>",
         "severity": "high"
-      }
-    ],
-    "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\pages\\settings\\PreferencesPage.tsx": [
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\pages\\settings\\PreferencesPage.tsx",
-        "line": 236,
-        "text": "English",
-        "type": "string-literal",
-        "context": "options={[\r\n                    { value: 'en', label: 'English' },\r\n                    { value: 'zh-CN', l",
-        "severity": "low"
       }
     ],
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\playground\\adapters\\input-adapters.tsx": [
@@ -5100,7 +4872,7 @@
     ]
   },
   "recommendations": [
-    "发现 192 处高优先级硬编码文本，建议优先处理",
-    "发现 384 处中优先级硬编码文本，应该逐步翻译"
+    "发现 177 处高优先级硬编码文本，建议优先处理",
+    "发现 377 处中优先级硬编码文本，应该逐步翻译"
   ]
 }

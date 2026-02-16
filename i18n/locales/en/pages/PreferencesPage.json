@@ -16,5 +16,15 @@
   "e.g., America/New_York": "e.g., America/New_York",
   "e.g., English": "e.g., English",
   "e.g., New York": "e.g., New York",
-  "e.g., USA": "e.g., USA"
+  "e.g., USA": "e.g., USA",
+  "Help Craft Agent personalize responses to you.": "Help Craft Agent personalize responses to you.",
+  "How Craft Agent should address you.": "How Craft Agent should address you.",
+  "Select language...": "Select language...",
+  "Enables location-aware responses like weather, local time, and regional context.": "Enables location-aware responses like weather, local time, and regional context.",
+  "Your city for local information and context.": "Your city for local information and context.",
+  "Your country for regional formatting and context.": "Your country for regional formatting and context.",
+  "Free-form context that helps Craft Agent understand your preferences.": "Free-form context that helps Craft Agent understand your preferences.",
+  "Edit File": "Edit File",
+  "English": "English",
+  "Simplified Chinese": "Simplified Chinese"
 }

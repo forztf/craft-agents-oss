@@ -55,6 +55,13 @@
     "test:i18n": "bun run tests/e2e/i18n/static-analyzer.ts",
     "test:i18n:full": "bun run test:i18n && bun run test:e2e:i18n",
     "test:i18n:legacy": "bun run tests/e2e/hardcoded-check.ts",
+    "i18n:scan": "node scripts/i18n/scan.js",
+    "i18n:audit": "node scripts/i18n/audit.js",
+    "i18n:patch": "node scripts/i18n/patch.js",
+    "i18n:regress": "node scripts/i18n/regress.js",
+    "i18n:summary": "node scripts/i18n/summary.js",
+    "test:i18n:zh-leak": "node scripts/i18n/regress.js",
+    "test:i18n:zh": "node scripts/i18n/scan.js --fail=true && bun run electron:build && node scripts/i18n/regress.js",
     "test:setup": "bun run scripts/setup-playwright.ts"
   },
   "devDependencies": {

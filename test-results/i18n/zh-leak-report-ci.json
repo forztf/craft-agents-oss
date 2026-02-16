@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-02-16T13:09:58.840Z",
+  "durationMs": 20345,
+  "routesChecked": [
+    {
+      "id": "allSessions",
+      "route": "allSessions"
+    },
+    {
+      "id": "settings/app",
+      "route": "settings"
+    },
+    {
+      "id": "settings/ai",
+      "route": "settings/ai"
+    },
+    {
+      "id": "settings/appearance",
+      "route": "settings/appearance"
+    },
+    {
+      "id": "settings/input",
+      "route": "settings/input"
+    },
+    {
+      "id": "settings/workspace",
+      "route": "settings/workspace"
+    },
+    {
+      "id": "settings/permissions",
+      "route": "settings/permissions"
+    },
+    {
+      "id": "settings/labels",
+      "route": "settings/labels"
+    },
+    {
+      "id": "settings/shortcuts",
+      "route": "settings/shortcuts"
+    },
+    {
+      "id": "settings/preferences",
+      "route": "settings/preferences"
+    }
+  ],
+  "issues": []
+}

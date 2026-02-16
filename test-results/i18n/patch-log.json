@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-02-16T11:57:28.127Z",
+  "files": [
+    "apps/electron/src/renderer/contexts/I18nContext.tsx",
+    "apps/electron/src/renderer/pages/settings/PreferencesPage.tsx"
+  ],
+  "results": [
+    {
+      "file": "apps/electron/src/renderer/contexts/I18nContext.tsx",
+      "changed": true
+    },
+    {
+      "file": "apps/electron/src/renderer/contexts/I18nContext.tsx",
+      "locale": {
+        "namespace": null,
+        "added": 0
+      }
+    },
+    {
+      "file": "apps/electron/src/renderer/pages/settings/PreferencesPage.tsx",
+      "changed": true
+    },
+    {
+      "file": "apps/electron/src/renderer/pages/settings/PreferencesPage.tsx",
+      "locale": {
+        "namespace": "pages/PreferencesPage",
+        "added": 8
+      }
+    }
+  ]
+}

@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-02-16T10:53:39.600Z",
+  "timestamp": "2026-02-16T13:07:44.025Z",
   "summary": {
-    "total": 50,
+    "total": 95,
     "errors": 30,
-    "warnings": 20,
+    "warnings": 65,
     "infos": 0,
-    "duration": 446
+    "duration": 32651
   },
   "issues": [
     {
@@ -308,6 +308,70 @@
     },
     {
       "type": "incomplete-translation",
+      "page": "Translation Values (pages\\PreferencesPage.json)",
+      "selector": "pages\\PreferencesPage.json",
+      "text": "Help Craft Agent personalize responses to you.",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (pages\\PreferencesPage.json)",
+      "selector": "pages\\PreferencesPage.json",
+      "text": "How Craft Agent should address you.",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (pages\\PreferencesPage.json)",
+      "selector": "pages\\PreferencesPage.json",
+      "text": "Select language...",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (pages\\PreferencesPage.json)",
+      "selector": "pages\\PreferencesPage.json",
+      "text": "Enables location-aware responses like weather, local time, and regional context.",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (pages\\PreferencesPage.json)",
+      "selector": "pages\\PreferencesPage.json",
+      "text": "Your city for local information and context.",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (pages\\PreferencesPage.json)",
+      "selector": "pages\\PreferencesPage.json",
+      "text": "Your country for regional formatting and context.",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (pages\\PreferencesPage.json)",
+      "selector": "pages\\PreferencesPage.json",
+      "text": "Free-form context that helps Craft Agent understand your preferences.",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Translation Values (pages\\PreferencesPage.json)",
+      "selector": "pages\\PreferencesPage.json",
+      "text": "Edit File",
+      "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
       "page": "Translation Values (pages\\settings\\AiSettingsPage.json)",
       "selector": "pages\\settings\\AiSettingsPage.json",
       "text": "Anthropic",
@@ -376,6 +440,265 @@
       "selector": "pages\\SkillInfoPage.json",
       "text": "Slug",
       "context": "zh-CN value equals key",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "HTML Attributes",
+      "selector": "[aria-label]",
+      "text": "Notifications alt+T",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Chat",
+      "selector": "div.text-xs",
+      "text": "Anthropic",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Chat",
+      "selector": "span.font-medium",
+      "text": "Claude Pro/Max",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Chat",
+      "selector": "span.font-medium",
+      "text": "Anthropic API Key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Sources",
+      "selector": "div.text-xs",
+      "text": "Anthropic",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Sources",
+      "selector": "span.font-medium",
+      "text": "Claude Pro/Max",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Sources",
+      "selector": "span.font-medium",
+      "text": "Anthropic API Key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Skills",
+      "selector": "div.text-xs",
+      "text": "Anthropic",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Skills",
+      "selector": "span.font-medium",
+      "text": "Claude Pro/Max",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Skills",
+      "selector": "span.font-medium",
+      "text": "Anthropic API Key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/app",
+      "selector": "div.text-xs",
+      "text": "Anthropic",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/app",
+      "selector": "span.font-medium",
+      "text": "Claude Pro/Max",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/app",
+      "selector": "span.font-medium",
+      "text": "Anthropic API Key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/ai",
+      "selector": "div.text-xs",
+      "text": "Anthropic",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/ai",
+      "selector": "span.font-medium",
+      "text": "Claude Pro/Max",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/ai",
+      "selector": "span.font-medium",
+      "text": "Anthropic API Key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/appearance",
+      "selector": "div.text-xs",
+      "text": "Anthropic",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/appearance",
+      "selector": "span.font-medium",
+      "text": "Claude Pro/Max",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/appearance",
+      "selector": "span.font-medium",
+      "text": "Anthropic API Key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/input",
+      "selector": "div.text-xs",
+      "text": "Anthropic",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/input",
+      "selector": "span.font-medium",
+      "text": "Claude Pro/Max",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/input",
+      "selector": "span.font-medium",
+      "text": "Anthropic API Key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/workspace",
+      "selector": "div.text-xs",
+      "text": "Anthropic",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/workspace",
+      "selector": "span.font-medium",
+      "text": "Claude Pro/Max",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/workspace",
+      "selector": "span.font-medium",
+      "text": "Anthropic API Key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/permissions",
+      "selector": "div.text-xs",
+      "text": "Anthropic",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/permissions",
+      "selector": "span.font-medium",
+      "text": "Claude Pro/Max",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/permissions",
+      "selector": "span.font-medium",
+      "text": "Anthropic API Key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/labels",
+      "selector": "div.text-xs",
+      "text": "Anthropic",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/labels",
+      "selector": "span.font-medium",
+      "text": "Claude Pro/Max",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/labels",
+      "selector": "span.font-medium",
+      "text": "Anthropic API Key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/shortcuts",
+      "selector": "div.text-xs",
+      "text": "Anthropic",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/shortcuts",
+      "selector": "span.font-medium",
+      "text": "Claude Pro/Max",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/shortcuts",
+      "selector": "span.font-medium",
+      "text": "Anthropic API Key",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/preferences",
+      "selector": "div.text-xs",
+      "text": "Anthropic",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/preferences",
+      "selector": "span.font-medium",
+      "text": "Claude Pro/Max",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/preferences",
+      "selector": "span.font-medium",
+      "text": "Anthropic API Key",
       "severity": "warning"
     }
   ]

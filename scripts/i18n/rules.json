@@ -1,0 +1,31 @@
+{
+  "scanRoots": [
+    "apps/electron/src/renderer"
+  ],
+  "includeExtensions": [
+    ".ts",
+    ".tsx",
+    ".js",
+    ".jsx",
+    ".html"
+  ],
+  "ignorePathContains": [
+    "node_modules",
+    ".git",
+    "dist",
+    "build",
+    "out",
+    "coverage",
+    "__tests__",
+    "/tests/",
+    "\\tests\\",
+    ".test.",
+    ".spec."
+  ],
+  "minChineseRun": 2,
+  "allowTextPatterns": [
+    "^©\\s*\\d{4}$",
+    "^\\d{4}$"
+  ],
+  "contextChars": 50
+}

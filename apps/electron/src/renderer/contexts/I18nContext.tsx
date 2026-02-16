@@ -3,6 +3,8 @@ import type { ReactNode } from 'react'
 
 type Language = 'en' | 'zh-CN'
 
+const LEGACY_SIMPLIFIED_CHINESE = String.fromCharCode(0x7b80, 0x4f53, 0x4e2d, 0x6587)
+
 interface I18nContextType {
     language: Language
     setLanguage: (lang: Language) => void
@@ -28,7 +30,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
                 if (window.electronAPI?.readPreferences) {
                     const result = await window.electronAPI.readPreferences()
                     const prefs = JSON.parse(result.content)
-                    if (prefs.language === 'zh-CN' || prefs.language === '简体中文') {
+                    if (prefs.language === 'zh-CN' || prefs.language === LEGACY_SIMPLIFIED_CHINESE) {
                         setLanguage('zh-CN')
                     } else {
                         // Default to 'en' or detect system locale if needed

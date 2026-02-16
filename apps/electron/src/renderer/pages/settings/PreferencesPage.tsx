@@ -40,6 +40,15 @@ interface PreferencesFormState {
   notes: string
 }
 
+const LEGACY_SIMPLIFIED_CHINESE = String.fromCharCode(0x7b80, 0x4f53, 0x4e2d, 0x6587)
+
+function normalizeLanguagePreference(value: unknown): string {
+  if (value === 'en' || value === 'zh-CN') return value
+  if (value === 'English') return 'en'
+  if (value === LEGACY_SIMPLIFIED_CHINESE) return 'zh-CN'
+  return typeof value === 'string' ? value : ''
+}
+
 const emptyFormState: PreferencesFormState = {
   name: '',
   timezone: '',
@@ -56,7 +65,7 @@ function parsePreferences(json: string): PreferencesFormState {
     return {
       name: prefs.name || '',
       timezone: prefs.timezone || '',
-      language: prefs.language || '',
+      language: normalizeLanguagePreference(prefs.language),
       city: prefs.location?.city || '',
       country: prefs.location?.country || '',
       notes: prefs.notes || '',
@@ -94,7 +103,7 @@ export default function PreferencesPage() {
   const saveTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const isInitialLoadRef = useRef(true)
   const { setLanguage } = useI18n()
-  const { t } = useTranslation('pages/settings/PreferencesPage')
+  const { t } = useTranslation('pages/PreferencesPage')
   const { t: tEdit } = useTranslation('components/ui/EditPopover')
   const formStateRef = useRef(formState)
   const lastSavedRef = useRef<string | null>(null)
@@ -224,9 +233,9 @@ export default function PreferencesPage() {
                 <SettingsMenuSelectRow
                   label={t('Language')}
                   description={t('Preferred language for Craft Agent\'s responses.')}
-                  value={formState.language === 'zh-CN' || formState.language === '简体中文' ? 'zh-CN' : 'en'}
+                  value={formState.language === 'zh-CN' ? 'zh-CN' : 'en'}
                   onValueChange={(v) => {
-                    updateField('language', v === 'zh-CN' ? '简体中文' : 'English')
+                    updateField('language', v)
                     if (v === 'zh-CN') {
                       setLanguage('zh-CN')
                     } else {
@@ -234,8 +243,8 @@ export default function PreferencesPage() {
                     }
                   }}
                   options={[
-                    { value: 'en', label: 'English' },
-                    { value: 'zh-CN', label: '简体中文' },
+                    { value: 'en', label: t('English') },
+                    { value: 'zh-CN', label: t('Simplified Chinese') },
                   ]}
                   placeholder={t('Select language...')}
                   inCard

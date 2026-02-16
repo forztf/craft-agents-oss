@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-02-16T11:59:38.348Z",
+  "files": [
+    "apps/electron/src/renderer/pages/settings/PreferencesPage.tsx"
+  ],
+  "results": [
+    {
+      "file": "apps/electron/src/renderer/pages/settings/PreferencesPage.tsx",
+      "changed": true
+    },
+    {
+      "file": "apps/electron/src/renderer/pages/settings/PreferencesPage.tsx",
+      "locale": {
+        "namespace": "pages/PreferencesPage",
+        "added": 2
+      }
+    }
+  ]
+}

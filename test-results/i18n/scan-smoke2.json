@@ -1,0 +1,327 @@
+{
+  "timestamp": "2026-02-16T11:54:50.431Z",
+  "roots": [
+    "apps/electron/src/renderer"
+  ],
+  "summary": {
+    "filesScanned": 289,
+    "issues": 4
+  },
+  "issuesByFile": {
+    "apps/electron/src/renderer/contexts/I18nContext.tsx": [
+      {
+        "file": "apps/electron/src/renderer/contexts/I18nContext.tsx",
+        "line": 31,
+        "col": 75,
+        "text": "简体中文",
+        "context": "prefs.language === 'zh-CN' || prefs.language === '简体中文') { setLanguage('zh-CN')"
+      }
+    ],
+    "apps/electron/src/renderer/pages/settings/PreferencesPage.tsx": [
+      {
+        "file": "apps/electron/src/renderer/pages/settings/PreferencesPage.tsx",
+        "line": 219,
+        "col": 84,
+        "text": "简体中文",
+        "context": "e.language === 'zh-CN' || formState.language === '简体中文' ? 'zh-CN' : 'en'} onValueChan"
+      },
+      {
+        "file": "apps/electron/src/renderer/pages/settings/PreferencesPage.tsx",
+        "line": 221,
+        "col": 62,
+        "text": "简体中文",
+        "context": "updateField('language', v === 'zh-CN' ? '简体中文' : 'English') if (v === 'zh-"
+      },
+      {
+        "file": "apps/electron/src/renderer/pages/settings/PreferencesPage.tsx",
+        "line": 230,
+        "col": 47,
+        "text": "简体中文",
+        "context": "}, { value: 'zh-CN', label: '简体中文' }, ]} plac"
+      }
+    ]
+  },
+  "namespaces": {
+    "actions/definitions": [
+      "apps/electron/src/renderer/actions/useHotkeyLabel.ts",
+      "apps/electron/src/renderer/components/KeyboardShortcutsDialog.tsx"
+    ],
+    "components/apisetup/ApiKeyInput": [
+      "apps/electron/src/renderer/components/apisetup/ApiKeyInput.tsx"
+    ],
+    "components/apisetup/OAuthConnect": [
+      "apps/electron/src/renderer/components/apisetup/OAuthConnect.tsx"
+    ],
+    "components/app-shell/ActiveOptionBadges": [
+      "apps/electron/src/renderer/components/app-shell/ActiveOptionBadges.tsx"
+    ],
+    "components/ui/EditPopover": [
+      "apps/electron/src/renderer/components/app-shell/AppShell.tsx",
+      "apps/electron/src/renderer/components/app-shell/input/FreeFormInput.tsx",
+      "apps/electron/src/renderer/components/app-shell/SkillsListPanel.tsx",
+      "apps/electron/src/renderer/components/app-shell/SourcesListPanel.tsx",
+      "apps/electron/src/renderer/components/ui/EditPopover.tsx",
+      "apps/electron/src/renderer/pages/settings/AppearanceSettingsPage.tsx",
+      "apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx",
+      "apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx",
+      "apps/electron/src/renderer/pages/settings/PreferencesPage.tsx",
+      "apps/electron/src/renderer/pages/SkillInfoPage.tsx",
+      "apps/electron/src/renderer/pages/SourceInfoPage.tsx"
+    ],
+    "components/app-shell/AppShell": [
+      "apps/electron/src/renderer/components/app-shell/AppShell.tsx"
+    ],
+    "components/app-shell/ChatDisplay": [
+      "apps/electron/src/renderer/components/app-shell/ChatDisplay.tsx"
+    ],
+    "components/app-shell/input/EscapeInterruptOverlay": [
+      "apps/electron/src/renderer/components/app-shell/input/EscapeInterruptOverlay.tsx"
+    ],
+    "components/app-shell/input/FreeFormInput": [
+      "apps/electron/src/renderer/components/app-shell/input/FreeFormInput.tsx"
+    ],
+    "components/app-shell/input/structured/CredentialRequest": [
+      "apps/electron/src/renderer/components/app-shell/input/structured/CredentialRequest.tsx"
+    ],
+    "components/app-shell/input/structured/PermissionRequest": [
+      "apps/electron/src/renderer/components/app-shell/input/structured/PermissionRequest.tsx"
+    ],
+    "components/app-shell/LeftSidebar": [
+      "apps/electron/src/renderer/components/app-shell/LeftSidebar.tsx"
+    ],
+    "components/app-shell/MainContentPanel": [
+      "apps/electron/src/renderer/components/app-shell/MainContentPanel.tsx"
+    ],
+    "components/app-shell/MultiSelectPanel": [
+      "apps/electron/src/renderer/components/app-shell/MultiSelectPanel.tsx"
+    ],
+    "components/app-shell/RightSidebar": [
+      "apps/electron/src/renderer/components/app-shell/RightSidebar.tsx"
+    ],
+    "pages/ChatPage": [
+      "apps/electron/src/renderer/components/app-shell/SessionList.tsx",
+      "apps/electron/src/renderer/pages/ChatPage.tsx"
+    ],
+    "components/app-shell/SessionList": [
+      "apps/electron/src/renderer/components/app-shell/SessionList.tsx"
+    ],
+    "components/app-shell/SessionMenu": [
+      "apps/electron/src/renderer/components/app-shell/SessionMenu.tsx"
+    ],
+    "components/app-shell/SessionSearchHeader": [
+      "apps/electron/src/renderer/components/app-shell/SessionSearchHeader.tsx"
+    ],
+    "components/app-shell/SetupAuthBanner": [
+      "apps/electron/src/renderer/components/app-shell/SetupAuthBanner.tsx"
+    ],
+    "components/app-shell/SidebarMenu": [
+      "apps/electron/src/renderer/components/app-shell/SidebarMenu.tsx"
+    ],
+    "components/app-shell/SkillMenu": [
+      "apps/electron/src/renderer/components/app-shell/SkillMenu.tsx"
+    ],
+    "components/app-shell/SkillsListPanel": [
+      "apps/electron/src/renderer/components/app-shell/SkillsListPanel.tsx"
+    ],
+    "components/app-shell/SourceMenu": [
+      "apps/electron/src/renderer/components/app-shell/SourceMenu.tsx"
+    ],
+    "components/app-shell/SourcesListPanel": [
+      "apps/electron/src/renderer/components/app-shell/SourcesListPanel.tsx"
+    ],
+    "components/app-shell/TaskActionMenu": [
+      "apps/electron/src/renderer/components/app-shell/TaskActionMenu.tsx"
+    ],
+    "components/app-shell/WorkspaceSwitcher": [
+      "apps/electron/src/renderer/components/app-shell/WorkspaceSwitcher.tsx"
+    ],
+    "components/AppMenu": [
+      "apps/electron/src/renderer/components/AppMenu.tsx"
+    ],
+    "components/chat/AuthRequestCard": [
+      "apps/electron/src/renderer/components/chat/AuthRequestCard.tsx"
+    ],
+    "components/chat/EmptyStateHint": [
+      "apps/electron/src/renderer/components/chat/EmptyStateHint.tsx"
+    ],
+    "components/files/FileViewer": [
+      "apps/electron/src/renderer/components/files/FileViewer.tsx"
+    ],
+    "components/info/AutoRulesDataTable": [
+      "apps/electron/src/renderer/components/info/AutoRulesDataTable.tsx"
+    ],
+    "components/info/Info_DataTable": [
+      "apps/electron/src/renderer/components/info/Info_DataTable.tsx"
+    ],
+    "components/info/Info_GroupedList": [
+      "apps/electron/src/renderer/components/info/Info_GroupedList.tsx"
+    ],
+    "components/info/Info_Markdown": [
+      "apps/electron/src/renderer/components/info/Info_Markdown.tsx"
+    ],
+    "components/info/Info_Page": [
+      "apps/electron/src/renderer/components/info/Info_Page.tsx"
+    ],
+    "components/info/Info_StatusBadge": [
+      "apps/electron/src/renderer/components/info/Info_StatusBadge.tsx"
+    ],
+    "components/info/LabelsDataTable": [
+      "apps/electron/src/renderer/components/info/LabelsDataTable.tsx"
+    ],
+    "components/info/PermissionsDataTable": [
+      "apps/electron/src/renderer/components/info/PermissionsDataTable.tsx"
+    ],
+    "components/info/ToolsDataTable": [
+      "apps/electron/src/renderer/components/info/ToolsDataTable.tsx"
+    ],
+    "components/KeyboardShortcutsDialog": [
+      "apps/electron/src/renderer/components/KeyboardShortcutsDialog.tsx"
+    ],
+    "components/onboarding/APISetupStep": [
+      "apps/electron/src/renderer/components/onboarding/APISetupStep.tsx"
+    ],
+    "components/onboarding/CompletionStep": [
+      "apps/electron/src/renderer/components/onboarding/CompletionStep.tsx"
+    ],
+    "components/onboarding/CredentialsStep": [
+      "apps/electron/src/renderer/components/onboarding/CredentialsStep.tsx"
+    ],
+    "components/onboarding/primitives": [
+      "apps/electron/src/renderer/components/onboarding/CredentialsStep.tsx",
+      "apps/electron/src/renderer/components/onboarding/primitives.tsx"
+    ],
+    "components/onboarding/GitBashWarning": [
+      "apps/electron/src/renderer/components/onboarding/GitBashWarning.tsx"
+    ],
+    "components/onboarding/ReauthScreen": [
+      "apps/electron/src/renderer/components/onboarding/ReauthScreen.tsx"
+    ],
+    "components/onboarding/WelcomeStep": [
+      "apps/electron/src/renderer/components/onboarding/WelcomeStep.tsx"
+    ],
+    "components/preview/TableOfContents": [
+      "apps/electron/src/renderer/components/preview/TableOfContents.tsx"
+    ],
+    "components/ResetConfirmationDialog": [
+      "apps/electron/src/renderer/components/ResetConfirmationDialog.tsx"
+    ],
+    "components/right-sidebar/SessionFilesSection": [
+      "apps/electron/src/renderer/components/right-sidebar/SessionFilesSection.tsx"
+    ],
+    "components/right-sidebar/SessionMetadataPanel": [
+      "apps/electron/src/renderer/components/right-sidebar/SessionMetadataPanel.tsx"
+    ],
+    "components/settings/SearchableModelInput": [
+      "apps/electron/src/renderer/components/settings/SearchableModelInput.tsx"
+    ],
+    "components/settings/SettingsEditRow": [
+      "apps/electron/src/renderer/components/settings/SettingsEditRow.tsx"
+    ],
+    "components/settings/SettingsInput": [
+      "apps/electron/src/renderer/components/settings/SettingsInput.tsx"
+    ],
+    "components/settings/SettingsMenuSelect": [
+      "apps/electron/src/renderer/components/settings/SettingsMenuSelect.tsx"
+    ],
+    "components/settings/SettingsSelect": [
+      "apps/electron/src/renderer/components/settings/SettingsSelect.tsx"
+    ],
+    "components/ui/data-table": [
+      "apps/electron/src/renderer/components/ui/data-table.tsx"
+    ],
+    "components/ui/dialog": [
+      "apps/electron/src/renderer/components/ui/dialog.tsx"
+    ],
+    "components/ui/HeaderMenu": [
+      "apps/electron/src/renderer/components/ui/HeaderMenu.tsx"
+    ],
+    "components/ui/label-menu": [
+      "apps/electron/src/renderer/components/ui/label-menu.tsx"
+    ],
+    "components/ui/label-value-popover": [
+      "apps/electron/src/renderer/components/ui/label-value-popover.tsx"
+    ],
+    "components/ui/mention-menu": [
+      "apps/electron/src/renderer/components/ui/mention-menu.tsx"
+    ],
+    "components/ui/rename-dialog": [
+      "apps/electron/src/renderer/components/ui/rename-dialog.tsx"
+    ],
+    "components/ui/rich-text-input": [
+      "apps/electron/src/renderer/components/ui/rich-text-input.tsx"
+    ],
+    "components/ui/slash-command-menu": [
+      "apps/electron/src/renderer/components/ui/slash-command-menu.tsx"
+    ],
+    "components/ui/source-status-indicator": [
+      "apps/electron/src/renderer/components/ui/source-status-indicator.tsx"
+    ],
+    "components/ui/todo-filter-menu": [
+      "apps/electron/src/renderer/components/ui/todo-filter-menu.tsx"
+    ],
+    "components/workspace/AddWorkspaceStep_Choice": [
+      "apps/electron/src/renderer/components/workspace/AddWorkspaceStep_Choice.tsx"
+    ],
+    "components/workspace/AddWorkspaceStep_CreateNew": [
+      "apps/electron/src/renderer/components/workspace/AddWorkspaceStep_CreateNew.tsx"
+    ],
+    "components/workspace/AddWorkspaceStep_OpenFolder": [
+      "apps/electron/src/renderer/components/workspace/AddWorkspaceStep_OpenFolder.tsx"
+    ],
+    "components/workspace/WorkspaceCreationScreen": [
+      "apps/electron/src/renderer/components/workspace/primitives.tsx",
+      "apps/electron/src/renderer/components/workspace/WorkspaceCreationScreen.tsx"
+    ],
+    "hooks/useNotifications": [
+      "apps/electron/src/renderer/hooks/useNotifications.ts"
+    ],
+    "hooks/useOnboarding": [
+      "apps/electron/src/renderer/hooks/useOnboarding.ts"
+    ],
+    "hooks/useUpdateChecker": [
+      "apps/electron/src/renderer/hooks/useUpdateChecker.ts"
+    ],
+    "pages/PreferencesPage": [
+      "apps/electron/src/renderer/pages/PreferencesPage.tsx"
+    ],
+    "pages/settings/AiSettingsPage": [
+      "apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx"
+    ],
+    "pages/settings/AppearanceSettingsPage": [
+      "apps/electron/src/renderer/pages/settings/AppearanceSettingsPage.tsx"
+    ],
+    "pages/settings/AppSettingsPage": [
+      "apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx"
+    ],
+    "pages/settings/InputSettingsPage": [
+      "apps/electron/src/renderer/pages/settings/InputSettingsPage.tsx"
+    ],
+    "pages/settings/LabelsSettingsPage": [
+      "apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx"
+    ],
+    "pages/settings/PermissionsSettingsPage": [
+      "apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx"
+    ],
+    "pages/settings/PreferencesPage": [
+      "apps/electron/src/renderer/pages/settings/PreferencesPage.tsx"
+    ],
+    "pages/settings/SettingsNavigator": [
+      "apps/electron/src/renderer/pages/settings/SettingsNavigator.tsx"
+    ],
+    "pages/settings/ShortcutsPage": [
+      "apps/electron/src/renderer/pages/settings/ShortcutsPage.tsx"
+    ],
+    "pages/settings/WorkspaceSettingsPage": [
+      "apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx"
+    ],
+    "pages/ShortcutsPage": [
+      "apps/electron/src/renderer/pages/ShortcutsPage.tsx"
+    ],
+    "pages/SkillInfoPage": [
+      "apps/electron/src/renderer/pages/SkillInfoPage.tsx"
+    ],
+    "pages/SourceInfoPage": [
+      "apps/electron/src/renderer/pages/SourceInfoPage.tsx"
+    ]
+  }
+}

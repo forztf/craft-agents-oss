@@ -375,7 +375,8 @@ test.beforeAll(async () => {
   reporter = new I18nTestReporter()
 
   // 检查应用是否已编译
-  const mainPath = path.join(projectRoot, 'apps', 'electron', 'main.js')
+  const appDir = path.join(projectRoot, 'apps', 'electron')
+  const mainPath = path.join(appDir, 'dist', 'main.cjs')
   const mainJsExists = await fs.access(mainPath).then(() => true).catch(() => false)
 
   if (!mainJsExists) {
@@ -385,6 +386,7 @@ test.beforeAll(async () => {
   }
 
   try {
+    const runId = String(Date.now())
     testConfigDir = await fs.mkdtemp(path.join(os.tmpdir(), 'craft-agent-e2e-'))
     await fs.writeFile(
       path.join(testConfigDir, 'preferences.json'),
@@ -393,11 +395,13 @@ test.beforeAll(async () => {
     )
 
     electronApp = await electron.launch({
-      args: [mainPath],
+      args: [appDir],
       env: {
         ...process.env,
         NODE_ENV: 'test',
         CRAFT_CONFIG_DIR: testConfigDir,
+        CRAFT_APP_NAME: `Craft Agents E2E ${runId}`,
+        CRAFT_DEEPLINK_SCHEME: `craftagents-e2e-${runId}`,
       },
     })
 

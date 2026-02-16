@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-02-16T11:11:52.744Z",
+  "timestamp": "2026-02-16T13:12:24.859Z",
   "summary": {
     "totalFiles": 292,
-    "totalIssues": 583
+    "totalIssues": 549
   },
   "files": {
     "apps\\electron\\src\\renderer\\actions\\definitions.ts": [
@@ -324,7 +324,7 @@
     "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx": [
       {
         "file": "apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 1702,
+        "line": 1704,
         "column": 20,
         "text": "Deleted source",
         "type": "template-literal"
@@ -766,30 +766,9 @@
     "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx": [
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 117,
-        "column": 6,
-        "text": "Permission Settings",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
         "line": 119,
         "column": 9,
         "text": "The user is on the Settings Screen and pressed the edit button on Workspace Permission settings.",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 135,
-        "column": 6,
-        "text": "Default Permissions",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 155,
-        "column": 6,
-        "text": "Skill Instructions",
         "type": "string-literal"
       },
       {
@@ -801,44 +780,9 @@
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 173,
-        "column": 6,
-        "text": "Skill Metadata",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
         "line": 175,
         "column": 9,
         "text": "The user is editing skill metadata in the YAML frontmatter of SKILL.md.",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 191,
-        "column": 6,
-        "text": "Source Documentation",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 207,
-        "column": 6,
-        "text": "Source Configuration",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 224,
-        "column": 6,
-        "text": "Source Permissions",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 241,
-        "column": 6,
-        "text": "Tool Permissions",
         "type": "string-literal"
       },
       {
@@ -850,30 +794,9 @@
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 261,
-        "column": 6,
-        "text": "Preferences Notes",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 279,
-        "column": 6,
-        "text": "Add Source",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
         "line": 281,
         "column": 9,
         "text": "The user wants to add a new source to their workspace.",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 296,
-        "column": 6,
-        "text": "Add API",
         "type": "string-literal"
       },
       {
@@ -885,23 +808,9 @@
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 313,
-        "column": 6,
-        "text": "Add MCP Server",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
         "line": 315,
         "column": 9,
         "text": "The user is viewing MCP sources and wants to add a new MCP server.",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 330,
-        "column": 6,
-        "text": "Add Local Folder",
         "type": "string-literal"
       },
       {
@@ -913,58 +822,9 @@
       },
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 348,
-        "column": 6,
-        "text": "Add Skill",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
         "line": 350,
         "column": 9,
         "text": "The user wants to add a new skill to their workspace.",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 365,
-        "column": 6,
-        "text": "Status Configuration",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 385,
-        "column": 6,
-        "text": "Label Configuration",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 406,
-        "column": 6,
-        "text": "Auto-Apply Rules",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 426,
-        "column": 6,
-        "text": "Add Label",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 447,
-        "column": 6,
-        "text": "Views Configuration",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\EditPopover.tsx",
-        "line": 468,
-        "column": 6,
-        "text": "Tool Icons",
         "type": "string-literal"
       },
       {
@@ -994,7 +854,7 @@
     "apps\\electron\\src\\renderer\\components\\ui\\label-menu.tsx": [
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\label-menu.tsx",
-        "line": 296,
+        "line": 297,
         "column": 41,
         "text": "Add New Label",
         "type": "jsx-text"
@@ -1003,37 +863,9 @@
     "apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx": [
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
-        "line": 276,
-        "column": 73,
-        "text": "No results",
-        "type": "jsx-text"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
-        "line": 137,
-        "column": 27,
-        "text": "Results",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
-        "line": 482,
-        "column": 8,
-        "text": "Skills",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
-        "line": 497,
+        "line": 500,
         "column": 8,
         "text": "Sources",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\components\\ui\\mention-menu.tsx",
-        "line": 514,
-        "column": 8,
-        "text": "Files",
         "type": "string-literal"
       }
     ],
@@ -1056,7 +888,7 @@
     "apps\\electron\\src\\renderer\\components\\ui\\todo-filter-menu.tsx": [
       {
         "file": "apps\\electron\\src\\renderer\\components\\ui\\todo-filter-menu.tsx",
-        "line": 95,
+        "line": 97,
         "column": 10,
         "text": "Filter statuses...",
         "type": "string-literal"
@@ -1089,79 +921,12 @@
         "type": "string-literal"
       }
     ],
-    "apps\\electron\\src\\renderer\\hooks\\useOnboarding.ts": [
-      {
-        "file": "apps\\electron\\src\\renderer\\hooks\\useOnboarding.ts",
-        "line": 176,
-        "column": 53,
-        "text": "Failed to save configuration",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\hooks\\useOnboarding.ts",
-        "line": 315,
-        "column": 53,
-        "text": "Validation failed",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\hooks\\useOnboarding.ts",
-        "line": 399,
-        "column": 53,
-        "text": "OAuth failed",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\hooks\\useOnboarding.ts",
-        "line": 442,
-        "column": 53,
-        "text": "Failed to exchange code",
-        "type": "string-literal"
-      }
-    ],
     "apps\\electron\\src\\renderer\\hooks\\useStatuses.ts": [
       {
         "file": "apps\\electron\\src\\renderer\\hooks\\useStatuses.ts",
         "line": 46,
         "column": 42,
         "text": "Failed to load statuses",
-        "type": "string-literal"
-      }
-    ],
-    "apps\\electron\\src\\renderer\\hooks\\useUpdateChecker.ts": [
-      {
-        "file": "apps\\electron\\src\\renderer\\hooks\\useUpdateChecker.ts",
-        "line": 51,
-        "column": 6,
-        "text": "Restart to apply the update.",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\hooks\\useUpdateChecker.ts",
-        "line": 54,
-        "column": 8,
-        "text": "Restart",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\hooks\\useUpdateChecker.ts",
-        "line": 70,
-        "column": 8,
-        "text": "The app will restart automatically.",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\hooks\\useUpdateChecker.ts",
-        "line": 77,
-        "column": 52,
-        "text": "Unknown error",
-        "type": "string-literal"
-      },
-      {
-        "file": "apps\\electron\\src\\renderer\\hooks\\useUpdateChecker.ts",
-        "line": 140,
-        "column": 52,
-        "text": "Unknown error",
         "type": "string-literal"
       }
     ],
@@ -1180,15 +945,6 @@
         "line": 330,
         "column": 18,
         "text": "Open",
-        "type": "string-literal"
-      }
-    ],
-    "apps\\electron\\src\\renderer\\pages\\settings\\PreferencesPage.tsx": [
-      {
-        "file": "apps\\electron\\src\\renderer\\pages\\settings\\PreferencesPage.tsx",
-        "line": 236,
-        "column": 35,
-        "text": "English",
         "type": "string-literal"
       }
     ],

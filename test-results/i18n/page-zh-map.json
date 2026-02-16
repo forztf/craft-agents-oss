@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-02-16T11:55:07.523Z",
+  "hardList": "test-results/i18n/hard-zh-20260216-195507.json",
+  "summary": {
+    "pages": 2,
+    "issues": 4
+  },
+  "pages": [
+    {
+      "page": "pages/settings/PreferencesPage",
+      "files": [
+        "apps/electron/src/renderer/pages/settings/PreferencesPage.tsx"
+      ],
+      "issues": 3
+    },
+    {
+      "page": "(unmapped)",
+      "files": [
+        "apps/electron/src/renderer/contexts/I18nContext.tsx"
+      ],
+      "issues": 1
+    }
+  ]
+}
