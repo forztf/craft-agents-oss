@@ -343,7 +343,7 @@ function FilterLabelItems({
                         />
                       </StyledDropdownMenuSubTrigger>
                       <StyledDropdownMenuSubContent minWidth="min-w-[140px]">
-                        <FilterModeSubMenuItems mode={mode} mode={mode} {...makeModeCallbacks(label.id)} t={t} />
+                        <FilterModeSubMenuItems mode={mode} {...makeModeCallbacks(label.id)} t={t} />
                       </StyledDropdownMenuSubContent>
                     </DropdownMenuSub>
                     <StyledDropdownMenuSeparator />
@@ -398,7 +398,7 @@ function FilterLabelItems({
                 />
               </StyledDropdownMenuSubTrigger>
               <StyledDropdownMenuSubContent minWidth="min-w-[140px]">
-                <FilterModeSubMenuItems mode={mode} mode={mode} {...makeModeCallbacks(label.id)} t={t} />
+                <FilterModeSubMenuItems mode={mode} {...makeModeCallbacks(label.id)} t={t} />
               </StyledDropdownMenuSubContent>
             </DropdownMenuSub>
           )
@@ -540,23 +540,7 @@ function AppShellContent({
   const { resolvedMode, isDark, setMode } = useTheme()
   const { canGoBack, canGoForward, goBack, goForward, navigateToSource, navigateToSession } = useNavigation()
   const { t } = useTranslation('components/app-shell/AppShell')
-
-/**
- * FilterModeBadge - Display-only badge showing the current filter mode.
- * Shows a checkmark for 'include' and an X for 'exclude'. Used as a visual
- * indicator inside DropdownMenuSubTrigger rows (the actual mode switching
- * happens via the sub-menu content, not this badge).
- */
-function FilterModeBadge({ mode }: { mode: FilterMode }) {
-
   // Double-Esc interrupt feature: first Esc shows warning, second Esc interrupts
-  const { handleEscapePress } = useEscapeInterrupt()
-
-  // UNIFIED NAVIGATION STATE - single source of truth from NavigationContext
-  // All sidebar/navigator/main panel state is derived from this
-  const navState = useNavigationState()
-
-  // Derive chat filter from navigation state (only when in chats navigator)
   const sessionFilter = isSessionsNavigation(navState) ? navState.filter : null
 
   // Derive source filter from navigation state (only when in sources navigator)
@@ -2553,7 +2537,6 @@ function FilterModeBadge({ mode }: { mode: FilterMode }) {
                                       </StyledDropdownMenuSubTrigger>
                                       <StyledDropdownMenuSubContent minWidth="min-w-[140px]">
                                         <FilterModeSubMenuItems mode={mode}
-                                          mode={mode}
                                           onChangeMode={(newMode) => setListFilter(prev => {
                                             const next = new Map(prev)
                                             next.set(state.id, newMode)
@@ -2585,7 +2568,6 @@ function FilterModeBadge({ mode }: { mode: FilterMode }) {
                                       </StyledDropdownMenuSubTrigger>
                                       <StyledDropdownMenuSubContent minWidth="min-w-[140px]">
                                         <FilterModeSubMenuItems mode={mode}
-                                          mode={mode}
                                           onChangeMode={(newMode) => setLabelFilter(prev => {
                                             const next = new Map(prev)
                                             next.set(labelId, newMode)

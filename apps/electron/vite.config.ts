@@ -42,7 +42,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'src/renderer/index.html'),
-        playground: resolve(__dirname, 'src/renderer/playground.html'),
+        // // playground: resolve(__dirname, "src/renderer/playground.html"),  // Temporarily disabled // temporarily disabled due to i18n changes
       }
     }
   },
