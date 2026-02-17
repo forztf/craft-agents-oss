@@ -69,6 +69,10 @@ class I18nTestReporter {
     }
   }
 
+  getIssues() {
+    return [...this.issues]
+  }
+
   printReport() {
     const summary = this.getSummary()
 
@@ -123,6 +127,58 @@ class I18nTestReporter {
     await fs.writeFile(legacyReportPath, JSON.stringify(report, null, 2))
     console.log(`\n📝 报告已保存至: ${reportPath}`)
   }
+
+  async saveMarkdownReport(params: { phase: string; screenshotsDir?: string }) {
+    const mdPath = path.join(projectRoot, 'test-results', `i18n-report.${params.phase}.md`)
+    const issues = this.getIssues()
+    const summary = this.getSummary()
+
+    const lines: string[] = []
+    lines.push(`# i18n UI 巡检报告 (${params.phase})`)
+    lines.push('')
+    lines.push(`- 时间: ${this.startTime.toISOString()}`)
+    lines.push(`- 总问题: ${summary.total}（错误 ${summary.errors} / 警告 ${summary.warnings} / 信息 ${summary.infos}）`)
+    if (params.screenshotsDir) lines.push(`- 截图目录: ${params.screenshotsDir}`)
+    lines.push('')
+    lines.push('## Issues')
+    lines.push('')
+    lines.push('| Page | Type | Text | Selector | Screenshot |')
+    lines.push('|---|---|---|---|---|')
+
+    for (const i of issues) {
+      const shot = params.screenshotsDir ? `${params.screenshotsDir}/${safeFileName(i.page)}.png` : ''
+      lines.push(`| ${escapeMd(i.page)} | ${i.type} | ${escapeMd(i.text)} | ${escapeMd(i.selector)} | ${escapeMd(shot)} |`)
+    }
+
+    await fs.writeFile(mdPath, lines.join('\n'), 'utf-8')
+    console.log(`\n📝 Markdown 报告已保存至: ${mdPath}`)
+  }
+}
+
+function escapeMd(s: string) {
+  return String(s).replace(/\|/g, '\\|').replace(/\r?\n/g, ' ')
+}
+
+function safeFileName(s: string) {
+  return String(s)
+    .trim()
+    .replace(/[\\/:*?"<>|]/g, '_')
+    .replace(/\s+/g, '_')
+    .slice(0, 180)
+}
+
+async function ensureDir(p: string) {
+  await fs.mkdir(p, { recursive: true })
+}
+
+const screenshotPhase = String(process.env.I18N_SCREENSHOT_PHASE || 'before')
+const screenshotsDir = path.join(projectRoot, 'test-results', 'i18n-screenshots', screenshotPhase)
+
+async function capturePageScreenshot(page: Page, name: string) {
+  await ensureDir(screenshotsDir)
+  const fileName = `${safeFileName(name)}.png`
+  const outPath = path.join(screenshotsDir, fileName)
+  await page.screenshot({ path: outPath, fullPage: true })
 }
 
 /**
@@ -256,6 +312,7 @@ let page: Page
 let reporter: I18nTestReporter
 let allTranslationKeys: Set<string>
 let testConfigDir: string | undefined
+let lastRuntimeError: string | null = null
 
 async function collectVisibleStrings(page: Page): Promise<Array<{ selector: string; text: string; kind: 'text' | 'attr'; attr?: string }>> {
   return page.evaluate(() => {
@@ -364,6 +421,21 @@ async function navigateToRoute(page: Page, route: string) {
   await page.waitForTimeout(1200)
 }
 
+async function tryClickFirst(locatorList: string[], page: Page) {
+  for (const selector of locatorList) {
+    try {
+      const el = page.locator(selector).first()
+      if (await el.isVisible({ timeout: 1000 })) {
+        await el.click({ timeout: 3000 })
+        return true
+      }
+    } catch {
+      continue
+    }
+  }
+  return false
+}
+
 test.beforeAll(async () => {
   console.log('🚀 启动 Electron 应用...\n')
 
@@ -388,9 +460,35 @@ test.beforeAll(async () => {
   try {
     const runId = String(Date.now())
     testConfigDir = await fs.mkdtemp(path.join(os.tmpdir(), 'craft-agent-e2e-'))
+    const wsRoot = path.join(testConfigDir, 'workspace')
+    try {
+      const defaultsSrc = path.join(appDir, 'resources', 'config-defaults.json')
+      const defaults = await fs.readFile(defaultsSrc, 'utf-8')
+      await fs.writeFile(path.join(testConfigDir, 'config-defaults.json'), defaults, 'utf-8')
+    } catch {}
     await fs.writeFile(
       path.join(testConfigDir, 'preferences.json'),
       JSON.stringify({ language: 'zh-CN' }, null, 2),
+      'utf-8'
+    )
+    await fs.writeFile(
+      path.join(testConfigDir, 'config.json'),
+      JSON.stringify({
+        llmConnections: [
+          {
+            slug: 'ollama-local',
+            name: 'Ollama',
+            providerType: 'openai_compat',
+            authType: 'api_key_with_endpoint',
+            baseUrl: 'http://127.0.0.1:11434',
+            defaultModel: 'llama3.1',
+          },
+        ],
+        defaultLlmConnection: 'ollama-local',
+        workspaces: [{ id: 'ws1', name: '工作区', rootPath: wsRoot }],
+        activeWorkspaceId: 'ws1',
+        activeSessionId: null,
+      }, null, 2),
       'utf-8'
     )
 
@@ -409,6 +507,16 @@ test.beforeAll(async () => {
     page = await electronApp.firstWindow()
     await page.waitForLoadState('domcontentloaded')
     await page.waitForTimeout(5000) // 等待应用完全加载
+    page.on('pageerror', (err) => {
+      lastRuntimeError = err?.stack || err?.message || String(err)
+      console.error('[pageerror]', lastRuntimeError)
+    })
+    page.on('console', (msg) => {
+      if (msg.type() === 'error') {
+        lastRuntimeError = msg.text()
+        console.error('[console.error]', lastRuntimeError)
+      }
+    })
 
     console.log('✅ Electron 应用已启动\n')
   } catch (error) {
@@ -429,6 +537,7 @@ test.afterAll(async () => {
   // 生成报告
   reporter.printReport()
   await reporter.saveReport()
+  await reporter.saveMarkdownReport({ phase: screenshotPhase, screenshotsDir })
 })
 
 test.describe('I18n 完整性测试套件', () => {
@@ -865,12 +974,24 @@ test.describe('I18n 完整性测试套件', () => {
             const attrValue = await element.getAttribute(attr)
             if (attrValue && attrValue.trim()) {
               const trimmed = attrValue.trim()
+              const selector = await element.evaluate(el => {
+                const id = (el as HTMLElement).id
+                if (id) return `#${id}`
+                const aria = el.getAttribute('aria-label')
+                if (aria) return `${el.tagName.toLowerCase()}[aria-label="${aria}"]`
+                const cls = (el as HTMLElement).className
+                if (cls && typeof cls === 'string') {
+                  const className = cls.split(' ')[0]
+                  if (className) return `${el.tagName.toLowerCase()}.${className}`
+                }
+                return el.tagName.toLowerCase()
+              })
 
               if (isMissingTranslationKey(trimmed)) {
                 reporter.addIssue({
                   type: 'missing-key',
                   page: 'HTML Attributes',
-                  selector: `[${attr}]`,
+                  selector,
                   text: trimmed,
                   severity: 'error',
                 })
@@ -879,7 +1000,7 @@ test.describe('I18n 完整性测试套件', () => {
                   reporter.addIssue({
                     type: 'incomplete-translation',
                     page: 'HTML Attributes',
-                    selector: `[${attr}]`,
+                    selector,
                     text: trimmed,
                     severity: 'warning',
                   })
@@ -887,7 +1008,7 @@ test.describe('I18n 完整性测试套件', () => {
                   reporter.addIssue({
                     type: 'hardcoded',
                     page: 'HTML Attributes',
-                    selector: `[${attr}]`,
+                    selector,
                     text: trimmed,
                     severity: 'warning',
                   })
@@ -916,7 +1037,12 @@ test.describe('I18n 完整性测试套件', () => {
 
     const targets: Array<{ name: string; route: string }> = [
       { name: 'Chat', route: routes.view.allSessions() },
+      { name: 'Flagged', route: routes.view.flagged() },
+      { name: 'Archived', route: routes.view.archived() },
       { name: 'Sources', route: routes.view.sources() },
+      { name: 'Sources/API', route: routes.view.sourcesApi() },
+      { name: 'Sources/MCP', route: routes.view.sourcesMcp() },
+      { name: 'Sources/Local', route: routes.view.sourcesLocal() },
       { name: 'Skills', route: routes.view.skills() },
     ]
 
@@ -930,13 +1056,54 @@ test.describe('I18n 完整性测试套件', () => {
         await navigateToRoute(page, target.route)
         await page.waitForLoadState('domcontentloaded')
         await page.waitForTimeout(800)
+        const crashVisible = await page.getByText('出了点问题').isVisible({ timeout: 200 }).catch(() => false)
+        if (crashVisible) {
+          throw new Error(`CrashFallback visible: ${lastRuntimeError || 'unknown error'}`)
+        }
+        await capturePageScreenshot(page, target.name)
         await scanPageForI18nIssues(page, target.name)
+
+        if (target.name === 'Chat') {
+          await navigateToRoute(page, routes.action.newSession())
+          await page.waitForLoadState('domcontentloaded')
+          await page.waitForTimeout(1200)
+          const opened = await tryClickFirst(
+            ['[data-focus-zone="session-list"] .session-item[data-session-id] button'],
+            page
+          )
+          if (opened) {
+            await page.waitForTimeout(1200)
+            await capturePageScreenshot(page, 'Chat__SessionDetail')
+            await scanPageForI18nIssues(page, 'Chat__SessionDetail')
+          }
+        }
+
+        if (target.name.startsWith('Sources')) {
+          const opened = await tryClickFirst(
+            ['[data-tutorial="source-item-first"] button', '.source-item button'],
+            page
+          )
+          if (opened) {
+            await page.waitForTimeout(1200)
+            await capturePageScreenshot(page, `${target.name}__Detail`)
+            await scanPageForI18nIssues(page, `${target.name}__Detail`)
+          }
+        }
+
+        if (target.name === 'Skills') {
+          const opened = await tryClickFirst(['.skill-item button'], page)
+          if (opened) {
+            await page.waitForTimeout(1200)
+            await capturePageScreenshot(page, 'Skills__Detail')
+            await scanPageForI18nIssues(page, 'Skills__Detail')
+          }
+        }
       } catch (e) {
         reporter.addIssue({
           type: 'format-error',
           page: target.name,
           selector: target.route,
-          text: 'Navigation or scan failed',
+          text: (e as any)?.message ? String((e as any).message) : 'Navigation or scan failed',
           severity: 'error',
         })
       }

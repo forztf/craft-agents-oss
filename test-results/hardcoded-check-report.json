@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-02-16T13:08:16.249Z",
+  "timestamp": "2026-02-17T00:10:03.293Z",
   "summary": {
-    "totalFiles": 50,
-    "totalIssues": 596,
+    "totalFiles": 49,
+    "totalIssues": 594,
     "bySeverity": {
-      "high": 177,
+      "high": 175,
       "medium": 377,
       "low": 42
     },
@@ -12,7 +12,7 @@
       "string-literal": 528,
       "placeholder": 9,
       "title": 15,
-      "jsx-text": 29,
+      "jsx-text": 27,
       "aria-label": 2,
       "label-attr": 13
     }
@@ -389,7 +389,7 @@
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx": [
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\app-shell\\AppShell.tsx",
-        "line": 2473,
+        "line": 2497,
         "text": "Search statuses & labels...",
         "type": "placeholder",
         "context": "}}\r\n                                placeholder=\"Search statuses & labels...\"",
@@ -981,28 +981,10 @@
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\contexts\\NavigationContext.tsx": [
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\contexts\\NavigationContext.tsx",
-        "line": 780,
+        "line": 781,
         "text": "The content may have been moved or deleted.",
         "type": "string-literal",
         "context": "toast\r\n          toast.error('Invalid link', {\r\n            description: 'The content may have been moved or deleted.',",
-        "severity": "high"
-      }
-    ],
-    "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\main.tsx": [
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\main.tsx",
-        "line": 76,
-        "text": "Something went wrong",
-        "type": "jsx-text",
-        "context": "round/50 gap-3\">\r\n      <p className=\"text-base font-medium\">Something went wrong</p>\r\n      <p className=\"text-[13px]\">",
-        "severity": "high"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\main.tsx",
-        "line": 77,
-        "text": "Please restart the app. The error has been reported.",
-        "type": "jsx-text",
-        "context": "\">Something went wrong</p>\r\n      <p className=\"text-[13px]\">Please restart the app. The error has been reported.</p>",
         "severity": "high"
       }
     ],
@@ -4872,7 +4854,7 @@
     ]
   },
   "recommendations": [
-    "发现 177 处高优先级硬编码文本，建议优先处理",
+    "发现 175 处高优先级硬编码文本，建议优先处理",
     "发现 377 处中优先级硬编码文本，应该逐步翻译"
   ]
 }

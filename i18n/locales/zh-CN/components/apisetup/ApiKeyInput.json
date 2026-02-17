@@ -1,8 +1,8 @@
 {
-  "API Key": "API Key",
+  "API Key": "API 密钥",
   "Endpoint": "端点",
   "https://your-api-endpoint.com": "https://your-api-endpoint.com",
-  "ollama pull": "ollama pull",
+  "ollama pull": "ollama 拉取",
   "provider/model-name": "provider/model-name",
   "Default model is required for compatible endpoints.": "兼容端点需要指定默认模型。",
   "Default Model": "默认模型",

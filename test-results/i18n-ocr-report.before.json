@@ -1,0 +1,90 @@
+{
+  "phase": "before",
+  "screenshotsDir": "test-results/i18n-screenshots/before",
+  "items": [
+    {
+      "screenshot": "Chat.png",
+      "english": [
+        { "text": "New Session", "where": "left-sidebar" },
+        { "text": "All Sessions", "where": "left-sidebar-and-header" },
+        { "text": "Status", "where": "left-sidebar" },
+        { "text": "Backlog", "where": "left-sidebar" },
+        { "text": "Todo", "where": "left-sidebar" },
+        { "text": "Needs Review", "where": "left-sidebar" },
+        { "text": "Done", "where": "left-sidebar" },
+        { "text": "Cancelled", "where": "left-sidebar" },
+        { "text": "Archived", "where": "left-sidebar" },
+        { "text": "APIs", "where": "left-sidebar" },
+        { "text": "MCPs", "where": "left-sidebar" },
+        { "text": "Local Folders", "where": "left-sidebar" },
+        { "text": "Settings", "where": "left-sidebar" },
+        { "text": "Workspace", "where": "bottom-left" }
+      ]
+    },
+    {
+      "screenshot": "Flagged.png",
+      "english": [
+        { "text": "Something went wrong", "where": "center" },
+        { "text": "Please restart the app. The error has been reported.", "where": "center" },
+        { "text": "Reload", "where": "center-button" }
+      ]
+    },
+    {
+      "screenshot": "Archived.png",
+      "english": [
+        { "text": "Something went wrong", "where": "center" },
+        { "text": "Please restart the app. The error has been reported.", "where": "center" },
+        { "text": "Reload", "where": "center-button" }
+      ]
+    },
+    {
+      "screenshot": "Sources.png",
+      "english": [
+        { "text": "Something went wrong", "where": "center" },
+        { "text": "Please restart the app. The error has been reported.", "where": "center" },
+        { "text": "Reload", "where": "center-button" }
+      ]
+    },
+    {
+      "screenshot": "Sources_API.png",
+      "english": [
+        { "text": "Something went wrong", "where": "center" },
+        { "text": "Please restart the app. The error has been reported.", "where": "center" },
+        { "text": "Reload", "where": "center-button" }
+      ]
+    },
+    {
+      "screenshot": "Sources_MCP.png",
+      "english": [
+        { "text": "Something went wrong", "where": "center" },
+        { "text": "Please restart the app. The error has been reported.", "where": "center" },
+        { "text": "Reload", "where": "center-button" }
+      ]
+    },
+    {
+      "screenshot": "Sources_Local.png",
+      "english": [
+        { "text": "Something went wrong", "where": "center" },
+        { "text": "Please restart the app. The error has been reported.", "where": "center" },
+        { "text": "Reload", "where": "center-button" }
+      ]
+    },
+    {
+      "screenshot": "Skills.png",
+      "english": [
+        { "text": "Something went wrong", "where": "center" },
+        { "text": "Please restart the app. The error has been reported.", "where": "center" },
+        { "text": "Reload", "where": "center-button" }
+      ]
+    },
+    {
+      "screenshot": "Settings_app.png",
+      "english": [
+        { "text": "Something went wrong", "where": "center" },
+        { "text": "Please restart the app. The error has been reported.", "where": "center" },
+        { "text": "Reload", "where": "center-button" }
+      ]
+    }
+  ]
+}
+

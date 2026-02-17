@@ -1,704 +1,3007 @@
 {
-  "timestamp": "2026-02-16T13:07:44.025Z",
+  "timestamp": "2026-02-17T01:02:03.147Z",
   "summary": {
-    "total": 95,
-    "errors": 30,
-    "warnings": 65,
+    "total": 428,
+    "errors": 2,
+    "warnings": 426,
     "infos": 0,
-    "duration": 32651
+    "duration": 58950
   },
   "issues": [
     {
-      "type": "incomplete-translation",
-      "page": "Translation Values (components\\apisetup\\ApiKeyInput.json)",
-      "selector": "components\\apisetup\\ApiKeyInput.json",
-      "text": "API Key",
-      "context": "zh-CN value equals key",
+      "type": "hardcoded",
+      "page": "Chat__SessionDetail",
+      "selector": "div.font-medium",
+      "text": "New chat",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
-      "page": "Translation Values (components\\apisetup\\ApiKeyInput.json)",
-      "selector": "components\\apisetup\\ApiKeyInput.json",
-      "text": "ollama pull",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "All Sessions",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Status",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Archived",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "APIs",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "MCPs",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Local Folders",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Settings",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "No matching statuses or labels",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "No sources configured",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "No skills configured",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Select a conversation to get started",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Rename",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Delete",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "No sessions yet",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Cancel",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Flags",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Template",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Description",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Search rules...",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Search tools...",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Search...",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Error loading content",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Allowed",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Blocked",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Color",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Search labels...",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\app-shell\\AppShell.json)",
-      "selector": "components\\app-shell\\AppShell.json",
-      "text": "Search statuses & labels...",
-      "severity": "error"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (components\\app-shell\\SessionList.json)",
-      "selector": "components\\app-shell\\SessionList.json",
-      "text": "Promise",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (components\\app-shell\\TaskActionMenu.json)",
-      "selector": "components\\app-shell\\TaskActionMenu.json",
-      "text": "Shell",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (components\\icons\\CraftAppIcon.json)",
-      "selector": "components\\icons\\CraftAppIcon.json",
-      "text": "Craft",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\info\\Info_GroupedList.json)",
-      "selector": "components\\info\\Info_GroupedList.json",
-      "text": "Source requires authentication",
-      "severity": "error"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (components\\onboarding\\APISetupStep.json)",
-      "selector": "components\\onboarding\\APISetupStep.json",
-      "text": "Anthropic",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (components\\onboarding\\APISetupStep.json)",
-      "selector": "components\\onboarding\\APISetupStep.json",
-      "text": "Claude Pro/Max",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (components\\onboarding\\APISetupStep.json)",
-      "selector": "components\\onboarding\\APISetupStep.json",
-      "text": "Anthropic API Key",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (components\\onboarding\\OnboardingWizard.json)",
-      "selector": "components\\onboarding\\OnboardingWizard.json",
-      "text": "Promise",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (components\\onboarding\\OnboardingWizard.json)",
-      "selector": "components\\onboarding\\OnboardingWizard.json",
-      "text": "Claude Pro/Max",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (components\\onboarding\\OnboardingWizard.json)",
-      "selector": "components\\onboarding\\OnboardingWizard.json",
-      "text": "Anthropic",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\settings\\SettingsInput.json)",
-      "selector": "components\\settings\\SettingsInput.json",
-      "text": "Enter your name...",
-      "severity": "error"
-    },
-    {
-      "type": "missing-key",
-      "page": "Translation Keys (components\\settings\\SettingsInput.json)",
-      "selector": "components\\settings\\SettingsInput.json",
-      "text": "Name",
-      "severity": "error"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (pages\\PreferencesPage.json)",
-      "selector": "pages\\PreferencesPage.json",
-      "text": "Help Craft Agent personalize responses to you.",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (pages\\PreferencesPage.json)",
-      "selector": "pages\\PreferencesPage.json",
-      "text": "How Craft Agent should address you.",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (pages\\PreferencesPage.json)",
-      "selector": "pages\\PreferencesPage.json",
-      "text": "Select language...",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (pages\\PreferencesPage.json)",
-      "selector": "pages\\PreferencesPage.json",
-      "text": "Enables location-aware responses like weather, local time, and regional context.",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (pages\\PreferencesPage.json)",
-      "selector": "pages\\PreferencesPage.json",
-      "text": "Your city for local information and context.",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (pages\\PreferencesPage.json)",
-      "selector": "pages\\PreferencesPage.json",
-      "text": "Your country for regional formatting and context.",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (pages\\PreferencesPage.json)",
-      "selector": "pages\\PreferencesPage.json",
-      "text": "Free-form context that helps Craft Agent understand your preferences.",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (pages\\PreferencesPage.json)",
-      "selector": "pages\\PreferencesPage.json",
-      "text": "Edit File",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (pages\\settings\\AiSettingsPage.json)",
-      "selector": "pages\\settings\\AiSettingsPage.json",
-      "text": "Anthropic",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (pages\\settings\\AiSettingsPage.json)",
-      "selector": "pages\\settings\\AiSettingsPage.json",
-      "text": "Anthropic API",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (pages\\settings\\AiSettingsPage.json)",
-      "selector": "pages\\settings\\AiSettingsPage.json",
-      "text": "AWS Bedrock",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (pages\\settings\\AiSettingsPage.json)",
-      "selector": "pages\\settings\\AiSettingsPage.json",
-      "text": "Google Vertex",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (pages\\settings\\AiSettingsPage.json)",
-      "selector": "pages\\settings\\AiSettingsPage.json",
-      "text": "OpenAI API",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (pages\\settings\\AppearanceSettingsPage.json)",
-      "selector": "pages\\settings\\AppearanceSettingsPage.json",
-      "text": "Inter",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (pages\\settings\\InputSettingsPage.json)",
-      "selector": "pages\\settings\\InputSettingsPage.json",
-      "text": "Enter",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (pages\\settings\\PreferencesPage.json)",
-      "selector": "pages\\settings\\PreferencesPage.json",
-      "text": "English",
-      "context": "zh-CN value equals key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Translation Values (pages\\SkillInfoPage.json)",
-      "selector": "pages\\SkillInfoPage.json",
-      "text": "Slug",
-      "context": "zh-CN value equals key",
+      "page": "Chat__SessionDetail",
+      "selector": "span.shrink-0",
+      "text": "Explore",
       "severity": "warning"
     },
     {
       "type": "hardcoded",
-      "page": "HTML Attributes",
-      "selector": "[aria-label]",
-      "text": "Notifications alt+T",
+      "page": "Chat__SessionDetail",
+      "selector": "h1.text-sm",
+      "text": "New chat",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
-      "page": "Chat",
-      "selector": "div.text-xs",
-      "text": "Anthropic",
+      "page": "Chat__SessionDetail",
+      "selector": "span",
+      "text": "Explore",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
-      "page": "Chat",
-      "selector": "span.font-medium",
-      "text": "Claude Pro/Max",
+      "page": "Chat__SessionDetail",
+      "selector": "span.whitespace-nowrap",
+      "text": "Todo",
+      "severity": "warning"
+    },
+    {
+      "type": "missing-key",
+      "page": "Chat__SessionDetail",
+      "selector": "#radix-\\:r2b\\:",
+      "text": "gpt-5.2-codex",
+      "severity": "error"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Chat__SessionDetail",
+      "selector": "div[aria-label=\"Sessions\"][aria-label]",
+      "text": "Sessions",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
-      "page": "Chat",
-      "selector": "span.font-medium",
-      "text": "Anthropic API Key",
+      "page": "Chat__SessionDetail",
+      "selector": "div[aria-label=\"Change todo state\"][aria-label]",
+      "text": "Change todo state",
       "severity": "warning"
     },
     {
-      "type": "incomplete-translation",
-      "page": "Sources",
-      "selector": "div.text-xs",
-      "text": "Anthropic",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Sources",
-      "selector": "span.font-medium",
-      "text": "Claude Pro/Max",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Sources",
-      "selector": "span.font-medium",
-      "text": "Anthropic API Key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Skills",
-      "selector": "div.text-xs",
-      "text": "Anthropic",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Skills",
-      "selector": "span.font-medium",
-      "text": "Claude Pro/Max",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
-      "page": "Skills",
-      "selector": "span.font-medium",
-      "text": "Anthropic API Key",
-      "severity": "warning"
-    },
-    {
-      "type": "incomplete-translation",
+      "type": "hardcoded",
       "page": "Settings/app",
-      "selector": "div.text-xs",
-      "text": "Anthropic",
+      "selector": "span.text-xs",
+      "text": "Notifications and updates",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/app",
+      "selector": "span.text-xs",
+      "text": "Model, thinking, connections",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/app",
       "selector": "span.font-medium",
-      "text": "Claude Pro/Max",
+      "text": "Appearance",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/app",
+      "selector": "span.text-xs",
+      "text": "Theme, font, tool icons",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/app",
       "selector": "span.font-medium",
-      "text": "Anthropic API Key",
+      "text": "Input",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/app",
+      "selector": "span.text-xs",
+      "text": "Send key, spell check",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/app",
+      "selector": "span.font-medium",
+      "text": "Workspace",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/app",
+      "selector": "span.text-xs",
+      "text": "Name, icon, working directory",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/app",
+      "selector": "span.font-medium",
+      "text": "Permissions",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/app",
+      "selector": "span.text-xs",
+      "text": "Explore mode rules",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/app",
+      "selector": "span.font-medium",
+      "text": "Labels",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/app",
+      "selector": "span.text-xs",
+      "text": "Manage session labels",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/app",
+      "selector": "span.font-medium",
+      "text": "Shortcuts",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/app",
+      "selector": "span.text-xs",
+      "text": "Keyboard shortcuts",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/app",
+      "selector": "span.font-medium",
+      "text": "Preferences",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/app",
+      "selector": "span.text-xs",
+      "text": "User preferences",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/ai",
+      "selector": "span.text-xs",
+      "text": "Notifications and updates",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/ai",
+      "selector": "span.text-xs",
+      "text": "Model, thinking, connections",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/ai",
-      "selector": "div.text-xs",
-      "text": "Anthropic",
+      "selector": "span.font-medium",
+      "text": "Appearance",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/ai",
+      "selector": "span.text-xs",
+      "text": "Theme, font, tool icons",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/ai",
       "selector": "span.font-medium",
-      "text": "Claude Pro/Max",
+      "text": "Input",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/ai",
+      "selector": "span.text-xs",
+      "text": "Send key, spell check",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/ai",
       "selector": "span.font-medium",
-      "text": "Anthropic API Key",
+      "text": "Workspace",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/ai",
+      "selector": "span.text-xs",
+      "text": "Name, icon, working directory",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/ai",
+      "selector": "span.font-medium",
+      "text": "Permissions",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/ai",
+      "selector": "span.text-xs",
+      "text": "Explore mode rules",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/ai",
+      "selector": "span.font-medium",
+      "text": "Labels",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/ai",
+      "selector": "span.text-xs",
+      "text": "Manage session labels",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/ai",
+      "selector": "span.font-medium",
+      "text": "Shortcuts",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/ai",
+      "selector": "span.text-xs",
+      "text": "Keyboard shortcuts",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/ai",
+      "selector": "span.font-medium",
+      "text": "Preferences",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/ai",
+      "selector": "span.text-xs",
+      "text": "User preferences",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/ai",
+      "selector": "h4.text-sm",
+      "text": "Credential Issue Detected",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/ai",
+      "selector": "span.truncate",
+      "text": "Ollama",
+      "severity": "warning"
+    },
+    {
+      "type": "missing-key",
+      "page": "Settings/ai",
+      "selector": "span.truncate",
+      "text": "gpt-5.2-codex",
+      "severity": "error"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/ai",
+      "selector": "span.truncate",
+      "text": "Thinking",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/ai",
+      "selector": "span",
+      "text": "Ollama",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "span.text-xs",
+      "text": "Notifications and updates",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "span.text-xs",
+      "text": "Model, thinking, connections",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/appearance",
-      "selector": "div.text-xs",
-      "text": "Anthropic",
+      "selector": "span.font-medium",
+      "text": "Appearance",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "span.text-xs",
+      "text": "Theme, font, tool icons",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/appearance",
       "selector": "span.font-medium",
-      "text": "Claude Pro/Max",
+      "text": "Input",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "span.text-xs",
+      "text": "Send key, spell check",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/appearance",
       "selector": "span.font-medium",
-      "text": "Anthropic API Key",
+      "text": "Workspace",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "span.text-xs",
+      "text": "Name, icon, working directory",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/appearance",
+      "selector": "span.font-medium",
+      "text": "Permissions",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "span.text-xs",
+      "text": "Explore mode rules",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/appearance",
+      "selector": "span.font-medium",
+      "text": "Labels",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "span.text-xs",
+      "text": "Manage session labels",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/appearance",
+      "selector": "span.font-medium",
+      "text": "Shortcuts",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "span.text-xs",
+      "text": "Keyboard shortcuts",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/appearance",
+      "selector": "span.font-medium",
+      "text": "Preferences",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "span.text-xs",
+      "text": "User preferences",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Yarn",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "PyPI",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Rust",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Homebrew",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Python",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Deno",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Ruby",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Swift",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Docker",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Kubernetes",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Terraform",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Google Cloud",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Azure",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Vercel",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Netlify",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Cloudflare",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Heroku",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Stripe",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Firebase",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Supabase",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Sentry",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "GNU Make",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "CMake",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Turborepo",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Jest",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Vitest",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "ESLint",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Prettier",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Webpack",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Vite",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "PostgreSQL",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "MySQL",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Redis",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "SQLite",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "MongoDB",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "Xcode",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "div.p-1.5",
+      "text": "CocoaPods",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Yarn",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "PyPI",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Rust",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Homebrew",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Python",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Deno",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Ruby",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Swift",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Docker",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Kubernetes",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Terraform",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Google Cloud",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Azure",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Vercel",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Netlify",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Cloudflare",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Heroku",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Stripe",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Firebase",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Supabase",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Sentry",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "GNU Make",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "CMake",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Turborepo",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Jest",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Vitest",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "ESLint",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Prettier",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Webpack",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Vite",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "PostgreSQL",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "MySQL",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Redis",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "SQLite",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "MongoDB",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "Xcode",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/appearance",
+      "selector": "img.w-5[alt]",
+      "text": "CocoaPods",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/input",
+      "selector": "span.text-xs",
+      "text": "Notifications and updates",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/input",
+      "selector": "span.text-xs",
+      "text": "Model, thinking, connections",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/input",
-      "selector": "div.text-xs",
-      "text": "Anthropic",
+      "selector": "span.font-medium",
+      "text": "Appearance",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/input",
+      "selector": "span.text-xs",
+      "text": "Theme, font, tool icons",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/input",
       "selector": "span.font-medium",
-      "text": "Claude Pro/Max",
+      "text": "Input",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/input",
+      "selector": "span.text-xs",
+      "text": "Send key, spell check",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/input",
       "selector": "span.font-medium",
-      "text": "Anthropic API Key",
+      "text": "Workspace",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/input",
+      "selector": "span.text-xs",
+      "text": "Name, icon, working directory",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/input",
+      "selector": "span.font-medium",
+      "text": "Permissions",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/input",
+      "selector": "span.text-xs",
+      "text": "Explore mode rules",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/input",
+      "selector": "span.font-medium",
+      "text": "Labels",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/input",
+      "selector": "span.text-xs",
+      "text": "Manage session labels",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/input",
+      "selector": "span.font-medium",
+      "text": "Shortcuts",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/input",
+      "selector": "span.text-xs",
+      "text": "Keyboard shortcuts",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/input",
+      "selector": "span.font-medium",
+      "text": "Preferences",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/input",
+      "selector": "span.text-xs",
+      "text": "User preferences",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/workspace",
+      "selector": "span.text-xs",
+      "text": "Notifications and updates",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/workspace",
+      "selector": "span.text-xs",
+      "text": "Model, thinking, connections",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/workspace",
-      "selector": "div.text-xs",
-      "text": "Anthropic",
+      "selector": "span.font-medium",
+      "text": "Appearance",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/workspace",
+      "selector": "span.text-xs",
+      "text": "Theme, font, tool icons",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/workspace",
       "selector": "span.font-medium",
-      "text": "Claude Pro/Max",
+      "text": "Input",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/workspace",
+      "selector": "span.text-xs",
+      "text": "Send key, spell check",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/workspace",
       "selector": "span.font-medium",
-      "text": "Anthropic API Key",
+      "text": "Workspace",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/workspace",
+      "selector": "span.text-xs",
+      "text": "Name, icon, working directory",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/workspace",
+      "selector": "span.font-medium",
+      "text": "Permissions",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/workspace",
+      "selector": "span.text-xs",
+      "text": "Explore mode rules",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/workspace",
+      "selector": "span.font-medium",
+      "text": "Labels",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/workspace",
+      "selector": "span.text-xs",
+      "text": "Manage session labels",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/workspace",
+      "selector": "span.font-medium",
+      "text": "Shortcuts",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/workspace",
+      "selector": "span.text-xs",
+      "text": "Keyboard shortcuts",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/workspace",
+      "selector": "span.font-medium",
+      "text": "Preferences",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/workspace",
+      "selector": "span.text-xs",
+      "text": "User preferences",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/workspace",
+      "selector": "span.truncate",
+      "text": "Explore",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/workspace",
+      "selector": "div.text-sm",
+      "text": "Explore",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/workspace",
+      "selector": "div.text-sm",
+      "text": "Read-only exploration. Blocks writes, never prompts.",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/workspace",
+      "selector": "div.text-sm",
+      "text": "Ask to Edit",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/workspace",
+      "selector": "div.text-sm",
+      "text": "Prompts before making edits.",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/workspace",
+      "selector": "div.text-sm",
+      "text": "Execute",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/workspace",
+      "selector": "div.text-sm",
+      "text": "Automatic execution, no prompts.",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.text-xs",
+      "text": "Notifications and updates",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.text-xs",
+      "text": "Model, thinking, connections",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/permissions",
-      "selector": "div.text-xs",
-      "text": "Anthropic",
+      "selector": "span.font-medium",
+      "text": "Appearance",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.text-xs",
+      "text": "Theme, font, tool icons",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/permissions",
       "selector": "span.font-medium",
-      "text": "Claude Pro/Max",
+      "text": "Input",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.text-xs",
+      "text": "Send key, spell check",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/permissions",
       "selector": "span.font-medium",
-      "text": "Anthropic API Key",
+      "text": "Workspace",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.text-xs",
+      "text": "Name, icon, working directory",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/permissions",
+      "selector": "span.font-medium",
+      "text": "Permissions",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.text-xs",
+      "text": "Explore mode rules",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/permissions",
+      "selector": "span.font-medium",
+      "text": "Labels",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.text-xs",
+      "text": "Manage session labels",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/permissions",
+      "selector": "span.font-medium",
+      "text": "Shortcuts",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.text-xs",
+      "text": "Keyboard shortcuts",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/permissions",
+      "selector": "span.font-medium",
+      "text": "Preferences",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.text-xs",
+      "text": "User preferences",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "List directory contents",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "List all including hidden (ls -la alias)",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Display directory tree structure",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Determine file type",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Display file status and metadata",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Estimate file/directory disk usage",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Report filesystem disk space usage",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Count lines, words, bytes in files",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Output first part of files",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Output last part of files",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Concatenate and display file contents",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "View file contents with paging",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Cat clone with syntax highlighting",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Search for files in directory hierarchy",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Find files by name using database",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Locate binary, source, manual for command",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Display information about command type",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Search file contents with patterns",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Fast and user-friendly find alternative",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Fuzzy finder for files and commands",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "GitHub CLI read operations: view PRs, issues, releases",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "GitHub API with explicit GET method",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "GitHub API without method (defaults to GET)",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Check GitHub authentication status",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Read GitHub CLI configuration",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "npm read operations: list packages, view info, check outdated",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Yarn read operations: list packages, check outdated",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "pnpm read operations: list packages, check outdated",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Bun package manager list",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "pip read operations: list packages, show info",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "pip3 read operations: list packages, show info",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Cargo read operations: dependency tree, metadata",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Go read operations: list modules, dependency graph",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Composer read operations: show packages, licenses",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "RubyGems read operations: list gems, show info",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Bundler read operations: list gems, check outdated",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Change directory (affects shell session only)",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Print current working directory",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Print current username",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Print user and group IDs",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Print group memberships",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Print system information",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Print system hostname",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Print current date and time",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Print system uptime and load",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Print all environment variables (bare command only, not env <cmd>)",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Print environment variables",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Echo environment variable values",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "List running processes",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Process viewer in batch/list mode only",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Interactive process viewer",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Display memory usage",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Virtual memory statistics",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Display CPU architecture information",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Display memory information",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "List block devices",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "List USB devices",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "List PCI devices",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Docker read operations: list containers, images, logs, inspect",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Docker Compose read operations: list services, view logs",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Kubernetes read operations: get resources, describe, view logs",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "sed in print-only mode (no editing)",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Sort lines of text files",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Report or filter repeated lines",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Remove sections from lines",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Translate or delete characters",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Columnate lists",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "JSON processor",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "YAML processor",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "XML processor (via yq)",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "XML linter and formatter",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "JSON pretty printer",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Python JSON formatter",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Send ICMP echo requests",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Trace packet route to host",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Trace path to host",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Network diagnostic tool",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "DNS lookup utility",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Query DNS servers",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Network statistics",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Socket statistics",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "IP address/link/route information",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Network interface configuration (read)",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Node.js version",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "npm version",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Yarn version",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "pnpm version",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Bun version",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Python version",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Ruby version",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Go version",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Rust compiler version",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Cargo version",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Java version",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PHP version",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Perl version",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Display manual pages",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Display command help",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Display command help (short flag)",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: List directory contents (dir/ls equivalent)",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Read file contents (cat equivalent)",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Get file/directory item properties",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Get item properties",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Print current directory (pwd equivalent)",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: List running processes",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: List services",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: List available commands",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Display command help",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: List loaded modules",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: List variables",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: List command aliases",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Get host information",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Get current date/time",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Get culture settings",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Get system information",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: List drives",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Get command history",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Read event logs",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Read Windows events",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Get access control list",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: List network adapters",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Get IP addresses",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Get routing table",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Get DNS server addresses",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: List disks",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: List volumes",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: List disk partitions",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: List installed packages",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: List installed PowerShell modules",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Test if path exists",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Ping equivalent",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Test network connectivity",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Resolve path to full path",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Split path into components",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Join path components",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Measure/count objects",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Measure execution time",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Compare two objects",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Select object properties",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Sort objects",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Group objects by property",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Filter objects",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Iterate over objects",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Format output as list",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Format output as table",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Format output as wide table",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Convert to JSON",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Parse JSON",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Convert to CSV",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Parse CSV",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Convert to XML",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Search strings in files (grep equivalent)",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Search for modules in gallery",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Search for packages",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Version information variable",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Environment variable access",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Current directory variable",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Home directory variable",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Host information variable",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell/CMD: List directory (Get-ChildItem alias)",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Get-ChildItem alias",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Get-Content alias",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Get-Process alias",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Get-Service alias",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "PowerShell: Get-Command alias",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Search operations across MCP sources",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Generic list operations",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Generic get/read operations",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/permissions",
+      "selector": "span.truncate",
+      "text": "Generic read operations",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/labels",
+      "selector": "span.text-xs",
+      "text": "Notifications and updates",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/labels",
+      "selector": "span.text-xs",
+      "text": "Model, thinking, connections",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/labels",
-      "selector": "div.text-xs",
-      "text": "Anthropic",
+      "selector": "span.font-medium",
+      "text": "Appearance",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/labels",
+      "selector": "span.text-xs",
+      "text": "Theme, font, tool icons",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/labels",
       "selector": "span.font-medium",
-      "text": "Claude Pro/Max",
+      "text": "Input",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/labels",
+      "selector": "span.text-xs",
+      "text": "Send key, spell check",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/labels",
       "selector": "span.font-medium",
-      "text": "Anthropic API Key",
+      "text": "Workspace",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/labels",
+      "selector": "span.text-xs",
+      "text": "Name, icon, working directory",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/labels",
+      "selector": "span.font-medium",
+      "text": "Permissions",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/labels",
+      "selector": "span.text-xs",
+      "text": "Explore mode rules",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/labels",
+      "selector": "span.font-medium",
+      "text": "Labels",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/labels",
+      "selector": "span.text-xs",
+      "text": "Manage session labels",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/labels",
+      "selector": "span.font-medium",
+      "text": "Shortcuts",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/labels",
+      "selector": "span.text-xs",
+      "text": "Keyboard shortcuts",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/labels",
+      "selector": "span.font-medium",
+      "text": "Preferences",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/labels",
+      "selector": "span.text-xs",
+      "text": "User preferences",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/labels",
+      "selector": "span.text-sm",
+      "text": "Development",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/labels",
+      "selector": "span.text-sm",
+      "text": "Code",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/labels",
+      "selector": "span.text-sm",
+      "text": "Automation",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/labels",
+      "selector": "span.text-sm",
+      "text": "Content",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/labels",
+      "selector": "span.text-sm",
+      "text": "Writing",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/labels",
+      "selector": "span.text-sm",
+      "text": "Research",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/labels",
+      "selector": "span.text-sm",
+      "text": "Design",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/labels",
+      "selector": "span.text-sm",
+      "text": "Priority",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/labels",
+      "selector": "span.text-sm",
+      "text": "Project",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/shortcuts",
+      "selector": "span.text-xs",
+      "text": "Notifications and updates",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/shortcuts",
+      "selector": "span.text-xs",
+      "text": "Model, thinking, connections",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/shortcuts",
-      "selector": "div.text-xs",
-      "text": "Anthropic",
+      "selector": "span.font-medium",
+      "text": "Appearance",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/shortcuts",
+      "selector": "span.text-xs",
+      "text": "Theme, font, tool icons",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/shortcuts",
       "selector": "span.font-medium",
-      "text": "Claude Pro/Max",
+      "text": "Input",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/shortcuts",
+      "selector": "span.text-xs",
+      "text": "Send key, spell check",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/shortcuts",
       "selector": "span.font-medium",
-      "text": "Anthropic API Key",
+      "text": "Workspace",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/shortcuts",
+      "selector": "span.text-xs",
+      "text": "Name, icon, working directory",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
+      "page": "Settings/shortcuts",
+      "selector": "span.font-medium",
+      "text": "Permissions",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/shortcuts",
+      "selector": "span.text-xs",
+      "text": "Explore mode rules",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/shortcuts",
+      "selector": "span.font-medium",
+      "text": "Labels",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/shortcuts",
+      "selector": "span.text-xs",
+      "text": "Manage session labels",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/shortcuts",
+      "selector": "span.font-medium",
+      "text": "Shortcuts",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/shortcuts",
+      "selector": "span.text-xs",
+      "text": "Keyboard shortcuts",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/shortcuts",
+      "selector": "span.font-medium",
+      "text": "Preferences",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/shortcuts",
+      "selector": "span.text-xs",
+      "text": "User preferences",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/shortcuts",
+      "selector": "h3.text-base",
+      "text": "General",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/shortcuts",
+      "selector": "kbd.inline-flex",
+      "text": "Ctrl",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/shortcuts",
+      "selector": "kbd.inline-flex",
+      "text": "Shift",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/shortcuts",
+      "selector": "h3.text-base",
+      "text": "Navigation",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/shortcuts",
+      "selector": "h3.text-base",
+      "text": "View",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/shortcuts",
+      "selector": "h3.text-base",
+      "text": "Session List",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/shortcuts",
+      "selector": "h3.text-base",
+      "text": "Chat",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/shortcuts",
+      "selector": "kbd.inline-flex",
+      "text": "Home",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/shortcuts",
+      "selector": "kbd.inline-flex",
+      "text": "Enter",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
       "page": "Settings/preferences",
-      "selector": "div.text-xs",
-      "text": "Anthropic",
+      "selector": "span.text-xs",
+      "text": "Notifications and updates",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/preferences",
+      "selector": "span.text-xs",
+      "text": "Model, thinking, connections",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/preferences",
       "selector": "span.font-medium",
-      "text": "Claude Pro/Max",
+      "text": "Appearance",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/preferences",
+      "selector": "span.text-xs",
+      "text": "Theme, font, tool icons",
       "severity": "warning"
     },
     {
       "type": "incomplete-translation",
       "page": "Settings/preferences",
       "selector": "span.font-medium",
-      "text": "Anthropic API Key",
+      "text": "Input",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/preferences",
+      "selector": "span.text-xs",
+      "text": "Send key, spell check",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/preferences",
+      "selector": "span.font-medium",
+      "text": "Workspace",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/preferences",
+      "selector": "span.text-xs",
+      "text": "Name, icon, working directory",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/preferences",
+      "selector": "span.font-medium",
+      "text": "Permissions",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/preferences",
+      "selector": "span.text-xs",
+      "text": "Explore mode rules",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/preferences",
+      "selector": "span.font-medium",
+      "text": "Labels",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/preferences",
+      "selector": "span.text-xs",
+      "text": "Manage session labels",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/preferences",
+      "selector": "span.font-medium",
+      "text": "Shortcuts",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/preferences",
+      "selector": "span.text-xs",
+      "text": "Keyboard shortcuts",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/preferences",
+      "selector": "span.font-medium",
+      "text": "Preferences",
+      "severity": "warning"
+    },
+    {
+      "type": "hardcoded",
+      "page": "Settings/preferences",
+      "selector": "span.text-xs",
+      "text": "User preferences",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/preferences",
+      "selector": "p.text-sm",
+      "text": "Used for relative dates like 'tomorrow' or 'next week'.",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/preferences",
+      "selector": "p.text-sm",
+      "text": "Preferred language for Craft Agent's responses.",
+      "severity": "warning"
+    },
+    {
+      "type": "incomplete-translation",
+      "page": "Settings/preferences",
+      "selector": "#\\:rh7\\:[placeholder]",
+      "text": "Any additional context you'd like Craft Agent to know...",
       "severity": "warning"
     }
   ]

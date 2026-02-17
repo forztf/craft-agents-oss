@@ -9,7 +9,7 @@
   "Font": "字体",
   "Icon": "图标",
   "Icons shown next to CLI commands in chat activity. Stored in ~/.craft-agent/tool-icons/.": "在对话活动中显示在 CLI 命令旁边的图标。存储在 ~/.craft-agent/tool-icons/ 中。",
-  "Inter": "Inter",
+  "Inter": "Inter（字体）",
   "Light": "浅色",
   "Mode": "模式",
   "No tool icon mappings found": "未找到工具图标映射",

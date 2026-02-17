@@ -73,48 +73,6 @@ function ExpandableNameCell({ row }: { row: Row<LabelConfig> }) {
   )
 }
 
-// Column definitions for the labels tree table
-const columns: ColumnDef<LabelConfig>[] = [
-  {
-    id: 'color',
-    header: () => <span className="p-1.5 pl-2.5">{t('Color')}</span>,
-    cell: ({ row }) => (
-      <div className="p-1.5 pl-2.5">
-        <LabelIcon
-          label={row.original}
-          size="sm"
-          hasChildren={!!row.original.children?.length}
-        />
-      </div>
-    ),
-    minSize: 60,
-    maxSize: 60,
-  },
-  {
-    accessorKey: 'name',
-    header: ({ column }) => <SortableHeader column={column} title={t('Name')} />,
-    cell: ({ row }) => <ExpandableNameCell row={row} />,
-    meta: { fillWidth: true },
-  },
-  {
-    id: 'valueType',
-    accessorKey: 'valueType',
-    header: ({ column }) => <SortableHeader column={column} title={t('Type')} />,
-    cell: ({ row }) => (
-      <div className="p-1.5 pl-2.5">
-        {row.original.valueType ? (
-          <Info_Badge color="muted" className="capitalize whitespace-nowrap">
-            {row.original.valueType}
-          </Info_Badge>
-        ) : (
-          <span className="text-muted-foreground/50 text-sm">—</span>
-        )}
-      </div>
-    ),
-    minSize: 120,
-  },
-]
-
 /**
  * Extract children from a LabelConfig for tree expansion.
  * Returns undefined if no children (tells TanStack this is a leaf node).
@@ -134,6 +92,46 @@ export function LabelsDataTable({
   const { t } = useTranslation('components/info/LabelsDataTable')
   const [isFullscreen, setIsFullscreen] = useState(false)
   const { isDark } = useTheme()
+  const columns: ColumnDef<LabelConfig>[] = [
+    {
+      id: 'color',
+      header: () => <span className="p-1.5 pl-2.5">{t('Color')}</span>,
+      cell: ({ row }) => (
+        <div className="p-1.5 pl-2.5">
+          <LabelIcon
+            label={row.original}
+            size="sm"
+            hasChildren={!!row.original.children?.length}
+          />
+        </div>
+      ),
+      minSize: 60,
+      maxSize: 60,
+    },
+    {
+      accessorKey: 'name',
+      header: ({ column }) => <SortableHeader column={column} title={t('Name')} />,
+      cell: ({ row }) => <ExpandableNameCell row={row} />,
+      meta: { fillWidth: true },
+    },
+    {
+      id: 'valueType',
+      accessorKey: 'valueType',
+      header: ({ column }) => <SortableHeader column={column} title={t('Type')} />,
+      cell: ({ row }) => (
+        <div className="p-1.5 pl-2.5">
+          {row.original.valueType ? (
+            <Info_Badge color="muted" className="capitalize whitespace-nowrap">
+              {row.original.valueType}
+            </Info_Badge>
+          ) : (
+            <span className="text-muted-foreground/50 text-sm">—</span>
+          )}
+        </div>
+      ),
+      minSize: 120,
+    },
+  ]
 
   // Fullscreen button (shown on hover via group class)
   const fullscreenButton = fullscreen ? (

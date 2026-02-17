@@ -1880,35 +1880,49 @@ function AppShellContent({
   const listTitle = React.useMemo(() => {
     // Sources navigator
     if (isSourcesNavigation(navState)) {
-      return 'Sources'
+      return t('Sources')
     }
 
     // Skills navigator
     if (isSkillsNavigation(navState)) {
-      return 'All Skills'
+      return t('All Skills')
     }
 
     // Settings navigator
-    if (isSettingsNavigation(navState)) return 'Settings'
+    if (isSettingsNavigation(navState)) return t('Settings')
 
     // Sessions navigator - use sessionFilter
-    if (!sessionFilter) return 'All Sessions'
+    if (!sessionFilter) return t('All Sessions')
 
     switch (sessionFilter.kind) {
       case 'flagged':
-        return 'Flagged'
+        return t('Flagged')
       case 'state': {
         const state = effectiveTodoStates.find(s => s.id === sessionFilter.stateId)
-        return state?.label || 'All Sessions'
+        return state
+          ? state.id === 'backlog'
+            ? t('Backlog')
+            : state.id === 'todo'
+              ? t('Todo')
+              : state.id === 'needs-review'
+                ? t('Needs Review')
+                : state.id === 'done'
+                  ? t('Done')
+                  : state.id === 'cancelled'
+                    ? t('Cancelled')
+                    : state.label
+          : t('All Sessions')
       }
       case 'label':
-        return sessionFilter.labelId === '__all__' ? 'Labels' : getLabelDisplayName(labelConfigs, sessionFilter.labelId)
+        return sessionFilter.labelId === '__all__' ? t('Labels') : getLabelDisplayName(labelConfigs, sessionFilter.labelId)
       case 'view':
-        return sessionFilter.viewId === '__all__' ? 'Views' : viewConfigs.find(v => v.id === sessionFilter.viewId)?.name || 'Views'
+        return sessionFilter.viewId === '__all__'
+          ? t('Views')
+          : viewConfigs.find(v => v.id === sessionFilter.viewId)?.name || t('Views')
       default:
-        return 'All Sessions'
+        return t('All Sessions')
     }
-  }, [navState, sessionFilter, effectiveTodoStates, labelConfigs, viewConfigs])
+  }, [navState, sessionFilter, effectiveTodoStates, labelConfigs, viewConfigs, t])
 
   // Build recursive sidebar items from label tree.
   // Each node renders with condensed height (compact: true) since many labels expected.
@@ -2057,7 +2071,7 @@ function AppShellContent({
                               data-tutorial="new-chat-button"
                             >
                               <SquarePenRounded className="h-3.5 w-3.5 shrink-0" />
-                              New Session
+                              {t('New Session')}
                             </Button>
                           </ContextMenuTrigger>
                           <StyledContextMenuContent>
@@ -2114,7 +2128,17 @@ function AppShellContent({
                         sortable: { onReorder: handleStatusReorder },
                         items: effectiveTodoStates.map(state => ({
                           id: `nav:state:${state.id}`,
-                          title: state.label,
+                          title: state.id === 'backlog'
+                            ? t('Backlog')
+                            : state.id === 'todo'
+                              ? t('Todo')
+                              : state.id === 'needs-review'
+                                ? t('Needs Review')
+                                : state.id === 'done'
+                                  ? t('Done')
+                                  : state.id === 'cancelled'
+                                    ? t('Cancelled')
+                                    : state.label,
                           label: String(todoStateCounts[state.id] || 0),
                           icon: state.icon,
                           iconColor: state.resolvedColor,
@@ -2401,7 +2425,7 @@ function AppShellContent({
                                 }}
                                 className="text-xs text-muted-foreground hover:text-foreground"
                               >
-                                Clear
+                                {t('Clear')}
                               </button>
                             )}
                           </div>

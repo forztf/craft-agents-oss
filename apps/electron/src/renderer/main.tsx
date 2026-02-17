@@ -6,7 +6,7 @@ import { captureConsoleIntegration } from '@sentry/react'
 import { Provider as JotaiProvider } from 'jotai'
 import App from './App'
 import { ThemeProvider } from './context/ThemeContext'
-import { I18nProvider } from './contexts/I18nContext'
+import { I18nProvider, useTranslation } from './contexts/I18nContext'
 import { Toaster } from '@/components/ui/sonner'
 import './index.css'
 
@@ -71,15 +71,16 @@ sentryInit(
  * Sentry.ErrorBoundary captures the error and sends it to Sentry automatically.
  */
 function CrashFallback() {
+  const { t } = useTranslation('renderer/main')
   return (
     <div className="flex flex-col items-center justify-center h-screen font-sans text-foreground/50 gap-3">
-      <p className="text-base font-medium">Something went wrong</p>
-      <p className="text-[13px]">Please restart the app. The error has been reported.</p>
+      <p className="text-base font-medium">{t('Something went wrong')}</p>
+      <p className="text-[13px]">{t('Please restart the app. The error has been reported.')}</p>
       <button
         onClick={() => window.location.reload()}
         className="mt-2 px-4 py-1.5 rounded-md bg-background shadow-minimal text-[13px] text-foreground/70 cursor-pointer"
       >
-        Reload
+        {t('Reload')}
       </button>
     </div>
   )
@@ -102,7 +103,9 @@ function Root() {
   return (
     <ThemeProvider activeWorkspaceId={workspaceId}>
       <I18nProvider>
-        <App />
+        <Sentry.ErrorBoundary fallback={<CrashFallback />}>
+          <App />
+        </Sentry.ErrorBoundary>
         <Toaster />
       </I18nProvider>
     </ThemeProvider>
@@ -111,10 +114,8 @@ function Root() {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Sentry.ErrorBoundary fallback={<CrashFallback />}>
-      <JotaiProvider>
-        <Root />
-      </JotaiProvider>
-    </Sentry.ErrorBoundary>
+    <JotaiProvider>
+      <Root />
+    </JotaiProvider>
   </React.StrictMode>
 )

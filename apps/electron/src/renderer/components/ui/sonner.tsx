@@ -1,19 +1,23 @@
 import { Toaster as Sonner, type ToasterProps } from "sonner"
 import { useTheme } from "@/context/ThemeContext"
+import { useTranslation } from "@/contexts/I18nContext"
 
 // Empty fragment to hide all toast icons
 const NoIcon = () => <></>
 
 const Toaster = ({ ...props }: ToasterProps) => {
   const { resolvedMode } = useTheme()
+  const { t } = useTranslation('components/ui/sonner')
 
   return (
     <Sonner
       theme={resolvedMode as ToasterProps["theme"]}
       position="top-right"
+      hotkey={[]}
       closeButton
       swipeDirections={["right"]}
       className="toaster group"
+      containerAriaLabel={t('Notifications')}
       icons={{
         success: <NoIcon />,
         info: <NoIcon />,

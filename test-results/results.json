@@ -37,7 +37,8 @@
       [
         "html",
         {
-          "outputFolder": "test-results/html"
+          "outputFolder": "test-results/html",
+          "open": "never"
         }
       ],
       [
@@ -79,283 +80,9 @@
         {
           "title": "I18n 完整性测试套件",
           "file": "i18n/i18n-e2e.spec.ts",
-          "line": 430,
+          "line": 543,
           "column": 6,
           "specs": [
-            {
-              "title": "Chat 页面硬编码文本检测",
-              "ok": false,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "electron",
-                  "projectName": "electron",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 0,
-                      "error": {
-                        "message": "Error: ENOENT: no such file or directory, scandir 'C:\\code\\AI\\craft-agents-i18n\\tests\\i18n\\locales\\en'",
-                        "stack": "Error: ENOENT: no such file or directory, scandir 'C:\\code\\AI\\craft-agents-i18n\\tests\\i18n\\locales\\en'\n    at walkDir (C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts:136:21)\n    at loadTranslationKeys (C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts:157:3)\n    at getAllTranslationKeys (C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts:166:22)\n    at C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts:371:24",
-                        "location": {
-                          "file": "C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts",
-                          "column": 21,
-                          "line": 136
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 134 |\u001b[39m\n \u001b[90m 135 |\u001b[39m   \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m walkDir(dir\u001b[33m:\u001b[39m string\u001b[33m,\u001b[39m basePath\u001b[33m:\u001b[39m string \u001b[33m=\u001b[39m \u001b[32m''\u001b[39m) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 136 |\u001b[39m     \u001b[36mconst\u001b[39m entries \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m fs\u001b[33m.\u001b[39mreaddir(dir\u001b[33m,\u001b[39m { withFileTypes\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 137 |\u001b[39m\n \u001b[90m 138 |\u001b[39m     \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m entry \u001b[36mof\u001b[39m entries) {\n \u001b[90m 139 |\u001b[39m       \u001b[36mconst\u001b[39m fullPath \u001b[33m=\u001b[39m path\u001b[33m.\u001b[39mjoin(dir\u001b[33m,\u001b[39m entry\u001b[33m.\u001b[39mname)\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts",
-                            "column": 21,
-                            "line": 136
-                          },
-                          "message": "Error: ENOENT: no such file or directory, scandir 'C:\\code\\AI\\craft-agents-i18n\\tests\\i18n\\locales\\en'\n\n\u001b[0m \u001b[90m 134 |\u001b[39m\n \u001b[90m 135 |\u001b[39m   \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m walkDir(dir\u001b[33m:\u001b[39m string\u001b[33m,\u001b[39m basePath\u001b[33m:\u001b[39m string \u001b[33m=\u001b[39m \u001b[32m''\u001b[39m) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 136 |\u001b[39m     \u001b[36mconst\u001b[39m entries \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m fs\u001b[33m.\u001b[39mreaddir(dir\u001b[33m,\u001b[39m { withFileTypes\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\n \u001b[90m     |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 137 |\u001b[39m\n \u001b[90m 138 |\u001b[39m     \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m entry \u001b[36mof\u001b[39m entries) {\n \u001b[90m 139 |\u001b[39m       \u001b[36mconst\u001b[39m fullPath \u001b[33m=\u001b[39m path\u001b[33m.\u001b[39mjoin(dir\u001b[33m,\u001b[39m entry\u001b[33m.\u001b[39mname)\u001b[0m\n\u001b[2m    at walkDir (C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts:136:21)\u001b[22m\n\u001b[2m    at loadTranslationKeys (C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts:157:3)\u001b[22m\n\u001b[2m    at getAllTranslationKeys (C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts:166:22)\u001b[22m\n\u001b[2m    at C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts:371:24\u001b[22m"
-                        },
-                        {
-                          "location": {
-                            "file": "C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts",
-                            "column": 12,
-                            "line": 426
-                          },
-                          "message": "TypeError: Cannot read properties of undefined (reading 'printReport')\n\n\u001b[0m \u001b[90m 424 |\u001b[39m\n \u001b[90m 425 |\u001b[39m   \u001b[90m// 生成报告\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 426 |\u001b[39m   reporter\u001b[33m.\u001b[39mprintReport()\n \u001b[90m     |\u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 427 |\u001b[39m   \u001b[36mawait\u001b[39m reporter\u001b[33m.\u001b[39msaveReport()\n \u001b[90m 428 |\u001b[39m })\n \u001b[90m 429 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts:426:12\u001b[22m"
-                        }
-                      ],
-                      "stdout": [
-                        {
-                          "text": "🚀 启动 Electron 应用...\n\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-02-16T10:22:16.815Z",
-                      "annotations": [],
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "C:\\code\\AI\\craft-agents-i18n\\tests\\e2e\\i18n\\i18n-e2e.spec.ts",
-                        "column": 21,
-                        "line": 136
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "fcfb652bd3ffd794a76e-cbf65e543f364d6ad982",
-              "file": "i18n/i18n-e2e.spec.ts",
-              "line": 431,
-              "column": 3
-            },
-            {
-              "title": "Settings 页面硬编码文本检测",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "electron",
-                  "projectName": "electron",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-02-16T10:22:16.877Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "fcfb652bd3ffd794a76e-762abd5aedc1dac6ee33",
-              "file": "i18n/i18n-e2e.spec.ts",
-              "line": 491,
-              "column": 3
-            },
-            {
-              "title": "Sidebar 区域检测",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "electron",
-                  "projectName": "electron",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-02-16T10:22:16.878Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "fcfb652bd3ffd794a76e-d27cb9b755b784202a36",
-              "file": "i18n/i18n-e2e.spec.ts",
-              "line": 566,
-              "column": 3
-            },
-            {
-              "title": "按钮文本检测",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "electron",
-                  "projectName": "electron",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-02-16T10:22:16.879Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "fcfb652bd3ffd794a76e-d0462fb00e4fac95ce0f",
-              "file": "i18n/i18n-e2e.spec.ts",
-              "line": 613,
-              "column": 3
-            },
-            {
-              "title": "Placeholder 文本检测",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "electron",
-                  "projectName": "electron",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-02-16T10:22:16.880Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "fcfb652bd3ffd794a76e-bcdd6b0db0cbc365c7d7",
-              "file": "i18n/i18n-e2e.spec.ts",
-              "line": 676,
-              "column": 3
-            },
-            {
-              "title": "语言文件完整性验证",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "electron",
-                  "projectName": "electron",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-02-16T10:22:16.881Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "fcfb652bd3ffd794a76e-d11d736ce0d42135fc41",
-              "file": "i18n/i18n-e2e.spec.ts",
-              "line": 728,
-              "column": 3
-            },
-            {
-              "title": "HTML 属性文本检测",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "electron",
-                  "projectName": "electron",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-02-16T10:22:16.882Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "fcfb652bd3ffd794a76e-1f43e7c282465dc47ee4",
-              "file": "i18n/i18n-e2e.spec.ts",
-              "line": 845,
-              "column": 3
-            },
             {
               "title": "自动化巡检 (Crawler)",
               "ok": true,
@@ -369,109 +96,2762 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 48967,
                       "errors": [],
-                      "stdout": [],
+                      "stdout": [
+                        {
+                          "text": "🚀 启动 Electron 应用...\n\n"
+                        },
+                        {
+                          "text": "✅ 已加载 867 个翻译 keys\n\n"
+                        },
+                        {
+                          "text": "✅ Electron 应用已启动\n\n"
+                        },
+                        {
+                          "text": "\n🧭 自动化巡检应用路由...\n"
+                        },
+                        {
+                          "text": "  → Chat\n"
+                        },
+                        {
+                          "text": "  → Flagged\n"
+                        },
+                        {
+                          "text": "  → Archived\n"
+                        },
+                        {
+                          "text": "  → Sources\n"
+                        },
+                        {
+                          "text": "  → Sources/API\n"
+                        },
+                        {
+                          "text": "  → Sources/MCP\n"
+                        },
+                        {
+                          "text": "  → Sources/Local\n"
+                        },
+                        {
+                          "text": "  → Skills\n"
+                        },
+                        {
+                          "text": "  → Settings/app\n"
+                        },
+                        {
+                          "text": "  → Settings/ai\n"
+                        },
+                        {
+                          "text": "  → Settings/appearance\n"
+                        },
+                        {
+                          "text": "  → Settings/input\n"
+                        },
+                        {
+                          "text": "  → Settings/workspace\n"
+                        },
+                        {
+                          "text": "  → Settings/permissions\n"
+                        },
+                        {
+                          "text": "  → Settings/labels\n"
+                        },
+                        {
+                          "text": "  → Settings/shortcuts\n"
+                        },
+                        {
+                          "text": "  → Settings/preferences\n"
+                        },
+                        {
+                          "text": "  ✓ 路由巡检完成\n"
+                        },
+                        {
+                          "text": "\n🧹 清理资源...\n"
+                        },
+                        {
+                          "text": "\n======================================================================\n"
+                        },
+                        {
+                          "text": "📊 I18n 测试报告\n"
+                        },
+                        {
+                          "text": "======================================================================\n"
+                        },
+                        {
+                          "text": "测试时间: 2026/2/17 09:02:03\n"
+                        },
+                        {
+                          "text": "总耗时: 59s\n"
+                        },
+                        {
+                          "text": "\n----------------------------------------------------------------------\n"
+                        },
+                        {
+                          "text": "发现问题: 428\n"
+                        },
+                        {
+                          "text": "  ❌ 错误: 2\n"
+                        },
+                        {
+                          "text": "  ⚠️  警告: 426\n"
+                        },
+                        {
+                          "text": "  ℹ️  信息: 0\n"
+                        },
+                        {
+                          "text": "======================================================================\n"
+                        },
+                        {
+                          "text": "\n📄 页面: Chat__SessionDetail\n"
+                        },
+                        {
+                          "text": "--  \n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] New chat\n"
+                        },
+                        {
+                          "text": "     选择器: div.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Explore\n"
+                        },
+                        {
+                          "text": "     选择器: span.shrink-0\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] New chat\n"
+                        },
+                        {
+                          "text": "     选择器: h1.text-sm\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Explore\n"
+                        },
+                        {
+                          "text": "     选择器: span\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Todo\n"
+                        },
+                        {
+                          "text": "     选择器: span.whitespace-nowrap\n"
+                        },
+                        {
+                          "text": "  ❌ [missing-key] gpt-5.2-codex\n"
+                        },
+                        {
+                          "text": "     选择器: #radix-\\:r2b\\:\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Sessions\n"
+                        },
+                        {
+                          "text": "     选择器: div[aria-label=\"Sessions\"][aria-label]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Change todo state\n"
+                        },
+                        {
+                          "text": "     选择器: div[aria-label=\"Change todo state\"][aria-label]\n"
+                        },
+                        {
+                          "text": "\n📄 页面: Settings/app\n"
+                        },
+                        {
+                          "text": "--  \n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Notifications and updates\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Model, thinking, connections\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Appearance\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Theme, font, tool icons\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Input\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Send key, spell check\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Workspace\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Name, icon, working directory\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Permissions\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Explore mode rules\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Labels\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Manage session labels\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Shortcuts\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Keyboard shortcuts\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Preferences\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] User preferences\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "\n📄 页面: Settings/ai\n"
+                        },
+                        {
+                          "text": "--  \n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Notifications and updates\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Model, thinking, connections\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Appearance\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Theme, font, tool icons\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Input\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Send key, spell check\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Workspace\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Name, icon, working directory\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Permissions\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Explore mode rules\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Labels\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Manage session labels\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Shortcuts\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Keyboard shortcuts\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Preferences\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] User preferences\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Credential Issue Detected\n"
+                        },
+                        {
+                          "text": "     选择器: h4.text-sm\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Ollama\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ❌ [missing-key] gpt-5.2-codex\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Thinking\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Ollama\n"
+                        },
+                        {
+                          "text": "     选择器: span\n"
+                        },
+                        {
+                          "text": "\n📄 页面: Settings/appearance\n"
+                        },
+                        {
+                          "text": "--  \n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Notifications and updates\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Model, thinking, connections\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Appearance\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Theme, font, tool icons\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Input\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Send key, spell check\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Workspace\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Name, icon, working directory\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Permissions\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Explore mode rules\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Labels\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Manage session labels\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Shortcuts\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Keyboard shortcuts\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Preferences\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] User preferences\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Yarn\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PyPI\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Rust\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Homebrew\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Python\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Deno\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Ruby\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Swift\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Docker\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Kubernetes\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Terraform\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Google Cloud\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Azure\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Vercel\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Netlify\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Cloudflare\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Heroku\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Stripe\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Firebase\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Supabase\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Sentry\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] GNU Make\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] CMake\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Turborepo\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Jest\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Vitest\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] ESLint\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Prettier\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Webpack\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Vite\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PostgreSQL\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] MySQL\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Redis\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] SQLite\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] MongoDB\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Xcode\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] CocoaPods\n"
+                        },
+                        {
+                          "text": "     选择器: div.p-1.5\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Yarn\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PyPI\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Rust\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Homebrew\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Python\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Deno\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Ruby\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Swift\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Docker\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Kubernetes\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Terraform\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Google Cloud\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Azure\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Vercel\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Netlify\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Cloudflare\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Heroku\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Stripe\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Firebase\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Supabase\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Sentry\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] GNU Make\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] CMake\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Turborepo\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Jest\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Vitest\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] ESLint\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Prettier\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Webpack\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Vite\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PostgreSQL\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] MySQL\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Redis\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] SQLite\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] MongoDB\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Xcode\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] CocoaPods\n"
+                        },
+                        {
+                          "text": "     选择器: img.w-5[alt]\n"
+                        },
+                        {
+                          "text": "\n📄 页面: Settings/input\n"
+                        },
+                        {
+                          "text": "--  \n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Notifications and updates\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Model, thinking, connections\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Appearance\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Theme, font, tool icons\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Input\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Send key, spell check\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Workspace\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Name, icon, working directory\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Permissions\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Explore mode rules\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Labels\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Manage session labels\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Shortcuts\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Keyboard shortcuts\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Preferences\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] User preferences\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "\n📄 页面: Settings/workspace\n"
+                        },
+                        {
+                          "text": "--  \n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Notifications and updates\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Model, thinking, connections\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Appearance\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Theme, font, tool icons\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Input\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Send key, spell check\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Workspace\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Name, icon, working directory\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Permissions\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Explore mode rules\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Labels\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Manage session labels\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Shortcuts\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Keyboard shortcuts\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Preferences\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] User preferences\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Explore\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Explore\n"
+                        },
+                        {
+                          "text": "     选择器: div.text-sm\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Read-only exploration. Blocks writes, never prompts.\n"
+                        },
+                        {
+                          "text": "     选择器: div.text-sm\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Ask to Edit\n"
+                        },
+                        {
+                          "text": "     选择器: div.text-sm\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Prompts before making edits.\n"
+                        },
+                        {
+                          "text": "     选择器: div.text-sm\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Execute\n"
+                        },
+                        {
+                          "text": "     选择器: div.text-sm\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Automatic execution, no prompts.\n"
+                        },
+                        {
+                          "text": "     选择器: div.text-sm\n"
+                        },
+                        {
+                          "text": "\n📄 页面: Settings/permissions\n"
+                        },
+                        {
+                          "text": "--  \n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Notifications and updates\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Model, thinking, connections\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Appearance\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Theme, font, tool icons\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Input\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Send key, spell check\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Workspace\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Name, icon, working directory\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Permissions\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Explore mode rules\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Labels\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Manage session labels\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Shortcuts\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Keyboard shortcuts\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Preferences\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] User preferences\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] List directory contents\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] List all including hidden (ls -la alias)\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Display directory tree structure\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Determine file type\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Display file status and metadata\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Estimate file/directory disk usage\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Report filesystem disk space usage\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Count lines, words, bytes in files\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Output first part of files\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Output last part of files\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Concatenate and display file contents\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] View file contents with paging\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Cat clone with syntax highlighting\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Search for files in directory hierarchy\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Find files by name using database\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Locate binary, source, manual for command\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Display information about command type\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Search file contents with patterns\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Fast and user-friendly find alternative\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Fuzzy finder for files and commands\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] GitHub CLI read operations: view PRs, issues, releases\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] GitHub API with explicit GET method\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] GitHub API without method (defaults to GET)\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Check GitHub authentication status\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Read GitHub CLI configuration\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] npm read operations: list packages, view info, check outdated\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Yarn read operations: list packages, check outdated\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] pnpm read operations: list packages, check outdated\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Bun package manager list\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] pip read operations: list packages, show info\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] pip3 read operations: list packages, show info\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Cargo read operations: dependency tree, metadata\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Go read operations: list modules, dependency graph\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Composer read operations: show packages, licenses\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] RubyGems read operations: list gems, show info\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Bundler read operations: list gems, check outdated\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Change directory (affects shell session only)\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Print current working directory\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Print current username\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Print user and group IDs\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Print group memberships\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Print system information\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Print system hostname\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Print current date and time\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Print system uptime and load\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Print all environment variables (bare command only, not env <cmd>)\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Print environment variables\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Echo environment variable values\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] List running processes\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Process viewer in batch/list mode only\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Interactive process viewer\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Display memory usage\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Virtual memory statistics\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Display CPU architecture information\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Display memory information\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] List block devices\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] List USB devices\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] List PCI devices\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Docker read operations: list containers, images, logs, inspect\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Docker Compose read operations: list services, view logs\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Kubernetes read operations: get resources, describe, view logs\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] sed in print-only mode (no editing)\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Sort lines of text files\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Report or filter repeated lines\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Remove sections from lines\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Translate or delete characters\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Columnate lists\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] JSON processor\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] YAML processor\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] XML processor (via yq)\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] XML linter and formatter\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] JSON pretty printer\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Python JSON formatter\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Send ICMP echo requests\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Trace packet route to host\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Trace path to host\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Network diagnostic tool\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] DNS lookup utility\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Query DNS servers\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Network statistics\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Socket statistics\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] IP address/link/route information\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Network interface configuration (read)\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Node.js version\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] npm version\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Yarn version\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] pnpm version\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Bun version\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Python version\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Ruby version\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Go version\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Rust compiler version\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Cargo version\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Java version\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PHP version\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Perl version\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Display manual pages\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Display command help\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Display command help (short flag)\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: List directory contents (dir/ls equivalent)\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Read file contents (cat equivalent)\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Get file/directory item properties\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Get item properties\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Print current directory (pwd equivalent)\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: List running processes\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: List services\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: List available commands\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Display command help\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: List loaded modules\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: List variables\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: List command aliases\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Get host information\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Get current date/time\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Get culture settings\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Get system information\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: List drives\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Get command history\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Read event logs\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Read Windows events\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Get access control list\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: List network adapters\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Get IP addresses\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Get routing table\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Get DNS server addresses\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: List disks\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: List volumes\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: List disk partitions\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: List installed packages\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: List installed PowerShell modules\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Test if path exists\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Ping equivalent\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Test network connectivity\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Resolve path to full path\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Split path into components\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Join path components\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Measure/count objects\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Measure execution time\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Compare two objects\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Select object properties\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Sort objects\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Group objects by property\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Filter objects\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Iterate over objects\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Format output as list\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Format output as table\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Format output as wide table\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Convert to JSON\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Parse JSON\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Convert to CSV\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Parse CSV\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Convert to XML\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Search strings in files (grep equivalent)\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Search for modules in gallery\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Search for packages\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Version information variable\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Environment variable access\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Current directory variable\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Home directory variable\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Host information variable\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell/CMD: List directory (Get-ChildItem alias)\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Get-ChildItem alias\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Get-Content alias\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Get-Process alias\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Get-Service alias\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] PowerShell: Get-Command alias\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Search operations across MCP sources\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Generic list operations\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Generic get/read operations\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Generic read operations\n"
+                        },
+                        {
+                          "text": "     选择器: span.truncate\n"
+                        },
+                        {
+                          "text": "\n📄 页面: Settings/labels\n"
+                        },
+                        {
+                          "text": "--  \n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Notifications and updates\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Model, thinking, connections\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Appearance\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Theme, font, tool icons\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Input\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Send key, spell check\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Workspace\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Name, icon, working directory\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Permissions\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Explore mode rules\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Labels\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Manage session labels\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Shortcuts\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Keyboard shortcuts\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Preferences\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] User preferences\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Development\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-sm\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Code\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-sm\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Automation\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-sm\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Content\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-sm\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Writing\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-sm\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Research\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-sm\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Design\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-sm\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Priority\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-sm\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Project\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-sm\n"
+                        },
+                        {
+                          "text": "\n📄 页面: Settings/shortcuts\n"
+                        },
+                        {
+                          "text": "--  \n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Notifications and updates\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Model, thinking, connections\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Appearance\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Theme, font, tool icons\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Input\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Send key, spell check\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Workspace\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Name, icon, working directory\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Permissions\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Explore mode rules\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Labels\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Manage session labels\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Shortcuts\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Keyboard shortcuts\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Preferences\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] User preferences\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] General\n"
+                        },
+                        {
+                          "text": "     选择器: h3.text-base\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Ctrl\n"
+                        },
+                        {
+                          "text": "     选择器: kbd.inline-flex\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Shift\n"
+                        },
+                        {
+                          "text": "     选择器: kbd.inline-flex\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Navigation\n"
+                        },
+                        {
+                          "text": "     选择器: h3.text-base\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] View\n"
+                        },
+                        {
+                          "text": "     选择器: h3.text-base\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Session List\n"
+                        },
+                        {
+                          "text": "     选择器: h3.text-base\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Chat\n"
+                        },
+                        {
+                          "text": "     选择器: h3.text-base\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Home\n"
+                        },
+                        {
+                          "text": "     选择器: kbd.inline-flex\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Enter\n"
+                        },
+                        {
+                          "text": "     选择器: kbd.inline-flex\n"
+                        },
+                        {
+                          "text": "\n📄 页面: Settings/preferences\n"
+                        },
+                        {
+                          "text": "--  \n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Notifications and updates\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Model, thinking, connections\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Appearance\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Theme, font, tool icons\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Input\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Send key, spell check\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Workspace\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Name, icon, working directory\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Permissions\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Explore mode rules\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Labels\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Manage session labels\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Shortcuts\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] Keyboard shortcuts\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Preferences\n"
+                        },
+                        {
+                          "text": "     选择器: span.font-medium\n"
+                        },
+                        {
+                          "text": "  ⚠️ [hardcoded] User preferences\n"
+                        },
+                        {
+                          "text": "     选择器: span.text-xs\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Used for relative dates like 'tomorrow' or 'next week'.\n"
+                        },
+                        {
+                          "text": "     选择器: p.text-sm\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Preferred language for Craft Agent's responses.\n"
+                        },
+                        {
+                          "text": "     选择器: p.text-sm\n"
+                        },
+                        {
+                          "text": "  ⚠️ [incomplete-translation] Any additional context you'd like Craft Agent to know...\n"
+                        },
+                        {
+                          "text": "     选择器: #\\:rh7\\:[placeholder]\n"
+                        },
+                        {
+                          "text": "\n📝 报告已保存至: C:\\code\\AI\\craft-agents-i18n\\test-results\\i18n-report.json\n"
+                        },
+                        {
+                          "text": "\n📝 Markdown 报告已保存至: C:\\code\\AI\\craft-agents-i18n\\test-results\\i18n-report.before.md\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-16T10:22:16.883Z",
+                      "startTime": "2026-02-17T01:02:03.107Z",
                       "annotations": [],
                       "attachments": []
                     }
                   ],
-                  "status": "skipped"
+                  "status": "expected"
                 }
               ],
               "id": "fcfb652bd3ffd794a76e-ad05c480824f6002ac3e",
               "file": "i18n/i18n-e2e.spec.ts",
-              "line": 905,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "UI 交互检测",
-          "file": "i18n/i18n-e2e.spec.ts",
-          "line": 945,
-          "column": 6,
-          "specs": [
-            {
-              "title": "语言切换功能",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "electron",
-                  "projectName": "electron",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-02-16T10:22:16.883Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "fcfb652bd3ffd794a76e-26743c49e3d5bd1ba696",
-              "file": "i18n/i18n-e2e.spec.ts",
-              "line": 946,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "静态代码分析集成",
-          "file": "i18n/i18n-e2e.spec.ts",
-          "line": 1003,
-          "column": 6,
-          "specs": [
-            {
-              "title": "生成静态代码分析报告",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "electron",
-                  "projectName": "electron",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-02-16T10:22:16.884Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "fcfb652bd3ffd794a76e-85beb6a3f5dfe183a91a",
-              "file": "i18n/i18n-e2e.spec.ts",
-              "line": 1004,
+              "line": 1030,
               "column": 3
             }
           ]
@@ -481,11 +2861,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-16T10:22:15.091Z",
-    "duration": 2137.719,
-    "expected": 0,
-    "skipped": 9,
-    "unexpected": 1,
+    "startTime": "2026-02-17T01:02:01.712Z",
+    "duration": 60870.562000000005,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
     "flaky": 0
   }
 }

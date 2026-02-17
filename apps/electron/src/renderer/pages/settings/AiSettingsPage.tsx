@@ -121,7 +121,7 @@ function CredentialHealthBanner({ issues, onReauthenticate }: CredentialHealthBa
             {t('Credential Issue Detected')}
           </h4>
           <p className="mt-1 text-sm text-amber-600 dark:text-amber-300/80">
-            {getHealthIssueMessage(issues[0])}
+            {getHealthIssueMessage(issues[0], t)}
           </p>
         </div>
         <Button

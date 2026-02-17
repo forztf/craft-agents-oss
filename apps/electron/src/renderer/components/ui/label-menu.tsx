@@ -5,6 +5,7 @@ import { LabelIcon } from './label-icon'
 import type { LabelConfig } from '@craft-agent/shared/labels'
 import { flattenLabels } from '@craft-agent/shared/labels'
 import type { TodoState } from '@/config/todo-states'
+import { useTranslation } from '@/contexts/I18nContext'
 
 // ============================================================================
 // Types

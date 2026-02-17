@@ -1,3 +1,21 @@
 {
-  "Open in New Window": "在新窗口中打开"
+  "Open in New Window": "在新窗口中打开",
+  "App": "应用",
+  "AI": "AI",
+  "Appearance": "外观",
+  "Input": "输入",
+  "Workspace": "工作区",
+  "Permissions": "权限",
+  "Labels": "标签",
+  "Shortcuts": "快捷键",
+  "Preferences": "偏好设置",
+  "Notifications and updates": "通知与更新",
+  "Model, thinking, connections": "模型、思考与连接",
+  "Theme, font, tool icons": "主题、字体与工具图标",
+  "Send key, spell check": "发送快捷键与拼写检查",
+  "Name, icon, working directory": "名称、图标与工作目录",
+  "Explore mode rules": "Explore 模式规则",
+  "Manage session labels": "管理会话标签",
+  "Keyboard shortcuts": "键盘快捷键",
+  "User preferences": "用户偏好"
 }

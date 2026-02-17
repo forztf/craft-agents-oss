@@ -4,7 +4,7 @@
   "Failed to load task output": "加载任务输出失败",
   "Click for task actions": "点击查看任务操作",
   "Task": "任务",
-  "Shell": "Shell",
+  "Shell": "终端",
   "View Output": "查看输出",
   "Stop Task": "停止任务"
 }

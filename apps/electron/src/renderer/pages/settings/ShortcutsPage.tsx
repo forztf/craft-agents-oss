@@ -101,7 +101,7 @@ export default function ShortcutsPage() {
           <div className="px-5 py-7 max-w-3xl mx-auto space-y-8">
             {/* Registry-driven sections */}
             {Object.entries(actionsByCategory).map(([category, actions]) => (
-              <SettingsSection key={category} title={category}>
+              <SettingsSection key={category} title={t(category)}>
                 <SettingsCard>
                   {actions.map(action => (
                     <ActionShortcutRow key={action.id} actionId={action.id as ActionId} />

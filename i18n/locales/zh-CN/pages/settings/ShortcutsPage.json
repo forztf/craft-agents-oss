@@ -1,5 +1,9 @@
 {
   "Shortcuts": "快捷键",
+  "General": "通用",
+  "Navigation": "导航",
+  "View": "视图",
+  "Chat": "聊天",
   "List Navigation": "列表导航",
   "Navigate items in list": "在列表中导航项目",
   "Go to first item": "转到第一个项目",

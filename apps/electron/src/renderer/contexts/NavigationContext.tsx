@@ -484,10 +484,11 @@ export function NavigationProvider({
       const sidebarParam = urlParams.get('sidebar') || undefined
       const newNavState = parseRouteToNavigationState(route, sidebarParam)
       let finalRoute = route
+      let finalState: NavigationState | null = null
 
       if (newNavState) {
         // Apply navigation state (may auto-select first item)
-        const finalState = applyNavigationState(newNavState)
+        finalState = applyNavigationState(newNavState)
 
         // Build route from final state (includes auto-selection)
         // This ensures the URL reflects the actual displayed content
@@ -496,9 +497,9 @@ export function NavigationProvider({
 
       // Persist route and sidebar in URL for reload restoration
       const url = new URL(window.location.href)
-      if (navigationState.rightSidebar) {
-        const fullUrl = buildUrlWithState(navigationState)
-        url.search = fullUrl
+      const stateForUrl = finalState ?? navigationState
+      if (stateForUrl?.rightSidebar && stateForUrl.rightSidebar.type !== 'none') {
+        url.search = buildUrlWithState(stateForUrl)
       } else {
         url.searchParams.set('route', finalRoute)
         url.searchParams.delete('sidebar')
@@ -526,7 +527,7 @@ export function NavigationProvider({
       setCanGoBack(newCanGoBack)
       setCanGoForward(newCanGoForward)
     },
-    [isReady, handleActionNavigation, applyNavigationState]
+    [isReady, handleActionNavigation, applyNavigationState, navigationState]
   )
 
   // Keep navigateRef in sync with latest navigate function
