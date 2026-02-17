@@ -275,6 +275,21 @@ function LabelBadge({
 }) {
   const { isDark } = useTheme()
   const [open, setOpen] = React.useState(false)
+  const { t, language } = useTranslation('components/app-shell/ActiveOptionBadges')
+  const displayLabelName = React.useMemo(() => {
+    if (language !== 'zh-CN') return label.name
+    if (label.id === 'development') return t('Development')
+    if (label.id === 'code') return t('Code')
+    if (label.id === 'bug') return t('Bug')
+    if (label.id === 'automation') return t('Automation')
+    if (label.id === 'content') return t('Content')
+    if (label.id === 'writing') return t('Writing')
+    if (label.id === 'research') return t('Research')
+    if (label.id === 'design') return t('Design')
+    if (label.id === 'priority') return t('Priority')
+    if (label.id === 'project') return t('Project')
+    return label.name
+  }, [label.id, label.name, language, t])
 
   // Auto-open the value popover when this label was just added via # menu
   // and has a valueType. Opens exactly once, then clears the signal.
@@ -317,7 +332,7 @@ function LabelBadge({
         style={{ '--badge-color': resolvedColor } as React.CSSProperties}
       >
         <LabelIcon label={label} size="lg" />
-        <span className="whitespace-nowrap ml-2">{label.name}</span>
+        <span className="whitespace-nowrap ml-2">{displayLabelName}</span>
         {/* Optional typed value: interpunkt separator + value, or placeholder icon if typed but no value set */}
         {displayValue ? (
           <>
@@ -359,6 +374,15 @@ function StateBadge({
   onTodoStateChange?: (stateId: string) => void
 }) {
   const [open, setOpen] = React.useState(false)
+  const { t } = useTranslation('components/app-shell/ActiveOptionBadges')
+  const displayStateLabel = React.useMemo(() => {
+    if (state.id === 'backlog') return t('Backlog')
+    if (state.id === 'todo') return t('Todo')
+    if (state.id === 'needs-review') return t('Needs Review')
+    if (state.id === 'done') return t('Done')
+    if (state.id === 'cancelled') return t('Cancelled')
+    return state.label
+  }, [state.id, state.label, t])
 
   const handleSelect = React.useCallback((stateId: string) => {
     setOpen(false)
@@ -392,7 +416,7 @@ function StateBadge({
           >
             {state.icon}
           </span>
-          <span className="whitespace-nowrap">{state.label}</span>
+          <span className="whitespace-nowrap">{displayStateLabel}</span>
           <ChevronDown className="h-3 w-3 opacity-40 shrink-0" />
         </button>
       </PopoverTrigger>
@@ -425,6 +449,7 @@ interface PermissionModeDropdownProps {
 
 function PermissionModeDropdown({ permissionMode, ultrathinkEnabled = false, onPermissionModeChange, onUltrathinkChange }: PermissionModeDropdownProps) {
   const [open, setOpen] = React.useState(false)
+  const { t } = useTranslation('components/app-shell/ActiveOptionBadges')
   // Optimistic local state - updates immediately, syncs with prop
   const [optimisticMode, setOptimisticMode] = React.useState(permissionMode)
 
@@ -487,7 +512,7 @@ function PermissionModeDropdown({ permissionMode, ultrathinkEnabled = false, onP
           style={{ '--shadow-color': currentStyle.shadowVar } as React.CSSProperties}
         >
           <PermissionModeIcon mode={optimisticMode} className="h-3.5 w-3.5" />
-          <span>{config.displayName}</span>
+          <span>{t(config.displayName)}</span>
           <ChevronDown className="h-3.5 w-3.5 opacity-60" />
         </button>
       </PopoverTrigger>
@@ -512,4 +537,3 @@ function PermissionModeDropdown({ permissionMode, ultrathinkEnabled = false, onP
     </Popover>
   )
 }
-

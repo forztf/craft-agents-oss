@@ -1,3 +1,21 @@
 {
-  "Ultrathink": "深度思考"
+  "Ultrathink": "深度思考",
+  "Explore": "探索",
+  "Ask to Edit": "询问后编辑",
+  "Execute": "执行",
+  "Backlog": "待规划",
+  "Todo": "待办",
+  "Needs Review": "需复核",
+  "Done": "已完成",
+  "Cancelled": "已取消",
+  "Development": "开发",
+  "Code": "代码",
+  "Bug": "缺陷",
+  "Automation": "自动化",
+  "Content": "内容",
+  "Writing": "写作",
+  "Research": "研究",
+  "Design": "设计",
+  "Priority": "优先级",
+  "Project": "项目"
 }

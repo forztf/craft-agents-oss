@@ -366,7 +366,7 @@ function SessionItem({
   onRangeSelect,
   onFocusZone,
 }: SessionItemProps) {
-  const { t } = useTranslation('pages/ChatPage')
+  const { t } = useTranslation('components/app-shell/SessionList')
   const [menuOpen, setMenuOpen] = useState(false)
   const [contextMenuOpen, setContextMenuOpen] = useState(false)
   const [todoMenuOpen, setTodoMenuOpen] = useState(false)
@@ -473,7 +473,7 @@ function SessionItem({
                 role="button"
                 aria-haspopup="menu"
                 aria-expanded={todoMenuOpen}
-                aria-label="Change todo state"
+                aria-label={t('Change todo state')}
                 onContextMenu={(e) => {
                   e.preventDefault()
                   e.stopPropagation()
@@ -534,7 +534,7 @@ function SessionItem({
                 "font-medium font-sans line-clamp-2 min-w-0 -mb-[2px]",
                 item.isAsyncOperationOngoing && "animate-shimmer-text"
               )}>
-                {searchQuery ? highlightMatch(getSessionTitle(item), searchQuery) : getSessionTitle(item)}
+                {searchQuery ? highlightMatch(getSessionTitle(item, t('New chat')), searchQuery) : getSessionTitle(item, t('New chat'))}
               </div>
             </div>
             {/* Subtitle row — badges scroll horizontally when they overflow */}
@@ -545,7 +545,7 @@ function SessionItem({
               )}
               {!item.isProcessing && hasUnreadMessages(item) && (
                 <span className="shrink-0 px-1.5 py-0.5 text-[10px] font-medium rounded bg-accent text-white">
-                  New
+                  {t('New')}
                 </span>
               )}
 
@@ -562,7 +562,7 @@ function SessionItem({
                 )}
                 {item.lastMessageRole === 'plan' && (
                   <span className="shrink-0 h-[18px] px-1.5 text-[10px] font-medium rounded bg-success/10 text-success flex items-center whitespace-nowrap">
-                    Plan
+                    {t('Plan')}
                   </span>
                 )}
                 {permissionMode && (
@@ -574,7 +574,7 @@ function SessionItem({
                       permissionMode === 'allow-all' && "bg-accent/10 text-accent"
                     )}
                   >
-                    {PERMISSION_MODE_CONFIG[permissionMode].shortName}
+                    {t(PERMISSION_MODE_CONFIG[permissionMode].shortName)}
                   </span>
                 )}
                 {/* Label badges — each badge opens its own LabelValuePopover for
@@ -754,7 +754,7 @@ function SessionItem({
                 <DropdownMenuProvider>
                   <SessionMenu
                     sessionId={item.id}
-                    sessionName={getSessionTitle(item)}
+                    sessionName={getSessionTitle(item, t('New chat'))}
                     isFlagged={item.isFlagged ?? false}
                     isArchived={item.isArchived ?? false}
                     sharedUrl={item.sharedUrl}
@@ -765,7 +765,7 @@ function SessionItem({
                     sessionLabels={item.labels ?? []}
                     labels={labels}
                     onLabelsChange={onLabelsChange ? (newLabels) => onLabelsChange(item.id, newLabels) : undefined}
-                    onRename={() => onRenameClick(item.id, getSessionTitle(item))}
+                    onRename={() => onRenameClick(item.id, getSessionTitle(item, t('New chat')))}
                     onFlag={() => onFlag?.(item.id)}
                     onUnflag={() => onUnflag?.(item.id)}
                     onArchive={() => onArchive?.(item.id)}
@@ -788,7 +788,7 @@ function SessionItem({
           <ContextMenuProvider>
             <SessionMenu
               sessionId={item.id}
-              sessionName={getSessionTitle(item)}
+              sessionName={getSessionTitle(item, t('New chat'))}
               isFlagged={item.isFlagged ?? false}
               isArchived={item.isArchived ?? false}
               sharedUrl={item.sharedUrl}
@@ -799,7 +799,7 @@ function SessionItem({
               sessionLabels={item.labels ?? []}
               labels={labels}
               onLabelsChange={onLabelsChange ? (newLabels) => onLabelsChange(item.id, newLabels) : undefined}
-              onRename={() => onRenameClick(item.id, getSessionTitle(item))}
+              onRename={() => onRenameClick(item.id, getSessionTitle(item, t('New chat')))}
               onFlag={() => onFlag?.(item.id)}
               onUnflag={() => onUnflag?.(item.id)}
               onArchive={() => onArchive?.(item.id)}
@@ -1051,8 +1051,8 @@ export function SessionList({
     return sortedItems
       .filter(item => contentSearchResults.has(item.id))
       .sort((a, b) => {
-        const aScore = fuzzyScore(getSessionTitle(a), searchQuery)
-        const bScore = fuzzyScore(getSessionTitle(b), searchQuery)
+        const aScore = fuzzyScore(getSessionTitle(a, t('New chat')), searchQuery)
+        const bScore = fuzzyScore(getSessionTitle(b, t('New chat')), searchQuery)
 
         // Title matches come first, sorted by fuzzy score (higher = better)
         if (aScore > 0 && bScore === 0) return -1
@@ -1510,7 +1510,7 @@ export function SessionList({
           className="flex flex-col pb-14 min-w-0"
           data-focus-zone="session-list"
           role="listbox"
-          aria-label="Sessions"
+          aria-label={t('Sessions')}
         >
           {/* No results message when in search mode */}
           {isSearchMode && flatItems.length === 0 && !isSearchingContent && (
@@ -1523,7 +1523,7 @@ export function SessionList({
                 onClick={() => onSearchChange?.('')}
                 className="text-xs text-foreground hover:underline mt-2"
               >
-                Clear search
+                {t('Clear search')}
               </button>
             </div>
           )}
@@ -1696,4 +1696,3 @@ export function SessionList({
     </div>
   )
 }
-

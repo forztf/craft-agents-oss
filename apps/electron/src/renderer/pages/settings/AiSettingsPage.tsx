@@ -428,8 +428,8 @@ function WorkspaceOverrideCard({ workspace, llmConnections, onSettingsChange }: 
                   { value: 'global', label: t('Use default'), description: t('Inherit from app settings') },
                   ...THINKING_LEVELS.map(({ id, name, description }) => ({
                     value: id,
-                    label: name,
-                    description,
+                    label: t(name),
+                    description: t(description),
                   })),
                 ]}
               />
@@ -697,8 +697,8 @@ export default function AiSettingsPage() {
                       onValueChange={(v) => handleDefaultThinkingChange(v as ThinkingLevel)}
                       options={THINKING_LEVELS.map(({ id, name, description }) => ({
                         value: id,
-                        label: name,
-                        description,
+                        label: t(name),
+                        description: t(description),
                       }))}
                     />
                   </SettingsCard>

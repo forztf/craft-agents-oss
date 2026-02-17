@@ -1,3 +1,21 @@
 {
-  "Ultrathink": "Ultrathink"
+  "Ultrathink": "Ultrathink",
+  "Explore": "Explore",
+  "Ask to Edit": "Ask to Edit",
+  "Execute": "Execute",
+  "Backlog": "Backlog",
+  "Todo": "Todo",
+  "Needs Review": "Needs Review",
+  "Done": "Done",
+  "Cancelled": "Cancelled",
+  "Development": "Development",
+  "Code": "Code",
+  "Bug": "Bug",
+  "Automation": "Automation",
+  "Content": "Content",
+  "Writing": "Writing",
+  "Research": "Research",
+  "Design": "Design",
+  "Priority": "Priority",
+  "Project": "Project"
 }

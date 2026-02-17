@@ -21,7 +21,7 @@ function sanitizePreview(content: string): string {
  * Priority: custom name > first user message > preview (from metadata) > "New chat"
  * Works with both Session (full) and SessionMeta (lightweight)
  */
-export function getSessionTitle(session: SessionLike | SessionMeta): string {
+export function getSessionTitle(session: SessionLike | SessionMeta, emptyTitleFallback = 'New chat'): string {
   if (session.name) {
     return session.name
   }
@@ -47,7 +47,7 @@ export function getSessionTitle(session: SessionLike | SessionMeta): string {
     }
   }
 
-  return 'New chat'
+  return emptyTitleFallback
 }
 
 /**

@@ -2,7 +2,7 @@
   "API": "API",
   "MCP": "MCP",
   "local folder": "本地文件夹",
-  "No {type} sources configured.": "未配置 {type} 数据源。",
+  "No {{type}} sources configured.": "未配置 {{type}} 数据源。",
   "No sources configured.": "未配置数据源。",
   "Sources connect your agent to external data — MCP servers, REST APIs, and local folders.": "数据源将您的代理连接到外部数据 — MCP 服务器、REST API 和本地文件夹。",
   "Learn more": "了解更多",

@@ -2,7 +2,7 @@
   "API": "API",
   "MCP": "MCP",
   "local folder": "local folder",
-  "No {type} sources configured.": "No {type} sources configured.",
+  "No {{type}} sources configured.": "No {{type}} sources configured.",
   "No sources configured.": "No sources configured.",
   "Sources connect your agent to external data — MCP servers, REST APIs, and local folders.": "Sources connect your agent to external data — MCP servers, REST APIs, and local folders.",
   "Learn more": "Learn more",

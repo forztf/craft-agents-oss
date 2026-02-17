@@ -1,20 +1,19 @@
 {
-  "timestamp": "2026-02-17T00:10:03.293Z",
+  "timestamp": "2026-02-17T02:19:37.474Z",
   "summary": {
     "totalFiles": 49,
-    "totalIssues": 594,
+    "totalIssues": 590,
     "bySeverity": {
       "high": 175,
-      "medium": 377,
-      "low": 42
+      "medium": 375,
+      "low": 40
     },
     "byType": {
       "string-literal": 528,
       "placeholder": 9,
       "title": 15,
       "jsx-text": 27,
-      "aria-label": 2,
-      "label-attr": 13
+      "label-attr": 11
     }
   },
   "issues": {
@@ -449,22 +448,6 @@
       }
     ],
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\app-shell\\SessionList.tsx": [
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\app-shell\\SessionList.tsx",
-        "line": 476,
-        "text": "Change todo state",
-        "type": "aria-label",
-        "context": "aria-expanded={todoMenuOpen}\n                aria-label=\"Change todo state\"\n                onContextMenu",
-        "severity": "medium"
-      },
-      {
-        "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\app-shell\\SessionList.tsx",
-        "line": 1513,
-        "text": "Sessions",
-        "type": "aria-label",
-        "context": "ocus-zone=\"session-list\"\n          role=\"listbox\"\n          aria-label=\"Sessions\"\n        >\n          {/* No results mes",
-        "severity": "low"
-      },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\app-shell\\SessionList.tsx",
         "line": 1690,
@@ -923,7 +906,7 @@
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\label-menu.tsx": [
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\ui\\label-menu.tsx",
-        "line": 297,
+        "line": 298,
         "text": "Add New Label",
         "type": "jsx-text",
         "context": "</div>\n            <span className=\"text-[13px]\">Add New Label</span>\n          </div>\n        ) : (",
@@ -4855,6 +4838,6 @@
   },
   "recommendations": [
     "发现 175 处高优先级硬编码文本，建议优先处理",
-    "发现 377 处中优先级硬编码文本，应该逐步翻译"
+    "发现 375 处中优先级硬编码文本，应该逐步翻译"
   ]
 }

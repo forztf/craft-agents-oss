@@ -37,7 +37,7 @@ interface LabelsDataTableProps {
  * ExpandableNameCell - Renders label name with indentation and expand/collapse chevron.
  * Depth-based indentation with a rotating chevron for parent nodes.
  */
-function ExpandableNameCell({ row }: { row: Row<LabelConfig> }) {
+function ExpandableNameCell({ row, name }: { row: Row<LabelConfig>; name: string }) {
   const canExpand = row.getCanExpand()
   const isExpanded = row.getIsExpanded()
 
@@ -68,7 +68,7 @@ function ExpandableNameCell({ row }: { row: Row<LabelConfig> }) {
         // Spacer to keep alignment consistent with expandable rows
         <span className="w-4" />
       )}
-      <span className="text-sm truncate">{row.original.name}</span>
+      <span className="text-sm truncate">{name}</span>
     </div>
   )
 }
@@ -89,9 +89,23 @@ export function LabelsDataTable({
   fullscreenTitle = 'Labels',
   className,
 }: LabelsDataTableProps) {
-  const { t } = useTranslation('components/info/LabelsDataTable')
+  const { t, language } = useTranslation('components/info/LabelsDataTable')
   const [isFullscreen, setIsFullscreen] = useState(false)
   const { isDark } = useTheme()
+  const getLabelDisplayName = React.useCallback((label: LabelConfig): string => {
+    if (language !== 'zh-CN') return label.name
+    if (label.id === 'development') return t('Development')
+    if (label.id === 'code') return t('Code')
+    if (label.id === 'bug') return t('Bug')
+    if (label.id === 'automation') return t('Automation')
+    if (label.id === 'content') return t('Content')
+    if (label.id === 'writing') return t('Writing')
+    if (label.id === 'research') return t('Research')
+    if (label.id === 'design') return t('Design')
+    if (label.id === 'priority') return t('Priority')
+    if (label.id === 'project') return t('Project')
+    return label.name
+  }, [language, t])
   const columns: ColumnDef<LabelConfig>[] = [
     {
       id: 'color',
@@ -111,7 +125,7 @@ export function LabelsDataTable({
     {
       accessorKey: 'name',
       header: ({ column }) => <SortableHeader column={column} title={t('Name')} />,
-      cell: ({ row }) => <ExpandableNameCell row={row} />,
+      cell: ({ row }) => <ExpandableNameCell row={row} name={getLabelDisplayName(row.original)} />,
       meta: { fillWidth: true },
     },
     {

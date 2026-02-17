@@ -87,7 +87,7 @@ export function SourcesListPanel({
   // Build empty state message based on filter
   const emptyMessage = React.useMemo(() => {
     if (sourceFilter?.kind === 'type') {
-      return t('No {type} sources configured.', { type: getSourceTypeFilterLabel(sourceFilter.sourceType, t) })
+      return t('No {{type}} sources configured.', { type: getSourceTypeFilterLabel(sourceFilter.sourceType, t) })
     }
     return t('No sources configured.')
   }, [sourceFilter, t])

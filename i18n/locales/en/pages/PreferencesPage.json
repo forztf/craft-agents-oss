@@ -1,5 +1,6 @@
 {
   "Any additional information you'd like to share with the AI assistant...": "Any additional information you'd like to share with the AI assistant...",
+  "Any additional context you'd like Craft Agent to know...": "Any additional context you'd like Craft Agent to know...",
   "Basic Info": "Basic Info",
   "City": "City",
   "Country": "Country",
@@ -12,6 +13,8 @@
   "Revert": "Revert",
   "Save": "Save",
   "Timezone": "Timezone",
+  "Used for relative dates like 'tomorrow' or 'next week'.": "Used for relative dates like 'tomorrow' or 'next week'.",
+  "Preferred language for Craft Agent's responses.": "Preferred language for Craft Agent's responses.",
   "Your name": "Your name",
   "e.g., America/New_York": "e.g., America/New_York",
   "e.g., English": "e.g., English",

@@ -1,3 +1,21 @@
 {
+  "App": "App",
+  "AI": "AI",
+  "Appearance": "Appearance",
+  "Input": "Input",
+  "Workspace": "Workspace",
+  "Permissions": "Permissions",
+  "Labels": "Labels",
+  "Shortcuts": "Shortcuts",
+  "Preferences": "Preferences",
+  "Notifications and updates": "Notifications and updates",
+  "Model, thinking, connections": "Model, thinking, connections",
+  "Theme, font, tool icons": "Theme, font, tool icons",
+  "Send key, spell check": "Send key, spell check",
+  "Name, icon, working directory": "Name, icon, working directory",
+  "Explore mode rules": "Explore mode rules",
+  "Manage session labels": "Manage session labels",
+  "Keyboard shortcuts": "Keyboard shortcuts",
+  "User preferences": "User preferences",
   "Open in New Window": "Open in New Window"
 }

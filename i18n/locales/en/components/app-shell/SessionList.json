@@ -1,4 +1,10 @@
 {
+  "Explore": "Explore",
+  "Ask": "Ask",
+  "Auto": "Auto",
+  "Plan": "Plan",
+  "New": "New",
+  "New chat": "New chat",
   "Today": "Today",
   "Yesterday": "Yesterday",
   "Change todo state": "Change todo state",

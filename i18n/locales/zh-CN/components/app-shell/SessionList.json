@@ -1,5 +1,11 @@
 {
   "Change todo state": "更改待办状态",
+  "Explore": "探索",
+  "Ask": "询问",
+  "Auto": "自动",
+  "Plan": "计划",
+  "New": "新",
+  "New chat": "新对话",
   "Today": "今天",
   "Yesterday": "昨天",
   "Enter session name...": "输入会话名称...",

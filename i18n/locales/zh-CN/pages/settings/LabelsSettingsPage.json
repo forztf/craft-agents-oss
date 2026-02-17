@@ -1,5 +1,8 @@
 {
   "About Labels": "关于标签",
+  "Labels help you organize sessions with colored tags. Use them to categorize conversations by project, topic, or priority — making it easy to filter and find related sessions later.": "标签可用彩色标记帮助你整理会话。你可以按项目、主题或优先级对对话分类，方便后续筛选与查找相关会话。",
+  "Each label can optionally carry a value with a specific type (text, number, or date). This turns labels into structured metadata — for example, a \"priority\" label with value 3, or a \"due\" label with a date.": "每个标签都可以携带一个带类型的值（文本、数字或日期）。这会把标签变成结构化元数据——例如带值为 3 的“priority”标签，或带日期的“due”标签。",
+  "Auto-apply rules assign labels automatically when a message matches a regex pattern. For example, pasting a Linear issue URL can auto-tag the session with the project name and issue ID — no manual tagging needed.": "当消息匹配某个正则表达式时，“自动应用规则”会自动为会话打上标签。例如，粘贴 Linear 工单链接即可自动用项目名与工单 ID 标记会话，无需手动操作。",
   "All labels configured for this workspace. Labels can be nested to form groups.": "此工作区配置的所有标签。标签可以嵌套以形成组。",
   "Auto-Apply Rules": "自动应用规则",
   "Auto-apply rules": "自动应用规则",
@@ -7,6 +10,8 @@
   "Labels": "标签",
   "Learn more": "了解更多",
   "No labels configured.": "未配置标签。",
+  "Labels can be created by the agent or by editing": "标签可以由 Agent 创建，或通过编辑",
+  "in your workspace.": "（位于你的工作区）来创建。",
   "Regex patterns that automatically apply labels when matched in user messages. For example, paste a Linear issue URL and automatically tag the session with the project name and issue ID.": "在用户消息中匹配时自动应用标签的正则表达式模式。例如，粘贴 Linear issue URL 并自动用项目名称和 issue ID 标记会话。",
   "labels/config.json": "labels/config.json",
   "value": "值",

@@ -73,13 +73,13 @@ export default function LabelsSettingsPage() {
                     <SettingsCard className="px-4 py-3.5">
                       <div className="text-sm text-muted-foreground leading-relaxed space-y-1.5">
                         <p>
-                          Labels help you organize sessions with colored tags. Use them to categorize conversations by project, topic, or priority — making it easy to filter and find related sessions later.
+                          {t('Labels help you organize sessions with colored tags. Use them to categorize conversations by project, topic, or priority — making it easy to filter and find related sessions later.')}
                         </p>
                         <p>
-                          Each label can optionally carry a <span className="text-foreground/80 font-medium">{t('value')}</span> with a specific type (text, number, or date). This turns labels into structured metadata — for example, a "priority" label with value 3, or a "due" label with a date.
+                          {t('Each label can optionally carry a value with a specific type (text, number, or date). This turns labels into structured metadata — for example, a "priority" label with value 3, or a "due" label with a date.')}
                         </p>
                         <p>
-                          <span className="text-foreground/80 font-medium">{t('Auto-apply rules')}</span> assign labels automatically when a message matches a regex pattern. For example, pasting a Linear issue URL can auto-tag the session with the project name and issue ID — no manual tagging needed.
+                          {t('Auto-apply rules assign labels automatically when a message matches a regex pattern. For example, pasting a Linear issue URL can auto-tag the session with the project name and issue ID — no manual tagging needed.')}
                         </p>
                         <p>
                           <button
@@ -122,7 +122,9 @@ export default function LabelsSettingsPage() {
                         <div className="p-8 text-center text-muted-foreground">
                           <p className="text-sm">{t('No labels configured.')}</p>
                           <p className="text-xs mt-1 text-foreground/40">
-                            Labels can be created by the agent or by editing <code className="bg-foreground/5 px-1 rounded">{t('labels/config.json')}</code> in your workspace.
+                            {t('Labels can be created by the agent or by editing')}{' '}
+                            <code className="bg-foreground/5 px-1 rounded">{t('labels/config.json')}</code>{' '}
+                            {t('in your workspace.')}
                           </p>
                         </div>
                       )}

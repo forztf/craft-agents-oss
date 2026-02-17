@@ -101,6 +101,7 @@ export function PermissionsDataTable({
   const [isFullscreen, setIsFullscreen] = useState(false)
   const { isDark } = useTheme()
   const { t } = useTranslation('components/info/PermissionsDataTable')
+  const { t: tPermissionComments } = useTranslation('resources/permissions/default-comments')
 
   // Memoized column definitions with i18n
   const columnsWithType = useMemo<ColumnDef<PermissionRow>[]>(() => [
@@ -143,13 +144,15 @@ export function PermissionsDataTable({
       cell: ({ row }) => (
         <div className="p-1.5 pl-2.5 min-w-0">
           <span className="truncate block">
-            {row.original.comment || '—'}
+            {row.original.comment
+              ? ((translated) => (translated !== row.original.comment ? translated : row.original.comment))(tPermissionComments(row.original.comment))
+              : '—'}
           </span>
         </div>
       ),
       meta: { fillWidth: true, truncate: true },
     },
-  ], [t])
+  ], [t, tPermissionComments])
 
   const columnsWithoutType = useMemo<ColumnDef<PermissionRow>[]>(() => [
     {
@@ -179,13 +182,15 @@ export function PermissionsDataTable({
       cell: ({ row }) => (
         <div className="p-1.5 pl-2.5 min-w-0">
           <span className="truncate block">
-            {row.original.comment || '—'}
+            {row.original.comment
+              ? ((translated) => (translated !== row.original.comment ? translated : row.original.comment))(tPermissionComments(row.original.comment))
+              : '—'}
           </span>
         </div>
       ),
       meta: { fillWidth: true, truncate: true },
     },
-  ], [t])
+  ], [t, tPermissionComments])
 
   const columns = hideTypeColumn ? columnsWithoutType : columnsWithType
 

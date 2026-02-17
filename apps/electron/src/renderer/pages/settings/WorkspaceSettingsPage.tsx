@@ -380,9 +380,9 @@ export default function WorkspaceSettingsPage() {
                   value={permissionMode}
                   onValueChange={(v) => handlePermissionModeChange(v as PermissionMode)}
                   options={[
-                    { value: 'safe', label: PERMISSION_MODE_CONFIG['safe'].shortName, description: t('Read-only, no changes allowed') },
-                    { value: 'ask', label: PERMISSION_MODE_CONFIG['ask'].shortName, description: t('Prompts before making edits') },
-                    { value: 'allow-all', label: PERMISSION_MODE_CONFIG['allow-all'].shortName, description: t('Full autonomous execution') },
+                    { value: 'safe', label: t(PERMISSION_MODE_CONFIG['safe'].shortName), description: t('Read-only, no changes allowed') },
+                    { value: 'ask', label: t(PERMISSION_MODE_CONFIG['ask'].shortName), description: t('Prompts before making edits') },
+                    { value: 'allow-all', label: t(PERMISSION_MODE_CONFIG['allow-all'].shortName), description: t('Full autonomous execution') },
                   ]}
                 />
               </SettingsCard>
@@ -400,8 +400,8 @@ export default function WorkspaceSettingsPage() {
                   return (
                     <SettingsToggle
                       key={m}
-                      label={config.displayName}
-                      description={config.description}
+                      label={t(config.displayName)}
+                      description={t(config.description)}
                       checked={isEnabled}
                       onCheckedChange={(checked) => handleModeToggle(m, checked)}
                     />

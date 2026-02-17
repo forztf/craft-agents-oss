@@ -1,5 +1,8 @@
 {
   "About Labels": "About Labels",
+  "Labels help you organize sessions with colored tags. Use them to categorize conversations by project, topic, or priority — making it easy to filter and find related sessions later.": "Labels help you organize sessions with colored tags. Use them to categorize conversations by project, topic, or priority — making it easy to filter and find related sessions later.",
+  "Each label can optionally carry a value with a specific type (text, number, or date). This turns labels into structured metadata — for example, a \"priority\" label with value 3, or a \"due\" label with a date.": "Each label can optionally carry a value with a specific type (text, number, or date). This turns labels into structured metadata — for example, a \"priority\" label with value 3, or a \"due\" label with a date.",
+  "Auto-apply rules assign labels automatically when a message matches a regex pattern. For example, pasting a Linear issue URL can auto-tag the session with the project name and issue ID — no manual tagging needed.": "Auto-apply rules assign labels automatically when a message matches a regex pattern. For example, pasting a Linear issue URL can auto-tag the session with the project name and issue ID — no manual tagging needed.",
   "All labels configured for this workspace. Labels can be nested to form groups.": "All labels configured for this workspace. Labels can be nested to form groups.",
   "Auto-Apply Rules": "Auto-Apply Rules",
   "Auto-apply rules": "Auto-apply rules",
@@ -7,6 +10,8 @@
   "Labels": "Labels",
   "Learn more": "Learn more",
   "No labels configured.": "No labels configured.",
+  "Labels can be created by the agent or by editing": "Labels can be created by the agent or by editing",
+  "in your workspace.": "in your workspace.",
   "Regex patterns that automatically apply labels when matched in user messages. For example, paste a Linear issue URL and automatically tag the session with the project name and issue ID.": "Regex patterns that automatically apply labels when matched in user messages. For example, paste a Linear issue URL and automatically tag the session with the project name and issue ID.",
   "labels/config.json": "labels/config.json",
   "value": "value",
