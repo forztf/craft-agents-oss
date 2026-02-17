@@ -2,6 +2,7 @@ import { useState, useCallback, useEffect, useRef, useMemo } from "react"
 import { useAction, useActionLabel } from "@/actions"
 import { formatDistanceToNow, formatDistanceToNowStrict, isToday, isYesterday, format, startOfDay } from "date-fns"
 import type { Locale } from "date-fns"
+import { enUS, zhCN } from "date-fns/locale"
 import { MoreHorizontal, Flag, Copy, Link2Off, CloudUpload, Globe, RefreshCw, Inbox, Check, Archive } from "lucide-react"
 import { toast } from "sonner"
 
@@ -66,7 +67,7 @@ const MAX_SEARCH_RESULTS = 100
 
 /** Short relative time locale for date-fns formatDistanceToNowStrict.
  *  Produces compact strings: "7m", "2h", "3d", "2w", "5mo", "1y" */
-const shortTimeLocale: Pick<Locale, 'formatDistance'> = {
+const shortTimeLocaleEn: Pick<Locale, 'formatDistance'> = {
   formatDistance: (token: string, count: number) => {
     const units: Record<string, string> = {
       xSeconds: `${count}s`,
@@ -81,21 +82,47 @@ const shortTimeLocale: Pick<Locale, 'formatDistance'> = {
   },
 }
 
+const shortTimeLocaleZhCN: Pick<Locale, 'formatDistance'> = {
+  formatDistance: (token: string, count: number) => {
+    const units: Record<string, string> = {
+      xSeconds: `${count}秒`,
+      xMinutes: `${count}分`,
+      xHours: `${count}时`,
+      xDays: `${count}天`,
+      xWeeks: `${count}周`,
+      xMonths: `${count}月`,
+      xYears: `${count}年`,
+    }
+    return units[token] || `${count}`
+  },
+}
+
+function getDateFnsLocale(language: 'en' | 'zh-CN'): Locale {
+  return language === 'zh-CN' ? zhCN : enUS
+}
+
+function getShortTimeLocale(language: 'en' | 'zh-CN'): Pick<Locale, 'formatDistance'> {
+  return language === 'zh-CN' ? shortTimeLocaleZhCN : shortTimeLocaleEn
+}
+
 /**
  * Format a date for the date header
  * Returns "Today", "Yesterday", or formatted date like "Dec 19"
  */
-function formatDateHeader(date: Date, t: (key: string) => string): string {
+function formatDateHeader(date: Date, t: (key: string) => string, language: 'en' | 'zh-CN'): string {
   if (isToday(date)) return t("Today")
   if (isYesterday(date)) return t("Yesterday")
-  return format(date, "MMM d")
+  const locale = getDateFnsLocale(language)
+  const isDifferentYear = date.getFullYear() !== new Date().getFullYear()
+  if (language === 'zh-CN') return format(date, isDifferentYear ? 'yyyy年M月d日' : 'M月d日', { locale })
+  return format(date, isDifferentYear ? 'MMM d, yyyy' : 'MMM d', { locale })
 }
 
 /**
  * Group sessions by date (day boundary)
  * Returns array of { date, sessions } sorted by date descending
  */
-function groupSessionsByDate(sessions: SessionMeta[], t: (key: string) => string): Array<{ date: Date; label: string; sessions: SessionMeta[] }> {
+function groupSessionsByDate(sessions: SessionMeta[], t: (key: string) => string, language: 'en' | 'zh-CN'): Array<{ date: Date; label: string; sessions: SessionMeta[] }> {
   const groups = new Map<string, { date: Date; sessions: SessionMeta[] }>()
 
   for (const session of sessions) {
@@ -114,7 +141,7 @@ function groupSessionsByDate(sessions: SessionMeta[], t: (key: string) => string
     .sort((a, b) => b.date.getTime() - a.date.getTime())
     .map(group => ({
       ...group,
-      label: formatDateHeader(group.date, t),
+      label: formatDateHeader(group.date, t, language),
     }))
 }
 
@@ -366,7 +393,7 @@ function SessionItem({
   onRangeSelect,
   onFocusZone,
 }: SessionItemProps) {
-  const { t } = useTranslation('components/app-shell/SessionList')
+  const { t, language } = useTranslation('components/app-shell/SessionList')
   const [menuOpen, setMenuOpen] = useState(false)
   const [contextMenuOpen, setContextMenuOpen] = useState(false)
   const [todoMenuOpen, setTodoMenuOpen] = useState(false)
@@ -379,6 +406,9 @@ function SessionItem({
 
   // Get current todo state from session properties
   const currentTodoState = getSessionTodoState(item)
+
+  const dateFnsLocale = useMemo(() => getDateFnsLocale(language), [language])
+  const shortTimeLocale = useMemo(() => getShortTimeLocale(language), [language])
 
   // Resolve session label entries (e.g. "bug", "priority::3") to config + optional value
   const resolvedLabels = useMemo(() => {
@@ -708,7 +738,7 @@ function SessionItem({
                     </span>
                   </TooltipTrigger>
                   <TooltipContent side="bottom" sideOffset={4}>
-                    {formatDistanceToNow(new Date(item.lastMessageAt), { addSuffix: true })}
+                    {formatDistanceToNow(new Date(item.lastMessageAt), { addSuffix: true, locale: dateFnsLocale })}
                   </TooltipContent>
                 </Tooltip>
               )}
@@ -929,7 +959,7 @@ export function SessionList({
   const { navigate, navigateToSession } = useNavigation()
   const navState = useNavigationState()
   const { showEscapeOverlay } = useEscapeInterrupt()
-  const { t } = useTranslation('components/app-shell/SessionList')
+  const { t, language } = useTranslation('components/app-shell/SessionList')
 
   // Pre-flatten label tree once for efficient ID lookups in each SessionItem
   const flatLabels = useMemo(() => flattenLabels(labels), [labels])
@@ -1161,7 +1191,7 @@ export function SessionList({
   }, [hasMore, loadMore])
 
   // Group sessions by date (only used in normal mode, not search mode)
-  const dateGroups = useMemo(() => groupSessionsByDate(paginatedItems, t), [paginatedItems, t])
+  const dateGroups = useMemo(() => groupSessionsByDate(paginatedItems, t, language), [paginatedItems, t, language])
 
   // Create flat list for keyboard navigation (maintains order across groups/sections)
   const flatItems = useMemo(() => {

@@ -29,6 +29,6 @@
   "Type @ to mention files, folders, or skills": "Type @ to mention files, folders, or skills",
   "Type # to apply labels to this conversation": "Type # to apply labels to this conversation",
   "Press Shift + Return to add a new line": "Press Shift + Return to add a new line",
-  "Press {cmdKey} + B to toggle the sidebar": "Press {cmdKey} + B to toggle the sidebar",
-  "Press {cmdKey} + . for focus mode": "Press {cmdKey} + . for focus mode"
+  "Press {{cmdKey}} + B to toggle the sidebar": "Press {{cmdKey}} + B to toggle the sidebar",
+  "Press {{cmdKey}} + . for focus mode": "Press {{cmdKey}} + . for focus mode"
 }

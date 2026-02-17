@@ -84,7 +84,7 @@
           "column": 6,
           "specs": [
             {
-              "title": "语言文件完整性验证",
+              "title": "Placeholder 文本检测",
               "ok": true,
               "tags": [],
               "tests": [
@@ -99,7 +99,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 156,
+                      "duration": 67,
                       "errors": [],
                       "stdout": [
                         {
@@ -112,13 +112,10 @@
                           "text": "✅ Electron 应用已启动\n\n"
                         },
                         {
-                          "text": "\n🔍 验证语言文件完整性...\n"
+                          "text": "\n📝 检测 Placeholder 文本...\n"
                         },
                         {
-                          "text": "  ✓ 验证 107 个英文文件\n"
-                        },
-                        {
-                          "text": "  ✓ 验证 107 个中文文件\n"
+                          "text": "  ✓ Placeholder 检查完成\n"
                         },
                         {
                           "text": "\n🧹 清理资源...\n"
@@ -133,7 +130,7 @@
                           "text": "======================================================================\n"
                         },
                         {
-                          "text": "测试时间: 2026/2/17 11:01:21\n"
+                          "text": "测试时间: 2026/2/17 11:40:01\n"
                         },
                         {
                           "text": "总耗时: 9s\n"
@@ -165,7 +162,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-17T03:01:21.303Z",
+                      "startTime": "2026-02-17T03:40:01.925Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -173,9 +170,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "fcfb652bd3ffd794a76e-d11d736ce0d42135fc41",
+              "id": "fcfb652bd3ffd794a76e-bcdd6b0db0cbc365c7d7",
               "file": "i18n/i18n-e2e.spec.ts",
-              "line": 884,
+              "line": 832,
               "column": 3
             }
           ]
@@ -185,8 +182,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-17T03:01:19.763Z",
-    "duration": 11100.506,
+    "startTime": "2026-02-17T03:40:00.398Z",
+    "duration": 10217.694000000001,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

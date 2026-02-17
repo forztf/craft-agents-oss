@@ -29,6 +29,6 @@
   "Type @ to mention files, folders, or skills": "输入 @ 以提及文件、文件夹或技能",
   "Type # to apply labels to this conversation": "输入 # 为此对话添加标签",
   "Press Shift + Return to add a new line": "按 Shift + Return 换行",
-  "Press {cmdKey} + B to toggle the sidebar": "按 {cmdKey} + B 切换侧边栏",
-  "Press {cmdKey} + . for focus mode": "按 {cmdKey} + . 进入聚焦模式"
+  "Press {{cmdKey}} + B to toggle the sidebar": "按 {{cmdKey}} + B 切换侧边栏",
+  "Press {{cmdKey}} + . for focus mode": "按 {{cmdKey}} + . 进入聚焦模式"
 }

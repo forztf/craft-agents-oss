@@ -337,8 +337,8 @@ export function FreeFormInput({
         t('Type @ to mention files, folders, or skills'),
         t('Type # to apply labels to this conversation'),
         t('Press Shift + Return to add a new line'),
-        t('Press {cmdKey} + B to toggle the sidebar', { cmdKey }),
-        t('Press {cmdKey} + . for focus mode', { cmdKey }),
+        t('Press {{cmdKey}} + B to toggle the sidebar', { cmdKey }),
+        t('Press {{cmdKey}} + . for focus mode', { cmdKey }),
       ]
       return Array.isArray(placeholder) ? shuffleArray(placeholder) : (placeholder || defaultPlaceholders)
     },
