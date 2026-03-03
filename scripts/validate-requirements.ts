@@ -251,7 +251,7 @@ class RequirementsValidator {
   async loadRequirements() {
     console.log('📄 加载需求文档...\n')
 
-    const requirementsPath = path.join(this.projectRoot, 'docs', 'specs', 'requirements-system', 'modules')
+    const requirementsPath = path.join(this.projectRoot, 'docs', 'requirements')
 
     if (!fs.existsSync(requirementsPath)) {
       this.issues.push({
@@ -293,22 +293,19 @@ class RequirementsValidator {
     let scenarioBuffer: string[] = []
 
     for (const line of lines) {
-      // 检测 Requirements 章节 (## Requirements)
-      if (line.match(/^#{2}\s+Requirements\s*$/)) {
-        inRequirementsSection = true
-        continue
-      }
+      // 检测新的需求条目 - 支持两种格式:
+      // 1. ### SM-001: 会话列表展示 (带ID的格式)
+      // 2. ### Requirement: 功能名称 (不带ID的格式)
+      const reqMatchWithId = line.match(/^#{3}\s+([A-Z]{1,4}-\d+):\s+(.+)$/s)
+      const reqMatch = line.match(/^#{3}\s+Requirement:\s+(.+)$/s)
 
-      // 检测新的需求条目 (### REQ-X.X: 文本)
-      const reqMatch = line.match(/^#{3}\s+(REQ-\d+\.\d+):\s+(.*)$/s)
-
-      if (reqMatch && inRequirementsSection) {
-        // 保存上一个需求
+      if (reqMatchWithId || reqMatch) {
+        // 保存上一个需求及其所有场景
         if (currentRequirement && currentRequirement.text) {
           // 保存当前 scenario 缓冲区
           if (scenarioBuffer.length > 0) {
-            const scenarioText = scenarioBuffer.join(' ').trim()
-            if (scenarioText && currentRequirement.scenarios) {
+            const scenarioText = scenarioBuffer.join('\n').trim()
+            if (currentRequirement.scenarios) {
               currentRequirement.scenarios.push(scenarioText)
             }
             scenarioBuffer = []
@@ -316,10 +313,32 @@ class RequirementsValidator {
           requirements.push(currentRequirement as RequirementItem)
         }
 
+        let reqId: string
+        let reqText: string
+
+        if (reqMatchWithId) {
+          reqId = reqMatchWithId[1]
+          reqText = reqMatchWithId[2].trim()
+        } else {
+          // 生成需求 ID（基于模块名+序号）
+          const modulePrefixes: Record<string, string> = {
+            'session-management': 'SM',
+            'workspace-management': 'WM',
+            'api-setup': 'AP',
+            'ai-chat': 'AC',
+            'onboarding': 'OB',
+            'settings': 'SE',
+            'shortcuts': 'SC',
+            'i18n': 'I18',
+          }
+          reqId = `${modulePrefixes[moduleName] || 'REQ'}-${requirements.length + 1}`
+          reqText = reqMatch![1].trim()
+        }
+
         currentRequirement = {
-          id: reqMatch[1],
-          text: reqMatch[2].trim(),
-          type: reqMatch[2].includes('应当') ? 'functional' : 'non-functional',
+          id: reqId,
+          text: reqText,
+          type: 'functional', // 默认为功能性需求
           scenarios: [],
           status: 'active',
         }
@@ -327,14 +346,25 @@ class RequirementsValidator {
         continue
       }
 
-      // 检测 Scenario 标题 (#### Scenario:)
-      if (line.match(/^#{4}\s+Scenario:?\s*$/) && currentRequirement) {
+      // 检测 Scenario 标题 (#### Scenario: 场景名称)
+      const scenarioMatch = line.match(/^#{4}\s+Scenario:\s+(.+)$/)
+      if (scenarioMatch && currentRequirement) {
+        // 保存上一个 scenario（如果有）
+        if (scenarioBuffer.length > 0) {
+          const scenarioText = scenarioBuffer.join('\n').trim()
+          if (currentRequirement.scenarios) {
+            currentRequirement.scenarios.push(scenarioText)
+          }
+        }
+        scenarioBuffer = []
         inScenario = true
+        // Scenario 标题作为场景的一部分
+        scenarioBuffer.push(scenarioMatch[1].trim())
         continue
       }
 
-      // 收集 scenario 内容 (以 - 开头的行)
-      if (inScenario && line.match(/^\s*-\s+/) && currentRequirement && currentRequirement.scenarios) {
+      // 收集 scenario 内容 (以 - 开头的行，特别是包含 **WHEN** 或 **THEN** 的行)
+      if (inScenario && line.match(/^\s*-/)) {
         const scenarioText = line.replace(/^\s*-\s+/, '').trim()
         scenarioBuffer.push(scenarioText)
         continue
@@ -343,7 +373,7 @@ class RequirementsValidator {
       // 检测分隔符，结束当前 scenario
       if (line.match(/^---+$/) && inScenario) {
         if (scenarioBuffer.length > 0 && currentRequirement) {
-          const scenarioText = scenarioBuffer.join(' | ')
+          const scenarioText = scenarioBuffer.join('\n').trim()
           if (currentRequirement.scenarios) {
             currentRequirement.scenarios.push(scenarioText)
           }
@@ -354,20 +384,31 @@ class RequirementsValidator {
       }
 
       // 检测 MODIFIED 或 REMOVED 区块
-      if (line.match(/^#{3}\s+(MODIFIED|REMOVED)\s+区块\s*$/)) {
-        inScenario = false
-        if (currentRequirement) {
-          currentRequirement.status = line.includes('MODIFIED') ? 'modified' : 'removed'
+      if (line.match(/^#{3}\s+(MODIFIED|REMOVED)\s*$/) && currentRequirement) {
+        // 保存当前 scenario
+        if (scenarioBuffer.length > 0) {
+          const scenarioText = scenarioBuffer.join('\n').trim()
+          if (currentRequirement.scenarios) {
+            currentRequirement.scenarios.push(scenarioText)
+          }
         }
+        scenarioBuffer = []
+        inScenario = false
+
+        // 标记为已修改或已移除状态
+        currentRequirement.status = line.includes('MODIFIED') ? 'modified' : 'removed'
         continue
       }
     }
 
-    // 保存最后一个需求及其 scenario
+    // 保存最后一个需求及其所有 scenario
     if (currentRequirement && currentRequirement.text) {
-      if (scenarioBuffer.length > 0 && currentRequirement.scenarios) {
-        const scenarioText = scenarioBuffer.join(' | ')
-        currentRequirement.scenarios.push(scenarioText)
+      // 保存最后一个 scenario（如果有）
+      if (scenarioBuffer.length > 0) {
+        const scenarioText = scenarioBuffer.join('\n').trim()
+        if (currentRequirement.scenarios) {
+          currentRequirement.scenarios.push(scenarioText)
+        }
       }
       requirements.push(currentRequirement as RequirementItem)
     }
@@ -393,8 +434,8 @@ class RequirementsValidator {
 
     for (const [moduleName, module] of this.moduleRequirements) {
       for (const req of module.requirements) {
-        // 检查需求 ID 格式
-        if (!req.id.match(/^REQ-\d+\.\d+$/)) {
+        // 检查需求 ID 格式 (支持多种前缀: SM-, WM-, AI-, KB-, OB-, SE-, SC-, I18-等)
+        if (!req.id.match(/^[A-Z]{2,4}-\d+$/)) {
           this.issues.push({
             type: 'format-error',
             module: moduleName,
@@ -526,7 +567,7 @@ class RequirementsValidator {
     const expectedModules = [
       'session-management',
       'workspace-management',
-      'api-integration',
+      'api-setup',
       'ai-chat',
       'onboarding',
       'settings',
@@ -554,7 +595,10 @@ class RequirementsValidator {
       console.log('✅ 所有预期模块都已文档化')
     }
 
-    const coverageRate = ((this.moduleRequirements.size / expectedModules.length) * 100).toFixed(1)
+    // 计算覆盖率时排除 INDEX.md
+    const moduleRequirements = Array.from(this.moduleRequirements.entries())
+      .filter(([name]) => name !== 'INDEX')
+    const coverageRate = ((moduleRequirements.length / expectedModules.length) * 100).toFixed(1)
     console.log(`📈 模块覆盖率: ${coverageRate}%\n`)
 
     if (parseFloat(coverageRate) < 80) {
@@ -663,6 +707,23 @@ class RequirementsValidator {
   hasErrors(): boolean {
     return this.issues.some(i => i.severity === 'error')
   }
+}
+
+/**
+ * 获取模块前缀（用于生成需求 ID）
+ */
+function getModulePrefix(moduleName: string): string {
+  const prefixes: Record<string, string> = {
+    'session-management': 'SM',
+    'workspace-management': 'WM',
+    'api-setup': 'AP',
+    'ai-chat': 'AC',
+    'onboarding': 'OB',
+    'settings': 'SE',
+    'shortcuts': 'SC',
+    'i18n': 'I18',
+  }
+  return prefixes[moduleName] || 'REQ'
 }
 
 /**

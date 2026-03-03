@@ -1,357 +1,371 @@
 {
-  "timestamp": "2026-03-03T03:48:59.857Z",
+  "timestamp": "2026-03-03T04:21:49.676Z",
   "summary": {
-    "totalIssues": 42,
+    "totalIssues": 44,
     "errors": 0,
-    "warnings": 42,
-    "infos": 0,
-    "modulesCovered": 8,
+    "warnings": 2,
+    "infos": 42,
+    "modulesCovered": 10,
     "codeFeaturesFound": 24
   },
   "issues": [
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-3.1",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-3.1"
+      "module": "api-configuration",
+      "requirement": "REQ-1",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-3.2",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-3.2"
+      "module": "api-configuration",
+      "requirement": "REQ-2",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-4.1",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-4.1"
+      "module": "api-configuration",
+      "requirement": "REQ-3",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-4.2",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-4.2"
+      "module": "api-configuration",
+      "requirement": "REQ-4",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-4.3",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-4.3"
+      "module": "api-configuration",
+      "requirement": "REQ-5",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-5.1",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-5.1"
+      "module": "api-configuration",
+      "requirement": "REQ-6",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-5.2",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-5.2"
+      "module": "api-configuration",
+      "requirement": "REQ-7",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-5.3",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-5.3"
+      "module": "api-configuration",
+      "requirement": "REQ-8",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-6.1",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-6.1"
+      "module": "api-configuration",
+      "requirement": "REQ-9",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-6.2",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-6.2"
+      "module": "api-configuration",
+      "requirement": "REQ-10",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-6.3",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-6.3"
+      "module": "api-configuration",
+      "requirement": "REQ-11",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-7.1",
+      "module": "api-configuration",
+      "requirement": "REQ-12",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
+    },
+    {
+      "type": "missing-scenario",
+      "module": "INDEX",
+      "requirement": "REQ-1",
       "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-7.1"
+      "message": "缺少场景定义"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-7.2",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-7.2"
+      "module": "INDEX",
+      "requirement": "REQ-1",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-7.3",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-7.3"
+      "module": "session-management",
+      "requirement": "SM-1",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-8.1",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-8.1"
+      "module": "session-management",
+      "requirement": "SM-2",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-8.2",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-8.2"
+      "module": "session-management",
+      "requirement": "SM-3",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-8.3",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-8.3"
+      "module": "session-management",
+      "requirement": "SM-4",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-9.1",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-9.1"
+      "module": "session-management",
+      "requirement": "SM-5",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-9.2",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-9.2"
+      "module": "session-management",
+      "requirement": "SM-6",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-10.1",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-10.1"
+      "module": "session-management",
+      "requirement": "SM-7",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-10.2",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-10.2"
+      "module": "session-management",
+      "requirement": "SM-8",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "I18n",
-      "requirement": "I18n-10.3",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: I18n-10.3"
+      "module": "session-management",
+      "requirement": "SM-9",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-3.1",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-3.1"
+      "module": "session-management",
+      "requirement": "SM-10",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-3.2",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-3.2"
+      "module": "session-management",
+      "requirement": "SM-11",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-3.3",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-3.3"
+      "module": "session-management",
+      "requirement": "SM-12",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-4.1",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-4.1"
+      "module": "session-management",
+      "requirement": "SM-13",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-4.2",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-4.2"
+      "module": "session-management",
+      "requirement": "SM-14",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-4.3",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-4.3"
+      "module": "session-management",
+      "requirement": "SM-15",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-4.4",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-4.4"
+      "module": "session-management",
+      "requirement": "SM-16",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-4.5",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-4.5"
+      "module": "session-management",
+      "requirement": "SM-17",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-5.1",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-5.1"
+      "module": "session-management",
+      "requirement": "SM-18",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-5.2",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-5.2"
+      "module": "session-management",
+      "requirement": "SM-19",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-5.3",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-5.3"
+      "module": "session-management",
+      "requirement": "SM-20",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-6.1",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-6.1"
+      "module": "session-management",
+      "requirement": "SM-21",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-6.2",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-6.2"
+      "module": "workspace-management",
+      "requirement": "WM-1",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-6.3",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-6.3"
+      "module": "workspace-management",
+      "requirement": "WM-2",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-7.1",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-7.1"
+      "module": "workspace-management",
+      "requirement": "WM-3",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-7.2",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-7.2"
+      "module": "workspace-management",
+      "requirement": "WM-4",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-8.1",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-8.1"
+      "module": "workspace-management",
+      "requirement": "WM-5",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-8.2",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-8.2"
+      "module": "workspace-management",
+      "requirement": "WM-6",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-9.1",
-      "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-9.1"
+      "module": "workspace-management",
+      "requirement": "WM-7",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
       "type": "format-error",
-      "module": "Shortcuts",
-      "requirement": "Shortcuts-10.1",
+      "module": "workspace-management",
+      "requirement": "WM-8",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
+    },
+    {
+      "type": "coverage-gap",
       "severity": "warning",
-      "message": "需求ID格式可能不符合标准: Shortcuts-10.1"
+      "message": "代码覆盖率仅为 12.5%，建议达到至少 80%"
     }
   ],
   "moduleSummary": [
     {
-      "name": "AiChat",
-      "fileName": "ai-chat",
+      "name": "ai-chat",
       "requirementCount": 0,
       "activeCount": 0
     },
     {
-      "name": "ApiSetup",
-      "fileName": "api-setup",
+      "name": "api-configuration",
+      "requirementCount": 12,
+      "activeCount": 12
+    },
+    {
+      "name": "api-setup",
       "requirementCount": 0,
       "activeCount": 0
     },
     {
-      "name": "I18n",
-      "fileName": "i18n",
-      "requirementCount": 22,
-      "activeCount": 22
-    },
-    {
-      "name": "Onboarding",
-      "fileName": "onboarding",
+      "name": "i18n",
       "requirementCount": 0,
       "activeCount": 0
     },
     {
-      "name": "SessionManagement",
-      "fileName": "session-management",
-      "requirementCount": 10,
-      "activeCount": 10
+      "name": "INDEX",
+      "requirementCount": 1,
+      "activeCount": 1
     },
     {
-      "name": "Settings",
-      "fileName": "settings",
+      "name": "onboarding",
       "requirementCount": 0,
       "activeCount": 0
     },
     {
-      "name": "Shortcuts",
-      "fileName": "shortcuts",
-      "requirementCount": 20,
-      "activeCount": 20
+      "name": "session-management",
+      "requirementCount": 21,
+      "activeCount": 21
     },
     {
-      "name": "WorkspaceManagement",
-      "fileName": "workspace-management",
-      "requirementCount": 10,
-      "activeCount": 10
+      "name": "settings",
+      "requirementCount": 0,
+      "activeCount": 0
+    },
+    {
+      "name": "shortcuts",
+      "requirementCount": 0,
+      "activeCount": 0
+    },
+    {
+      "name": "workspace-management",
+      "requirementCount": 8,
+      "activeCount": 8
     }
   ]
 }
