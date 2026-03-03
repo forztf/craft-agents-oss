@@ -1,1255 +1,552 @@
-# 设置模块需求规格说明书
+# Settings 模块需求规格规范
 
-**版本**: 1.0
+**版本**: 2.0
 **生成日期**: 2026-03-03
-**文档格式**: OpenSpec
+**文档格式**: OpenSpec (EARS 语法)
 **目标组件**: `apps/electron/src/renderer/pages/settings/`
+
+---
+
+## 模块概述
+
+设置模块是 Craft Agents 应用的核心配置中心，提供全局应用级别设置和各功能模块的特定设置。模块包含 10 个子页面，每个页面负责特定功能的配置管理。
 
 ---
 
 ## ADDED Requirements
 
-### Requirement: 1.1.1 - 桌面通知开关
-**WHEN** 用户在应用设置页面
-**THE SYSTEM SHALL** 提供一个切换开关来启用或禁用桌面通知
-**SO THAT** 用户可以控制是否在 AI 完成工作时接收通知
+### Requirement: 桌面通知管理
+系统 SHALL 提供桌面通知的启用/禁用配置功能。
 
-#### Scenario: 用户切换桌面通知开关
-- **WHEN** 用户点击桌面通知的切换开关
-- **THEN** 系统启用或禁用桌面通知功能
-> 来源: `apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx`
+#### Scenario: 启用桌面通知
+- **WHEN** 用户将"桌面通知"开关切换到开启状态
+- **THEN** 系统应通过 IPC 调用 `setNotificationsEnabled(true)` 保存设置，并在 AI 完成工作后发送桌面通知
+> 来源: `apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx:81-84, 101-106`
 
-### Requirement: 1.1.2 - 通知状态持久化
-**WHEN** 用户切换桌面通知开关
-**THE SYSTEM SHALL** 保存通知设置到系统配置中
-**SO THAT** 设置在应用重启后仍然有效
+#### Scenario: 禁用桌面通知
+- **WHEN** 用户将"桌面通知"开关切换到关闭状态
+- **THEN** 系统应通过 IPC 调用 `setNotificationsEnabled(false)` 保存设置，不再发送桌面通知
+> 来源: `apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx:81-84, 101-106`
 
-#### Scenario: 保存桌面通知设置
-- **WHEN** 用户修改桌面通知状态
-- **THEN** 系统将设置存储到应用配置文件
-> 来源: `apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx`
+#### Scenario: 加载通知设置状态
+- **WHEN** 应用启动并加载设置页面时
+- **THEN** 系统应从主进程获取当前通知启用状态，并更新 UI 开关状态
+> 来源: `apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx:43, 63-79`
 
-### Requirement: 1.2.1 - 屏幕唤醒保持
-**WHEN** 用户启用"保持屏幕唤醒"选项
-**THE SYSTEM SHALL** 在会话运行时防止屏幕关闭
-**SO THAT** 长时间运行的任务不会因为屏幕关闭而中断
+---
 
-#### Scenario: 启用保持屏幕唤醒
-- **WHEN** 用户开启"保持屏幕唤醒"开关
-- **THEN** 系统在会话运行期间阻止屏幕关闭
-> 来源: `apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx`
+### Requirement: 电源管理设置
+系统 SHALL 提供屏幕保持唤醒的配置功能。
 
-### Requirement: 1.2.2 - 电源设置持久化
-**WHEN** 用户修改电源设置
-**THE SYSTEM SHALL** 保存电源管理设置到系统配置中
-**SO THAT** 设置在应用重启后保持不变
+#### Scenario: 启用屏幕保持唤醒
+- **WHEN** 用户将"保持屏幕唤醒"开关切换到开启状态
+- **THEN** 系统应通过 IPC 调用 `setKeepAwakeWhileRunning(true)` 防止屏幕在会话运行时关闭
+> 来源: `apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx:86-89, 113-118`
 
-#### Scenario: 保存电源管理设置
-- **WHEN** 用户修改保持屏幕唤醒设置
-- **THEN** 系统将设置持久化存储
-> 来源: `apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx`
+#### Scenario: 禁用屏幕保持唤醒
+- **WHEN** 用户将"保持屏幕唤醒"开关切换到关闭状态
+- **THEN** 系统应通过 IPC 调用 `setKeepAwakeWhileRunning(false)` 恢复正常屏幕休眠行为
+> 来源: `apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx:86-89, 113-118`
 
-### Requirement: 1.3.1 - 版本显示
-**WHEN** 用户访问应用设置
-**THE SYSTEM SHALL** 显示当前应用的版本号
-**SO THAT** 用户可以知道正在使用的版本
+#### Scenario: 加载电源设置状态
+- **WHEN** 应用启动并加载设置页面时
+- **THEN** 系统应从主进程获取当前保持唤醒启用状态，并更新 UI 开关状态
+> 来源: `apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx:47, 63-79`
 
-#### Scenario: 查看应用版本
-- **WHEN** 用户打开应用设置页面
-- **THEN** 系统显示当前应用版本号
-> 来源: `apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx`
+---
 
-### Requirement: 1.3.2 - 更新检查
-**WHEN** 用户点击"检查更新"按钮
-**THE SYSTEM SHALL** 连接到更新服务器检查是否有新版本可用
-**SO THAT** 用户可以获取最新的功能和修复
+### Requirement: 应用更新管理
+系统 SHALL 提供应用版本检查和更新功能。
 
-#### Scenario: 检查应用更新
+#### Scenario: 显示当前应用版本
+- **WHEN** 用户打开应用设置的"关于"部分
+- **THEN** 系统应显示当前应用版本号，未加载时显示"加载中"
+> 来源: `apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx:125-129`
+
+#### Scenario: 检查更新
 - **WHEN** 用户点击"检查更新"按钮
-- **THEN** 系统连接更新服务器并检查新版本
-> 来源: `apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx`
-
-### Requirement: 1.3.3 - 更新提示
-**WHEN** 检测到有新版本可用
-**THE SYSTEM SHALL** 显示更新按钮和最新版本号
-**SO THAT** 用户可以选择更新到最新版本
+- **THEN** 系统应异步调用更新检查器，显示加载状态，检查完成后更新可用更新信息
+> 来源: `apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx:53-60, 141-157`
 
 #### Scenario: 显示可用更新
-- **WHEN** 检测到新版本可用
-- **THEN** 系统显示更新按钮和最新版本号
-> 来源: `apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx`
+- **WHEN** 检测到有可用的新版本
+- **THEN** 系统应显示"更新到 {版本号}"按钮，点击后触发更新安装
+> 来源: `apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx:130-138`
 
-### Requirement: 1.3.4 - 更新安装
-**WHEN** 用户点击更新按钮
-**THE SYSTEM SHALL** 下载更新并准备安装
-**SO THAT** 用户可以升级到新版本
+#### Scenario: 就绪状态下显示重启更新按钮
+- **WHEN** 更新已下载并准备安装
+- **THEN** 系统应显示"重启以更新"按钮，点击后重启应用并完成更新
+> 来源: `apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx:158-167`
 
-#### Scenario: 下载并准备更新
-- **WHEN** 用户点击更新到版本按钮
-- **THEN** 系统下载更新包并准备安装
-> 来源: `apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx`
+---
 
-### Requirement: 1.3.5 - 重启更新
-**WHEN** 更新准备就绪
-**THE SYSTEM SHALL** 显示"重启以更新"按钮
-**SO THAT** 用户可以完成更新安装
+### Requirement: AI 默认配置设置
+系统 SHALL 允许用户配置 AI 对话的默认连接、模型和思考级别。
 
-#### Scenario: 重启以完成更新
-- **WHEN** 更新准备就绪
-- **THEN** 系统显示"重启以更新"按钮
-> 来源: `apps/electron/src/renderer/pages/settings/AppSettingsPage.tsx`
+#### Scenario: 设置默认连接
+- **WHEN** 用户从默认设置中选择一个 AI 连接
+- **THEN** 系统应通过 IPC 调用 `setDefaultLlmConnection(slug)` 将其设为默认连接并刷新连接列表
+> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx:670-684, 610-622`
 
-### Requirement: 2.1.1 - 默认连接选择
-**WHEN** 配置了多个 AI API 连接
-**THE SYSTEM SHALL** 允许用户选择默认连接
-**SO THAT** 新聊天会使用指定的连接
-
-#### Scenario: 设置默认 AI 连接
-- **WHEN** 用户从连接列表中选择一个连接作为默认
-- **THEN** 新聊天会使用选定的连接
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
-
-### Requirement: 2.1.2 - 默认模型选择
-**WHEN** 选定的连接支持多个模型
-**THE SYSTEM SHALL** 允许用户选择默认模型
-**SO THAT** 新聊天会使用指定的模型
-
-#### Scenario: 设置默认 AI 模型
-- **WHEN** 用户从模型列表中选择默认模型
-- **THEN** 新聊天会使用选定的模型
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
-
-### Requirement: 2.1.3 - 默认思考级别
-**WHEN** 用户配置 AI 设置
-**THE SYSTEM SHALL** 允许用户选择默认思考级别(深度推理)
-**SO THAT** 新聊天会使用指定的推理深度
+#### Scenario: 设置默认模型
+- **WHEN** 用户从默认设置中选择一个 AI 模型
+- **THEN** 系统应更新默认连接的 `defaultModel` 属性并保存
+> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx:686-692, 632-640`
 
 #### Scenario: 设置默认思考级别
-- **WHEN** 用户选择默认思考级别
-- **THEN** 新聊天会使用选定的推理深度
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
+- **WHEN** 用户从默认设置中选择思考级别
+- **THEN** 系统应更新默认的思考级别配置
+> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx:693-703, 642-645`
 
-### Requirement: 2.2.1 - 工作区连接覆盖
-**WHEN** 用户为特定工作区配置 AI 设置
-**THE SYSTEM SHALL** 允许该工作区覆盖应用默认连接
-**SO THAT** 不同工作区可以使用不同的 AI 提供商
+#### Scenario: 动态模型选项
+- **WHEN** 用户选择的连接有明确的模型列表
+- **THEN** 系统应使用连接的模型列表作为下拉选项；否则使用提供商类型的注册模型
+> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx:56-80`
 
-#### Scenario: 工作区覆盖默认连接
-- **WHEN** 用户为工作区选择特定连接
-- **THEN** 该工作区使用指定的连接而非应用默认
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
+---
 
-### Requirement: 2.2.2 - 工作区模型覆盖
-**WHEN** 用户为特定工作区配置模型
-**THE SYSTEM SHALL** 允许该工作区覆盖应用默认模型
-**SO THAT** 不同工作区可以使用适合其任务的模型
+### Requirement: 工作区 AI 配置覆盖
+系统 SHALL 允许每个工作区覆盖应用级别的 AI 默认设置。
 
-#### Scenario: 工作区覆盖默认模型
-- **WHEN** 用户为工作区选择特定模型
-- **THEN** 该工作区使用指定的模型
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
+#### Scenario: 设置工作区特定连接
+- **WHEN** 用户在工作区覆盖卡片中选择特定连接或"使用默认"
+- **THEN** 系统应更新工作区的 `defaultLlmConnection` 设置，选择"使用默认"时清除覆盖
+> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx:396-411, 299-302`
 
-### Requirement: 2.2.3 - 工作区思考级别覆盖
-**WHEN** 用户为特定工作区配置思考级别
-**THE SYSTEM SHALL** 允许该工作区覆盖应用默认思考级别
-**SO THAT** 不同工作区可以使用不同的推理深度
+#### Scenario: 设置工作区特定模型
+- **WHEN** 用户在工作区覆盖卡片中选择特定模型或"使用默认"
+- **THEN** 系统应更新工作区的 `model` 设置，选择"使用默认"时清除覆盖
+> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx:412-421, 304-307`
 
-#### Scenario: 工作区覆盖默认思考级别
-- **WHEN** 用户为工作区选择特定思考级别
-- **THEN** 该工作区使用指定的推理深度
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
+#### Scenario: 设置工作区特定思考级别
+- **WHEN** 用户在工作区覆盖卡片中选择特定思考级别或"使用默认"
+- **THEN** 系统应更新工作区的 `thinkingLevel` 设置，选择"使用默认"时清除覆盖
+> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx:422-435, 309-312`
 
-### Requirement: 2.2.4 - 使用全局默认选项
-**WHEN** 用户在工作区配置中选择"使用默认"
-**THE SYSTEM SHALL** 移除该工作区对此设置的覆盖
-**SO THAT** 工作区继承应用默认设置
+#### Scenario: 工作区覆盖折叠状态
+- **WHEN** 工作区设置卡处于折叠状态
+- **THEN** 系统应显示工作区名称、图标以及覆盖项摘要（如"使用默认"或具体配置）
+> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx:333-348`
 
-#### Scenario: 工作区恢复使用默认设置
-- **WHEN** 用户选择"使用默认"选项
-- **THEN** 工作区移除覆盖并继承应用默认设置
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
+---
 
-### Requirement: 2.2.5 - 工作区配置摘要
-**WHEN** 工作区配置卡片处于折叠状态
-**THE SYSTEM SHALL** 显示当前配置的摘要(连接名、模型、思考级别)
-**SO THAT** 用户可以快速查看工作区配置状态
+### Requirement: AI 连接管理
+系统 SHALL 允许用户添加、编辑、删除和验证 AI 提供商连接。
 
-#### Scenario: 显示工作区配置摘要
-- **WHEN** 工作区配置卡片处于折叠状态
-- **THEN** 系统显示当前配置的摘要信息
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
+#### Scenario: 编辑连接
+- **WHEN** 用户点击连接行的编辑菜单项
+- **THEN** 系统应打开全屏 API 设置向导，加载该连接的配置供编辑
+> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx:212-216, 546-548`
 
-### Requirement: 2.3.1 - 连接列表显示
-**WHEN** 用户访问 AI 设置页面
-**THE SYSTEM SHALL** 显示所有配置的 AI API 连接
-**SO THAT** 用户可以查看和管理所有连接
-
-#### Scenario: 查看 AI 连接列表
-- **WHEN** 用户访问 AI 设置页面
-- **THEN** 系统显示所有已配置的连接
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
-
-### Requirement: 2.3.2 - 连接信息显示
-**WHEN** 显示连接列表
-**THE SYSTEM SHALL** 为每个连接显示名称、提供商类型、认证状态
-**SO THAT** 用户可以了解连接的基本信息
-
-#### Scenario: 显示连接详细信息
-- **WHEN** 用户查看连接列表
-- **THEN** 每个连接显示名称、提供商类型、认证状态
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
-
-### Requirement: 2.3.3 - 默认连接标识
-**WHEN** 显示连接列表
-**THE SYSTEM SHALL** 为默认连接显示标识标签
-**SO THAT** 用户可以快速识别默认连接
-
-#### Scenario: 识别默认连接
-- **WHEN** 用户查看连接列表
-- **THEN** 默认连接显示标识标签
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
-
-### Requirement: 2.3.4 - 添加新连接
-**WHEN** 用户点击"添加连接"按钮
-**THE SYSTEM SHALL** 打开全屏 API 设置向导
-**SO THAT** 用户可以添加新的 AI 提供商连接
-
-#### Scenario: 添加新的 AI 连接
-- **WHEN** 用户点击"+ Add Connection"按钮
-- **THEN** 系统打开全屏 API 设置向导
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
-
-### Requirement: 2.3.5 - 编辑现有连接
-**WHEN** 用户选择编辑某个连接
-**THE SYSTEM SHALL** 打开全屏 API 设置向导并预填充连接信息
-**SO THAT** 用户可以修改连接配置
-
-#### Scenario: 编辑现有 AI 连接
-- **WHEN** 用户选择连接的编辑选项
-- **THEN** 系统打开 API 设置向导并预填充信息
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
-
-### Requirement: 2.3.6 - 设置默认连接
-**WHEN** 用户选择"设为默认"选项
-**THE SYSTEM SHALL** 将该连接设置为应用默认
-**SO THAT** 新聊天会使用此连接
-
-#### Scenario: 设置默认 AI 连接
-- **WHEN** 用户选择"设为默认"选项
-- **THEN** 该连接成为应用默认连接
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
-
-### Requirement: 2.3.7 - 删除连接
-**WHEN** 用户选择删除某个连接
-**THE SYSTEM SHALL** 删除该连接(如果是最后一个连接则禁止删除)
-**SO THAT** 用户可以移除不需要的连接
-
-#### Scenario: 删除 AI 连接
-- **WHEN** 用户选择删除连接选项
-- **THEN** 系统删除该连接(至少保留一个)
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
-
-### Requirement: 2.3.8 - 连接验证
-**WHEN** 用户选择"验证连接"选项
-**THE SYSTEM SHALL** 测试连接的凭证和模型访问权限
-**SO THAT** 用户可以确认连接配置正确
-
-#### Scenario: 验证 AI 连接
-- **WHEN** 用户选择"验证连接"选项
-- **THEN** 系统测试凭证和模型访问权限
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
-
-### Requirement: 2.3.9 - 验证状态显示
-**WHEN** 进行连接验证
-**THE SYSTEM SHALL** 显示验证中、验证成功或验证失败状态
-**SO THAT** 用户了解验证进度和结果
-
-#### Scenario: 显示验证状态
-- **WHEN** 进行连接验证
-- **THEN** 系统显示验证中/成功/失败状态
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
-
-### Requirement: 2.3.10 - 重新认证
-**WHEN** 用户选择"重新认证"选项
-**THE SYSTEM SHALL** 打开认证流程(OAuth 或凭证输入)
-**SO THAT** 用户可以更新过期的凭证
+#### Scenario: 设置默认连接
+- **WHEN** 用户点击非默认连接的"设为默认"菜单项
+- **THEN** 系统应调用 IPC 将该连接设为默认并刷新连接列表
+> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx:217-222, 610-622`
 
 #### Scenario: 重新认证连接
-- **WHEN** 用户选择"重新认证"选项
-- **THEN** 系统打开 OAuth 或凭证输入流程
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
+- **WHEN** 用户点击"重新认证"菜单项
+- **THEN** 系统应打开 API 设置向导，对 OAuth 连接自动触发 OAuth 流程
+> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx:223-228, 550-558`
 
-### Requirement: 2.4.1 - 凭证问题检测
-**WHEN** 系统启动时检测到凭证问题(文件损坏、机器迁移等)
-**THE SYSTEM SHALL** 显示警告横幅
-**SO THAT** 用户知道需要重新认证
+#### Scenario: 验证连接
+- **WHEN** 用户点击"验证连接"菜单项
+- **THEN** 系统应调用 IPC 测试连接，显示验证状态（验证中/成功/失败），成功后 3 秒自动清除状态
+> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx:229-235, 574-608`
 
-#### Scenario: 检测凭证健康问题
-- **WHEN** 系统检测到凭证问题
-- **THEN** 显示警告横幅提示用户
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
+#### Scenario: 删除连接
+- **WHEN** 用户点击"删除"菜单项
+- **THEN** 系统应调用 IPC 删除该连接并刷新连接列表（至少保留一个连接）
+> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx:236-244, 560-572`
 
-### Requirement: 2.4.2 - 凭证问题信息
-**WHEN** 显示凭证问题警告
-**THE SYSTEM SHALL** 显示具体的错误信息和建议操作
-**SO THAT** 用户了解问题原因和解决方法
+#### Scenario: 添加新连接
+- **WHEN** 用户点击"+ 添加连接"按钮
+- **THEN** 系统应打开全屏 API 设置向导供用户添加新的 AI 连接
+> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx:754-761, 493-497`
 
-#### Scenario: 显示凭证问题详情
-- **WHEN** 显示凭证问题警告
-- **THEN** 系统显示错误信息和解决建议
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
+---
 
-### Requirement: 2.4.3 - 重新认证引导
-**WHEN** 用户点击凭证警告横幅中的"重新认证"按钮
-**THE SYSTEM SHALL** 打开默认连接的认证流程
-**SO THAT** 用户可以快速修复凭证问题
+### Requirement: 凭证健康监控
+系统 SHALL 监控 AI 凭证健康状态并在检测到问题时显示警告。
 
-#### Scenario: 从警告横幅重新认证
-- **WHEN** 用户点击警告横幅中的"重新认证"
-- **THEN** 系统打开默认连接的认证流程
-> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx`
+#### Scenario: 检测凭证损坏
+- **WHEN** 系统检测到凭证文件损坏
+- **THEN** 系统应在 AI 设置页面顶部显示警告横幅，说明"凭证文件已损坏，请重新认证"
+> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx:92-103, 116-137`
 
-### Requirement: 3.1.1 - 主题模式选择
-**WHEN** 用户配置外观设置
-**THE SYSTEM SHALL** 提供"系统"、"亮色"、"暗色"三种主题模式选择
-**SO THAT** 用户可以根据偏好选择主题
+#### Scenario: 检测跨机器凭证
+- **WHEN** 系统检测到凭证来自另一台机器
+- **THEN** 系统应在 AI 设置页面顶部显示警告横幅，说明"检测到来自另一台机器的凭证"
+> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx:94-97, 116-137`
 
-#### Scenario: 选择主题模式
-- **WHEN** 用户配置外观设置
-- **THEN** 系统提供系统/亮色/暗色三种模式选项
-> 来源: `apps/electron/src/renderer/pages/settings/AppearanceSettingsPage.tsx`
+#### Scenario: 从凭证警告重新认证
+- **WHEN** 用户点击凭证警告横幅的"重新认证"按钮
+- **THEN** 系统应打开默认连接或首个连接的 API 设置向导供用户重新认证
+> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx:127-134, 534-543`
 
-### Requirement: 3.1.2 - 颜色主题选择
-**WHEN** 用户配置外观设置
-**THE SYSTEM SHALL** 提供多种预设颜色主题供选择
-**SO THAT** 用户可以自定义应用配色
+---
 
-#### Scenario: 选择颜色主题
-- **WHEN** 用户配置外观设置
-- **THEN** 系统提供多种预设颜色主题
-> 来源: `apps/electron/src/renderer/pages/settings/AppearanceSettingsPage.tsx`
+### Requirement: 外观主题设置
+系统 SHALL 允许用户配置应用的外观主题。
 
-### Requirement: 3.1.3 - 字体选择
-**WHEN** 用户配置外观设置
-**THE SYSTEM SHALL** 提供字体选择(如 Inter)
-**SO THAT** 用户可以选择喜欢的字体
+#### Scenario: 设置主题模式
+- **WHEN** 用户从模式分段控制器选择"系统"、"浅色"或"深色"
+- **THEN** 系统应更新全局主题模式设置
+> 来源: `apps/electron/src/renderer/pages/settings/AppearanceSettingsPage.tsx:227-236`
 
-#### Scenario: 选择应用字体
-- **WHEN** 用户配置外观设置
-- **THEN** 系统提供字体选择
-> 来源: `apps/electron/src/renderer/pages/settings/AppearanceSettingsPage.tsx`
+#### Scenario: 设置颜色主题
+- **WHEN** 用户从颜色主题下拉菜单选择预设主题
+- **THEN** 系统应更新全局颜色主题设置
+> 来源: `apps/electron/src/renderer/pages/settings/AppearanceSettingsPage.tsx:238-243`
 
-### Requirement: 3.2.1 - 为每个工作区设置主题
-**WHEN** 配置了多个工作区
-**THE SYSTEM SHALL** 允许为每个工作区单独设置颜色主题
-**SO THAT** 不同工作区可以有不同的视觉标识
+#### Scenario: 设置字体
+- **WHEN** 用户从字体分段控制器选择字体类型
+- **THEN** 系统应更新全局字体设置
+> 来源: `apps/electron/src/renderer/pages/settings/AppearanceSettingsPage.tsx:245-252`
 
-#### Scenario: 为工作区设置单独主题
-- **WHEN** 用户配置多个工作区
-- **THEN** 每个工作区可以有独立的颜色主题
-> 来源: `apps/electron/src/renderer/pages/settings/AppearanceSettingsPage.tsx`
+---
 
-### Requirement: 3.2.2 - 工作区主题显示
-**WHEN** 显示工作区主题列表
-**THE SYSTEM SHALL** 显示工作区图标、名称和当前主题
-**SO THAT** 用户可以方便地管理主题
+### Requirement: 工作区主题覆盖
+系统 SHALL 允许每个工作区覆盖应用级别的主题设置。
 
-#### Scenario: 显示工作区主题列表
-- **WHEN** 用户查看工作区主题
-- **THEN** 系统显示图标、名称和当前主题
-> 来源: `apps/electron/src/renderer/pages/settings/AppearanceSettingsPage.tsx`
+#### Scenario: 设置工作区特定颜色主题
+- **WHEN** 用户在工作区主题设置中选择特定主题或"使用默认"
+- **THEN** 系统应更新工作区的颜色主题设置，对于当前工作区立即应用，其他工作区通过 IPC 持久化
+> 来源: `apps/electron/src/renderer/pages/settings/AppearanceSettingsPage.tsx:284-297, 173-193`
 
-### Requirement: 3.2.3 - 使用默认主题选项
-**WHEN** 用户为工作区选择"使用默认"
-**THE SYSTEM SHALL** 移除工作区的主题覆盖
-**SO THAT** 工作区继承应用默认主题
+#### Scenario: 显示工作区主题状态
+- **WHEN** 渲染工作区主题设置行时
+- **THEN** 系统应显示工作区名称、图标以及当前主题选择（如有自定义主题高亮显示，否则显示"使用默认"）
+> 来源: `apps/electron/src/renderer/pages/settings/AppearanceSettingsPage.tsx:268-283`
 
-#### Scenario: 工作区恢复使用默认主题
-- **WHEN** 用户选择"使用默认"
-- **THEN** 工作区恢复使用应用默认主题
-> 来源: `apps/electron/src/renderer/pages/settings/AppearanceSettingsPage.tsx`
+---
 
-### Requirement: 3.3.1 - 工具图标表格显示
-**WHEN** 用户访问工具图标设置
-**THE SYSTEM SHALL** 显示所有工具图标及其对应的 CLI 命令
-**SO THAT** 用户可以查看命令到图标的映射关系
+### Requirement: 工具图标映射管理
+系统 SHALL 显示 CLI 命令到图标的映射配置并提供编辑入口。
 
-#### Scenario: 查看工具图标映射
-- **WHEN** 用户访问工具图标设置
-- **THEN** 系统显示所有工具图标和 CLI 命令映射
-> 来源: `apps/electron/src/renderer/pages/settings/AppearanceSettingsPage.tsx`
+#### Scenario: 显示工具图标映射表
+- **WHEN** 用户打开工具图标设置部分
+- **THEN** 系统应显示包含图标预览、工具名称、命令徽章的数据表格
+> 来源: `apps/electron/src/renderer/pages/settings/AppearanceSettingsPage.tsx:110-151, 323-329`
 
-### Requirement: 3.3.2 - 工具图标搜索
-**WHEN** 工具图标列表很长
-**THE SYSTEM SHALL** 提供搜索功能来过滤工具
-**SO THAT** 用户可以快速找到特定工具
+#### Scenario: 通过编辑弹窗编辑工具图标
+- **WHEN** 用户点击工具图标部分的编辑按钮
+- **THEN** 系统应打开 EditPopover 提供 AI 辅助编辑工具图标配置的功能
+> 来源: `apps/electron/src/renderer/pages/settings/AppearanceSettingsPage.tsx:309-320`
 
-#### Scenario: 搜索工具图标
-- **WHEN** 用户搜索工具图标
-- **THEN** 系统过滤并显示匹配的工具
-> 来源: `apps/electron/src/renderer/pages/settings/AppearanceSettingsPage.tsx`
+#### Scenario: 直接编辑工具图标文件
+- **WHEN** 用户点击工具图标编辑弹窗的"编辑文件"操作
+- **THEN** 系统应在系统编辑器中打开 `~/.craft-agent/tool-icons/tool-icons.json` 文件
+> 来源: `apps/electron/src/renderer/pages/settings/AppearanceSettingsPage.tsx:314-318`
 
-### Requirement: 3.3.3 - 编辑工具图标
-**WHEN** 用户点击"编辑"按钮
-**THE SYSTEM SHALL** 打开工具图标配置文件的编辑界面
-**SO THAT** 用户可以自定义命令到图标的映射
+---
 
-#### Scenario: 编辑工具图标映射
-- **WHEN** 用户点击"编辑"按钮
-- **THEN** 系统打开工具图标配置文件编辑界面
-> 来源: `apps/electron/src/renderer/pages/settings/AppearanceSettingsPage.tsx`
+### Requirement: 输入行为设置
+系统 SHALL 允许用户配置聊天输入的行为。
 
-### Requirement: 4.1.1 - 自动大写
-**WHEN** 用户在聊天输入框中输入文本
-**THE SYSTEM SHALL** 在自动大写启用时自动将句子首字母大写
-**SO THAT** 用户不需要手动大写
+#### Scenario: 启用自动大写
+- **WHEN** 用户将"自动大写"开关切换到开启状态
+- **THEN** 系统应通过 IPC 调用 `setAutoCapitalisation(true)`，输入消息时自动首字母大写
+> 来源: `apps/electron/src/renderer/pages/settings/InputSettingsPage.tsx:68-71, 94-99`
 
-#### Scenario: 自动大写句子首字母
-- **WHEN** 用户输入文本且自动大写启用
-- **THEN** 系统自动大写句子首字母
-> 来源: `apps/electron/src/renderer/pages/settings/InputSettingsPage.tsx`
+#### Scenario: 启用拼写检查
+- **WHEN** 用户将"拼写检查"开关切换到开启状态
+- **THEN** 系统应通过 IPC 调用 `setSpellCheck(true)`，在输入时下划线标记拼写错误
+> 来源: `apps/electron/src/renderer/pages/settings/InputSettingsPage.tsx:73-76, 100-105`
 
-### Requirement: 4.1.2 - 拼写检查
-**WHEN** 用户在聊天输入框中输入文本
-**THE SYSTEM SHALL** 在拼写检查启用时标记拼写错误
-**SO THAT** 用户可以识别并修正拼写错误
+#### Scenario: 配置发送消息快捷键
+- **WHEN** 用户从"发送消息用"下拉选择"Enter"或"Cmd Enter"（Windows 为 Ctrl+Enter）
+- **THEN** 系统应通过 IPC 调用 `setSendMessageKey(key)` 更新发送消息的键盘快捷键
+> 来源: `apps/electron/src/renderer/pages/settings/InputSettingsPage.tsx:78-82, 112-121`
 
-#### Scenario: 拼写检查提示
-- **WHEN** 用户输入文本且拼写检查启用
-- **THEN** 系统标记拼写错误
-> 来源: `apps/electron/src/renderer/pages/settings/InputSettingsPage.tsx`
+---
 
-### Requirement: 4.2.1 - Enter 发送
-**WHEN** 用户选择"Enter"作为发送消息快捷键
-**THE SYSTEM SHALL** 按 Enter 键发送消息，按 Shift+Enter 换行
-**SO THAT** 用户可以快速发送消息
-
-#### Scenario: 使用 Enter 发送消息
-- **WHEN** 用户选择 Enter 作为发送快捷键
-- **THEN** Enter 发送消息，Shift+Enter 换行
-> 来源: `apps/electron/src/renderer/pages/settings/InputSettingsPage.tsx`
-
-### Requirement: 4.2.2 - Cmd+Enter 发送
-**WHEN** 用户选择"Cmd+Enter"(Mac)或"Ctrl+Enter"(Windows/Linux)作为发送快捷键
-**THE SYSTEM SHALL** 按 Cmd+Enter/Ctrl+Enter 键发送消息，按 Enter 换行
-**SO THAT** 用户可以方便地输入多行文本
-
-#### Scenario: 使用 Cmd+Enter 发送消息
-- **WHEN** 用户选择 Cmd+Enter 作为发送快捷键
-- **THEN** Cmd+Enter 发送消息，Enter 换行
-> 来源: `apps/electron/src/renderer/pages/settings/InputSettingsPage.tsx`
-
-### Requirement: 5.1.1 - 工作区名称显示
-**WHEN** 用户访问工作区设置
-**THE SYSTEM SHALL** 显示当前工作区名称
-**SO THAT** 用户知道正在配置哪个工作区
-
-#### Scenario: 显示工作区名称
-- **WHEN** 用户访问工作区设置
-- **THEN** 系统显示当前工作区名称
-> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx`
-
-### Requirement: 5.1.2 - 编辑工作区名称
-**WHEN** 用户点击"编辑"按钮
-**THE SYSTEM SHALL** 打开对话框允许用户修改工作区名称
-**SO THAT** 用户可以重命名工作区
+### Requirement: 工作区标识设置
+系统 SHALL 允许用户修改工作区的名称和图标。
 
 #### Scenario: 重命名工作区
-- **WHEN** 用户点击"编辑"按钮
-- **THEN** 系统打开重命名对话框
-> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx`
-
-### Requirement: 5.1.3 - 工作区图标显示
-**WHEN** 用户访问工作区设置
-**THE SYSTEM SHALL** 显示当前工作区图标
-**SO THAT** 用户可以识别工作区
-
-#### Scenario: 显示工作区图标
-- **WHEN** 用户访问工作区设置
-- **THEN** 系统显示当前工作区图标
-> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx`
-
-### Requirement: 5.1.4 - 更改工作区图标
-**WHEN** 用户点击"更改"按钮并选择图片文件
-**THE SYSTEM SHALL** 上传并设置新图标(支持 PNG、JPG、SVG、WebP、GIF)
-**SO THAT** 用户可以自定义工作区图标
+- **WHEN** 用户点击工作区名称旁边的"编辑"按钮，输入新名称并提交
+- **THEN** 系统应更新工作区的 `name` 设置，刷新工作区列表显示新名称
+> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx:303-317, 355-372`
 
 #### Scenario: 上传工作区图标
-- **WHEN** 用户选择图片文件(支持 PNG、JPG、SVG、WebP、GIF)
-- **THEN** 系统上传并设置新图标
-> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx`
+- **WHEN** 用户点击"更改"按钮选择图片文件（支持 png、jpg、jpeg、svg、webp、gif）
+- **THEN** 系统应验证文件类型，转换图片为 base64，保存到工作区目录，并刷新工作区列表显示新图标
+> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx:319-352, 142-194`
 
-### Requirement: 5.1.5 - 图标上传状态
-**WHEN** 正在上传图标
-**THE SYSTEM SHALL** 显示上传进度或加载指示器
-**SO THAT** 用户知道上传正在进行
+---
 
-#### Scenario: 显示图标上传状态
-- **WHEN** 正在上传图标
-- **THEN** 系统显示加载指示器
-> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx`
+### Requirement: 工作区权限设置
+系统 SHALL 允许用户配置工作区的默认权限模式。
 
-### Requirement: 5.1.6 - 空工作区状态
-**WHEN** 没有选择工作区
-**THE SYSTEM SHALL** 显示"未选择工作区"提示
-**SO THAT** 用户知道需要先选择工作区
+#### Scenario: 设置默认权限模式
+- **WHEN** 用户从默认模式下拉选择"只读"、"询问"或"全部允许"
+- **THEN** 系统应更新工作区的 `permissionMode` 设置
+> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx:377-387, 197-203`
 
-#### Scenario: 显示空工作区状态
-- **WHEN** 没有选择工作区
-- **THEN** 系统显示"未选择工作区"提示
-> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx`
+---
 
-### Requirement: 5.2.1 - 默认权限模式
-**WHEN** 用户配置工作区权限
-**THE SYSTEM SHALL** 提供三种权限模式: Safe(只读，不允许修改)、Ask(在执行前提示)、Allow-all(完全自主执行)
-**SO THAT** 用户可以控制 AI 的操作权限
+### Requirement: 权限模式循环设置
+系统 SHALL 允许用户配置可通过快捷键循环切换的权限模式。
 
-#### Scenario: 选择默认权限模式
-- **WHEN** 用户配置工作区权限
-- **THEN** 系统提供 Safe/Ask/Allow-all 三种模式
-> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx`
+#### Scenario: 启用/禁用权限模式循环
+- **WHEN** 用户切换某个权限模式的开关
+- **THEN** 系统应启用或禁用该模式在快捷键 Shift+Tab 循环中的参与
+> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx:397-409, 238-267`
 
-### Requirement: 5.2.2 - 权限模式持久化
-**WHEN** 用户更改权限模式
-**THE SYSTEM SHALL** 保存设置到工作区配置
-**SO THAT** 设置在工作区会话间保持一致
+#### Scenario: 至少保留两个可循环模式
+- **WHEN** 用户尝试禁用权限模式导致只剩少于 2 个模式
+- **THEN** 系统应拒绝该操作，显示错误提示"至少需要 2 个模式"，2 秒后自动清除提示
+> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx:247-254, 412-423`
 
-#### Scenario: 保存权限模式设置
-- **WHEN** 用户更改权限模式
-- **THEN** 系统保存设置到工作区配置
-> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx`
+---
 
-### Requirement: 5.3.1 - 启用/禁用模式
-**WHEN** 用户配置模式循环
-**THE SYSTEM SHALL** 允许选择哪些权限模式在 Shift+Tab 循环中包含
-**SO THAT** 用户可以自定义快捷键循环的模式集合
-
-#### Scenario: 配置模式循环
-- **WHEN** 用户启用或禁用某个模式
-- **THEN** 该模式被包含或排除在 Shift+Tab 循环中
-> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx`
-
-### Requirement: 5.3.2 - 最少模式限制
-**WHEN** 用户尝试禁用模式以保留少于2个模式
-**THE SYSTEM SHALL** 显示错误提示"至少需要2个模式"
-**SO THAT** 用户知道模式循环不能少于2个模式
-
-#### Scenario: 验证模式数量
-- **WHEN** 用户尝试禁用模式导致少于2个模式
-- **THEN** 系统显示错误提示
-> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx`
-
-### Requirement: 5.3.3 - 模式说明
-**WHEN** 显示模式循环选项
-**THE SYSTEM SHALL** 为每个模式显示描述
-**SO THAT** 用户了解每个模式的作用
-
-#### Scenario: 显示模式描述
-- **WHEN** 显示模式循环选项
-- **THEN** 系统显示每个模式的描述
-> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx`
-
-### Requirement: 5.4.1 - 默认工作目录
-**WHEN** 用户配置工作区设置
-**THE SYSTEM SHALL** 允许设置默认工作目录路径
-**SO THAT** AI 操作默认在该目录中执行
-
-#### Scenario: 设置默认工作目录
-- **WHEN** 用户配置工作区设置
-- **THEN** 系统允许设置默认工作目录路径
-> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx`
-
-### Requirement: 5.4.2 - 更改工作目录
-**WHEN** 用户点击"更改..."按钮
-**THE SYSTEM SHALL** 打开文件夹选择对话框
-**SO THAT** 用户可以选择新的工作目录
+### Requirement: 工作区高级配置
+系统 SHALL 允许用户配置工作区的工作目录和本地 MCP 服务器。
 
 #### Scenario: 更改默认工作目录
-- **WHEN** 用户点击"更改..."按钮
-- **THEN** 系统打开文件夹选择对话框
-> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx`
+- **WHEN** 用户点击"更改..."按钮并通过文件夹对话框选择新目录
+- **THEN** 系统应更新工作区的 `workingDirectory` 设置为选中路径
+> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx:429-451, 205-217`
 
-### Requirement: 5.4.3 - 清除工作目录
-**WHEN** 用户点击"清除"按钮
-**THE SYSTEM SHALL** 移除默认工作目录设置
-**SO THAT** AI 会使用会话文件夹作为工作目录
-
-#### Scenario: 清除默认工作目录
+#### Scenario: 清除工作目录
 - **WHEN** 用户点击"清除"按钮
-- **THEN** 系统移除默认工作目录设置
-> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx`
-
-### Requirement: 5.4.4 - 本地 MCP 服务器
-**WHEN** 用户配置高级设置
-**THE SYSTEM SHALL** 提供切换开关来启用或禁用本地 MCP(Model Context Protocol)服务器
-**SO THAT** 用户可以控制 stdio 子进程服务器的可用性
+- **THEN** 系统应清除工作区的 `workingDirectory` 设置，恢复使用会话文件夹
+> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx:434-441, 219-228`
 
 #### Scenario: 启用/禁用本地 MCP 服务器
-- **WHEN** 用户切换本地 MCP 服务器开关
-- **THEN** 系统启用或禁用 stdio 子进程服务器
-> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx`
+- **WHEN** 用户切换"本地 MCP 服务器"开关
+- **THEN** 系统应更新工作区的 `localMcpEnabled` 设置
+> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx:453-458, 230-236`
 
-### Requirement: 6.1.1 - 权限介绍
-**WHEN** 用户访问权限设置
-**THE SYSTEM SHALL** 显示权限模块的介绍说明
-**SO THAT** 用户了解权限控制的作用和价值
+---
 
-#### Scenario: 显示权限模块介绍
-- **WHEN** 用户访问权限设置
-- **THEN** 系统显示权限模块介绍说明
-> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx`
+### Requirement: 默认权限配置显示
+系统 SHALL 显示 Explore 模式的默认权限模式配置。
 
-### Requirement: 6.1.2 - 文档链接
-**WHEN** 显示权限介绍
-**THE SYSTEM SHALL** 提供文档链接"了解更多"
-**SO THAT** 用户可以获取详细的权限配置说明
-
-#### Scenario: 提供权限文档链接
-- **WHEN** 显示权限介绍
-- **THEN** 系统提供文档链接"了解更多"
-> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx`
-
-### Requirement: 6.2.1 - 默认权限表格
-**WHEN** 访问默认权限部分
-**THE SYSTEM SHALL** 显示应用级别的默认权限规则表格
-**SO THAT** 用户可以查看 Explore 模式允许的操作
+#### Scenario: 显示默认权限说明
+- **WHEN** 用户打开权限设置的"关于权限"部分
+- **THEN** 系统应显示权限功能说明、推荐工作流程以及"了解更多"文档链接
+> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx:211-231`
 
 #### Scenario: 显示默认权限表格
-- **WHEN** 访问默认权限部分
-- **THEN** 系统显示应用级别默认权限规则表格
-> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx`
+- **WHEN** 用户打开权限设置的"默认权限"部分
+- **THEN** 系统应显示 Bash、MCP、API 端点、写入路径的允许模式规则表格
+> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx:234-269, 46-86`
 
-### Requirement: 6.2.2 - 权限类型显示
-**WHEN** 显示权限表格
-**THE SYSTEM SHALL** 显示以下类型权限: Bash(允许的 bash 命令模式)、MCP(允许的 MCP 工具模式)、API(允许的 API 端点)、Tool(允许的写路径)
-**SO THAT** 用户可以了解所有权限类别
+#### Scenario: 通过编辑弹窗编辑默认权限
+- **WHEN** 用户点击默认权限部分的编辑按钮
+- **THEN** 系统应打开 EditPopover 提供 AI 辅助编辑 `default.json` 文件的功能
+> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx:238-248`
 
-#### Scenario: 显示权限类型
-- **WHEN** 显示权限表格
-- **THEN** 系统显示 Bash/MCP/API/Tool 权限类型
-> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx`
+#### Scenario: 直接编辑默认权限文件
+- **WHEN** 用户点击默认权限编辑弹窗的"编辑文件"操作
+- **THEN** 系统应在系统编辑器中打开 `~/.craft-agent/permissions/default.json` 文件
+> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx:243-247`
 
-### Requirement: 6.2.3 - 权限模式搜索
-**WHEN** 权限列表很长
-**THE SYSTEM SHALL** 提供搜索功能来过滤权限规则
-**SO THAT** 用户可以快速找到特定权限
+---
 
-#### Scenario: 搜索权限规则
-- **WHEN** 用户搜索权限
-- **THEN** 系统过滤并显示匹配的权限规则
-> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx`
+### Requirement: 工作区权限自定义显示
+系统 SHALL 显示工作区级别的自定义权限配置。
 
-### Requirement: 6.2.4 - 编辑默认权限
-**WHEN** 用户点击"编辑"按钮
-**THE SYSTEM SHALL** 打开默认权限配置文件的编辑界面
-**SO THAT** 用户可以自定义默认权限规则
+#### Scenario: 显示自定义权限表格
+- **WHEN** 用户打开权限设置的"工作区自定义"部分
+- **THEN** 系统应显示工作区扩展的 Bash、MCP、API 端点和写入路径规则
+> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx:272-311, 89-131`
 
-#### Scenario: 编辑默认权限
-- **WHEN** 用户点击"编辑"按钮
-- **THEN** 系统打开默认权限配置文件编辑界面
-> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx`
+#### Scenario: 通过编辑弹窗编辑自定义权限
+- **WHEN** 用户点击工作区自定义部分的编辑按钮
+- **THEN** 系统应打开 EditPopover 提供 AI 辅助编辑工作区 `permissions.json` 文件的功能
+> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx:276-291`
 
-### Requirement: 6.2.5 - 权限文件路径显示
-**WHEN** 没有默认权限配置
-**THE SYSTEM SHALL** 显示默认权限文件路径 `~/.craft-agent/permissions/default.json`
-**SO THAT** 用户知道在哪里创建权限文件
+#### Scenario: 直接编辑自定义权限文件
+- **WHEN** 用户点击工作区自定义编辑弹窗的"编辑文件"操作
+- **THEN** 系统应在系统编辑器中打开工作区的 `permissions.json` 文件
+> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx:284-288`
 
-#### Scenario: 显示权限文件路径
-- **WHEN** 没有默认权限配置
-- **THEN** 系统显示默认权限文件路径
-> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx`
+#### Scenario: 监听默认权限文件变更
+- **WHEN** `~/.craft-agent/permissions/default.json` 文件发生变化
+- **THEN** 系统应自动重新加载默认权限配置并更新显示
+> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx:184-195`
 
-### Requirement: 6.3.1 - 自定义权限表格
-**WHEN** 访问工作区权限部分
-**THE SYSTEM SHALL** 显示工作区级别的自定义权限规则
-**SO THAT** 用户可以查看工作区特有的权限规则
+---
 
-#### Scenario: 显示工作区自定义权限
-- **WHEN** 访问工作区权限部分
-- **THEN** 系统显示工作区级别自定义权限规则
-> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx`
+### Requirement: 标签层级配置显示
+系统 SHALL 显示工作区的标签层级结构。
 
-### Requirement: 6.3.2 - 编辑自定义权限
-**WHEN** 用户点击"编辑"按钮
-**THE SYSTEM SHALL** 打开工作区权限文件的编辑界面
-**SO THAT** 用户可以添加工作区特定的权限规则
+#### Scenario: 显示标签说明
+- **WHEN** 用户打开标签设置的"关于标签"部分
+- **THEN** 系统应显示标签功能说明、值类型说明、自动应用规则说明以及"了解更多"文档链接
+> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx:72-95`
 
-#### Scenario: 编辑工作区自定义权限
-- **WHEN** 用户点击"编辑"按钮
-- **THEN** 系统打开工作区权限文件编辑界面
-> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx`
+#### Scenario: 显示标签层级表格
+- **WHEN** 用户打开标签设置的"标签层级"部分
+- **THEN** 系统应显示可展开/折叠的标签树形表格，包含标签名称、颜色、值类型等信息
+> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx:98-132`
 
-### Requirement: 6.3.3 - 权限规则扩展
-**WHEN** 用户配置自定义权限
-**THE SYSTEM SHALL** 允许规则扩展默认权限(添加额外允许的操作或阻止的工具)
-**SO THAT** 工作区可以有更宽松或更严格的权限控制
-
-#### Scenario: 扩展默认权限规则
-- **WHEN** 用户配置自定义权限
-- **THEN** 规则扩展默认权限
-> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx`
-
-### Requirement: 6.4.1 - 配置变化检测
-**WHEN** 默认权限配置文件发生变化
-**THE SYSTEM SHALL** 自动重新加载权限配置
-**SO THAT** 权限设置变化立即生效
-
-#### Scenario: 自动重新加载权限配置
-- **WHEN** 默认权限配置文件发生变化
-- **THEN** 系统自动重新加载权限配置
-> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx`
-
-### Requirement: 7.1.1 - 标签功能说明
-**WHEN** 用户访问标签设置
-**THE SYSTEM SHALL** 显示标签功能的详细介绍
-**SO THAT** 用户了解如何使用标签组织会话
-
-#### Scenario: 显示标签功能介绍
-- **WHEN** 用户访问标签设置
-- **THEN** 系统显示标签功能详细介绍
-> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx`
-
-### Requirement: 7.1.2 - 标签值类型说明
-**WHEN** 显示标签介绍
-**THE SYSTEM SHALL** 说明标签可以携带值(文本、数字、日期)
-**SO THAT** 用户了解标签的元数据功能
-
-#### Scenario: 说明标签值类型
-- **WHEN** 显示标签介绍
-- **THEN** 系统说明标签可以携带值
-> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx`
-
-### Requirement: 7.1.3 - 自动应用规则说明
-**WHEN** 显示标签介绍
-**THE SYSTEM SHALL** 正则表达式自动应用标签的规则和示例
-**SO THAT** 用户了解如何配置自动标签
-
-#### Scenario: 说明自动应用标签规则
-- **WHEN** 显示标签介绍
-- **THEN** 系统说明正则表达式自动应用标签规则
-> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx`
-
-### Requirement: 7.1.4 - 文档链接
-**WHEN** 显示标签介绍
-**THE SYSTEM SHALL** 提供文档链接
-**SO THAT** 用户可以获取详细的标签配置指南
-
-#### Scenario: 提供标签文档链接
-- **WHEN** 显示标签介绍
-- **THEN** 系统提供文档链接
-> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx`
-
-### Requirement: 7.2.1 - 标签树形表格
-**WHEN** 访问标签层次结构部分
-**THE SYSTEM SHALL** 显示所有标签的树形表格(支持展开/折叠)
-**SO THAT** 用户可以查看和浏览标签层次结构
-
-#### Scenario: 显示标签树形表格
-- **WHEN** 访问标签层次结构部分
-- **THEN** 系统显示所有标签的树形表格
-> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx`
-
-### Requirement: 7.2.2 - 标签信息显示
-**WHEN** 显示标签表格
-**THE SYSTEM SHALL** 显示每个标签的名称、颜色、值类型、父标签
-**SO THAT** 用户可以了解标签的完整信息
-
-#### Scenario: 显示标签详细信息
-- **WHEN** 显示标签表格
-- **THEN** 系统显示每个标签的名称、颜色、值类型、父标签
-> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx`
-
-### Requirement: 7.2.3 - 标签搜索
-**WHEN** 标签列表很长
-**THE SYSTEM SHALL** 提供搜索功能来过滤标签
-**SO THAT** 用户可以快速找到特定标签
-
-#### Scenario: 搜索标签
-- **WHEN** 用户搜索标签
-- **THEN** 系统过滤并显示匹配的标签
-> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx`
-
-### Requirement: 7.2.4 - 编辑标签配置
-**WHEN** 用户点击"编辑"按钮
-**THE SYSTEM SHALL** 打开标签配置文件的编辑界面
-**SO THAT** 用户可以使用 AI 辅助编辑标签结构
-
-#### Scenario: 编辑标签配置
-- **WHEN** 用户点击"编辑"按钮
-- **THEN** 系统打开标签配置文件编辑界面
-> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx`
-
-### Requirement: 7.2.5 - 直接编辑配置文件
-**WHEN** 用户点击"编辑文件"按钮
-**THE SYSTEM SHALL** 在系统编辑器中打开 `labels/config.json`
-**SO THAT** 用户可以直接编辑标签配置
+#### Scenario: 通过编辑弹窗编辑标签配置
+- **WHEN** 用户点击标签层级部分的编辑按钮
+- **THEN** 系统应打开 EditPopover 提供 AI 辅助编辑 `labels/config.json` 文件的功能
+> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx:102-110`
 
 #### Scenario: 直接编辑标签配置文件
-- **WHEN** 用户点击"编辑文件"按钮
-- **THEN** 系统在系统编辑器中打开标签配置文件
-> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx`
+- **WHEN** 用户点击标签层级编辑弹窗的"编辑文件"操作
+- **THEN** 系统应在系统编辑器中打开工作区的 `labels/config.json` 文件
+> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx:53-56`
 
-### Requirement: 7.2.6 - 空标签状态
-**WHEN** 没有配置标签
-**THE SYSTEM SHALL** 显示提示信息和配置文件路径
-**SO THAT** 用户知道如何创建标签
+#### Scenario: 显示未配置标签的空状态
+- **WHEN** 工作区未配置任何标签
+- **THEN** 系统应显示空状态提示，说明标签可通过编辑 `labels/config.json` 文件创建
+> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx:122-130`
 
-#### Scenario: 显示空标签状态
-- **WHEN** 没有配置标签
-- **THEN** 系统显示提示信息和配置文件路径
-> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx`
+---
 
-### Requirement: 7.3.1 - 自动规则表格
-**WHEN** 访问自动应用规则部分
-**THE SYSTEM SHALL** 显示所有自动应用规则的表格
-**SO THAT** 用户可以查看所有配置的正则表达式规则
+### Requirement: 标签自动应用规则显示
+系统 SHALL 显示标签的自动应用正则表达式规则。
 
 #### Scenario: 显示自动应用规则表格
-- **WHEN** 访问自动应用规则部分
-- **THEN** 系统显示所有自动应用规则的表格
-> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx`
+- **WHEN** 用户打开标签设置的"自动应用规则"部分
+- **THEN** 系统应显示所有标签的自动应用规则表格，包含父标签、正则表达式、示例匹配值等信息
+> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx:135-158`
 
-### Requirement: 7.3.2 - 规则信息显示
-**WHEN** 显示自动规则表格
-**THE SYSTEM SHALL** 显示每个规则的正则表达式模式和匹配时应用的标签
-**SO THAT** 用户可以了解规则的配置
+#### Scenario: 通过编辑弹窗编辑自动应用规则
+- **WHEN** 用户点击自动应用规则部分的编辑按钮
+- **THEN** 系统应打开 EditPopover 提供 AI 辅助编辑自动应用规则的功能
+> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx:139-147`
 
-#### Scenario: 显示规则详细信息
-- **WHEN** 显示自动规则表格
-- **THEN** 系统显示每个规则的正则表达式和标签
-> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx`
+---
 
-### Requirement: 7.3.3 - 规则搜索
-**WHEN** 自动规则列表很长
-**THE SYSTEM SHALL** 提供搜索功能来过滤规则
-**SO THAT** 用户可以快速找到特定规则
+### Requirement: 快捷键参考显示
+系统 SHALL 显示应用和组件的快捷键参考信息。
 
-#### Scenario: 搜索自动规则
-- **WHEN** 用户搜索自动规则
-- **THEN** 系统过滤并显示匹配的规则
-> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx`
+#### Scenario: 显示全局快捷键
+- **WHEN** 用户打开快捷键设置页面
+- **THEN** 系统应从集中式操作注册表按类别显示全局快捷键
+> 来源: `apps/electron/src/renderer/pages/settings/ShortcutsPage.tsx:103-111`
 
-### Requirement: 7.3.4 - 编辑自动规则
-**WHEN** 用户点击"编辑"按钮
-**THE SYSTEM SHALL** 打开规则配置文件的编辑界面
-**SO THAT** 用户可以添加或修改自动标签规则
+#### Scenario: 显示组件特定快捷键
+- **WHEN** 用户打开快捷键设置页面
+- **THEN** 系统应显示列表导航、会话列表、聊天输入等组件的快捷键
+> 来源: `apps/electron/src/renderer/pages/settings/ShortcutsPage.tsx:114-128, 31-57`
 
-#### Scenario: 编辑自动规则
-- **WHEN** 用户点击"编辑"按钮
-- **THEN** 系统打开规则配置文件编辑界面
-> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx`
+#### Scenario: 智能分隔快捷键显示
+- **WHEN** 渲染快捷键
+- **THEN** Mac 平台应正确分隔 `⌘⇧N` 等组合键，Windows 平台应正确分隔 `Ctrl+Shift+N`
+> 来源: `apps/electron/src/renderer/pages/settings/ShortcutsPage.tsx:78-80`
 
-### Requirement: 7.3.5 - 空规则状态
-**WHEN** 没有配置自动规则
-**THE SYSTEM SHALL** 显示提示信息
-**SO THAT** 用户知道可以配置自动规则
+---
 
-#### Scenario: 显示空规则状态
-- **WHEN** 没有配置自动规则
-- **THEN** 系统显示提示信息
-> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx`
+### Requirement: 用户偏好设置
+系统 SHALL 允许用户 configuring 个人偏好信息。
 
-### Requirement: 8.1.1 - 类别分组显示
-**WHEN** 用户访问快捷键页面
-**THE SYSTEM SHALL** 按类别(如编辑、视图等)显示全局快捷键
-**SO THAT** 用户可以方便地浏览不同功能的快捷键
+#### Scenario: 设置用户姓名
+- **WHEN** 用户在"姓名"输入框输入姓名
+- **THEN** 系统应自动保存（500ms 防抖）到 `~/.craft-agent/preferences.json` 文件
+> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx:217-224, 140-169`
 
-#### Scenario: 按类别显示快捷键
-- **WHEN** 用户访问快捷键页面
-- **THEN** 系统按类别显示全局快捷键
-> 来源: `apps/electron/src/renderer/pages/settings/ShortcutsPage.tsx`
+#### Scenario: 设置时区
+- **WHEN** 用户在"时区"输入框输入时区（如 America/New_York）
+- **THEN** 系统应自动保存（500ms 防抖）到偏好文件
+> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx:226-232`
 
-### Requirement: 8.1.2 - 快捷键信息显示
-**WHEN** 显示快捷键列表
-**THE SYSTEM SHALL** 为每个快捷键显示功能和对应的键盘组合
-**SO THAT** 用户可以了解每个快捷键的作用
+#### Scenario: 设置语言偏好
+- **WHEN** 用户从"语言"下拉选择英语或简体中文
+- **THEN** 系统应自动保存语言偏好到偏好文件，并立即切换应用语言
+> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx:234-251, 237-244`
 
-#### Scenario: 显示快捷键信息
-- **WHEN** 显示快捷键列表
-- **THEN** 系统显示功能和键盘组合
-> 来源: `apps/electron/src/renderer/pages/settings/ShortcutsPage.tsx`
+#### Scenario: 设置城市信息
+- **WHEN** 用户在"城市"输入框输入城市名称
+- **THEN** 系统应自动保存（500ms 防抖）到偏好文件的 location.city 字段
+> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx:262-268`
 
-### Requirement: 8.1.3 - 平台适配显示
-**WHEN** 显示快捷键
-**THE SYSTEM SHALL** 根据当前平台(Mac/Windows/Linux)显示相应的快捷键符号
-**SO THAT** 用户可以看到符合其平台的快捷键表示
+#### Scenario: 设置国家信息
+- **WHEN** 用户在"国家"输入框输入国家名称
+- **THEN** 系统应自动保存（500ms 防抖）到偏好文件的 location.country 字段
+> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx:270-276`
 
-#### Scenario: 显示平台适配快捷键
-- **WHEN** 显示快捷键
-- **THEN** 系统显示当前平台相应的快捷键符号
-> 来源: `apps/electron/src/renderer/pages/settings/ShortcutsPage.tsx`
+#### Scenario: 设置用户备注
+- **WHEN** 用户在"备注"文本框输入自由格式内容
+- **THEN** 系统应自动保存（500ms 防抖）到偏好文件的 notes 字段
+> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx:299-306`
 
-### Requirement: 8.2.1 - 列表导航快捷键
-**WHEN** 显示快捷键列表
-**THE SYSTEM SHALL** 显示列表导航相关快捷键: 上下箭头(在列表中导航)、Home(跳转到第一项)、End(跳转到最后一项)
-**SO THAT** 用户可以使用键盘在列表中快速导航
+#### Scenario: 组件卸载时保存未保存更改
+- **WHEN** 用户离开偏好设置页面且存在未保存的更改
+- **THEN** 系统应在组件卸载时立即将当前状态保存到偏好文件
+> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx:172-188`
 
-#### Scenario: 显示列表导航快捷键
-- **WHEN** 显示快捷键列表
-- **THEN** 系统显示列表导航相关快捷键
-> 来源: `apps/electron/src/renderer/pages/settings/ShortcutsPage.tsx`
+#### Scenario: 通过编辑弹窗编辑备注
+- **WHEN** 用户点击备注部分的编辑按钮
+- **THEN** 系统应打开 EditPopover 提供 AI 辅助编辑备注的功能
+> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx:286-296`
 
-### Requirement: 8.2.2 - 会话列表快捷键
-**WHEN** 显示快捷键列表
-**THE SYSTEM SHALL** 显示会话列表快捷键: Enter(聚焦聊天输入框)、右键点击(打开上下文菜单)
-**SO THAT** 用户可以快速操作会话列表
+#### Scenario: 直接编辑偏好文件
+- **WHEN** 用户点击备注编辑弹窗的"编辑文件"操作
+- **THEN** 系统应在系统编辑器中打开 `~/.craft-agent/preferences.json` 文件
+> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx:290-294`
 
-#### Scenario: 显示会话列表快捷键
-- **WHEN** 显示快捷键列表
-- **THEN** 系统显示会话列表快捷键
-> 来源: `apps/electron/src/renderer/pages/settings/ShortcutsPage.tsx`
+---
 
-### Requirement: 8.2.3 - 代理树快捷键
-**WHEN** 显示快捷键列表
-**THE SYSTEM SHALL** 显示代理树快捷键: 左箭头(折叠文件夹)、右箭头(展开文件夹)
-**SO THAT** 用户可以浏览代理的层次结构
-
-#### Scenario: 显示代理树快捷键
-- **WHEN** 显示快捷键列表
-- **THEN** 系统显示代理树快捷键
-> 来源: `apps/electron/src/renderer/pages/settings/ShortcutsPage.tsx`
-
-### Requirement: 8.2.4 - 聊天输入快捷键
-**WHEN** 显示快捷键列表
-**THE SYSTEM SHALL** 显示聊天输入快捷键: Enter(发送消息)、Shift+Enter(新建行)、Esc(关闭对话框/失去焦点)
-**SO THAT** 用户可以高效地输入和管理消息
-
-#### Scenario: 显示聊天输入快捷键
-- **WHEN** 显示快捷键列表
-- **THEN** 系统显示聊天输入快捷键
-> 来源: `apps/electron/src/renderer/pages/settings/ShortcutsPage.tsx`
-
-### Requirement: 8.3.1 - 内联显示
-**WHEn** 在用户界面中显示快捷键
-**THE SYSTEM SHALL** 使用键帽样式(Kbd 组件)显示快捷键
-**SO THAT** 用户可以清楚地识别快捷键键位
-
-#### Scenario: 键帽样式显示快捷键
-- **WHEn** 在用户界面中显示快捷键
-- **THEN** 系统使用键帽样式显示快捷键
-> 来源: `apps/electron/src/renderer/pages/settings/ShortcutsPage.tsx`
-
-### Requirement: 8.3.2 - 悬停效果
-**WHEn** 用户悬停在快捷键行上
-**THE SYSTEM SHALL** 显示虚线分隔符
-**SO THAT** 用户可以更清楚地看到快捷键和描述的分离
-
-#### Scenario: 快捷键行悬停效果
-- **WHEn** 用户悬停在快捷键行上
-- **THEN** 系统显示虚线分隔符
-> 来源: `apps/electron/src/renderer/pages/settings/ShortcutsPage.tsx`
-
-### Requirement: 9.1.1 - 姓名输入
-**WHEN** 用户配置偏好设置
-**THE SYSTEM SHALL** 提供姓名输入字段
-**SO THAT** AI 可以个性化与用户的交互
-
-#### Scenario: 输入用户姓名
-- **WHEN** 用户配置偏好设置
-- **THEN** 系统提供姓名输入字段
-> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx`
-
-### Requirement: 9.1.2 - 时区设置
-**WHEN** 用户配置偏好设置
-**THE SYSTEM SHALL** 提供时区输入字段(如 America/New_York)
-**SO THAT** AI 可以了解用户的时间偏好
-
-#### Scenario: 设置用户时区
-- **WHEN** 用户配置偏好设置
-- **THEN** 系统提供时区输入字段
-> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx`
-
-### Requirement: 9.1.3 - 语言设置
-**WHEN** 用户配置偏好设置
-**THE SYSTEM SHALL** 提供语言输入字段
-**SO THAT** AI 可以了解用户的语言偏好
-
-#### Scenario: 设置用户语言
-- **WHEN** 用户配置偏好设置
-- **THEN** 系统提供语言输入字段
-> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx`
-
-### Requirement: 9.2.1 - 城市输入
-**WHEN** 用户配置偏好设置
-**THE SYSTEM SHALL** 提供城市输入字段(如纽约)
-**SO THAT** AI 可以了解用户所在的城市
-
-#### Scenario: 输入用户城市
-- **WHEN** 用户配置偏好设置
-- **THEN** 系统提供城市输入字段
-> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx`
-
-### Requirement: 9.2.2 - 国家输入
-**WHEN** 用户配置偏好设置
-**THE SYSTEM SHALL** 提供国家输入字段(如美国)
-**SO THAT** AI 可以了解用户所在的国家
-
-#### Scenario: 输入用户国家
-- **WHEN** 用户配置偏好设置
-- **THEN** 系统提供国家输入字段
-> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx`
-
-### Requirement: 9.3.1 - 自由文本备注
-**WHEN** 用户配置偏好设置
-**THE SYSTEM SHALL** 提供多行文本区域用于输入额外信息
-**SO THAT** 用户可以分享任何他们希望 AI 知道的信息
-
-#### Scenario: 输入用户备注
-- **WHEN** 用户配置偏好设置
-- **THEN** 系统提供多行文本区域
-> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx`
-
-### Requirement: 9.3.2 - 备注持久化
-**WHEN** 用户保存偏好设置
-**THE SYSTEM SHALL** 将备注信息保存到用户偏好文件
-**SO THAT** AI 可以在后续会话中访问这些信息
-
-#### Scenario: 保存用户备注
-- **WHEN** 用户保存偏好设置
-- **THEN** 系统将备注保存到偏好文件
-> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx`
-
-### Requirement: 9.4.1 - 加载偏好设置
-**WHEN** 用户访问偏好页面
-**THE SYSTEM SHALL** 从 `~/.craft-agent/preferences.json` 加载用户偏好
-**SO THAT** 用户可以查看和编辑现有偏好
-
-#### Scenario: 加载用户偏好
-- **WHEN** 用户访问偏好页面
-- **THEN** 系统从偏好文件加载用户偏好
-> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx`
-
-### Requirement: 9.4.2 - 保存偏好设置
-**WHEN** 用户点击"保存"按钮
-**THE SYSTEM SHALL** 将偏好设置写入用户偏好文件
-**SO THAT** 设置会保留到下次会话
-
-#### Scenario: 保存用户偏好
-- **WHEN** 用户点击"保存"按钮
-- **THEN** 系统将偏好设置写入偏好文件
-> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx`
-
-### Requirement: 9.4.3 - 撤销更改
-**WHEN** 用户点击"还原"按钮
-**THE SYSTEM SHALL** 将表单恢复到上次保存的状态
-**SO THAT** 用户可以撤销未保存的更改
-
-#### Scenario: 还原偏好设置
-- **WHEN** 用户点击"还原"按钮
-- **THEN** 系统将表单恢复到上次保存的状态
-> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx`
-
-### Requirement: 9.4.4 - 脏状态指示
-**WHEN** 用户修改了任何表单字段
-**THE SYSTEM SHALL** 启用"保存"和"还原"按钮
-**SO THAT** 用户知道有未保存的更改
-
-#### Scenario: 显示未保存更改提示
-- **WHEN** 用户修改了任何表单字段
-- **THEN** 系统启用"保存"和"还原"按钮
-> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx`
-
-### Requirement: 9.4.5 - 保存成功反馈
-**WHEN** 偏好设置保存成功
-**THE SYSTEM SHALL** 显示检查标记图标并在2秒后消失
-**SO THAT** 用户知道保存操作成功完成
-
-#### Scenario: 显示保存成功反馈
-- **WHEN** 偏好设置保存成功
-- **THEN** 系统显示检查标记图标2秒后消失
-> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx`
-
-### Requirement: 9.4.6 - 在文件管理器中打开
-**WHEN** 用户点击"在 Finder 中打开"按钮
-**THE SYSTEM SHALL** 在系统文件管理器中打开偏好文件所在的文件夹
-**SO THAT** 用户可以直接访问偏好文件
-
-#### Scenario: 在文件管理器中打开偏好文件
-- **WHEN** 用户点击"在 Finder 中打开"按钮
-- **THEN** 系统在系统文件管理器中打开偏好文件所在文件夹
-> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx`
-
-### Requirement: 10.1.1 - 设置页面显示
-**WHEN** 用户打开设置面板
-**THE SYSTEM SHALL** 在侧边栏显示所有设置页面的列表
-**SO THAT** 用户可以方便地导航到不同的设置页面
+### Requirement: 设置页面导航器
+系统 SHALL 提供设置页面导航面板。
 
 #### Scenario: 显示设置页面列表
-- **WHEN** 用户打开设置面板
-- **THEN** 系统在侧边栏显示所有设置页面的列表
-> 来源: `apps/electron/src/renderer/pages/settings/SettingsNavigator.tsx`
+- **WHEN** 用户打开设置导航面板
+- **THEN** 系统应从共享架构渲染设置页面列表，包含图标、标签和描述
+> 来源: `apps/electron/src/renderer/pages/settings/SettingsNavigator.tsx:47-52, 162-171`
 
-### Requirement: 10.1.2 - 页面图标和描述
-**WHEN** 显示设置页面列表
-**THE SYSTEM SHALL** 为每个页面显示图标、标签和简短描述
-**SO THAT** 用户可以快速识别各个设置页面
+#### Scenario: 选择设置页面
+- **WHEN** 用户点击设置页面列表项
+- **THEN** 系统应调用 `onSelectSubpage` 切换到选中的设置子页面
+> 来源: `apps/electron/src/renderer/pages/settings/SettingsNavigator.tsx:95-123`
 
-#### Scenario: 显示页面图标和描述
-- **WHEN** 显示设置页面列表
-- **THEN** 系统显示每个页面的图标、标签和描述
-> 来源: `apps/electron/src/renderer/pages/settings/SettingsNavigator.tsx`
-
-### Requirement: 10.1.3 - 选中状态指示
-**WHEN** 某个设置页面被选中
-**THE SYSTEM SHALL** 高亮显示该页面并使用不同背景色
-**SO THAT** 用户知道当前正在查看哪个页面
-
-#### Scenario: 高亮显示选中页面
+#### Scenario: 显示选中状态
 - **WHEN** 某个设置页面被选中
-- **THEN** 系统高亮显示该页面
-> 来源: `apps/electron/src/renderer/pages/settings/SettingsNavigator.tsx`
+- **THEN** 系统应高亮显示该列表项，图标和标签使用前景色
+> 来源: `apps/electron/src/renderer/pages/settings/SettingsNavigator.tsx:98-105, 110-116`
 
-### Requirement: 10.1.4 - 悬停效果
-**WHEN** 用户悬停在设置页面项上
-**THE SYSTEM SHALL** 显示悬停背景色
-**SO THAT** 用户知道该页面可以点击
+#### Scenario: 鼠标悬停显示快捷菜单
+- **WHEN** 鼠标悬停在设置列表项上
+- **THEN** 系统应显示"..."快捷菜单按钮
+> 来源: `apps/electron/src/renderer/pages/settings/SettingsNavigator.tsx:125-148`
 
-#### Scenario: 显示悬停效果
-- **WHEN** 用户悬停在设置页面项上
-- **THEN** 系统显示悬停背景色
-> 来源: `apps/electron/src/renderer/pages/settings/SettingsNavigator.tsx`
-
-### Requirement: 10.2.1 - 更多选项菜单
-**WHEN** 用户悬停在设置页面项上
-**THE SYSTEM SHALL** 显示"..."菜单按钮
-**SO THAT** 用户可以访问额外的选项
-
-#### Scenario: 显示更多选项菜单
-- **WHEN** 用户悬停在设置页面项上
-- **THEN** 系统显示"..."菜单按钮
-> 来源: `apps/electron/src/renderer/pages/settings/SettingsNavigator.tsx`
-
-### Requirement: 10.2.2 - 在新窗口中打开
-**WHEN** 用户点击"在新窗口中打开"选项
-**THE SYSTEM SHALL** 在新的应用窗口中打开选定的设置页面
-**SO THAT** 用户可以同时在多个窗口中查看不同的设置页面
-
-#### Scenario: 在新窗口中打开设置页面
-- **WHEN** 用户点击"在新窗口中打开"选项
-- **THEN** 系统在新的应用窗口中打开选定的设置页面
-> 来源: `apps/electron/src/renderer/pages/settings/SettingsNavigator.tsx`
-
-### Requirement: 11.1.1 - 应用配置存储
-**WHEN** 用户保存应用级别设置
-**THE SYSTEM SHALL** 将设置存储到应用配置位置
-**SO THAT** 设置在所有工作区间共享
-
-#### Scenario: 保存应用级别配置
-- **WHEN** 用户保存应用级别设置
-- **THEN** 系统将设置存储到应用配置位置
-> 来源: `apps/electron/src/renderer/pages/settings/` (通用)
-
-### Requirement: 11.1.2 - 设备同步
-**WHEN** 用户在不同设备上登录
-**THE SYSTEM SHALL** (未来)支持跨设备同步应用设置
-**SO THAT** 用户在不同设备上有统一的设置体验
-
-#### Scenario: 跨设备同步应用设置
-- **WHEN** 用户在不同设备上登录
-- **THEN** 系统(未来)支持跨设备同步应用设置
-> 来源: `apps/electron/src/renderer/pages/settings/` (通用)
-
-### Requirement: 11.2.1 - 工作区配置存储
-**WHEN** 用户保存工作区级别设置
-**THE SYSTEM SHALL** 将设置存储到工作区的配置文件(如 `workspace.json`)
-**SO THAT** 设置在工作区会话间保持一致
-
-#### Scenario: 保存工作区配置
-- **WHEN** 用户保存工作区级别设置
-- **THEN** 系统将设置存储到工作区的配置文件
-> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx`
-
-### Requirement: 11.2.2 - 配置文件位置
-**WHEN** 存储工作区配置
-**THE SYSTEM SHALL** 使用工作区根目录作为配置文件的基准路径
-**SO THAT** 配置与工作区数据一起存储
-
-#### Scenario: 使用工作区目录存储配置
-- **WHEN** 存储工作区配置
-- **THEN** 系统使用工作区根目录作为配置文件的基准路径
-> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx`
-
-### Requirement: 11.3.1 - 偏好文件格式
-**WHEN** 保存用户偏好
-**THE SYSTEM SHALL** 使用 JSON 格式存储偏好设置
-**SO THAT** 偏好设置易于读取和编辑
-
-#### Scenario: 使用 JSON 格式存储偏好
-- **WHEN** 保存用户偏好
-- **THEN** 系统使用 JSON 格式存储偏好设置
-> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx`
-
-### Requirement: 11.3.2 - 偏好文件更新时间戳
-**WHEN** 保存用户偏好
-**THE SYSTEM SHALL** 添加 `updatedAt` 时间戳字段
-**SO THAT** 可以追踪偏好设置的修改时间
-
-#### Scenario: 添加更新时间戳
-- **WHEN** 保存用户偏好
-- **THEN** 系统添加 `updatedAt` 时间戳字段
-> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx`
-
-### Requirement: 12.1.1 - 键盘导航
-**WHEN** 用户使用键盘导航设置页面
-**THE SYSTEM SHALL** 支持完整的键盘操作(Tab、箭头键、Enter、Esc)
-**SO THAT** 键盘用户可以高效地使用设置功能
-
-#### Scenario: 使用键盘导航设置
-- **WHEN** 用户使用键盘导航设置页面
-- **THEN** 系统支持完整的键盘操作
-> 来源: `apps/electron/src/renderer/pages/settings/` (通用)
-
-### Requirement: 12.1.2 - 屏幕阅读器支持
-**WHEN** 屏幕阅读器读取设置页面
-**THE SYSTEM SHALL** 为所有交互元素提供适当的 ARIA 标签
-**SO THAT** 视障碍用户可以使用设置功能
-
-#### Scenario: 屏幕阅读器读取设置
-- **WHEN** 屏幕阅读器读取设置页面
-- **THEN** 系统为交互元素提供适当的 ARIA 标签
-> 来源: `apps/electron/src/renderer/pages/settings/` (通用)
-
-### Requirement: 12.1.3 - 对比度
-**WHEN** 显示设置页面
-**THE SYSTEM SHALL** 确保文本和背景之间有足够的对比度
-**SO THAT** 视力较弱的用户可以清楚地阅读设置内容
-
-#### Scenario: 确保足够的对比度
-- **WHEN** 显示设置页面
-- **THEN** 系统确保文本和背景之间有足够的对比度
-> 来源: `apps/electron/src/renderer/pages/settings/` (通用)
-
-### Requirement: 12.2.1 - 多语言标签
-**WHEN** 应用在不同语言环境下运行
-**THE SYSTEM SHALL** 显示相应语言的设置页面标签和描述
-**SO THAT** 母语用户可以轻松理解和使用设置功能
-
-#### Scenario: 显示多语言标签
-- **WHEN** 应用在不同语言环境下运行
-- **THEN** 系统显示相应语言的设置页面标签和描述
-> 来源: `apps/electron/src/renderer/pages/settings/` (通用)
-
-### Requirement: 12.2.2 - 平台特定文本
-**WHEN** 应用在不同操作系统上运行
-**THE SYSTEM SHALL** 使用平台特定的文本(如 Mac 用 Cmd，Windows 用 Ctrl)
-**SO THAT** 用户看到符合其平台的快捷键说明
-
-#### Scenario: 显示平台特定文本
-- **WHEN** 应用在不同操作系统上运行
-- **THEN** 系统使用平台特定的文本
-> 来源: `apps/electron/src/renderer/pages/settings/` (通用)
+#### Scenario: 在新窗口打开设置页面
+- **WHEN** 用户点击"..."菜单的"在新窗口打开"选项
+- **THEN** 系统应通过 deep link `craftagents://settings/{subpageId}?window=focused` 在新窗口打开该设置页面
+> 来源: `apps/electron/src/renderer/pages/settings/SettingsNavigator.tsx:140-143`
 
 ---
 
-## MODIFIED Requirements
+### Requirement: 空工作区状态处理
+系统 SHALL 在没有活动工作区时显示空状态。
 
-*(无修改的需求)*
+#### Scenario: 显示无选中工作区空状态
+- **WHEN** 用户打开工作区设置页面但没有活动工作区时
+- **THEN** 系统应显示"未选择工作区"提示信息
+> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx:269-278`
 
 ---
 
-## REMOVED Requirements
+### Requirement: 加载状态处理
+系统 SHALL 在加载数据时显示加载指示器。
 
-*(无移除的需求)*
+#### Scenario: 显示工作区设置加载状态
+- **WHEN** 正在加载工作区设置时
+- **THEN** 系统应显示旋转加载图标
+> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx:281-290`
+
+#### Scenario: 显示权限设置加载状态
+- **WHEN** 正在加载权限配置时
+- **THEN** 系统应显示旋转加载图标
+> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx:139, 204-207`
+
+#### Scenario: 显示标签设置加载状态
+- **WHEN** 正在加载标签配置时
+- **THEN** 系统应显示旋转加载图标
+> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx:43, 65-68`
+
+#### Scenario: 显示偏好设置加载状态
+- **WHEN** 正在加载用户偏好时
+- **THEN** 系统应显示旋转加载图标
+> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx:101, 197-202`
 
 ---
 
@@ -1273,30 +570,33 @@
 
 | 配置类型 | 存储位置 | 说明 |
 |---------|---------|------|
-| 应用配置 | Electron 应用数据目录 | 应用级别设置(通知、主题等) |
 | AI 连接 | 应用配置目录 | LLM 连接和凭证 |
 | 用户偏好 | `~/.craft-agent/preferences.json` | 用户个人信息和备注 |
 | 默认权限 | `~/.craft-agent/permissions/default.json` | Explore 模式默认权限 |
-| 工作区配置 | `{workspace}/workspace.json` | 工作区特定设置 |
+| 工作区配置 | `{workspace}/settings.json` | 工作区特定设置 |
 | 标签配置 | `{workspace}/labels/config.json` | 标签层次和自动规则 |
 | 工作区权限 | `{workspace}/permissions.json` | 工作区自定义权限 |
 | 工具图标 | `~/.craft-agent/tool-icons/tool-icons.json` | CLI 命令图标映射 |
 
 ---
 
-## 附录 C: 权限模式详解
+## 附录 C: IPC 通信接口
 
-| 模式 | 英文名 | 描述 |
-|------|--------|------|
-| Safe | 只读模式 | AI 只能读取和研究，不允许任何修改 |
-| Ask | 询问模式 | AI 在执行操作前会提示用户确认 |
-| Allow-all | 执行模式 | AI 可以完全自主执行操作 |
-
----
-
-## 附录 D: 思考级别
-
-思考级别控制 AI 推理的深度，从快速简洁到深入详细。用户可以根据任务复杂度选择合适的级别。
+| IPC 方法 | 描述 |
+|---------|------|
+| `getNotificationsEnabled()` / `setNotificationsEnabled(enabled)` | 桌面通知管理 |
+| `getKeepAwakeWhileRunning()` / `setKeepAwakeWhileRunning(enabled)` | 屏幕唤醒控制 |
+| `getDefaultLlmConnection()` / `setDefaultLlmConnection(slug)` | 默认 AI 连接 |
+| `saveLlmConnection(connection)` / `deleteLlmConnection(slug)` | 连接管理 |
+| `testLlmConnection(slug)` | 连接验证 |
+| `getCredentialHealth()` | 凭证健康检查 |
+| `getWorkspaceSettings(id)` / `updateWorkspaceSetting(id, key, value)` | 工作区设置 |
+| `getWorkspaceIcon(id)` | 工作区图标 |
+| `getDefaultPermissionsConfig()` / `getWorkspacePermissionsConfig(id)` | 权限配置 |
+| `readPreferences()` / `writePreferences(content)` | 用户偏好 |
+| `readWorkspaceImage(id, path)` / `writeWorkspaceImage(id, path, data, type)` | 图片文件读写 |
+| `loadPresetThemes()` / `setWorkspaceColorTheme(id, theme)` | 主题配置 |
+| `getToolIconMappings()` | 工具图标映射 |
 
 ---
 
@@ -1304,14 +604,417 @@
 
 | 版本 | 日期 | 变更说明 |
 |------|------|---------|
-| 1.0 | 2026-03-03 | 初始版本，从 EARS 格式转换为 OpenSpec 格式 |
+| 2.0 | 2026-03-03 | 重写为标准 EARS 语法（WHEN/THEN）格式 |
+| 1.0 | 2026-03-03 | 初始版本 |
+
+---
+
+### Requirement: SettingsInput 表单验证
+系统 SHALL 在设置页面输入组件中支持表单验证功能。
+
+#### Scenario: 在 SettingsInput 中显示验证错误
+- **WHEN** 输入组件设置了 error 属性值
+- **THEN** 系统应在输入框下方显示红色错误消息，并在输入框周围显示红色边框
+> 来源: `apps/electron/src/renderer/components/settings/SettingsInput.tsx:30-34, 98-99, 131`
+
+#### Scenario: 在 SettingsInputRow 中显示验证错误
+- **WHEN** 内联输入组件设置了 error 属性值
+- **THEN** 系统应在标签下方显示红色错误消息，并在输入框周围显示红色边框
+> 来源: `apps/electron/src/renderer/components/settings/SettingsInput.tsx:156-157, 196-198, 193`
+
+---
+
+### Requirement: 密码输入可见性控制
+系统 SHALL 在密码输入框中支持显示/隐藏密码的切换功能。
+
+#### Scenario: 在 SettingsInput 中切换密码可见性
+- **WHEN** 用户点击密码类型输入框的显示/隐藏图标按钮
+- **THEN** 系统应在明文和密文输入类型之间切换，并相应更新图标
+> 来源: `apps/electron/src/renderer/components/settings/SettingsInput.tsx:28-29, 73-76, 114-127`
+
+#### Scenario: 在 SettingsSecretInput 中切换值可见性
+- **WHEN** 用户点击密钥输入框的显示/隐藏图标按钮
+- **THEN** 系统应在明文和密文输入类型之间切换，并相应更新图标
+> 来源: `apps/electron/src/renderer/components/settings/SettingsInput.tsx:252, 255, 282, 290-301`
+
+---
+
+### Requirement: 可搜索模型选择器
+系统 SHALL 在设置页面提供可搜索的模型选择器组件。
+
+#### Scenario: 打开模型下拉列表
+- **WHEN** 用户点击输入框右侧的下拉按钮且已有可用模型
+- **THEN** 系统应打开 popover 下拉菜单，显示所有可用模型并自动聚焦搜索输入框
+> 来源: `apps/electron/src/renderer/components/settings/SearchableModelInput.tsx:87-95, 119-123, 92-94`
+
+#### Scenario: 搜索模型列表
+- **WHEN** 用户在下拉菜单的搜索框中输入搜索关键词
+- **THEN** 系统应根据模型 ID 和名称进行不区分大小写的过滤，更新显示的模型列表
+> 来源: `apps/electron/src/renderer/components/settings/SearchableModelInput.tsx:61-69, 138-141`
+
+#### Scenario: 从列表选择模型
+- **WHEN** 用户从过滤后的模型列表中选中一个模型
+- **THEN** 系统应更新输入框值为选中模型的 ID，关闭下拉菜单，清空搜索查询，并调用可选的 onBlur 处理器
+> 来源: `apps/electron/src/renderer/components/settings/SearchableModelInput.tsx:71-76`
+
+#### Scenario: 显示无模型结果
+- **WHEN** 搜索过滤后没有匹配的模型
+- **THEN** 系统应显示"No models found"提示消息
+> 来源: `apps/electron/src/renderer/components/settings/SearchableModelInput.tsx:145-148`
+
+#### Scenario: 异步获取模型列表
+- **WHEN** 用户点击获取按钮且 onFetchModels 处理器已设置
+- **THEN** 系统应调用 onFetchModels 异步获取模型，打开下拉菜单，加载完成后自动聚焦搜索输入框
+> 来源: `apps/electron/src/renderer/components/settings/SearchableModelInput.tsx:78-85`
+
+---
+
+### Requirement: SettingsSection 危险变体
+系统 SHALL 支持在设置区域使用危险变体来突出显示具有潜在风险的操作。
+
+#### Scenario: 显示危险区域标题
+- **WHEN** SettingsSection 设置了 variant="danger"
+- **THEN** 系统应在区域标题使用红色文字（text-destructive）样式
+> 来源: `apps/electron/src/renderer/components/settings/SettingsSection.tsx:24, 51-53`
+
+---
+
+### Requirement: SettingsSection 操作按钮
+系统 SHALL 支持在设置区域标题右侧显示操作按钮（如编辑按钮）。
+
+#### Scenario: 显示区域操作按钮
+- **WHEN** SettingsSection 提供了 action 属性
+- **THEN** 系统应在区域标题右侧显示提供的操作元素
+> 来源: `apps/electron/src/renderer/components/settings/SettingsSection.tsx:25-27, 61`
+
+---
+
+### Requirement: SettingsRow 动态内容渲染
+系统 SHALL 支持在设置行中渲染动态的标签内容和右侧内容。
+
+#### Scenario: 使用 JSX 作为标签
+- **WHEN** SettingsRow 的 label 属性是 JSX 元素
+- **THEN** 系统应正确渲染 JSX 内容作为标签
+> 来源: `apps/electron/src/renderer/components/settings/SettingsRow.tsx:14, 61-62`
+
+---
+
+### Requirement: SettingsRow 点击交互
+系统 SHALL 支持设置行的点击交互。
+
+#### Scenario: 设置行可点击
+- **WHEN** SettingsRow 设置了 onClick 处理器
+- **THEN** 系统应将容器渲染为 button 元素，点击时执行处理器，鼠标悬停时显示背景色变化
+> 来源: `apps/electron/src/renderer/components/settings/SettingsRow.tsx:19-20, 51-54, 54-58`
+
+---
+
+### Requirement: SettingsCard 内部分隔
+系统 SHALL 支持在卡片内使用分隔线来分隔子项。
+
+#### Scenario: 卡片内分隔线
+- **WHEN** SettingsCard 的 divided 设置为 true 且有多个子项
+- **THEN** 系统应在子项之间添加 1px 高的水平分隔线
+> 来源: `apps/electron/src/renderer/components/settings/SettingsCard.tsx:17, 39-45`
+
+#### Scenario: 跳过最后一项的分隔线
+- **WHEN** SettingsCard 渲染带有分隔线的多个子项时
+- **THEN** 系统应在每个子项后添加分隔线，除了最后一项
+> 来源: `apps/electron/src/renderer/components/settings/SettingsCard.tsx:40-45`
+
+---
+
+### Requirement: SettingsCardContent 独立内容包装器
+系统 SHALL 支持在卡片中使用独立的内容包装器。
+
+#### Scenario: 使用内容包装器
+- **WHEN** 在 SettingsCard 内使用 SettingsCardContent
+- **THEN** 系统应将内容包裹在带边距的 div 中
+> 来源: `apps/electron/src/renderer/components/settings/SettingsCard.tsx:56-64`
+
+---
+
+### Requirement: SettingsCardFooter 操作页脚
+系统 SHALL 支持在卡片底部显示操作按钮区域。
+
+#### Scenario: 显示卡片操作页脚
+- **WHEN** 在 SettingsCard 后使用 SettingsCardFooter
+- **THEN** 系统应显示带背景色的底部区域，右对齐显示操作按钮
+> 来源: `apps/electron/src/renderer/components/settings/SettingsCard.tsx:69-86`
+
+---
+
+### Requirement: SettingsSegmentedControlCard 卡片变体
+系统 SHALL 支持卡片风格的分段控制器。
+
+#### Scenario: 渲染卡片风格分段控制器
+- **WHEN** 使用 SettingsSegmentedControlCard 组件
+- **THEN** 系统应以网格布局渲染选项，每个选项为圆角卡片，选中时高亮背景并显示选中标识
+> 来源: `apps/electron/src/renderer/components/settings/SettingsSegmentedControl.tsx:121-181`
+
+#### Scenario: 动态列数
+- **WHEN** SettingsSegmentedControlCard 设置了 columns 属性
+- **THEN** 系统应使用指定的列数（2、3 或 4）布局选项卡片
+> 来源: `apps/electron/src/renderer/components/settings/SettingsSegmentedControl.tsx:117, 132-136`
+
+---
+
+### Requirement: SettingsSelect 内联变体
+系统 SHALL 支持内联样式选择器。
+
+#### Scenario: 渲染内联选择器
+- **WHEN** 使用 SettingsSelectRow 组件
+- **THEN** 系统应将标签放在左侧，选择器放在右侧，固定选择器宽度为 180px
+> 来源: `apps/electron/src/renderer/components/settings/SettingsSelect.tsx:136-183`
+
+---
+
+### Requirement: SettingsSelect 国际化占位符
+系统 SHALL 支持选择器占位符文本的国际化。
+
+#### Scenario: 使用翻译后的占位符
+- **WHEN** SettingsSelect 未设置 placeholder 属性
+- **THEN** 系统应从翻译字典获取"Select..."作为占位符文本
+> 来源: `apps/electron/src/renderer/components/settings/SettingsSelect.tsx:72, 74`
+
+---
+
+### Requirement: SettingsRowLabel 独立标签
+系统 SHALL 支持独立使用设置行标签组件。
+
+#### Scenario: 使用独立标签
+- **WHEN** 在 SettingsRow 外使用 SettingsRowLabel
+- **THEN** 系统应渲染标签和描述文本，使用与 SettingsRow 相同的样式
+> 来源: `apps/electron/src/renderer/components/settings/SettingsRow.tsx:86-103`
+
+---
+
+### Requirement: SettingsGroup 顶级分组
+系统 SHALL 支持使用分组组件组织设置页面的主要区域。
+
+#### Scenario: 渲染设置分组
+- **WHEN** 使用 SettingsGroup 组件
+- **THEN** 系统应显示大写分组标题，使用横线分隔，并在下方按垂直间距排列子内容
+> 来源: `apps/electron/src/renderer/components/settings/SettingsSection.tsx:90-98`
+
+---
+
+### Requirement: SettingsDivider 水平分隔
+系统 SHALL 支持在设置区域间使用分隔线。
+
+#### Scenario: 渲染分隔线
+- **WHEN** 使用 SettingsDivider 组件
+- **THEN** 系统应渲染 1px 高的水平分隔线
+> 来源: `apps/electron/src/renderer/components/settings/SettingsSection.tsx:115-117`
+
+---
+
+### Requirement: AI 设置空状态
+系统 SHALL 在没有配置连接时显示空状态提示。
+
+#### Scenario: 显示无连接空状态
+- **WHEN** AI 设置页面没有配置任何连接
+- **THEN** 系统应显示"No connections configured. Add a connection to get started."提示信息
+> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx:727-730`
+
+---
+
+### Requirement: 连接排序
+系统 SHALL 在 AI 设置中按优先级和名称排序连接列表。
+
+#### Scenario: 按默认状态和名称排序连接
+- **WHEN** 渲染 AI 连接列表时
+- **THEN** 系统应将默认连接排在前面，其他连接按字母顺序排序
+> 来源: `apps/electron/src/renderer/pages/settings/AiSettingsPage.tsx:732-737`
+
+---
+
+### Requirement: 工作区设置加载状态
+系统 SHALL 在加载工作区设置时显示加载指示器。
+
+#### Scenario: 显示空状态工作区提示
+- **WHEN** 工作区设置页面没有活动工作区
+- **THEN** 系统应显示"No workspace selected"提示，禁用设置编辑功能
+> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx:270-278`
+
+#### Scenario: 显示工作区加载指示器
+- **WHEN** 正在加载工作区设置数据
+- **THEN** 系统应显示旋转的 Spinner 加载图标
+> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx:282-290`
+
+---
+
+### Requirement: 工作区图标上传反馈
+系统 SHALL 在工作区图标上传过程中提供视觉反馈。
+
+#### Scenario: 显示上传中状态
+- **WHEN** 正在上传工作区图标文件
+- **THEN** 系统应在图标区域显示小型 Spinner 加载图标，按钮显示"Uploading..."文本，禁用文件输入
+> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx:154, 192, 328, 330-331, 342-344`
+
+#### Scenario: 上传完成后重置文件输入
+- **WHEN** 工作区图标上传完成（无论成功或失败）
+- **THEN** 系统应重置文件输入的 value，允许用户选择同一文件再次上传
+> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx:190-193`
+
+---
+
+### Requirement: 工作区重命名对话框
+系统 SHALL 使用模态对话框进行工作区重命名操作。
+
+#### Scenario: 打开重命名对话框
+- **WHEN** 用户在工作区设置中点击名称旁的"Edit"按钮
+- **THEN** 系统应打开 RenameDialog，预填充当前工作区名称，聚焦输入框
+> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx:307-317, 355-358`
+
+#### Scenario: 保存工作区重命名
+- **WHEN** 用户在重命名对话框中提交新名称
+- **THEN** 系统应验证名称非空且与原名称不同，更新工作区设置，刷新工作区列表，关闭对话框
+> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx:359-369`
+
+---
+
+### Requirement: 工作区权限模式错误提示
+系统 SHALL 在用户尝试禁用过多权限模式时显示错误提示。
+
+#### Scenario: 模式禁用错误提示
+- **WHEN** 用户尝试禁用权限模式导致可循环模式少于 2 个
+- **THEN** 系统应显示"At least 2 modes required"错误消息，2 秒后自动淡化隐藏
+> 来源: `apps/electron/src/renderer/pages/settings/WorkspaceSettingsPage.tsx:247-254, 418-423`
+
+---
+
+### Requirement: 偏好表单初始加载跳过
+系统 SHALL 在加载过程中跳过自动保存以避免不必要的写入。
+
+#### Scenario: 初始加载期间跳过自动保存
+- **WHEN** 用户偏好表单处于初始加载状态
+- **THEN** 系统应跳过防抖自动保存逻辑
+> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx:104, 124, 131-133, 142-143`
+
+#### Scenario: 完成初始加载
+- **WHEN** 用户偏好表单数据加载完成
+- **THEN** 系统应延迟 100ms 后重置初始加载标记
+> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx:130-134`
+
+---
+
+### Requirement: 用户偏好语言规范化
+系统 SHALL 支持规范化历史遗留的语言偏好值。
+
+#### Scenario: 规范化语言偏好值
+- **WHEN** 解析用户偏好文件中的语言设置时
+- **THEN** 系统应将"English"转换为"en"，将简体中文 Unicode 转换为"zh-CN"，其他值保持为字符串
+> 来源: `apps/electron/src/renderer/pages/settings/PreferencesPage.tsx:43-50, 68`
+
+---
+
+### Requirement: 权限设置文档链接
+系统 SHALL 在权限设置页面提供相关文档链接。
+
+#### Scenario: 打开权限文档
+- **WHEN** 用户在权限设置页面点击"Learn more"链接
+- **THEN** 系统应在系统默认浏览器中打开权限文档页面
+> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx:223-228`
+
+---
+
+### Requirement: 标签设置文档链接
+系统 SHALL 在标签设置页面提供相关文档链接。
+
+#### Scenario: 打开标签文档
+- **WHEN** 用户在标签设置页面点击"Learn more"链接
+- **THEN** 系统应在系统默认浏览器中打开标签文档页面
+> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx:87-92`
+
+---
+
+### Requirement: 标签设置编辑弹窗模型参数
+系统 SHALL 支持为标签编辑弹窗配置自定义模型参数。
+
+#### Scenario: 使用自定义模型编辑标签
+- **WHEN** 用户打开标签层级或自动规则编辑弹窗
+- **THEN** 系统应使用预定义的 model、context、example 和 systemPromptPreset 参数配置
+> 来源: `apps/electron/src/renderer/pages/settings/LabelsSettingsPage.tsx:103-109, 140-146`
+
+---
+
+### Requirement: 权限设置自定义编辑配置
+系统 SHALL 支持为工作区自定义权限编辑弹窗配置自定义参数。
+
+#### Scenario: 使用自定义配置编辑权限
+- **WHEN** 用户打开工作区自定义权限编辑弹窗
+- **THEN** 系统应使用工作区根路径获取预定义的编辑配置（context 和 example）
+> 来源: `apps/electron/src/renderer/pages/settings/PermissionsSettingsPage.tsx:276-290`
+
+---
+
+### Requirement: 快捷键页面组件特定区域
+系统 SHALL 在快捷键设置页面显示组件级别的快捷键参考。
+
+#### Scenario: 显示列表导航快捷键
+- **WHEN** 用户查看快捷键设置页面的列表导航区域
+- **THEN** 系统应显示上下键导航、Home/End 键操作等快捷键
+> 来源: `apps/electron/src/renderer/pages/settings/ShortcutsPage.tsx:33-41`
+
+#### Scenario: 显示会话列表快捷键
+- **WHEN** 用户查看快捷键设置页面的会话列表区域
+- **THEN** 系统应显示 Enter 键聚焦输入、右键打开菜单等快捷键
+> 来源: `apps/electron/src/renderer/pages/settings/ShortcutsPage.tsx:42-48`
+
+#### Scenario: 显示聊天输入快捷键
+- **WHEN** 用户查看快捷键设置页面的聊天输入区域
+- **THEN** 系统应显示 Enter/Shift+Enter 发送消息、Esc 关闭对话框等快捷键
+> 来源: `apps/electron/src/renderer/pages/settings/ShortcutsPage.tsx:50-57`
+
+---
+
+### Requirement: Mac 平台快捷键符号分割
+系统 SHALL 在 Mac 平台正确分割组合快捷键符号。
+
+#### Scenario: 分隔 Mac 快捷键符号
+- **WHEN** 快捷键热键包含连续的 Mac 符号（如 ⌘⇧N）
+- **THEN** 系统应使用正则表达式将符号分割为单个按键元素进行显示
+> 来源: `apps/electron/src/renderer/pages/settings/ShortcutsPage.tsx:78-80`
+
+---
+
+## 附录 D: 设置组件索引
+
+| 组件名称 | 文件路径 | 用途说明 |
+|---------|---------|---------|
+| SettingsCard | components/settings/SettingsCard.tsx | 容器卡片，支持内部分隔 |
+| SettingsInput | components/settings/SettingsInput.tsx | 文本输入，支持密码类型 |
+| SettingsInputRow | components/settings/SettingsInput.tsx | 内联文本输入 |
+| SettingsSecretInput | components/settings/SettingsInput.tsx | 密钥输入，支持显示/隐藏 |
+| SettingsCard | components/settings/SettingsCard.tsx | 容器卡片，支持分隔 |
+| SettingsCard | components/settings/SettingsCard.tsx | 卡片容器，支持分组和分隔 |
+| SettingsCardContent | components/settings/SettingsCard.tsx | 卡片内容包装器 |
+| SettingsCardFooter | components/settings/SettingsCard.tsx | 卡片操作页脚 |
+| SettingsRow | components/settings/SettingsRow.tsx | 通用设置行 |
+| SettingsRowLabel | components/settings/SettingsRow.tsx | 独立行标签 |
+| SearchableModelInput | components/settings/SearchableModelInput.tsx | 可搜索模型选择器 |
+| SettingsSection | components/settings/SettingsSection.tsx | 设置区域容器 |
+| SettingsGroup | components/settings/SettingsSection.tsx | 顶级分组容器 |
+| SettingsDivider | components/settings/SettingsSection.tsx | 水平分隔线 |
+| SettingsSegmentedControl | components/settings/SettingsSegmentedControl.tsx | 水平按钮组 |
+| SettingsSegmentedControlCard | components/settings/SettingsSegmentedControl.tsx | 卡片风格按钮组 |
+| SettingsSelect | components/settings/SettingsSelect.tsx | 下拉选择器 |
+| SettingsSelectRow | components/settings/SettingsSelect.tsx | 内联下拉选择器 |
+| SettingsMenuSelectRow | components/settings/SettingsMenuSelectRow.tsx | 带描述的下拉选择器 |
+| SettingsTextarea | components/settings/SettingsTextarea.tsx | 多行文本输入 |
+| SettingsToggle | components/settings/SettingsToggle.tsx | 开关切换 |
+| EditButton | components/ui/EditPopover.tsx | 编辑按钮 |
+| EditPopover | components/ui/EditPopover.tsx | AI 辅助编辑弹窗 |
+| RenameDialog | components/ui/rename-dialog.tsx | 重命名对话框 |
 
 ---
 
 ## 文档元数据
 
-- **创建日期**: 2026-03-03
-- **最后更新**: 2026-03-03
-- **文档格式**: OpenSpec
-- **源格式**: EARS (Easy Approach to Requirements Syntax)
-- **目标组件**: `apps/electron/src/renderer/pages/settings/`
+- 创建日期: 2026-03-03
+- 最后更新: 2026-03-03
+- 文档格式: OpenSpec (EARS 语法)
+- 规范语法: WHEN/THEN
+- 分析范围: `apps/electron/src/renderer/pages/settings/` 和 `apps/electron/src/renderer/components/settings/`
+- 作者: Code Analyzer Agent

@@ -2,7 +2,7 @@
 
 ## ADDED Requirements
 
-### 2.1 Requirement: 快捷键注册机制
+### Requirement: 快捷键注册机制
 
 **Requirement: 快捷键注册机制**
 
@@ -35,7 +35,7 @@
 
 ---
 
-### 2.2 Requirement: 跨平台快捷键处理
+### Requirement: 跨平台快捷键处理
 
 **Requirement: 跨平台快捷键处理**
 
@@ -67,7 +67,7 @@
 
 ---
 
-### 2.3 Requirement: 全局键盘事件捕获
+### Requirement: 全局键盘事件捕获
 
 **Requirement: 全局键盘事件捕获**
 
@@ -102,7 +102,7 @@
 
 ---
 
-### 2.4 Requirement: 输入安全模式
+### Requirement: 输入安全模式
 
 **Requirement: 输入安全模式**
 
@@ -139,7 +139,7 @@
 
 ---
 
-### 2.5 Requirement: 操作启用条件
+### Requirement: 操作启用条件
 
 **Requirement: 操作启用条件**
 
@@ -164,7 +164,7 @@
 
 ---
 
-### 2.6 Requirement: 用户快捷键覆盖
+### Requirement: 用户快捷键覆盖
 
 **Requirement: 用户快捷键覆盖**
 
@@ -193,7 +193,7 @@
 
 ---
 
-### 2.7 Requirement: 快捷键显示
+### Requirement: 快捷键显示
 
 **Requirement: 快捷键显示**
 
@@ -218,7 +218,7 @@
 
 ---
 
-### 2.8 Requirement: 国际化标签
+### Requirement: 国际化标签
 
 **Requirement: 国际化标签**
 
@@ -244,7 +244,7 @@
 
 ---
 
-### 3.1 Requirement: 键盘快捷键对话框
+### Requirement: 键盘快捷键对话框
 
 **Requirement: 键盘快捷键对话框**
 
@@ -279,7 +279,7 @@
 
 ---
 
-### 3.2 Requirement: 快捷键设置页面
+### Requirement: 快捷键设置页面
 
 **Requirement: 快捷键设置页面**
 
@@ -304,7 +304,7 @@
 
 ---
 
-### 3.3 Requirement: 组件特定快捷键
+### Requirement: 组件特定快捷键
 
 **Requirement: 组件特定快捷键**
 
@@ -329,7 +329,7 @@
 
 ---
 
-### 4.1 Requirement: 通用操作
+### Requirement: 通用操作
 
 **Requirement: 通用操作**
 
@@ -354,7 +354,7 @@
 
 ---
 
-### 4.2 Requirement: 导航操作
+### Requirement: 导航操作
 
 **Requirement: 导航操作**
 
@@ -379,7 +379,7 @@
 
 ---
 
-### 4.3 Requirement: 视图操作
+### Requirement: 视图操作
 
 **Requirement: 视图操作**
 
@@ -398,7 +398,7 @@
 
 ---
 
-### 4.4 Requirement: 会话列表操作
+### Requirement: 会话列表操作
 
 **Requirement: 会话列表操作**
 
@@ -418,7 +418,7 @@
 
 ---
 
-### 4.5 Requirement: 聊天操作
+### Requirement: 聊天操作
 
 **Requirement: 聊天操作**
 
@@ -441,7 +441,7 @@
 
 ---
 
-### 5.1 Requirement: TypeScript 类型安全
+### Requirement: TypeScript 类型安全
 
 **Requirement: TypeScript 类型安全**
 
@@ -461,7 +461,7 @@
 
 ---
 
-### 5.2 Requirement: React Hook 集成
+### Requirement: React Hook 集成
 
 **Requirement: React Hook 集成**
 
@@ -481,7 +481,7 @@
 
 ---
 
-### 5.3 Requirement: 事件捕获性能
+### Requirement: 事件捕获性能
 
 **Requirement: 事件捕获性能**
 
@@ -496,7 +496,7 @@
 
 ---
 
-### 6.1 Requirement: 响应性
+### Requirement: 响应性
 
 **Requirement: 响应性**
 
@@ -510,7 +510,7 @@
 
 ---
 
-### 6.2 Requirement: 可靠性
+### Requirement: 可靠性
 
 **Requirement: 可靠性**
 
@@ -530,7 +530,7 @@
 
 ---
 
-### 6.3 Requirement: 可维护性
+### Requirement: 可维护性
 
 **Requirement: 可维护性**
 
@@ -551,7 +551,7 @@
 
 ---
 
-### 7.1 Requirement: 快捷键冲突
+### Requirement: 快捷键冲突
 
 **Requirement: 快捷键冲突**
 
@@ -566,7 +566,7 @@
 
 ---
 
-### 7.2 Requirement: 浏览器快捷键冲突
+### Requirement: 浏览器快捷键冲突
 
 **Requirement: 浏览器快捷键冲突**
 
@@ -581,7 +581,7 @@
 
 ---
 
-### 8.1 Requirement: 快捷键功能测试
+### Requirement: 快捷键功能测试
 
 **Requirement: 快捷键功能测试**
 
@@ -598,7 +598,7 @@
 
 ---
 
-### 8.2 Requirement: 键盘事件模拟测试
+### Requirement: 键盘事件模拟测试
 
 **Requirement: 键盘事件模拟测试**
 
@@ -613,7 +613,7 @@
 
 ---
 
-### 9.1 Requirement: 注册错误处理
+### Requirement: 注册错误处理
 
 **Requirement: 注册错误处理**
 
@@ -627,7 +627,486 @@
 
 ---
 
-### 10.1 Requirement: 自定义快捷键编辑器
+### Requirement: Tab 键区域导航
+
+**Requirement: Tab 键区域导航**
+
+系统 SHALL 支持 Tab 键在不同焦点区域之间进行导航。
+
+**子系统 SHALL:**
+- 定义 `nav.nextZone` 操作使用 Tab 键作为默认快捷键
+- 支持焦点在会话列表、聊天区域等不同区域间切换
+
+> 来源: `apps/electron/src/renderer/actions/definitions.ts:78-83`
+
+---
+
+### Requirement: 焦点区域顺序定义
+
+**Requirement: 焦点区域顺序定义**
+
+系统 SHALL 为焦点区域定义固定的导航顺序。
+
+**子系统 SHALL:**
+- 定义 `FocusZoneId` 类型包含 'sidebar'、'session-list'、'chat'
+- 定义区域导航顺序：sidebar → session-list → chat
+- 支持 Tab 前进、Shift+Tab 后退
+
+**系统 SHALL:**
+- 在循环导航中超出末尾时回到开头
+- 在后退导航中超出开头时回到末尾
+
+#### Scenario: Tab 前进导航
+- **WHEN** 用户按下 Tab 键
+  - **WHEN** 当前焦点在侧边栏
+    - **THEN** 焦点转移到会话列表
+
+#### Scenario: Shift+Tab 后退导航
+- **WHEN** 用户按下 Shift+Tab 键
+  - **WHEN** 当前焦点在会话列表
+    - **THEN** 焦点转移到侧边栏
+
+> 来源: `apps/electron/src/renderer/context/FocusContext.tsx:7, 28, 112-124`
+
+---
+
+### Requirement: 焦点意图跟踪
+
+**Requirement: 焦点意图跟踪**
+
+系统 SHALL 跟踪焦点变化的原因，允许组件做出适当的响应。
+
+**子系统 SHALL:**
+- 定义三种焦点意图类型：`keyboard`、`click`、`programmatic`
+- 在焦点状态中记录当前意图和是否应移动 DOM 焦点
+
+**系统 SHALL:**
+- keyboard 导航（如 Cmd+1/2/3、Tab）默认移动 DOM 焦点
+- click 导航默认不移动 DOM 焦点
+- programmatic 导航默认移动 DOM 焦点
+- 允许通过选项覆盖默认行为
+
+#### Scenario: 键盘导航意图
+- **WHEN** 用户按下 Cmd+1 聚焦侧边栏
+  - **THEN** 焦点意图设置为 'keyboard'
+  - **THEN** `shouldMoveDOMFocus` 设置为 true
+
+#### Scenario: 点击导航意图
+- **WHEN** 用户点击某区域进行选择
+  - **THEN** 焦点意图设置为 'click'
+  - **THEN** `shouldMoveDOMFocus` 设置为 false
+
+> 来源: `apps/electron/src/renderer/context/FocusContext.tsx:16, 38-43, 82-110`
+
+---
+
+### Requirement: 特殊按键映射
+
+**Requirement: 特殊按键映射**
+
+系统 SHALL 支持特殊按键的正确映射和识别。
+
+**子系统 SHALL:**
+- 支持符号按键：`[`、`]`、`,`、`.`
+- 支持箭头键：`left`、`right`、`up`、`down`
+- 支持 Escape 和 Tab 键映射为代码 `Escape`、`Tab`
+- 将按键名称映射到 `KeyboardEvent.code` 值
+
+**系统 SHALL:**
+- 优先使用 `code` 匹配（如 `BracketLeft`）而非 `key` 匹配（如 `[`）
+- 确保跨平台按键行为一致
+
+> 来源: `apps/electron/src/renderer/actions/registry.tsx:179-194`
+
+---
+
+### Requirement: 按键样式显示
+
+**Requirement: 按键样式显示**
+
+系统 SHALL 为快捷键提供一致的按键样式显示。
+
+**子系统 SHALL:**
+- 提供 `Kbd` 组件用于渲染单键显示
+- 应用统一的样式（圆角、边框、阴影、内边距）
+- 设置最小宽度和固定高度
+
+**系统 SHALL:**
+- 对快捷键组合进行智能分割
+- 显示符合按键物理外观的样式
+
+> 来源: `apps/electron/src/renderer/components/KeyboardShortcutsDialog.tsx:64-70`, `apps/electron/src/renderer/pages/settings/ShortcutsPage.tsx:59-65`
+
+---
+
+### Requirement: macOS 快捷键智能分割
+
+**Requirement: macOS 快捷键智能分割**
+
+系统 SHALL 在 macOS 上对连接符号的快捷键进行智能分割。
+
+**系统 SHALL:**
+- 使用正则表达式 `/[⌘⇧⌥←→]|Tab|Esc|./g` 匹配完整的修饰符组合
+- 将 `⌘N` 分割为 `['⌘', 'N']` 两个按键
+- 在 Windows/Linux 上使用 `+` 分割快捷键字符串
+
+#### Scenario: macOS 快捷键显示分割
+- **WHEN** 显示快捷键 `⌘⇧N`
+  - **THEN** 系统分割为三个按键元素：`⌘`、`⇧`、`N`
+  - **THEN** 每个按键应用 Kbd 样式
+
+> 来源: `apps/electron/src/renderer/components/KeyboardShortcutsDialog.tsx:83-85`, `apps/electron/src/renderer/pages/settings/ShortcutsPage.tsx:78-80`
+
+---
+
+### Requirement: 对话框快捷键关闭
+
+**Requirement: 对话框快捷键关闭**
+
+系统 SHALL 支持通过快捷键关闭快捷键对话框。
+
+**子系统 SHALL:**
+- 对话框注册到模态上下文（`ModalContext`）
+- 支持 `Cmd+W`（macOS）或类似快捷键关闭对话框
+
+**系统 SHALL:**
+- 确保快捷键对话框优先处理关闭快捷键
+- 防止关闭快捷键传播到父组件
+
+> 来源: `apps/electron/src/renderer/components/KeyboardShortcutsDialog.tsx:146`
+
+---
+
+### Requirement: 焦点区域标识符
+
+**Requirement: 焦点区域标识符**
+
+系统 SHALL 为焦点区域提供类型安全的标识符。
+
+**子系统 SHALL:**
+- 定义 `FocusZoneId` 类型为联合类型：`'sidebar' | 'session-list' | 'chat'`
+- 确保 TypeScript 类型检查正确
+- 防止拼写错误的区域 ID
+
+> 来源: `apps/electron/src/renderer/context/FocusContext.tsx:7`
+
+---
+
+### Requirement: 焦点区域注册生命周期
+
+**Requirement: 焦点区域注册生命周期**
+
+系统 SHALL 管理焦点区域的注册和注销生命周期。
+
+**子系统 SHALL:**
+- 提供 `registerZone` 函数用于组件挂载时注册
+- 提供 `unregisterZone` 函数用于组件卸载时注销
+- 使用 Map 数据结构存储已注册区域
+
+**系统 SHALL:**
+- 自动处理组件卸载时的清理工作
+- 确保不再存在的区域不会被导航到
+- React Effect 清理函数确保正确注销
+
+> 来源: `apps/electron/src/renderer/context/FocusContext.tsx:74-80`, `apps/electron/src/renderer/hooks/keyboard/useFocusZone.ts:50-61`
+
+---
+
+### Requirement: DOM 焦点移动控制
+
+**Requirement: DOM 焦点移动控制**
+
+系统 SHALL 提供精确控制 DOM 焦点是否移动到焦点区域。
+
+**子系统 SHALL:**
+- 在 `FocusZoneOptions` 中提供 `moveFocus` 选项
+- 默认值基于焦点意图：keyboard=true，click=false，programmatic=true
+- 支持自定义的焦点首元素聚焦行为
+
+**系统 SHALL:**
+- 仅在 `moveFocus` 为 true时移动焦点
+- 优先使用区域的 `focusFirst` 函数
+- 回退到聚焦区域的 ref 元素
+- 焦点移动后"消费"意图（立即重置 `shouldMoveDOMFocus`）
+
+#### Scenario: 自定义焦点行为
+- **WHEN** 区域定义了 `focusFirst` 函数
+  - **WHEN** 调用时 `moveFocus` 为 true
+    - **THEN** 系统调用 `focusFirst` 而非直接聚焦 ref
+
+#### Scenario: 意图消费
+- **WHEN** 焦点移动完成
+  - **THEN** 系统立即重置 `shouldMoveDOMFocus` 为 false
+  - **THEN** 防止副作用在数据变化时重复触发
+
+> 来源: `apps/electron/src/renderer/context/FocusContext.tsx:82-110`
+> 来源: `apps/electron/src/renderer/hooks/keyboard/useFocusZone.ts:20-21`
+
+---
+
+### Requirement: 焦点区域管理
+
+**Requirement: 焦点区域管理**
+
+系统 SHALL 支持将组件划分为可导航的焦点区域。
+
+**子系统 SHALL:**
+- 提供 `useFocusZone` hook 用于注册焦点区域
+- 维护全局焦点状态（当前区域、焦点意图）
+- 支持 `keyboard`、`click`、`programmatic` 三种焦点意图
+
+**系统 SHALL:**
+- 支持焦点区域注册和注销
+- 提供回调函数（`onFocus`、`onBlur`）
+- 支持自定义聚焦第一个元素的行为
+- 控制 DOM 焦点是否移动到区域
+- 返回区域引用和焦点状态
+
+#### Scenario: 焦点区域注册
+- **WHEN** 组件调用 `useFocusZone({ zoneId, onFocus, onBlur })`
+  - **THEN** 系统注册该区域为可导航焦点区域
+  - **THEN** 返回 `zoneRef` 绑定到容器 DOM 元素
+  - **THEN** 返回 `isFocused` 表示当前焦点状态
+  - **THEN** 组件卸载时自动注销该区域
+
+#### Scenario: 焦点状态跟踪
+- **WHEN** 用户通过键盘导航切换区域
+  - **THEN** 焦点状态更新为新的区域 ID 和意图类型
+  - **THEN** `isFocused` 返回值更新
+  - **THEN** `shouldMoveDOMFocus` 指示是否需要移动 DOM 焦点
+  - **THEN** `intent` 显示焦点变化的意图类型
+
+> 来源: `apps/electron/src/renderer/hooks/keyboard/useFocusZone.ts`
+
+---
+
+**Requirement: 焦点状态变化通知**
+
+系统 SHALL 通知组件焦点区域的变化。
+
+**子系统 SHALL:**
+- 在 `useFocusZone` hook 中跟踪焦点状态变化
+- 提供可选的 `onFocus` 和 `onBlur` 回调
+
+**系统 SHALL:**
+- 当区域获得焦点时调用 `onFocus` 回调
+- 当区域失去焦点时调用 `onBlur` 回调
+- 避免重复回调（状态确实变化时才触发）
+
+#### Scenario: 焦点获得通知
+- **WHEN** 用户导航到会话列表区域
+  - **THEN** `isFocused` 变为 true
+  - **THEN** 触发 `onFocus` 回调（如果已设置）
+  - **THEN** 组件可执行焦点相关操作
+
+#### Scenario: 焦点失去通知
+- **WHEN** 用户从会话列表导航到聊天区域
+  - **THEN** `isFocused` 变为 false
+  - **THEN** 触发 `onBlur` 回调（如果已设置）
+  - **THEN** 组件可清理焦点状态
+
+> 来源: `apps/electron/src/renderer/hooks/keyboard/useFocusZone.ts:42-71`
+
+---
+
+### Requirement: Roving Tab Index 列表导航
+
+**Requirement: Roving Tab Index 列表导航**
+
+系统 SHALL 实现标准的 roving tabindex 模式用于列表键盘导航。
+
+**子系统 SHALL:**
+- 提供 `useRovingTabIndex` hook 管理列表导航
+- 仅当前活动项设置 `tabIndex=0`，其他项设置为 `tabIndex=-1`
+- 支持垂直、水平或双向导航方向
+- 支持在列表两端循环导航（可选）
+
+**系统 SHALL:**
+- 方向键（↑↓←→）导航列表项并调用 `onNavigate` 回调
+- Enter/Space 键触发 `onActivate` 回调用于选择
+- Home/End 键跳转到首/末项
+- Tab 键退出列表到下一个焦点区域
+- 在项目中滚动到视图（通过 `onNavigate`）
+
+#### Scenario: 列表导航
+- **WHEN** 用户按下箭头键
+  - **THEN** 活动索引更新
+  - **THEN** 系统调用 `onNavigate` 回调以滚动到视图
+  - **THEN** 焦点移动到新项目
+
+#### Scenario: 选择项目
+- **WHEN** 用户按下 Enter 或 Space
+  - **THEN** 系统触发 `onActivate` 回调
+  - **THEN** 组件执行选择操作
+
+#### Scenario: 循环导航
+- **WHEN** 用户在最后一项按下向下箭头
+  - **WHEN** `wrap` 选项设置为 true
+    - **THEN** 焦点转移到第一项
+    - **THEN** 调用 `onNavigate` 回调
+
+> 来源: `apps/electron/src/renderer/hooks/keyboard/useRovingTabIndex.ts`
+
+---
+
+### Requirement: 列表多选支持
+
+**Requirement: 列表多选支持**
+
+系统 SHALL 支持 Shift+箭头键扩展选择范围的多选操作。
+
+**子系统 SHALL:**
+- 检测 Shift+箭头键组合
+- 调用 `onExtendSelection` 回调传递目标索引
+
+**系统 SHALL:**
+- 更新活动索引用于视觉反馈
+- 调用 `onNavigate` 回调将新项滚动到视图
+
+#### Scenario: 扩展选择范围
+- **WHEN** 用户按下 Shift+向下箭头
+  - **WHEN** `onExtendSelection` 回调已设置
+    - **THEN** 系统传递下一个索引到 `onExtendSelection`
+    - **THEN** 更新活动索引
+
+> 来源: `apps/electron/src/renderer/hooks/keyboard/useRovingTabIndex.ts:27, 234-238`
+
+---
+
+### Requirement: 列表删除操作
+
+**Requirement: 列表删除操作**
+
+系统 SHALL 支持通过 Delete/Backspace 键删除当前聚焦的列表项。
+
+**子系统 SHALL:**
+- 检测 Delete 或 Backspace 键
+- 检查 `onDelete` 回调是否已设置
+
+**系统 SHALL:**
+- 阻止按键的默认浏览器行为
+- 调用 `onDelete` 回调传递当前项和索引
+
+#### Scenario: 删除会话
+- **WHEN** 用户在会话列表中按下 Delete 键
+  - **WHEN** 会话项当前活动
+    - **THEN** 系统调用 `onDelete` 回调
+    - **THEN** 组件删除对应会话
+
+> 来源: `apps/electron/src/renderer/hooks/keyboard/useRovingTabIndex.ts:204-211`
+
+---
+
+### Requirement: 上下文菜单快捷键
+
+**Requirement: 上下文菜单快捷键**
+
+系统 SHALL 支持通过键盘打开上下文菜单。
+
+**子系统 SHALL:**
+- 检测 F10 键（Shift+F10）或 ContextMenu 键
+- 调用 `onContextMenu` 回调传递当前项和对应 DOM 元素
+
+**系统 SHALL:**
+- 阻止按键的默认浏览器行为
+- 仅 Shift+F10 触发上下文菜单（单独 F10 不触发）
+
+#### Scenario: 键盘打开上下文菜单
+- **WHEN** 用户按下 Shift+F10
+  - **WHEN** 列表项当前活动
+  - **WHEN** `onContextMenu` 回调已设置
+    - **THEN** 系统调用 `onContextMenu` 回调
+    - **THEN** 组件在项的位置显示上下文菜单
+
+> 来源: `apps/electron/src/renderer/hooks/keyboard/useRovingTabIndex.ts:214-227`
+
+---
+
+### Requirement: 非焦点导航模式
+
+**Requirement: 非焦点导航模式**
+
+系统 SHALL 支持在不移动 DOM 焦点的情况下导航列表项。
+
+**子系统 SHALL:**
+- 提供 `moveFocus` 选项控制是否移动焦点
+- 默认值为 `true`（移动焦点）
+
+**系统 SHALL:**
+- 当 `moveFocus` 为 `false` 时更新活动索引但焦点保留在当前位置（如搜索输入框）
+- 仍调用 `onNavigate` 回调以滚动到视图
+
+#### Scenario: 搜索时导航列表
+- **WHEN** 用户在搜索输入框中输入
+  - **WHEN** 用户按下箭头键
+  - **WHEN** 列表的 `moveFocus` 设置为 `false`
+    - **THEN** 系统更新活动索引以显示高亮
+    - **THEN** 焦点保留在搜索输入框
+    - **THEN** 用户可继续输入搜索内容
+
+> 来源: `apps/electron/src/renderer/hooks/keyboard/useRovingTabIndex.ts:24-25, 119-131`
+
+---
+
+### Requirement: 无障碍属性支持
+
+**Requirement: 无障碍属性支持**
+
+系统 SHALL 为列表导航提供完整的无障碍（A11y）属性支持。
+
+**子系统 SHALL:**
+- 容器设置 `role="listbox"`
+- 设置 `aria-activedescendant` 指向当前活动项的 ID
+- 每个项目设置 `role="option"`
+- 每个项目设置 `aria-selected` 表示活动状态
+
+**系统 SHALL:**
+- 确保屏幕阅读器正确识别列表结构
+- 支持键盘导航的可访问性
+
+> 来源: `apps/electron/src/renderer/hooks/keyboard/useRovingTabIndex.ts:278, 283-286`
+
+---
+
+### Requirement: 列表项动态处理
+
+**Requirement: 列表项动态处理**
+
+系统 SHALL 正确处理列表项的动态变化。
+
+**系统 SHALL:**
+- 当列表为空时重置活动索引为 0
+- 当活动索引超出列表范围时调整为有效范围
+- 仅在列表长度变化时自动调整（忽略状态变化）
+
+#### Scenario: 动态列表重置
+- **WHEN** 当前活动索引为 5
+- **WHEN** 列表缩小到 3 个项目
+    - **THEN** 系统自动将活动索引调整为 2
+
+> 来源: `apps/electron/src/renderer/hooks/keyboard/useRovingTabIndex.ts:93-100`
+
+---
+
+### Requirement: 程序化索引设置
+
+**Requirement: 程序化索引设置**
+
+系统 SHALL 支持程序化设置活动索引而不触发导航回调。
+
+**子系统 SHALL:**
+- 提供 `setActiveIndex` 函数
+- 验证索引在有效范围内
+
+**系统 SHALL:**
+- 仅更新状态，不调用 `onNavigate` 回调
+- 用于初始化或外部设置列表选择
+
+> 来源: `apps/electron/src/renderer/hooks/keyboard/useRovingTabIndex.ts:104-108`
+
+---
+
+### Requirement: 自定义快捷键编辑器
 
 **Requirement: 自定义快捷键编辑器**
 
