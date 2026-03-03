@@ -1,105 +1,14 @@
 {
-  "timestamp": "2026-03-03T04:21:49.676Z",
+  "timestamp": "2026-03-03T04:51:05.990Z",
   "summary": {
-    "totalIssues": 44,
+    "totalIssues": 37,
     "errors": 0,
-    "warnings": 2,
-    "infos": 42,
-    "modulesCovered": 10,
+    "warnings": 1,
+    "infos": 36,
+    "modulesCovered": 13,
     "codeFeaturesFound": 24
   },
   "issues": [
-    {
-      "type": "format-error",
-      "module": "api-configuration",
-      "requirement": "REQ-1",
-      "severity": "info",
-      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
-    },
-    {
-      "type": "format-error",
-      "module": "api-configuration",
-      "requirement": "REQ-2",
-      "severity": "info",
-      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
-    },
-    {
-      "type": "format-error",
-      "module": "api-configuration",
-      "requirement": "REQ-3",
-      "severity": "info",
-      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
-    },
-    {
-      "type": "format-error",
-      "module": "api-configuration",
-      "requirement": "REQ-4",
-      "severity": "info",
-      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
-    },
-    {
-      "type": "format-error",
-      "module": "api-configuration",
-      "requirement": "REQ-5",
-      "severity": "info",
-      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
-    },
-    {
-      "type": "format-error",
-      "module": "api-configuration",
-      "requirement": "REQ-6",
-      "severity": "info",
-      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
-    },
-    {
-      "type": "format-error",
-      "module": "api-configuration",
-      "requirement": "REQ-7",
-      "severity": "info",
-      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
-    },
-    {
-      "type": "format-error",
-      "module": "api-configuration",
-      "requirement": "REQ-8",
-      "severity": "info",
-      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
-    },
-    {
-      "type": "format-error",
-      "module": "api-configuration",
-      "requirement": "REQ-9",
-      "severity": "info",
-      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
-    },
-    {
-      "type": "format-error",
-      "module": "api-configuration",
-      "requirement": "REQ-10",
-      "severity": "info",
-      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
-    },
-    {
-      "type": "format-error",
-      "module": "api-configuration",
-      "requirement": "REQ-11",
-      "severity": "info",
-      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
-    },
-    {
-      "type": "format-error",
-      "module": "api-configuration",
-      "requirement": "REQ-12",
-      "severity": "info",
-      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
-    },
-    {
-      "type": "missing-scenario",
-      "module": "INDEX",
-      "requirement": "REQ-1",
-      "severity": "warning",
-      "message": "缺少场景定义"
-    },
     {
       "type": "format-error",
       "module": "INDEX",
@@ -160,13 +69,6 @@
       "type": "format-error",
       "module": "session-management",
       "requirement": "SM-8",
-      "severity": "info",
-      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
-    },
-    {
-      "type": "format-error",
-      "module": "session-management",
-      "requirement": "SM-9",
       "severity": "info",
       "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
@@ -235,27 +137,6 @@
     },
     {
       "type": "format-error",
-      "module": "session-management",
-      "requirement": "SM-19",
-      "severity": "info",
-      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
-    },
-    {
-      "type": "format-error",
-      "module": "session-management",
-      "requirement": "SM-20",
-      "severity": "info",
-      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
-    },
-    {
-      "type": "format-error",
-      "module": "session-management",
-      "requirement": "SM-21",
-      "severity": "info",
-      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
-    },
-    {
-      "type": "format-error",
       "module": "workspace-management",
       "requirement": "WM-1",
       "severity": "info",
@@ -311,9 +192,79 @@
       "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
     },
     {
+      "type": "format-error",
+      "module": "workspace-management",
+      "requirement": "WM-9",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
+    },
+    {
+      "type": "format-error",
+      "module": "workspace-management",
+      "requirement": "WM-10",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
+    },
+    {
+      "type": "format-error",
+      "module": "workspace-management",
+      "requirement": "WM-11",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
+    },
+    {
+      "type": "format-error",
+      "module": "workspace-management",
+      "requirement": "WM-12",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
+    },
+    {
+      "type": "format-error",
+      "module": "workspace-management",
+      "requirement": "WM-13",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
+    },
+    {
+      "type": "format-error",
+      "module": "workspace-management",
+      "requirement": "WM-14",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
+    },
+    {
+      "type": "format-error",
+      "module": "workspace-management",
+      "requirement": "WM-15",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
+    },
+    {
+      "type": "format-error",
+      "module": "workspace-management",
+      "requirement": "WM-16",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
+    },
+    {
+      "type": "format-error",
+      "module": "workspace-management",
+      "requirement": "WM-17",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
+    },
+    {
+      "type": "format-error",
+      "module": "workspace-management",
+      "requirement": "WM-18",
+      "severity": "info",
+      "message": "需求可能不符合 EARS 格式（缺少\"应当\"或\"系统\"）"
+    },
+    {
       "type": "coverage-gap",
       "severity": "warning",
-      "message": "代码覆盖率仅为 12.5%，建议达到至少 80%"
+      "message": "代码覆盖率仅为 33.3%，建议达到至少 80%"
     }
   ],
   "moduleSummary": [
@@ -324,11 +275,16 @@
     },
     {
       "name": "api-configuration",
-      "requirementCount": 12,
-      "activeCount": 12
+      "requirementCount": 0,
+      "activeCount": 0
     },
     {
       "name": "api-setup",
+      "requirementCount": 0,
+      "activeCount": 0
+    },
+    {
+      "name": "chat-interaction",
       "requirementCount": 0,
       "activeCount": 0
     },
@@ -349,8 +305,8 @@
     },
     {
       "name": "session-management",
-      "requirementCount": 21,
-      "activeCount": 21
+      "requirementCount": 18,
+      "activeCount": 18
     },
     {
       "name": "settings",
@@ -363,9 +319,19 @@
       "activeCount": 0
     },
     {
+      "name": "sources-skills",
+      "requirementCount": 0,
+      "activeCount": 0
+    },
+    {
       "name": "workspace-management",
-      "requirementCount": 8,
-      "activeCount": 8
+      "requirementCount": 18,
+      "activeCount": 18
+    },
+    {
+      "name": "_product-analysis",
+      "requirementCount": 0,
+      "activeCount": 0
     }
   ]
 }
