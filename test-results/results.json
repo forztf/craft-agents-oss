@@ -84,6 +84,176 @@
           "column": 6,
           "specs": [
             {
+              "title": "Chat 页面硬编码文本检测",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 335,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "🚀 启动 Electron 应用...\n\n"
+                        },
+                        {
+                          "text": "✅ 已加载 1084 个翻译 keys\n\n"
+                        },
+                        {
+                          "text": "✅ Electron 应用已启动\n\n"
+                        },
+                        {
+                          "text": "\n📋 检测 Chat 页面...\n"
+                        },
+                        {
+                          "text": "  ✓ Chat 页面检查完成\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-17T03:50:25.573Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "fcfb652bd3ffd794a76e-cbf65e543f364d6ad982",
+              "file": "i18n/i18n-e2e.spec.ts",
+              "line": 587,
+              "column": 3
+            },
+            {
+              "title": "Settings 页面硬编码文本检测",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 22,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "\n⚙️  检测 Settings 页面...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-17T03:50:35.662Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "fcfb652bd3ffd794a76e-762abd5aedc1dac6ee33",
+              "file": "i18n/i18n-e2e.spec.ts",
+              "line": 647,
+              "column": 3
+            },
+            {
+              "title": "Sidebar 区域检测",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 152,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "\n📊 检测 Sidebar 区域...\n"
+                        },
+                        {
+                          "text": "  ✓ Sidebar 检查完成\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-17T03:50:35.735Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "fcfb652bd3ffd794a76e-d27cb9b755b784202a36",
+              "file": "i18n/i18n-e2e.spec.ts",
+              "line": 722,
+              "column": 3
+            },
+            {
+              "title": "按钮文本检测",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 207,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "\n🔘 检测按钮文本...\n"
+                        },
+                        {
+                          "text": "  ✓ 检查了 19 个按钮\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-17T03:50:35.915Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "fcfb652bd3ffd794a76e-d0462fb00e4fac95ce0f",
+              "file": "i18n/i18n-e2e.spec.ts",
+              "line": 769,
+              "column": 3
+            },
+            {
               "title": "Placeholder 文本检测",
               "ok": true,
               "tags": [],
@@ -99,23 +269,287 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 67,
+                      "duration": 10,
                       "errors": [],
                       "stdout": [
-                        {
-                          "text": "🚀 启动 Electron 应用...\n\n"
-                        },
-                        {
-                          "text": "✅ 已加载 1084 个翻译 keys\n\n"
-                        },
-                        {
-                          "text": "✅ Electron 应用已启动\n\n"
-                        },
                         {
                           "text": "\n📝 检测 Placeholder 文本...\n"
                         },
                         {
                           "text": "  ✓ Placeholder 检查完成\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-17T03:50:36.153Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "fcfb652bd3ffd794a76e-bcdd6b0db0cbc365c7d7",
+              "file": "i18n/i18n-e2e.spec.ts",
+              "line": 832,
+              "column": 3
+            },
+            {
+              "title": "语言文件完整性验证",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 155,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "\n🔍 验证语言文件完整性...\n"
+                        },
+                        {
+                          "text": "  ✓ 验证 107 个英文文件\n"
+                        },
+                        {
+                          "text": "  ✓ 验证 107 个中文文件\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-17T03:50:36.184Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "fcfb652bd3ffd794a76e-d11d736ce0d42135fc41",
+              "file": "i18n/i18n-e2e.spec.ts",
+              "line": 884,
+              "column": 3
+            },
+            {
+              "title": "HTML 属性文本检测",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 348,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "\n🏷️  检测 HTML 属性文本...\n"
+                        },
+                        {
+                          "text": "  ✓ HTML 属性检查完成\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-17T03:50:36.360Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "fcfb652bd3ffd794a76e-1f43e7c282465dc47ee4",
+              "file": "i18n/i18n-e2e.spec.ts",
+              "line": 1001,
+              "column": 3
+            },
+            {
+              "title": "自动化巡检 (Crawler)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 45943,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "\n🧭 自动化巡检应用路由...\n"
+                        },
+                        {
+                          "text": "  → Chat\n"
+                        },
+                        {
+                          "text": "  → Flagged\n"
+                        },
+                        {
+                          "text": "  → Archived\n"
+                        },
+                        {
+                          "text": "  → Sources\n"
+                        },
+                        {
+                          "text": "  → Sources/API\n"
+                        },
+                        {
+                          "text": "  → Sources/MCP\n"
+                        },
+                        {
+                          "text": "  → Sources/Local\n"
+                        },
+                        {
+                          "text": "  → Skills\n"
+                        },
+                        {
+                          "text": "  → Settings/app\n"
+                        },
+                        {
+                          "text": "  → Settings/ai\n"
+                        },
+                        {
+                          "text": "  → Settings/appearance\n"
+                        },
+                        {
+                          "text": "  → Settings/input\n"
+                        },
+                        {
+                          "text": "  → Settings/workspace\n"
+                        },
+                        {
+                          "text": "  → Settings/permissions\n"
+                        },
+                        {
+                          "text": "  → Settings/labels\n"
+                        },
+                        {
+                          "text": "  → Settings/shortcuts\n"
+                        },
+                        {
+                          "text": "  → Settings/preferences\n"
+                        },
+                        {
+                          "text": "  ✓ 路由巡检完成\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-17T03:50:36.737Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "fcfb652bd3ffd794a76e-ad05c480824f6002ac3e",
+              "file": "i18n/i18n-e2e.spec.ts",
+              "line": 1073,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "UI 交互检测",
+          "file": "i18n/i18n-e2e.spec.ts",
+          "line": 1159,
+          "column": 6,
+          "specs": [
+            {
+              "title": "语言切换功能",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 26,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "\n🌐 测试语言切换功能...\n"
+                        }
+                      ],
+                      "stderr": [
+                        {
+                          "text": "  ⚠️  未找到语言选择器\n"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2026-02-17T03:51:22.709Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "fcfb652bd3ffd794a76e-26743c49e3d5bd1ba696",
+              "file": "i18n/i18n-e2e.spec.ts",
+              "line": 1160,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "静态代码分析集成",
+          "file": "i18n/i18n-e2e.spec.ts",
+          "line": 1217,
+          "column": 6,
+          "specs": [
+            {
+              "title": "生成静态代码分析报告",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 232,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "\n📊 执行静态代码分析...\n"
                         },
                         {
                           "text": "\n🧹 清理资源...\n"
@@ -130,10 +564,10 @@
                           "text": "======================================================================\n"
                         },
                         {
-                          "text": "测试时间: 2026/2/17 11:40:01\n"
+                          "text": "测试时间: 2026/2/17 11:50:25\n"
                         },
                         {
-                          "text": "总耗时: 9s\n"
+                          "text": "总耗时: 58s\n"
                         },
                         {
                           "text": "\n----------------------------------------------------------------------\n"
@@ -157,12 +591,16 @@
                           "text": "\n📝 报告已保存至: C:\\code\\AI\\craft-agents-i18n\\test-results\\i18n-report.json\n"
                         },
                         {
-                          "text": "\n📝 Markdown 报告已保存至: C:\\code\\AI\\craft-agents-i18n\\test-results\\i18n-report.before.md\n"
+                          "text": "\n📝 Markdown 报告已保存至: C:\\code\\AI\\craft-agents-i18n\\test-results\\i18n-report.plan_check_1.md\n"
                         }
                       ],
-                      "stderr": [],
+                      "stderr": [
+                        {
+                          "text": "  ⚠️  静态代码分析失败: Error: Process exited with code 1\n    at ChildProcess.<anonymous> \u001b[90m(file:///C:/code/AI/craft-agents-i18n/\u001b[39mtests/e2e/i18n/i18n-e2e.spec.ts:1246:20\u001b[90m)\u001b[39m\n\u001b[90m    at ChildProcess.emit (node:events:518:28)\u001b[39m\n\u001b[90m    at maybeClose (node:internal/child_process:1101:16)\u001b[39m\n\u001b[90m    at Process.ChildProcess._handle.onexit (node:internal/child_process:304:5)\u001b[39m\n\u001b[90m    at Process.callbackTrampoline (node:internal/async_hooks:130:17)\u001b[39m\n"
+                        }
+                      ],
                       "retry": 0,
-                      "startTime": "2026-02-17T03:40:01.925Z",
+                      "startTime": "2026-02-17T03:51:22.760Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -170,9 +608,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "fcfb652bd3ffd794a76e-bcdd6b0db0cbc365c7d7",
+              "id": "fcfb652bd3ffd794a76e-85beb6a3f5dfe183a91a",
               "file": "i18n/i18n-e2e.spec.ts",
-              "line": 832,
+              "line": 1218,
               "column": 3
             }
           ]
@@ -182,9 +620,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-17T03:40:00.398Z",
-    "duration": 10217.694000000001,
-    "expected": 1,
+    "startTime": "2026-02-17T03:50:24.013Z",
+    "duration": 59903.651999999995,
+    "expected": 10,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

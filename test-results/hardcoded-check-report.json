@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-17T02:19:37.474Z",
+  "timestamp": "2026-02-17T03:51:22.981Z",
   "summary": {
     "totalFiles": 49,
     "totalIssues": 590,
@@ -450,7 +450,7 @@
     "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\app-shell\\SessionList.tsx": [
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\app-shell\\SessionList.tsx",
-        "line": 1690,
+        "line": 1720,
         "text": "Rename Session",
         "type": "title",
         "context": "logOpen}\n        onOpenChange={setRenameDialogOpen}\n        title=\"Rename Session\"\n        value={renameName}\n        on",
@@ -458,7 +458,7 @@
       },
       {
         "file": "C:\\code\\AI\\craft-agents-i18n\\apps\\electron\\src\\renderer\\components\\app-shell\\SessionList.tsx",
-        "line": 1694,
+        "line": 1724,
         "text": "Enter session name...",
         "type": "placeholder",
         "context": "etRenameName}\n        onSubmit={handleRenameSubmit}\n        placeholder=\"Enter session name...\"\n      />\n    </div>\n  )",
